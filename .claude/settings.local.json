@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000/api/chatbot/welcome)",
+      "Bash(curl -s -X POST http://localhost:3000/api/chatbot/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Explore Robots\",\"session_id\":\"test1\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/chatbot/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Cleaning Robots\",\"session_id\":\"test1\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/chatbot/chat -H \"Content-Type: application/json\" -d '{\"message\":\"Hospitality\",\"session_id\":\"test1\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/chatbot/chat -H \"Content-Type: application/json\" -d '{\"message\":\"who are you?\",\"session_id\":\"test1\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/chatbot/chat -H \"Content-Type: application/json\" -d '{\"message\":\"blah blah blah\",\"session_id\":\"test1\"}')",
+      "Bash(curl -s -I http://localhost:3000/)",
+      "Bash(curl -s -X POST http://localhost:3000/api/chatbot/chat -H 'Content-Type: application/json' -d '{\"message\":\"__TRACKED_VAR__\",\"session_id\":\"t\"}')"
+    ]
+  }
+}

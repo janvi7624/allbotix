@@ -1,0 +1,57 @@
+{
+  "page_3": {
+    "title": "Allbotix Alpha B2",
+    "content": "The Allbotix Alpha B2 is a next-generation industrial quadruped robot engineered for extreme performance, versatility, and intelligence. With industry-leading speed, payload capacity, endurance, and terrain adaptability, the Alpha B2 sets a new standard for all-terrain robotic mobility. Whether navigating complex environments, carrying heavy loads, or supporting autonomous inspection tasks, the Alpha B2 is built to lead across industries—from power infrastructure and emergency rescue to advanced research and exploration. Equipped with advanced perception systems, AI-ready compute platforms, and optional wheeled-leg hybrid mobility, the Alpha B2 is more than just a robot—it’s a modular, intelligent assistant capable of adapting to diverse missions. Its rugged design, autonomous charging capabilities, and customizable sensor integration make it a powerful tool for organizations seeking high-performance automation in challenging real-world scenarios."
+  },
+
+  "page_4": {
+    "title": "Product Feature",
+    "content": [
+      "AI-Powered Intelligence",
+      "Modular & Customizable Design",
+      "Agile & Stable Mobility",
+      "Human-Friendly Aesthetic",
+      "Safe and Stable Movements",
+      "Heavy-Duty Payload"
+    ]
+  },
+
+  "page_5": {
+    "title": "Hardware & Sensors (Image Extracted)",
+    "content": [
+      "32-wire Automotive-grade LiDAR",
+      "Depth Camera",
+      "High Resolution Optical Camera",
+      "M107 High Performance Joint Modules",
+      "Ultra Large Capacity Battery 45Ah (2250Wh)"
+    ]
+  },
+
+  "page_6": {
+    "title": "Accessory Highlights",
+    "content": [
+      "Wheeled-Leg Hybrid Kit Innovative mobility system allowing seamless transition between wheels and legs for unmatched speed and endurance.",
+      "Quick-Swap Battery System Field-ready power solution enabling rapid battery replacement for extended, uninterrupted operations.",
+      "Autonomous Charging Station Smart self-docking system for hands-free charging in remote or continuous-use environments.",
+      "Jetson Orin NX AI Module Edge AI computing powerhouse supporting advanced autonomy, 3D perception, and real-time decision-making.",
+      "Weatherproof Shell (IP67) Provides full protection against dust and water ingress for reliable outdoor performance.",
+      "High-Capacity Payload Rack Supports heavy-duty loads up to 40 kg in motion, expanding functionality for industrial-grade missions."
+    ]
+  },
+
+  "page_7": {
+    "title": "Product Specification",
+    "content": {
+      "Dimension of standing": "≈ 1098mm×450mm×645mm",
+      "Dimension of crouching": "≈ 880mm×460mm×330mm",
+      "Robot Weight": "≈ 60kg Total weight (battery included)",
+      "Battery Performance": "Battery capacity 45Ah(2250Wh)，voltage 58V",
+      "Endurance Ability": "Battery life 4-6h Walking without load > 5h, and the mileage > 20km Walking with 20kg load > 4h, and the mileage> 15km",
+      "Payload": "Load(Standing) = Max. 120kg Load(Walking) > 40kg",
+      "Max Jump Distance": "> 1.6m",
+      "Running Speed": "> 6m/s",
+      "Climb Angle": "> 45°",
+      "Sensing Sensor": "3D LiDAR ×1 + Depth camera ×2 + Optical camera ×2 (Varies with different configurations)"
+    }
+  }
+}

@@ -1,0 +1,642 @@
+{
+  "memory_test_3": [
+    {
+      "role": "user",
+      "content": "Tell me about Bolt G1 Smart Humanoid Robot"
+    },
+    {
+      "role": "assistant",
+      "content": "# **Bolt G1 Smart Humanoid Robot**\n\nThe **Bolt G1** is Nanta Tech's next-generation humanoid robot — a cutting-edge service robot that combines advanced AI, natural movement, and expressive communication to deliver intelligence and efficiency across service environments.\n\nSelect a product below to see full details:"
+    },
+    {
+      "role": "user",
+      "content": "what about for office?"
+    },
+    {
+      "role": "assistant",
+      "content": "I can help only with **Allbotix Robotics**.\n\nTell me your use case (for example: cleaning, delivery, warehouse, surveillance) and I will suggest the right robot."
+    }
+  ],
+  "sess_x9eicuphm6": [
+    {
+      "role": "user",
+      "content": "cleaning robot for office of 500sqft area"
+    },
+    {
+      "role": "assistant",
+      "content": "**Cleaning Robot for 500 sq ft Office**\n\nFor a compact office space like yours, you'll want a nimble, efficient robot that can navigate tight corners and clean thoroughly without taking up much storage space.\n\nBased on your needs, I'd suggest:\n• **AT20s Pro** — Unleash the power of the AT20s Pro — the ultimate cleaning solution upon redefining how clean really looks and feels...\n• **AX10** — Introducing the Allbotix AX10 — a powerhouse cleaning robot engineered for deep, intelligent, and more-than-seamless...\n\nTap a product below to see full details."
+    },
+    {
+      "role": "user",
+      "content": "Back to Robotics"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "Back to Menu"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! Welcome to Allbotix Robotics 👋 How may I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "Robotics"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "AMR"
+    },
+    {
+      "role": "assistant",
+      "content": "🚗 *AMR — Autonomous Mobile Robots*\n\nIndustrial-grade robots for warehouse automation and material transport. Select a product to learn more:"
+    },
+    {
+      "role": "user",
+      "content": "Back to Menu"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "Back to Menu"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "Robot Arm"
+    },
+    {
+      "role": "assistant",
+      "content": "🦾 *Robot Arms*\n\nAL Series collaborative robots for industrial automation and precision manufacturing. Select a product to learn more:"
+    },
+    {
+      "role": "user",
+      "content": "AL Series Robot Arm"
+    },
+    {
+      "role": "assistant",
+      "content": "**AL Series Robot Arm**\n\nAL Series collaborative robot arms for industrial automation, precision manufacturing, and flexible production lines.\n\n**Key Features:**\n• Collaborative operation alongside humans\n• High-precision repeatability\n• Flexible payload configurations\n• Easy programming & deployment\n• Safety-rated speed monitoring\n\n**Tech Highlights:**\n• Multiple reach configurations\n• Industrial-grade build\n• Compatible with major automation platforms\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/1u3uyhQZpbpeKHJthio9Ts-jVvws1NXjt/view?usp=drive_link)"
+    },
+    {
+      "role": "user",
+      "content": "Back to Robot Arms"
+    },
+    {
+      "role": "assistant",
+      "content": "🦾 *Robot Arms*\n\nAL Series collaborative robots for industrial automation and precision manufacturing. Select a product to learn more:"
+    }
+  ],
+  "memory_test_5": [
+    {
+      "role": "user",
+      "content": "Tell me about Bolt G1 Smart Humanoid Robot"
+    },
+    {
+      "role": "assistant",
+      "content": "# Bolt G1 Smart Humanoid Robot\n\nThe **Bolt G1** is Nanta Tech's next-generation humanoid robot — designed to combine advanced AI, natural movement, and expressive communication for intelligent service across various environments.\n\nSelect a product below to see full details:"
+    },
+    {
+      "role": "user",
+      "content": "what about for office?"
+    },
+    {
+      "role": "assistant",
+      "content": "Great question! For office environments, the **Bolt G1** is an excellent fit. Here's why it works so well.\n\nSelect a product below to see full details:"
+    }
+  ],
+  "desc_btn_test_1": [
+    {
+      "role": "user",
+      "content": "suggest cleaning robots for office"
+    },
+    {
+      "role": "assistant",
+      "content": "For an office environment, you'll want a cleaning robot that's compact, quiet, and efficient enough to handle daily maintenance across different floor types. Here are my recommendations.\n\nBased on your needs, I'd suggest:\n• **AT20s Pro** — Unleash the power of the AT20s Pro — the ultimate cleaning solution upon redefining how clean really looks and feels...\n• **AX10** — Introducing the Allbotix AX10 — a powerhouse cleaning robot engineered for deep, intelligent, and more-than-seamless...\n• **AC40** — Meet the Allbotix AC40 — mop, scrub, vacuum all-in-one cleaning robot that sweeps, scrubs, vacuums, and mops with pre...\n• **AS 100N** — Introducing the Allbotix AS 100N — the most versatile outdoor sweeping robot that takes care of every outdoor surface...\n• **Smart Cleaning Robot** — A full lineup of autonomous smart cleaning robots designed to revolutionize cleanliness across commercial and industr...\n\nTap a product below to see full details."
+    },
+    {
+      "role": "user",
+      "content": "suggest cleaning robots for office"
+    },
+    {
+      "role": "assistant",
+      "content": "For an office environment, you'll want a cleaning robot that's compact, quiet, and efficient enough to handle daily maintenance across different floor types. Here are my recommendations: Based on your needs, I'd suggest.\n\nBased on your needs, I'd suggest:\n• **AT20s Pro** — Unleash the power of the AT20s Pro — the ultimate cleaning solution upon redefining how clean really looks and feels...\n• **AX10** — Introducing the Allbotix AX10 — a powerhouse cleaning robot engineered for deep, intelligent, and more-than-seamless...\n• **AC40** — Meet the Allbotix AC40 — mop, scrub, vacuum all-in-one cleaning robot that sweeps, scrubs, vacuums, and mops with pre...\n• **AS 100N** — Introducing the Allbotix AS 100N — the most versatile outdoor sweeping robot that takes care of every outdoor surface...\n\nTap a product below to see full details."
+    }
+  ],
+  "menu_route_test": [
+    {
+      "role": "user",
+      "content": "Back to Menu"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    }
+  ],
+  "remove_back_robotics_test": [
+    {
+      "role": "user",
+      "content": "contact allbotix"
+    },
+    {
+      "role": "assistant",
+      "content": "You can reach the Allbotix team directly through their contact page:\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)\n\nTheir team will be happy to assist you with any robotics enquiries!"
+    }
+  ],
+  "sess_y78fekmko6n": [
+    {
+      "role": "user",
+      "content": "Robot Arm"
+    },
+    {
+      "role": "assistant",
+      "content": "🦾 *Robot Arms*\n\nAL Series collaborative robots for industrial automation and precision manufacturing. Select a product to learn more:"
+    },
+    {
+      "role": "user",
+      "content": "AL Series Robot Arm"
+    },
+    {
+      "role": "assistant",
+      "content": "For industrial automation and precision tasks, start with **Robot Arms (Cobots)**."
+    },
+    {
+      "role": "user",
+      "content": "Robot Arm"
+    },
+    {
+      "role": "assistant",
+      "content": "🦾 *Robot Arms*\n\nAL Series collaborative robots for industrial automation and precision manufacturing. Select a product to learn more:"
+    },
+    {
+      "role": "user",
+      "content": "AL Series Robot Arm"
+    },
+    {
+      "role": "assistant",
+      "content": "**AL Series Robot Arm**\n\nAL Series collaborative robot arms for industrial automation, precision manufacturing, and flexible production lines.\n\n**Key Features:**\n• Collaborative operation alongside humans\n• High-precision repeatability\n• Flexible payload configurations\n• Easy programming & deployment\n• Safety-rated speed monitoring\n\n**Tech Highlights:**\n• Multiple reach configurations\n• Industrial-grade build\n• Compatible with major automation platforms\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/1u3uyhQZpbpeKHJthio9Ts-jVvws1NXjt/view?usp=drive_link)"
+    },
+    {
+      "role": "user",
+      "content": "Back to Menu"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "I want robotics solution for workstation inspection with heat monitor which robot is suitable for that and why I use that robot instead of human."
+    },
+    {
+      "role": "assistant",
+      "content": "For security, patrol, and inspection tasks, **Surveillance Robots** are the best fit."
+    },
+    {
+      "role": "user",
+      "content": "Surveillance Robots"
+    },
+    {
+      "role": "assistant",
+      "content": "🔍 *Surveillance & Autonomous Robots*\n\nRugged quadruped robots for security patrol, inspection, and rescue. Select a product to learn more:"
+    },
+    {
+      "role": "user",
+      "content": "ALPHA GO2"
+    },
+    {
+      "role": "assistant",
+      "content": "**Alpha GO2**\n\nAgile, intelligent quadruped robots combining advanced AI and sensors to support security patrol, inspection, hospitality assistance, and on-site operations — reducing manual workload and safety risks.\n\n**Key Features:**\n• Agile Quadruped Mobility\n• Advanced AI & Autonomy\n• High-Precision Sensors\n• Rugged, All-Terrain Design\n• Modular Payload Options\n\n**Tech Highlights:**\n• Agile quadruped locomotion across uneven terrain\n• Autonomous path planning and obstacle avoidance\n• Operates in environments inaccessible to wheeled robots\n• Consistent patrol and inspection with high reliability\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/1UCJ3ChLy8eqL1dNV8QExiO2vbqmVsT94/view?usp=drive_link)"
+    },
+    {
+      "role": "user",
+      "content": "how can it will do the survillance like which camera and sensor is used for inspection of workstation."
+    },
+    {
+      "role": "assistant",
+      "content": "For security, patrol, and inspection tasks, **Surveillance Robots** are the best fit."
+    },
+    {
+      "role": "user",
+      "content": "how can Alpha GO2 will do the survillance like which camera and sensor is used for inspection of workstation."
+    },
+    {
+      "role": "assistant",
+      "content": "For security, patrol, and inspection tasks, **Surveillance Robots** are the best fit."
+    }
+  ],
+  "test-contact-intent": [
+    {
+      "role": "user",
+      "content": "can you connect with me senior technical as i want robot for work station inspection"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "can you connect with me senior technical as i want robot for work station inspection"
+    },
+    {
+      "role": "assistant",
+      "content": "You can reach the Allbotix team directly through their contact page:\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)\n\nShare your requirement there, and our senior technical team will get in touch."
+    }
+  ],
+  "test-demo-link": [
+    {
+      "role": "user",
+      "content": "AT20 PRO"
+    },
+    {
+      "role": "assistant",
+      "content": "**AT20 PRO**\n\nAdvanced AI-driven robot ensuring deep cleaning with powerful vacuuming and intelligent mopping for homes, offices, apartments & multi-level spaces.\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/1aXPjDN9ZpgsfqtcoKXW8kLQQDeLeK6Ie/view?usp=drive_link)\n\n**Key Features:**\n• 5200mAh Battery\n• 260 min Runtime\n• 70-Day Self-Emptying System\n• Stores Up to 5 Maps\n• Self-Cleaning Mop\n• 6500Pa Suction Power\n• No-Go Zone Control"
+    }
+  ],
+  "test-demo-link-2": [
+    {
+      "role": "user",
+      "content": "AT20 PRO"
+    },
+    {
+      "role": "assistant",
+      "content": "**AT20 PRO**\n\nAdvanced AI-driven robot ensuring deep cleaning with powerful vacuuming and intelligent mopping for homes, offices, apartments & multi-level spaces.\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/1aXPjDN9ZpgsfqtcoKXW8kLQQDeLeK6Ie/view?usp=drive_link)\n\n**Key Features:**\n• 5200mAh Battery\n• 260 min Runtime\n• 70-Day Self-Emptying System\n• Stores Up to 5 Maps\n• Self-Cleaning Mop\n• 6500Pa Suction Power\n• No-Go Zone Control"
+    }
+  ],
+  "robotics-only-test": [
+    {
+      "role": "user",
+      "content": "Audio Products"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    },
+    {
+      "role": "user",
+      "content": "Cleaning Robots"
+    },
+    {
+      "role": "assistant",
+      "content": "🧹 *Cleaning Robots*\n\nAI-powered robots for homes, offices, and large industrial spaces. Select a product to learn more:"
+    }
+  ],
+  "robotics-btn-test": [
+    {
+      "role": "user",
+      "content": "audio products"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    }
+  ],
+  "robotics-only-panels": [
+    {
+      "role": "user",
+      "content": "panels"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    }
+  ],
+  "robotics-only-hi": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    }
+  ],
+  "robotics-only-hi-2": [
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    }
+  ],
+  "robotics-only-meeting": [
+    {
+      "role": "user",
+      "content": "meeting room solution"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    }
+  ],
+  "robot-demo-order": [
+    {
+      "role": "user",
+      "content": "AT60"
+    },
+    {
+      "role": "assistant",
+      "content": "**AT60**\n\nAdvanced AI-powered robot delivering deep vacuuming and intelligent mopping for spotless homes, apartments & premium indoor spaces.\n\n**Key Features:**\n• 15000Pa suction power\n• Hot Water Mop Washing & Hot Air Drying\n• Auto Recharge & Resume\n• Multi-Surface Cleaning Support\n• AI LiDAR Mapping\n• Self-Cleaning Mop System\n• Hair Removal System\n• No-Go & No-Mop Zone Control\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/13G1z631m4hHpbhNwWLJk9tBEdeWNEHsr/view?usp=drive_link)"
+    }
+  ],
+  "remove-av-integration-test": [
+    {
+      "role": "user",
+      "content": "av integration"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    }
+  ],
+  "remove-vc-test": [
+    {
+      "role": "user",
+      "content": "video conferencing setup"
+    },
+    {
+      "role": "assistant",
+      "content": "I can help only with **Allbotix Robotics**.\n\nTell me your use case (for example: cleaning, delivery, warehouse, surveillance) and I will suggest the right robot."
+    }
+  ],
+  "cleanup-pass-av-integration": [
+    {
+      "role": "user",
+      "content": "av integration"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    }
+  ],
+  "cleanup-pass-vc": [
+    {
+      "role": "user",
+      "content": "video conferencing"
+    },
+    {
+      "role": "assistant",
+      "content": "I can help only with **Allbotix Robotics**.\n\nTell me your use case (for example: cleaning, delivery, warehouse, surveillance) and I will suggest the right robot."
+    }
+  ],
+  "amr-phrase-test": [
+    {
+      "role": "user",
+      "content": "Autonomous mobile robots"
+    },
+    {
+      "role": "assistant",
+      "content": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    }
+  ],
+  "amr-phrase-test-2": [
+    {
+      "role": "user",
+      "content": "Autonomous mobile robots"
+    },
+    {
+      "role": "assistant",
+      "content": "🚗 *AMR — Autonomous Mobile Robots*\n\nIndustrial-grade robots for warehouse automation and material transport. Select a product to learn more:"
+    }
+  ],
+  "rec-buttons-test": [
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on your **500 sq ft workspace**, I'd recommend a compact, efficient cleaning robot that can handle tight spaces while delivering consistent performance. Here are the best fits from our Allbotix cleaning lineup.\n\nBased on your needs, I'd suggest:\n• **AT20s Pro** — Unleash the power of the AT20s Pro — the ultimate cleaning solution upon redefining how clean really looks and feels...\n• **AX10** — Introducing the Allbotix AX10 — a powerhouse cleaning robot engineered for deep, intelligent, and more-than-seamless...\n• **AC40** — Meet the Allbotix AC40 — mop, scrub, vacuum all-in-one cleaning robot that sweeps, scrubs, vacuums, and mops with pre...\n\nTap a product below to see full details."
+    },
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on your **500 sq ft workspace**, I'd recommend a compact, efficient cleaning robot that handles tight spaces while delivering consistent performance.\n\nHere are the best fits:\n\n• **Autonomous Cleaning Robot** — Purpose-built for smaller to medium workspaces, agile navigation in confined areas with reliable cleaning performance.\n\nTap the product above to see full details and specifications.\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on your **500 sq ft workspace**, I'd recommend a compact, efficient cleaning robot that handles tight spaces with reliable performance.\n\nHere's what fits best:\n\n• **Autonomous Cleaning Robot** — Purpose-built for smaller to medium workspaces, with agile navigation in confined areas and consistent cleaning coverage.\n\nTap the product above to see full details and specifications.\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    }
+  ],
+  "rec-buttons-fresh": [
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "For a **500 sq ft workspace**, you'll want a cleaning robot that's compact, efficient, and can handle tight spaces while delivering reliable performance.\n\nBased on your needs, I'd suggest:\n\n• **Autonomous Cleaning Robot** — Perfectly sized for smaller to medium workspaces, these robots are designed to navigate confined areas efficiently and maintain consistent cleaning coverage.\n\nTap the product above to see full details, including specific models, battery life, and scheduling capabilities.\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    }
+  ],
+  "rec-buttons-fresh-desc": [
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "Great! A 500 sq ft workspace is perfect for a compact, efficient cleaning robot. Based on your space size, here's what I'd recommend:\n\nFor a **500 sq ft workspace**, you'll want a robot that's agile, easy to maneuver in tight spaces, and capable of covering the area efficiently without frequent recharging.\n\nUnfortunately, I don't have detailed specifications for our cleaning robot models in my current data. However, Nanta Tech does offer **autonomous cleaning robots** through our **Allbotix** brand that are designed for various workspace sizes — including yours.\n\nTo get the perfect match for your 500 sq ft area, I'd recommend:\n\n📌 **Visit Allbotix directly** — they'll help you find the right cleaning robot model, discuss runtime, coverage capacity, and features tailored to your workspace.\n\n[Visit Allbotix](https://www.allbotix.ai/)\n\nYou can also reach out to our team at **nantatech.com/contact-us** and mention your 500 sq ft workspace — they'll guide you to the best cleaning solution.\n\nIs there anything else about our robotics offerings I can help clarify?"
+    }
+  ],
+  "rec-desc-fallback": [
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "For a **500 sq ft workspace**, you need a cleaning robot that's **compact, efficient, and quick** — perfect for smaller office areas, retail spaces, or light commercial environments. Based on your workspace size, here's what I'd recommend.\n\nBased on your needs, I'd suggest:\n• **AT60** — Advanced AI-powered robot delivering deep vacuuming and intelligent mopping for spotless homes, apartments & premium...\n• **AT300** — A high-capacity autonomous mobile robot engineered for heavy-duty warehouse goods transport, material handling, and l...\n• **AT600** — A powerful and scalable AMR built for high-volume industrial environments, delivering precision transport and autonom...\n• **Smart Autonomous Mobile Robot** — Transform your operations with Allbotix cutting-edge Autonomous Mobile Robots (AMR) — the all-powerful, automatically...\n\nTap a product below to see full details."
+    }
+  ],
+  "rec-desc-fallback-2": [
+    {
+      "role": "user",
+      "content": "cleaning robot for workspace of 500sqft"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on your needs, I'd suggest:\n\n• **AT20 PRO** — Advanced AI-driven robot ensuring deep cleaning with powerful vacuuming and intelligent mopping for homes, offices, a...\n• **AX10 PRO** — AI-powered vacuuming robot designed for high-efficiency cleaning with obstacle detection for homes, workspaces & reta...\n• **AC40** — Advanced AI-driven robot ensuring spotless floors with efficient sweeping and scrubbing.\n\nTap a product below to see full details."
+    }
+  ],
+  "single-demo-link-test": [
+    {
+      "role": "user",
+      "content": "ALPHA GO2"
+    },
+    {
+      "role": "assistant",
+      "content": "**Alpha GO2**\n\nAgile, intelligent quadruped robots combining advanced AI and sensors to support security patrol, inspection, hospitality assistance, and on-site operations — reducing manual workload and safety risks.\n\n**Key Features:**\n• Agile Quadruped Mobility\n• Advanced AI & Autonomy\n• High-Precision Sensors\n• Rugged, All-Terrain Design\n• Modular Payload Options\n\n**Tech Highlights:**\n• Agile quadruped locomotion across uneven terrain\n• Autonomous path planning and obstacle avoidance\n• Operates in environments inaccessible to wheeled robots\n• Consistent patrol and inspection with high reliability\n\n[🎬 Watch Demo Video](https://drive.google.com/file/d/1UCJ3ChLy8eqL1dNV8QExiO2vbqmVsT94/view?usp=drive_link)"
+    }
+  ],
+  "block-smart-serving-test": [
+    {
+      "role": "user",
+      "content": "I want a serving robot with hands"
+    },
+    {
+      "role": "assistant",
+      "content": "Based on your needs, I'd suggest:\n\n• **AW3** — Closed-door AI-powered food delivery robot for safe and contactless delivery.\n• **ASMR T9** — AI-powered delivery robot for restaurants and hotels.\n• **ASMR T10** — AI-powered delivery and marketing robot for commercial use.\n\nTap a product below to see full details."
+    }
+  ],
+  "category-suggestion-test": [
+    {
+      "role": "user",
+      "content": "i want robotics solution for workstation inspection with heat monitor which robot is suitable"
+    },
+    {
+      "role": "assistant",
+      "content": "For workstation inspection and heat/safety monitoring, these categories are the best fit:\n\n• **Surveillance Robots** for patrol, inspection, and sensor-based monitoring\n• **AMR** for autonomous movement across large work areas\n\nChoose a category below and I'll suggest the most suitable models."
+    }
+  ],
+  "contact-copy-test": [
+    {
+      "role": "user",
+      "content": "can you connect with me senior technical as i want robot for work station inspection"
+    },
+    {
+      "role": "assistant",
+      "content": "For workstation inspection and heat/safety monitoring, these categories are the best fit:\n\n• **Surveillance Robots** for patrol, inspection, and sensor-based monitoring\n• **AMR** for autonomous movement across large work areas\n\nChoose a category below and I'll suggest the most suitable models."
+    }
+  ],
+  "contact-copy-test-2": [
+    {
+      "role": "user",
+      "content": "can you connect me with your senior technical team"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd be happy to help you connect with our senior technical team!\n\nPlease reach out to us directly through our contact page:\n\n**📧 Visit: nantatech.com/contact-us**\n\nYou can:\n- Fill out a detailed inquiry form specifying your technical needs\n- Request a call or meeting with our technical specialists\n- Share your project requirements so our team can route you to the right expert\n\nAlternatively, if you let me know what you're looking to discuss — whether it's **AI solutions** (computer vision, callbots), **AV systems**, or **robotics** — I can give you more specific guidance on who to reach out to or what information would help speed up the process.\n\nWhat are you working on?"
+    }
+  ],
+  "test_fix": [
+    {
+      "role": "user",
+      "content": "AV Solutions"
+    },
+    {
+      "role": "assistant",
+      "content": "Our AV division covers end-to-end audio-visual needs. What would you like to explore?"
+    },
+    {
+      "role": "user",
+      "content": "AI Solutions"
+    },
+    {
+      "role": "assistant",
+      "content": "Our AI division delivers intelligent automation and vision systems. What interests you?"
+    }
+  ],
+  "robotics_only_check": [
+    {
+      "role": "user",
+      "content": "AV Solutions"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    }
+  ],
+  "sess_t6e0x2vmzun": [
+    {
+      "role": "user",
+      "content": "like expain me how this robot arm can gives coffee to cutomers and how much weight this robot can lift"
+    },
+    {
+      "role": "assistant",
+      "content": "For pricing and cost details on our robotics products, please reach out directly to our team — they'll provide a tailored quote based on your requirements.\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)"
+    },
+    {
+      "role": "user",
+      "content": "which grippers i can add on this"
+    },
+    {
+      "role": "assistant",
+      "content": "**AL Series Robot Arm — Gripper & End Effector Options**\n\nThe **AL Series cobots** support a wide range of end effectors and grippers for diverse applications, including beverage/item handling for vending scenarios.\n\n**Available Gripper Types:**\n\n• **Electric Grippers** — Precise, controlled grip for delicate items (cups, bottles, cans)\n• **Pneumatic Grippers** — Fast-acting for high-speed repetitive tasks\n• **Vacuum Grippers** — Ideal for smooth surfaces (cups, containers, packaging)\n• **Custom End Effectors** — Specialized solutions designed for your specific use case\n\n**Additional Accessories:**\n\n• **Tool Changers** — Automatic switching between grippers for multi-task automation\n• **Force & Torque Sensors** — Enable force-controlled gripping (prevents crushing cups or spilling)\n• **Vision Systems** — Camera integration for object detection and positioning\n• **Mounting Solutions** — Flexible floor, wall, or custom installations\n\n**For a Coffee/Beverage Vending Setup:**\n\nA **vacuum or electric gripper** paired with a **force/torque sensor** would be ideal — they provide gentle, reliable handling without damaging cups or spilling contents.\n\n**Which AL Model?**\nThe payload determines cup/beverage capacity — ranging from **AL3e (3 kg)** to **AL30 (35 kg)** depending on your application.\n\nFor custom gripper recommendations and integration details, reach out to our team:\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "like expain me how this robot arm can gives coffee to cutomers and how much weight this robot can lift"
+    },
+    {
+      "role": "assistant",
+      "content": "For pricing and cost details on our robotics products, please reach out directly to our team — they'll provide a tailored quote based on your requirements.\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)"
+    },
+    {
+      "role": "user",
+      "content": "like expain me how this robot arm can gives coffee to cutomers and how much weight this robot can lift"
+    },
+    {
+      "role": "assistant",
+      "content": "For pricing and cost details on our robotics products, please reach out directly to our team — they'll provide a tailored quote based on your requirements.\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)"
+    },
+    {
+      "role": "user",
+      "content": "visualize"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd love to show you a preview! First let me recommend the right setup.\n\nHow many people will use the room, or what's the room size?"
+    },
+    {
+      "role": "user",
+      "content": "Medium Room"
+    },
+    {
+      "role": "assistant",
+      "content": "This chatbot supports only **Allbotix Robotics**.\n\nPlease choose a robotics category below or share your robot use case."
+    },
+    {
+      "role": "user",
+      "content": "like expain me how this robot arm can gives coffee to cutomers and how much weight this robot can lift"
+    },
+    {
+      "role": "assistant",
+      "content": "For pricing and cost details on our robotics products, please reach out directly to our team — they'll provide a tailored quote based on your requirements.\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)"
+    },
+    {
+      "role": "user",
+      "content": "expain me how this robot arm can gives coffee to cutomers and how much weight this robot can lift"
+    },
+    {
+      "role": "assistant",
+      "content": "**AL Series Robot Arm — Coffee Vending Application**\n\nHere's how an **AL Series cobot** can serve coffee to customers and its lifting capacity:\n\n---\n\n**How It Works:**\n\n1. **Customer Order** — Orders placed via touchscreen or app\n2. **Arm Movement** — Robot arm reaches pre-programmed locations (cup dispenser, coffee machine, serving counter)\n3. **Gripper Pickup** — Electric or vacuum gripper gently grabs filled cup\n4. **Delivery** — Arm extends to customer at counter or designated pickup point\n5. **Release** — Gripper opens, customer receives coffee safely\n\n**Force Control** — Built-in force/torque sensors prevent spilling or crushing cups during handling.\n\n---\n\n**Weight Lifting Capacity — AL Series Options:**\n\n| Model | Payload | Best For |\n|-------|---------|----------|\n| **AL3e** | 3 kg | Single cups, light beverages |\n| **AL7e** | 7.5 kg | Multiple cups or larger containers |\n| **AL12e** | 12.5 kg | Trays with multiple drinks |\n| **AL16e** | 16 kg | Heavy dispensers or multi-item service |\n| **AL30** | 35 kg | Industrial-scale beverage systems |\n\n**For a coffee vending setup**, an **AL7e (7.5 kg)** or **AL12e (12.5 kg)** is ideal — handles cups, dispensers, and multi-drink trays comfortably.\n\nFor custom integration, gripper selection, and installation in your medium-sized space, contact our team:\n\n[📞 Contact Allbotix](https://www.allbotix.ai/contact)\n\n[Visit Allbotix](https://www.allbotix.ai/)"
+    },
+    {
+      "role": "user",
+      "content": "visualize"
+    },
+    {
+      "role": "assistant",
+      "content": "I'd love to show you a preview! First let me recommend the right setup.\n\nHow many people will use the room, or what's the room size?"
+    },
+    {
+      "role": "user",
+      "content": "Delivery Robots"
+    },
+    {
+      "role": "assistant",
+      "content": "📦 *Delivery & Serving Robots*\n\nContactless AI-powered delivery for restaurants, hotels, and hospitals. Select a product to learn more:"
+    }
+  ]
+}

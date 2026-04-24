@@ -1,0 +1,67 @@
+{
+  "page_5": {
+    "title": "Allbotix AT20 Pro",
+    "content": "The Allbotix T20s Pro is an advanced robotic vacuum and mop combo designed to revolutionize your home cleaning routine. Equipped with LiDAR navigation technology, it efficiently maps and navigates your home, ensuring no corner is missed. Whether you need vacuuming, mopping, or both simultaneously, the T20s Pro offers a 6500Pa suction power for deep cleaning and features a unique 'Y' shape mopping pattern for a more thorough clean. With its self-emptying station, you won’t have to worry about dust bags for up to 70 days. The robot’s long-lasting 5200mAh battery offers up to 260 minutes of continuous cleaning, and it intelligently auto-recharges and resumes from where it left off. It also boasts features like no-go zones, customizable cleaning areas, and the ability to store up to 5 maps—ideal for multi-level homes. Control your cleaning experience easily with the mobile app, voice commands (compatible with Amazon Alexa and Google Home), and precise mapping options for efficient, hands-free cleaning."
+  },
+
+  "page_6": {
+    "title": "Product Feature",
+    "content": [
+      "AI LiDAR Mapping",
+      "AI expert & Best Cleaner",
+      "Self-Cleaning Mop",
+      "Hair Removal System",
+      "Safe and Stable Movements"
+    ]
+  },
+
+  "page_7": {
+    "title": "Key Features",
+    "content": [
+      "Powerful 6500pa Suction Super strong suction power with multiple settings for a perfect clean every time",
+      "Area Designation Cleaning Mark no-go, to-go, and to-mop areas",
+      "Set Suction & Water Levels Adjust suction and water levels for each selected area",
+      "Auto-boost for Carpets Automatically increases suction power for deep cleaning",
+      "Efficiently Collects Dust from All Floors Removes dust, crumbs, and debris from hard floors & tiles",
+      "Seamless Control with App, Alexa & GH Integrates with smart home systems for effortless control"
+    ]
+  },
+
+  "page_8": {
+    "title": "Key Features",
+    "content": [
+      "Simultaneous Vacuum and Mop Vacuum and mop at the same time for efficient, all-in-one cleaning",
+      "Accurate LDS Navigation Technology 360° scanning at 4000 scans/sec for accurate and rapid mapping",
+      "Vacuuming Powerful vacuuming for deep, thorough cleaning",
+      "Mopping Special Y-shape mopping for superior cleaning",
+      "Mapping Made easy Stores maps for up to 5 levels",
+      "Precision Cleaning Smart sensors to avoid obstacles"
+    ]
+  },
+
+  "page_9": {
+    "title": "AI-Smart Home",
+    "content": [
+      "5200mAh Battery Long-lasting battery for extended cleaning sessions",
+      "Up To 4500sq.ft Area Coverage Cleans large spaces with ease, covering up to 4500 sq.ft.",
+      "Auto-Recharge & Auto-Resume Returns to dock to recharge and picks up where it left off",
+      "Extends up-to 300 min of runtime Provides an impressive runtime for extended cleaning session",
+      "AI-Smart Home Think Like You Do, Clean Like You Want"
+    ]
+  },
+
+  "page_10": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "33.5 cm x 33.5 cm x 9.5 cm",
+      "Robot Weight": "4Kg",
+      "Cleaning Type": "Dry, Wet, Dry & Wet Simultaneously",
+      "Compatibility": "Smart Phone, Amazon Alexa, Google Home",
+      "Navigation Algorithm": "LiDAR + Ai",
+      "Suction Power": "6500 pa",
+      "Battery Life": "Up to 260 minutes (5200mAh)",
+      "Charging Time": "2 Hours",
+      "Note": "All electrical appliances are compatible with 2.4Ghz Wi-Fi frequency for wider range."
+    }
+  }
+}

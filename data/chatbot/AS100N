@@ -1,0 +1,36 @@
+{
+  "page_3": {
+    "title": "AS-100N",
+    "content": "Built for large outdoor spaces, the ALLBOTIX AS-100N cleans various debris types—including dust, litter, and industrial waste—while navigating complex terrains like cement, bitumen, and rubble. Equipped with multi-line laser, RGBD, ultrasonic, and anti-collision sensors, it ensures safe, autonomous operation with precise obstacle avoidance. Powered by a 24V/200Ah battery, it runs up to 6 hours per charge, covering 30–40 km with a 100 cm cleaning width and 5 km/h speed. The robot features a 60L water tank and dustbin, rolling brushes, vacuuming, and dust suppression for over 98% cleaning efficiency, including edge cleaning. With scheduled tasks, auto recall, and break-point resuming, ALLBOTIX AS-100N delivers reliable, hassle-free outdoor cleaning for industrial, commercial, and transportation environments."
+  },
+
+  "page_4": {
+    "title": "Product Feature",
+    "content": [
+      "Smart and Stable Navigation",
+      "AI-Powered Route Intelligence",
+      "Compact Yet Capable",
+      "Engaging User Interaction",
+      "Autonomous Cleaning Expert"
+    ]
+  },
+
+  "page_5": {
+    "title": "Autonomous Cleaning",
+    "content": "The ALLBOTIX AS-100N is engineered for scheduled or on-demand outdoor floor cleaning in commercial spaces, significantly reducing manual labor while maintaining consistent hygiene standards. Perfect for environments like hospitals, malls, and offices, it minimizes human involvement in sanitation tasks—especially vital during outbreaks or in hygiene-sensitive areas. Equipped with intelligent zoning and scheduling, the AS-100N can handle diverse tasks across specific outdoor zones—cleaning entryways, pathways, and transport routes—boosting operational efficiency and supporting multiple facility needs with a single robot."
+  },
+
+  "page_6": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "1706(L)x927(W)x1199(H)(MM)",
+      "Robot Weight": "395 Kg",
+      "Sweeping width": "100 cm",
+      "Charging Time": "4 ~ 5 Hours",
+      "Battery Life": "6 Hours (With Operating Conditions Considered)",
+      "Max Cleaning Efficiency": "3000 ㎡/h",
+      "Range": "30 ~ 40 km",
+      "Applicable environment (outdoor)": "-15℃ ~ 40℃"
+    }
+  }
+}

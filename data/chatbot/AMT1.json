@@ -1,0 +1,32 @@
+{
+  "page_6": {
+    "title": "AMT1: The Future of Large-Scale Cleaning",
+    "content": "World’s First AI-Powered Robotic Sweeper for Industrial and Commercial Spaces Efficiency. Precision. Cleanliness. 24/7 Allbotix, a global leader in service robotics, proudly presents the AMT1 – an AI-powered sweeping robot designed to revolutionize cleaning in large-scale environments, covering up to 100,000 m² with unmatched efficiency."
+  },
+
+  "page_7": {
+    "title": "Usage Scenario",
+    "content": [
+      "Restaurant",
+      "Hotel",
+      "Nursing home",
+      "Office",
+      "Karaoke",
+      "Hospital",
+      "Shopping Mall",
+      "Internet Bar"
+    ]
+  },
+
+  "page_8": {
+    "title": "Usage Scenario",
+    "content": [
+      "AI-Powered Trash Recognition: Equipped with advanced AI cameras, the MT1 identifies and categorizes waste in real time, continuously improving accuracy through deep learning and database updates. Distinguishes real trash from non- trash items, activating cleaning only when necessary to maximize efficiency.",
+      "Dynamic Environment Adaptability: Uses Lidar SLAM + VSLAM integrated positioning for flexible navigation in dynamic environments. Adapts to layout changes with full-space awareness, ensuring thorough cleaning without redundancy.",
+      "Smart Spot Cleaning: Patrols large areas with an ultra-wide scanning field of view, detecting and cleaning trash immediately upon detection. Cleans efficiently by targeting trash directly, avoiding redundant paths.",
+      "No Debris Too Big or Small: Features dual-disc brushes and a 70 cm wide cleaning path to handle fine dust, paper scraps, nails, and larger items like beverage bottles in a single pass. 35-liter large-capacity trash bin reduces the need for manual intervention.",
+      "Active Dust Control: High-flow negative pressure ventilation and efficient filter system trap particles, preventing secondary pollution.",
+      "IoT Integration: Seamlessly interacts with elevators, gates, and other infrastructure for multi-floor cleaning. Remote monitoring via apps and PC interfaces provides real-time updates, visualized cleaning reports, and trash bin notifications."
+    ]
+  }
+}

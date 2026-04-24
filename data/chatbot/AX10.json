@@ -1,0 +1,77 @@
+{
+  "page_3": {
+    "title": "Allbotix AX10",
+    "content": [
+      "The Allbotix AX10 is a state-of-the-art autonomous cleaning robot designed to revolutionize commercial and industrial cleaning operations. Building upon Allbotix AX10 Robotics' expertise in robotic cleaning solutions, the X1000 represents a significant leap forward in autonomous cleaning technology, offering unprecedented performance and intelligent cleaning capabilities.",
+      "Technologically, the AX10 stands out with its comprehensive smart features. The robot is fully WiFi-enabled, allowing for remote monitoring, control, and management through a dedicated mobile application. Facility managers can schedule cleaning sessions, track cleaning progress, generate detailed performance reports, and receive real-time notifications. The robot's intelligent software continuously learns and optimizes its cleaning routes, improving efficiency with each operation."
+    ]
+  },
+
+  "page_4": {
+    "title": "Usage Scenario",
+    "content": [
+      "Restaurant",
+      "Hotel",
+      "Nursing home",
+      "Office",
+      "Karaoke",
+      "Hospital",
+      "Shopping Mall",
+      "Internet Bar"
+    ]
+  },
+
+  "page_5": {
+    "title": "Product Feature",
+    "content": [
+      "Customizable",
+      "AI expert & Best Cleaner",
+      "Extremely Cute Design",
+      "Multimodal Intersection",
+      "Safe and Stable Movements"
+    ]
+  },
+
+  "page_6": {
+    "title": "Key Features",
+    "content": [
+      "To-Go Zone and No-Go Zone X1000 allows users to designate \"To-Go\" zones for focused cleaning and \"No-Go\" zones to protect delicate items and avoid obstacles. This ensures the vacuum navigates effectively while safeguarding your home from potential damage.",
+      "Personalized Cleaning X1000 enhances efficiency with tailored area cleaning, allowing for customizable suction power and cleaning modes. Its advanced 3D mapping capability enables the device to create and store detailed maps of large spaces, ensuring an optimized cleaning experience based on your specific needs.",
+      "Smart App & Voice Control You can take full control of your X1000 compatible with Alexa and Google Home for intelligent control, Simply use voice commands and make household chores more convenient and efficient than ever before."
+    ]
+  },
+
+  "page_7": {
+    "title": "Key Features",
+    "content": [
+      "Up to 200 mins Runtime With 2 detachable batteries, each of which can be worked separately, X1000 can last up to 200mins,so you can clean 500-800m² at one time without interruption.",
+      "Advanced LiDAR Navigation It scans and then creates maps of the environment precisely and quickly and cleans the whole area precisely and thoroughly.",
+      "3D ToF Sensor X1000 is equipped with a 3D Time-of-Flight (ToF) sensor enabling it to identify and navigate around items like shoes, cables, and flowerpots. This capability allows the robot to avoid obstacles during cleaning and optimize its route based on your space's layout. You can set it to clean without rearranging items, ensuring a thorough and hassle-free experience."
+    ]
+  },
+
+  "page_8": {
+    "title": "Key Features",
+    "content": [
+      "Dual AI Stereo Camera X1000 recognizes and then bypasses them it can recognize objects like shoes, cables, socks, books, towels, bottles, garbage cans, flower pots and much more and optimize its route, so you don't have to move anything before you start cleaning",
+      "Sensitive Touch Screen Operation X1000 is equipped with a 5-inch touchscreen, so you can operate X1000 easily via this screen. No matter whether you are a child or aged, it is easy to use and don’t worry other people will disturb the robot when working, you can ‘lock’ the screen.",
+      "Unique Modular design Easy to assemble and disassemble, so you can maintain it without much effort. With a compact design, it is easy to store. Worry-free from winding cords in your large spaces."
+    ]
+  },
+
+  "page_9": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "376 x 372 x 365 mm",
+      "Cleaning Type": "Sweeping, Vacuuming.",
+      "Robot Weight": "12 Kg",
+      "Coverage Area": "Max 10,700+ sq. ft",
+      "Dust Bag Capacity": "3 Litres Capacity",
+      "Charging Type": "Dual 5200mAh Detachable Batteries",
+      "Battery Life": "200 mins",
+      "Cruise Speed": "Maximum 1.2 m/s",
+      "Cleaning Efficiency": "Fast cleaning of 700m²-1000m² area per cleaning cycle",
+      "Navigation Algorithm": "3D Time-of-Flight (ToF) Sensors and LiDAR Technology"
+    }
+  }
+}

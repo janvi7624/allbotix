@@ -1,0 +1,72 @@
+{
+  "page_6": {
+    "title": "Allbotix AC40",
+    "content": "The ALLBOTIX AC40 is an advanced autonomous cleaning robot designed for both sweeping and scrubbing in commercial and industrial environments. With its compact design (578 × 500 × 690 mm) and weight of 70 kg, the robot offers quick charging (2 hours) and long-lasting performance, delivering up to 5 hours of floor scrubbing and 12 hours of sweeping on a single charge. Its sweeping width is 560 mm with dual side brushes, and it cleans efficiently, covering up to 1,100 ㎡/h. Ideal for high-traffic spaces like malls, airports, and hotels, the ALLBOTIX AC40 features generous tank capacities, including 16 L for clean water and 14 L for waste water. It also boasts an 8 L dust bag and a 0.7 L trash bin for added convenience. By reducing labor costs and increasing cleaning efficiency, the ALLBOTIX AC40 provides a sustainable, cost-effective solution that ensures consistent cleanliness while enhancing productivity in large-scale operations."
+  },
+
+  "page_7": {
+    "title": "Usage Scenario",
+    "content": [
+      "Restaurant",
+      "Hotel",
+      "Nursing home",
+      "Office",
+      "Karaoke",
+      "Hospital",
+      "Shopping Mall",
+      "Internet Bar"
+    ]
+  },
+
+  "page_8": {
+    "title": "Product Feature",
+    "content": [
+      "Customizable",
+      "AI expert & Best Cleaner",
+      "Extremely Cute Design",
+      "Multimodal Intersection",
+      "Safe and Stable Movements"
+    ]
+  },
+
+  "page_9": {
+    "title": "Accessory Highlights",
+    "content": [
+      "Dual Side Brushes Equipped with dual side brushes, the ALLBOTIX AC40 provides effective sweeping, ensuring that dust and debris are collected from edges and corners for a thorough clean.",
+      "Squeegee System The built-in squeegee system is designed to enhance the scrubbing and vacuuming process, efficiently removing excess water from floors, leaving them dry and spotless.",
+      "High-Capacity Water Tanks Features 16 L clean water and 14 L waste water tanks, allowing for extended operation without the need for frequent refills or emptying, improving productivity during cleaning cycles."
+    ]
+  },
+
+  "page_10": {
+    "title": "Accessory Highlights",
+    "content": [
+      "Dust Bag and Trash Bin The 8 L dust bag and 0.7 L trash bin are designed to collect both fine dust and larger debris, allowing the robot to continue working for extended periods without interruption.",
+      "Advanced Sensors & Navigation System Obstacle detection and mapping sensors help the ALLBOTIX AC40 navigate around obstacles and clean efficiently without getting stuck, offering precise and smart navigation through complex environments.",
+      "Automated Cleaning Mode The robot can be set to automatically adapt its cleaning mode based on the environment, ensuring optimal performance whether sweeping or scrubbing."
+    ]
+  },
+
+  "page_11": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": [
+        "Without Squeegee: 578 × 500 × 690 mm",
+        "With Squeegee: 616 × 550 × 690 mm"
+      ],
+      "Robot Weight": "70 kg (including battery)",
+      "Cleaning Efficiency": "Up to 1,100 ㎡/h",
+      "Charging Time": "2 hours",
+      "Battery Life": [
+        "Floor scrubbing: Up to 5 hours",
+        "Floor sweeping: Up to 12 hours"
+      ],
+      "Tank Capacity": [
+        "Clean Water Tank: 16 L",
+        "Waste Water Tank: 14 L",
+        "Dust Bag Capacity: 8 L",
+        "Trash Bin Capacity: 0.7 L"
+      ]
+    }
+  }
+}

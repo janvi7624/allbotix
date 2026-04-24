@@ -1,0 +1,53 @@
+{
+  "page_3": {
+    "title": "AW3",
+    "content": [
+      "The Allbotix Butler Bot AW3 is a sophisticated indoor delivery robot designed for service environments (hotels, restaurants, hospitals, offices, etc.). It features four adjustable, enclosed compartments and is capable of cross-floor operation (including automatic elevator access). Below is a comprehensive breakdown of its specs, features, use cases, pricing, and certifications.",
+      "With its cloud-based management platform, businesses can monitor the robot's status remotely and update its programming as needed. The robot can operate for several hours on a single charge and can automatically return to its charging station when battery levels are low."
+    ]
+  },
+
+  "page_4": {
+    "title": "Usage Scenario",
+    "content": [
+      "Restaurant",
+      "Hotel",
+      "Nursing home",
+      "Office",
+      "Karaoke",
+      "Hospital",
+      "Shopping Mall",
+      "Internet Bar"
+    ]
+  },
+
+  "page_5": {
+    "title": "Product Feature",
+    "content": [
+      "Contactless Delivery",
+      "Delivery expert & good Helper",
+      "Extremely Cute Design",
+      "Multimodal Intersection",
+      "Safe and Stable Delivery"
+    ]
+  },
+
+  "page_6": {
+    "title": "Delivery Expert & Good Helper",
+    "content": "The Allbotix BUTLERBOT AW3 can now take the elevator for item delivery, streamlining business processes. Automatic doors and ventilation ensure contactless, hygienic dish service, prioritizing privacy and spill prevention."
+  },
+
+  "page_7": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "459 x 549 x 1081 mm",
+      "Slope Angle": "7°",
+      "Robot Weight": "48kg",
+      "Charging Time": "6.5h",
+      "Battery Life": "Up to 12 Hours runtime",
+      "Cruise Speed": "0.8m/s (2.63ft/s)",
+      "Total Load Capacity": "20kg",
+      "Navigation Algorithm": "360 Lidar, RGBD sensor, Camera, Visual + Laser SLAM"
+    }
+  }
+}

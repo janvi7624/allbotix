@@ -1,0 +1,55 @@
+{
+  "page_3": {
+    "title": "Allbotix AT600",
+    "content": "The ALLBOTIX AT600 Series is a robust, next-generation Industrial Delivery Robot (AMR) engineered by ALLBOTIX Robotics for automated material transport. Its defining feature is a massive 600 kg (1322 lbs) payload capacity, making it ideal for high-volume logistics in factories and warehouses. The series includes a Standard model for direct cargo transport and an Underride model designed to autonomously lift and move racks or shelves. Navigation is handled by advanced LiDAR and VSLAM technology, ensuring accurate movement and dynamic obstacle avoidance in complex industrial settings. The AT600 supports 24/7 non-stop operation thanks to its long battery life and fast-charging capabilities. It integrates seamlessly into larger systems using protocols like VDA5050 for efficient fleet management. This robot significantly streamlines intralogistics, reduces labor intensity, and boosts overall operational efficiency. The ALLBOTIX AT600 is your powerful solution for modernizing and scaling industrial supply chains."
+  },
+
+  "page_4": {
+    "title": "AT600 Logistic Solution",
+    "content": "AT600 Logistic Solution AT600 Underride AT600"
+  },
+
+  "page_5": {
+    "title": "Product Feature",
+    "content": [
+      "Customizable",
+      "AI expert & Best Navigator",
+      "Extremely Cute Design",
+      "Multimodal Intersection",
+      "Safe and Stable Movements"
+    ]
+  },
+
+  "page_6": {
+    "title": "Accessory Highlights",
+    "content": [
+      "600 kg Max Payload The robot features a robust frame and powerful drive system engineered to handle an exceptional 600 kg (1322 lbs) load, drastically reducing material transfer frequency and increasing production line throughput.",
+      "Dual Model Design The series is offered in two forms: the Standard Model with a high-strength cargo platform and screen for easy interaction, and the Underride Model with a low-profile chassis designed to autonomously drive under, lift, and move industrial racks or shelves.",
+      "Rack Group Recognition (Underride Model) This advanced visual system allows the Underride model to precisely identify, locate, and align itself with designated industrial racks, ensuring unmanned, accurate docking and lifting for high-density logistics applications."
+    ]
+  },
+
+  "page_7": {
+    "title": "Accessory Highlights",
+    "content": [
+      "Interactive Touchscreen and Handle The Standard AT600 is equipped with an ergonomic handle and a large touchscreen interface, allowing human operators to easily switch between manual towing, setting destinations, and monitoring the robot's status directly on the factory floor.",
+      "VDA5050 Protocol Support The T600 adheres to the international VDA5050 standard, enabling seamless communication and integration with the central management system and other AMRs, ensuring optimized and coordinated fleet operations."
+    ]
+  },
+
+  "page_8": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "1240 X 740 X 1560 mm (L x W x H)",
+      "Robot Weight": "Approximately 215 kg",
+      "Max Payload Capacity": "600 kg (1322 lbs)",
+      "Charging Time": "Approximately 2 hours (fast charging)",
+      "Battery Life": "Up to 12 hours (continuous operation)",
+      "Max Travel Speed": "Up to 1.5 m/s",
+      "Min Turning Radius": "1.4 Mtr",
+      "Navigation Technology": "LiDAR SLAM and VSLAM (Visual SLAM)",
+      "Communication Interface": "VDA5050 (for fleet management integration)",
+      "Safety Features": "Emergency Stop Button, Ground Projection Warning, Obstacle Avoidance"
+    }
+  }
+}

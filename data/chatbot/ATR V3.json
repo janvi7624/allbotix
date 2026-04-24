@@ -1,0 +1,151 @@
+{
+  "page_3": {
+    "title": "ATR V2 & V3",
+    "content": [
+      "ATR is a personal, mobile, and interactive robotic assistant designed for both home and business use, offering autonomous navigation, voice control, and video conferencing capabilities, along with access to various applications and services.",
+      "The ATR V2 and V3 are premium AI assistant robots that can recognize and follow you, navigate environments, and connect you to services, with the V3 offering a 12V DC power jack and 4 screw holes for add-on attachment in its tray, while the V2 has a wireless charger.",
+      "Open source SDK for creating customized android app. ATR V3 is the latest version of it. It has more functionality support and update than ATR V2 have. Both are based on the android 11."
+    ]
+  },
+
+  "page_4": {
+    "title": "Hardware Components (Image Extracted)",
+    "content": [
+      "DIVE / Photo / Video cameras",
+      "Speakers (2 tweeters, 2 midrange)",
+      "Sub Woofer",
+      "Range Sensors",
+      "3D Safety Depth Camera",
+      "LiDAR Sensor"
+    ]
+  },
+
+  "page_5": {
+    "title": "Usage Scenario",
+    "content": [
+      "Restaurant",
+      "Hotel",
+      "Nursing home",
+      "Office",
+      "Karaoke",
+      "Hospital",
+      "Shopping Mall",
+      "Internet Bar"
+    ]
+  },
+
+  "page_6": {
+    "title": "Product Feature",
+    "content": [
+      "Customisable",
+      "AI expert & good Helper",
+      "Extremely Cute Design",
+      "Multimodal Intersection",
+      "Safe and Stable Movements"
+    ]
+  },
+
+  "page_7": {
+    "title": "Retails",
+    "content": [
+      "ATR robots can enhance the customer experience, improve store operations, and provide valuable data insights in retail settings.",
+      "Customer service and information",
+      "Product guidance and recommendations",
+      "Interactive display and marketing"
+    ]
+  },
+
+  "page_8": {
+    "title": "Enterprise",
+    "content": [
+      "ATR can automate tasks, enhance communication, and promote a more engaging work environment in various business settings.",
+      "Automated Delivery",
+      "Smart Assistant Integration",
+      "Personalized Greetings",
+      "Internal Navigations"
+    ]
+  },
+
+  "page_9": {
+    "title": "Hospitality",
+    "content": [
+      "ATR robots can improve guest experiences, streamline operations, and provide personalized assistance in the hospitality industry.",
+      "Friendly and informative",
+      "Effortless navigation",
+      "Automated deliveries"
+    ]
+  },
+
+  "page_10": {
+    "title": "Education",
+    "content": [
+      "ATR can enhance learning experiences, promote accessibility, and offer unique functionalities in both classrooms and remote learning environments.",
+      "Virtual attendance",
+      "Special needs attention",
+      "Interactive learning",
+      "Virtual video call lectures"
+    ]
+  },
+
+  "page_11": {
+    "title": "Healthcare",
+    "content": [
+      "ATR robots can reduce staff exposure, improve patient engagement, streamline communication, and enhance accessibility in the healthcare sector.",
+      "Reduced staff exposure",
+      "Remote patient monitoring",
+      "Streamlined communication",
+      "Enhanced accessibility"
+    ]
+  },
+
+  "page_12": {
+    "title": "Home Assistance",
+    "content": [
+      "ATR can bring a range of benefits to the home environment, from video calling and remote monitoring to control and automation of smart home devices.",
+      "Video calling",
+      "Remote monitoring",
+      "Control home automation",
+      "Built in Alexa for more fun"
+    ]
+  },
+
+  "page_13": {
+    "title": "Product Specification V2",
+    "content": {
+      "Robot Size": "1000 x 350 x 450 (MM)",
+      "Display Size": "10.1 inch",
+      "Robot Weight": "12 Kg",
+      "Robot Material": "ABS/Aviation-grade aluminum Alloy",
+      "Charging Time": "3 Hours (Autonomous charging- 220V/110V High performance docking station)",
+      "Battery Life": "Up to 8 Hours",
+      "Cruise Speed": "1.0 m/s (Adjustable)",
+      "Tray Load": "2.5 Kg / Total",
+      "Navigation Algorithm": "360 Lidar, RGBD sensor, Camera"
+    }
+  },
+
+  "page_14": {
+    "title": "Product Specification V3",
+    "content": {
+      "Robot Size": "1000 x 350 x 450 (MM)",
+      "Display Size": "13.3 inch",
+      "Robot Weight": "12 Kg",
+      "Robot Material": "ABS/Aviation-grade aluminum Alloy",
+      "Charging Time": "3 Hours (Autonomous charging- 220V/110V High performance docking station)",
+      "Battery Life": "Up to 8 Hours",
+      "Cruise Speed": "1.0 m/s (Adjustable)",
+      "Tray Load": "2.5 Kg / Total",
+      "Navigation Algorithm": "360 Lidar, RGBD sensor, Camera"
+    }
+  },
+
+  "page_15": {
+    "title": "Additional Features",
+    "content": {
+      "Autonomous face tracking screen": "Motion range – 15°~+55°",
+      "Audio": "20W audio, One sub-woofer, Two midrange speakers, Two tweeters",
+      "Mics": "4 Omni-directional digital mics Echo and Noise cancellation",
+      "Cameras": "Autofocus 13MP, 1080p@30FPS, FOV 120 Degrees"
+    }
+  }
+}

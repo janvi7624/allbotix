@@ -1,0 +1,87 @@
+{
+  "page_3": {
+    "title": "KSR_40",
+    "content": "The KSR_40 is a next-generation, autonomous service robot designed to take customer experience to new heights. With its advanced AI-powered navigation, sophisticated design, and innovative features, the KSR_40 is poised to redefine the service industry. Whether it's delivering personalized customer service, streamlining operations, or creating unforgettable experiences, the KSR_40 is the ultimate solution for businesses that demand the best.",
+    "key_features": [
+      "Advanced AI-powered navigation",
+      "Sophisticated and modern design",
+      "Innovative features for personalized customer experience",
+      "Seamless integration with existing systems"
+    ]
+  },
+
+  "page_4": {
+    "title": "Robot Components (Image Extracted)",
+    "content": [
+      "11.6-Zoll-Bedienbildschirm",
+      "Stereo-Vision-Sensor",
+      "Multifunktionsknopf",
+      "23.8-Zoll-Werbebildschirm",
+      "Stereo-Vision-Sensoren",
+      "LiDAR-Sensor",
+      "VSLAM-Sensor",
+      "Not-Aus-Schalter",
+      "Tablettanzeigeleuchte"
+    ]
+  },
+
+  "page_5": {
+    "title": "Usage Scenario",
+    "content": [
+      "Restaurant",
+      "Hotel",
+      "Nursing home",
+      "Office",
+      "Karaoke",
+      "Hospital",
+      "Shopping Mall",
+      "Internet Bar"
+    ]
+  },
+
+  "page_6": {
+    "title": "Product Feature",
+    "content": [
+      "Contactless Delivery",
+      "Delivery expert & good Helper",
+      "Extremely Cute Design",
+      "Multimodal Intersection",
+      "Safe and Stable Delivery"
+    ]
+  },
+
+  "page_7": {
+    "title": "Contactless Delivery",
+    "content": [
+      "In restaurant, by using the robots to deliver food to customers, human to human contact is reduced, which avoids potential spreading of the virus during the outbreak of infectious disease.",
+      "Sensor Tray The tray can sense it immediately and confirm there’s no dish on, thus to promote T10 to automatically go on with the next delivery task."
+    ]
+  },
+
+  "page_8": {
+    "title": "Delivery Expert & Good Helper",
+    "content": "KSR_40 can achieve 400 times of food delivery per day, which frees waiters from repetitive work of food delivery so that they have more time to focus on serving the customers."
+  },
+
+  "page_9": {
+    "title": "Delivery Interaction",
+    "content": [
+      "Different task states trigger corresponding light effect interactions.",
+      "When KSR_40 arrives to the table with meals, the tray with lamp belt flashing indicates to customers don’t pick up your food wrong."
+    ]
+  },
+
+  "page_10": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "486 x 555 x 1399 (MM)",
+      "Robot Weight": "58 Kg",
+      "Robot Material": "ABS/Aviation-grade aluminum Alloy",
+      "Charging Time": "5.5 H",
+      "Battery Life": "Up to 8 Hours",
+      "Cruise Speed": "1.0 m/s (Maximum)",
+      "Tray Load": "40 Kg / Total",
+      "Navigation Algorithm": "360 Lidar, RGBD sensor, Camera"
+    }
+  }
+}

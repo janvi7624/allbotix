@@ -1,0 +1,66 @@
+{
+  "page_6": {
+    "title": "Allbotix AT300",
+    "content": "The ALLBOTIX AT300 is an industrial-grade Autonomous Mobile Robot (AMR) engineered specifically for heavy-load material transport in demanding environments like factories and logistics centers. It is designed to significantly automate internal logistics and move materials across production lines. The robot features a robust, open-architecture chassis capable of carrying a maximum payload of up to 300 kg (660 lbs). Its highly flexible navigation system combines LiDAR SLAM and VSLAM for accurate, marker-free positioning and movement in dynamic layouts. Safety is ensured by a 360° Omni-Sense system with depth cameras and sensors, meeting the stringent ISO 3691-4 standard. Operation is user-friendly via a 10.1-inch interactive touchscreen, supporting various modes like Auto-Delivery and Follow Mode. The AT300 is built for 24/7 operation with quick 2-hour fast charging and seamless integration through IoT capabilities such as elevator and e-gate control."
+  },
+
+  "page_7": {
+    "title": "AT300 Logistic Solution",
+    "content": ""
+  },
+
+  "page_8": {
+    "title": "Product Feature",
+    "content": [
+      "AI-Powered Intelligence",
+      "Modular & Customizable Design",
+      "Agile & Stable Mobility",
+      "Human-Friendly Aesthetic",
+      "Safe and Stable Movements",
+      "Heavy-Duty Payload"
+    ]
+  },
+
+  "page_9": {
+    "title": "Accessory Highlights",
+    "content": [
+      "300 kg Max Payload The AT300's robust core chassis is built to manage a substantial load, featuring a maximum payload of 300 kg. This heavy-duty capacity allows it to replace manual carts and transport large volumes of raw materials or components in a single trip, drastically improving operational efficiency.",
+      "Versatile Application Modes The robot's modular design allows for quick adaptation to various logistical tasks via four main attachment configurations (Standard, Shelf, Lifting, and Towing), eliminating the need for separate, single-purpose machines.",
+      "Automatic Lifting Function (Lifting Mode) This attachment allows the robot to autonomously lift and lower its cargo platform for hands-free material transfer. It enables smart, automated docking with conveyors, work tables, or specialized racks for precise pickup and drop-off, boosting process automation."
+    ]
+  },
+
+  "page_10": {
+    "title": "Accessory Highlights",
+    "content": [
+      "Towing Capabilities (Towing Mode) Equipped with a rear towing device, the T300 can autonomously hitch and move existing wheeled industrial carriers, carts, or trolleys. It supports a maximum towing weight of 400 kg (with counterweight), integrating seamlessly with your current logistics fleet.",
+      "Multi-Layer Storage (Shelf Mode) The Shelf attachment provides a multi-level carrying space, ideal for transporting assorted goods or multiple smaller bins and boxes. This maximizes space utilization and is perfect for complex \"milk-run\" routes or line-side replenishment of various parts."
+    ]
+  },
+
+  "page_11": {
+    "title": "Product Specification",
+    "content": {
+      "Robot Size": "835×500×1350 mm (32.87×19.69×53.15 inches)",
+      "Robot Weight": "Approx. 60–65 kg (132–143 lbs)",
+      "Max Payload Capacity": "Up to 300 kg (661 lbs)",
+      "Charging Time": "≈ 2 hours",
+      "Battery Life": [
+        "Up to 12 hours (no load)",
+        "≈ 6 hours (fully loaded)"
+      ],
+      "Max Travel Speed": "Up to 1.2 m/s",
+      "Min Turning Radius": "≥ 60 cm",
+      "Navigation Technology": "LiDAR SLAM and VSLAM (Visual SLAM)",
+      "Communication Interface": "VDA5050 (for fleet management integration)",
+      "Safety Features": [
+        "ISO 3691-4 Compliant",
+        "LiDAR Sensors",
+        "Depth Cameras",
+        "Collision Protection Sensors",
+        "Emergency Stop Button",
+        "Obstacle Avoidance"
+      ]
+    }
+  }
+}

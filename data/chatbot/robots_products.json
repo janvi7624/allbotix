@@ -1,0 +1,289 @@
+{
+  "products": [
+    {
+      "category": "Reception Robot",
+      "name": "ATR V3",
+      "description": "Smart AI-powered receptionist for seamless visitor assistance in hotels, offices, malls & hospitals.",
+      "key_features": [
+        "Visitor check-in & facial recognition",
+        "Touchscreen navigation support",
+        "Voice-assistant interaction",
+        "Obstacle avoidance & user tracking",
+        "Multi-language support",
+        "Automatic charging"
+      ],
+      "tech_highlights": [
+        "13.3 inch display",
+        "13MP camera",
+        "360° LiDAR smart mapping",
+        "Zero-turn navigation",
+        "Optional tray (up to 3 kg)"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1WDKmzweRd3sCELLUwTWg140krA8oDMRx/view?usp=drive_link"
+    },
+    {
+      "category": "Cleaning Robot",
+      "name": "AT20 PRO",
+      "description": "Advanced AI-driven robot ensuring deep cleaning with powerful vacuuming and intelligent mopping for homes, offices, apartments & multi-level spaces.",
+      "key_features": [
+        "5200mAh Battery",
+        "260 min Runtime",
+        "70-Day Self-Emptying System",
+        "Stores Up to 5 Maps",
+        "Self-Cleaning Mop",
+        "6500Pa Suction Power",
+        "No-Go Zone Control"
+      ],
+      "tech_highlights": [],
+      "demo_link": "https://drive.google.com/file/d/1aXPjDN9ZpgsfqtcoKXW8kLQQDeLeK6Ie/view?usp=drive_link"
+    },
+    {
+      "category": "Cleaning Robot",
+      "name": "AT60",
+      "description": "Advanced AI-powered robot delivering deep vacuuming and intelligent mopping for spotless homes, apartments & premium indoor spaces.",
+      "key_features": [
+        "15000Pa suction power",
+        "Hot Water Mop Washing & Hot Air Drying",
+        "Auto Recharge & Resume",
+        "Multi-Surface Cleaning Support",
+        "AI LiDAR Mapping",
+        "Self-Cleaning Mop System",
+        "Hair Removal System",
+        "No-Go & No-Mop Zone Control"
+      ],
+      "tech_highlights": [],
+      "demo_link": "https://drive.google.com/file/d/13G1z631m4hHpbhNwWLJk9tBEdeWNEHsr/view?usp=drive_link"
+    },
+    {
+      "category": "Cleaning Robot",
+      "name": "AX10",
+      "description": "AI-powered vacuuming robot designed for high-efficiency cleaning with obstacle detection for homes, workspaces & retail environments.",
+      "key_features": [
+        "Smart AI Navigation",
+        "Clean & Avoid Zone Areas",
+        "App & Voice Control",
+        "Accurate Mapping & Object Detection",
+        "Long Cleaning Run"
+      ],
+      "tech_highlights": [
+        "Coverage: 10,700+ sqft",
+        "Runtime: 200 min",
+        "Dual battery",
+        "Navigation: LiDAR + ToF",
+        "Dust Bag Capacity: 3 Litres"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1XEQlILzcaZDflFmqGHa4UMHRPB42Ikkp/view?usp=drive_link"
+    },
+    {
+      "category": "Cleaning Robot",
+      "name": "AMT 1",
+      "description": "Advanced AI-powered industrial sweeping robot designed for large-scale cleaning with high efficiency and autonomous operation.",
+      "key_features": [
+        "Cleaning Efficiency: 1800–6000 m2/h",
+        "Battery Life: 4–8 hours",
+        "Trash Bin Capacity: 35 L",
+        "AI Trash Recognition",
+        "Dynamic Navigation",
+        "Smart Spot Cleaning",
+        "Dual-Brush System",
+        "IoT Integration"
+      ],
+      "tech_highlights": [
+        "Navigation: VSLAM + Marker + LiDAR SLAM"
+      ],
+      "demo_link": "https://drive.google.com/file/d/14E22Pm4sCpQKpriUb7Zj_Q8ThGh49vYn/view?usp=drive_link"
+    },
+    {
+      "category": "Cleaning Robot",
+      "name": "AC40",
+      "description": "Advanced AI-driven robot ensuring spotless floors with efficient sweeping and scrubbing.",
+      "key_features": [
+        "Dual brushes",
+        "Scrub + dry",
+        "Auto cleaning",
+        "Smart navigation",
+        "Dust & debris collection"
+      ],
+      "tech_highlights": [
+        "5h scrub / 12h sweep",
+        "16L clean water tank",
+        "14L dirty water tank",
+        "8L dust bag",
+        "2h charge"
+      ],
+      "demo_link": "https://drive.google.com/file/d/14HnvIRVA6a3hacUR2uewcjNNhxbycyKo/view?usp=drive_link"
+    },
+    {
+      "category": "Cleaning Robot",
+      "name": "AS100N",
+      "description": "Advanced AI-powered outdoor sweeping robot for large industrial and commercial spaces.",
+      "key_features": [
+        "100 cm sweeping width",
+        "6 hours battery life",
+        "3000 m2/h efficiency",
+        "30–40 km operating range",
+        "Smart navigation",
+        "AI route intelligence",
+        "Autonomous cleaning"
+      ],
+      "tech_highlights": [],
+      "demo_link": "https://drive.google.com/file/d/1EM-qBWtniKdZ8wohaOMx0LecL4v3H6QP/view?usp=drive_link"
+    },
+    {
+      "category": "Serving Robot",
+      "name": "AW3",
+      "description": "Closed-door AI-powered food delivery robot for safe and contactless delivery.",
+      "key_features": [
+        "Contactless delivery",
+        "Multimodal interaction",
+        "Safe navigation",
+        "Hygienic delivery"
+      ],
+      "tech_highlights": [
+        "Size: 459 × 549 × 1081 mm",
+        "Weight: 48 kg",
+        "Battery: 12 hours",
+        "Load capacity: 20 kg"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1AYNX4_H27VQMmoZxqOpiDs7JfZK6Mplw/view?usp=drive_link"
+    },
+    {
+      "category": "Delivery Robot",
+      "name": "ASMR T9",
+      "description": "AI-powered delivery robot for restaurants and hotels.",
+      "key_features": [
+        "Contactless delivery",
+        "Multimodal interaction",
+        "Safe navigation"
+      ],
+      "tech_highlights": [
+        "Size: 486 × 555 × 1399 mm",
+        "Weight: 63 kg",
+        "Battery: 8 hours",
+        "Load: 40 kg"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1nPIOor48Agq9Usv0gmuBEU06WVskP3gZ/view?usp=drive_link"
+    },
+    {
+      "category": "Delivery & Marketing Robot",
+      "name": "ASMR T10",
+      "description": "AI-powered delivery and marketing robot for commercial use.",
+      "key_features": [
+        "Contactless delivery",
+        "Multimodal interaction",
+        "Safe navigation"
+      ],
+      "tech_highlights": [
+        "Weight: 58 kg",
+        "Battery: 8 hours",
+        "Load: 40 kg"
+      ],
+      "demo_link": "https://drive.google.com/file/d/17tF1G5fcENGVKr1augzZlwDqEBMSegHD/view?usp=drive_link"
+    },
+    {
+      "category": "Logistics Robot",
+      "name": "AT300",
+      "description": "Industrial-grade AMR for autonomous material transport.",
+      "key_features": [
+        "Customizable design",
+        "Safe navigation",
+        "24/7 operation"
+      ],
+      "tech_highlights": [
+        "Payload: 300 kg",
+        "Battery: 12 hours",
+        "Speed: 1.2 m/s",
+        "Navigation: LiDAR SLAM + VSLAM"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1fg0qcaYjOgbhiP5CRpCBIKU3gtD9Nrj3/view?usp=drive_link"
+    },
+    {
+      "category": "Logistics Robot",
+      "name": "AT600",
+      "description": "Heavy-duty AMR for ultra-heavy material transport.",
+      "key_features": [
+        "Dual model design",
+        "Rack recognition",
+        "Touchscreen interaction"
+      ],
+      "tech_highlights": [
+        "Payload: 600 kg",
+        "Battery: 12 hours",
+        "Speed: 1.5 m/s",
+        "Navigation: LiDAR SLAM + VSLAM"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1B77gBjH2tmPLLuXAc4I6NjArmgmbAG06/view?usp=drive_link"
+    },
+    {
+      "category": "Humanoid Robot",
+      "name": "G1",
+      "description": "AI-powered humanoid robot for research and human interaction.",
+      "key_features": [
+        "AI intelligence",
+        "Advanced mobility",
+        "Multi-modal perception",
+        "OTA updates"
+      ],
+      "tech_highlights": [
+        "Height: 1.32 m",
+        "Weight: 35 kg",
+        "43 DOF",
+        "Battery: 9000mAh"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1tQPret9azc1O9bRYfEhytEiM26OfP9QP/view?usp=drive_link"
+    },
+    {
+      "category": "Autonomous Robot",
+      "name": "ALPHA B2",
+      "description": "Quadruped robot for industrial inspection and rescue.",
+      "key_features": [
+        "All-terrain mobility",
+        "Weatherproof",
+        "Modular design",
+        "Safe navigation"
+      ],
+      "tech_highlights": [
+        "Payload: 10 kg",
+        "IP67 protection",
+        "Quick-swap battery"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1kD8sbog8kZzqio9RoX4Vwi82cbzqyNDn/view?usp=drive_link",
+      "demo_link_entertainment": "https://drive.google.com/file/d/18GSIlSTZpGenzV-0ss-klTM0HtBdsDlM/view?usp=drive_link"
+    },
+    {
+      "category": "Autonomous Robot",
+      "name": "ALPHA GO2",
+      "description": "Advanced quadruped robot for industrial and research applications.",
+      "key_features": [
+        "All-terrain mobility",
+        "Modular design",
+        "Stable navigation"
+      ],
+      "tech_highlights": [
+        "Payload: 10 kg",
+        "IP67 protection",
+        "Quick-swap battery"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1UCJ3ChLy8eqL1dNV8QExiO2vbqmVsT94/view?usp=drive_link",
+      "demo_link_entertainment": "https://drive.google.com/file/d/1NPCcJ4b-CiotFeN95m4toLeRDWFhlUPm/view?usp=drive_link"
+    },
+    {
+      "category": "Robot Arm",
+      "name": "AL Series Robot Arm",
+      "description": "AL Series collaborative robot arms for industrial automation, precision manufacturing, and flexible production lines.",
+      "key_features": [
+        "Collaborative operation alongside humans",
+        "High-precision repeatability",
+        "Flexible payload configurations",
+        "Easy programming & deployment",
+        "Safety-rated speed monitoring"
+      ],
+      "tech_highlights": [
+        "Multiple reach configurations",
+        "Industrial-grade build",
+        "Compatible with major automation platforms"
+      ],
+      "demo_link": "https://drive.google.com/file/d/1u3uyhQZpbpeKHJthio9Ts-jVvws1NXjt/view?usp=drive_link"
+    }
+  ]
+}

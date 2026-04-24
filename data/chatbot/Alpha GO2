@@ -1,0 +1,45 @@
+{
+  "page_3": {
+    "title": "Allbotix Alpha GO 2",
+    "content": "The ALLBOTIX Alpha GO 2 is a next-generation quadruped robot engineered for agility, intelligence, and adaptability. Building on the foundation of earlier models, this advanced robotic platform combines powerful hardware with cutting-edge AI, making it ideal for research, development, education, and real-world deployment. With enhanced dynamic mobility, real-time perception, and autonomous navigation capabilities, the Alpha GO 2 offers a versatile and open platform for exploring robotics, artificial intelligence, and human-machine collaboration. Whether navigating complex environments, performing automated missions, or serving as a base for custom robotics solutions, the ALLBOTIX Alpha GO 2 redefines what’s possible in agile legged robotics."
+  },
+
+  "page_4": {
+    "title": "Product Feature",
+    "content": [
+      "AI-Powered Intelligence",
+      "Modular & Customizable Design",
+      "Agile & Stable Mobility",
+      "Human-Friendly Aesthetic",
+      "Safe and Stable Movements"
+    ]
+  },
+
+  "page_5": {
+    "title": "Accessory Highlights",
+    "content": [
+      "3D LiDAR Sensor Advanced spatial awareness for precise navigation and mapping.",
+      "HD Vision Camera Enables real-time video capture, object recognition, and remote monitoring.",
+      "Robotic Arm Attachment Adds manipulation capability for interactive or task-based applications.",
+      "Extended Battery Pack Significantly increases operational time for field use.",
+      "Wireless Charging Dock Hands-free, autonomous charging to keep the robot mission-ready.",
+      "Modular Payload Mounts Customize with third-party tools and sensors to fit any use case."
+    ]
+  },
+
+  "page_6": {
+    "title": "Product Specification",
+    "content": {
+      "Dimension of standing": "70x31x40cm",
+      "Dimension of crouching": "76x31x20cm",
+      "Robot Weight": "About 15kg",
+      "Material": "Aluminium alloy + High strength engineering plastic",
+      "Voltage": "28V~33.6V",
+      "Payload": "≈7kg（MAX ~ 10kg）",
+      "Battery Life": "About 1-2h",
+      "Battery": "Standard（8000mAh）",
+      "Max Climb Angle": "30°",
+      "Navigation Algorithm": "360 Lidar, RGBD sensor, Camera, Visual + Laser SLAM"
+    }
+  }
+}

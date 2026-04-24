@@ -1,0 +1,335 @@
+{
+  "greeting": {
+    "text": "Hello! Welcome to Allbotix Robotics 👋 How may I help you today?",
+    "buttons": [
+      "Robotics",
+      "Cleaning Robots",
+      "Delivery Robots",
+      "Contact Allbotix"
+    ]
+  },
+  "services": {
+    "text": "We now provide only Allbotix robotics solutions through this chatbot. Which robotics area are you interested in?",
+    "buttons": [
+      "Robotics",
+      "Cleaning Robots",
+      "AMR",
+      "Contact Allbotix"
+    ]
+  },
+  "av_solutions": {
+    "text": "Our AV division covers end-to-end audio-visual needs. What would you like to explore?",
+    "buttons": [
+      "AV Products",
+      "AV Integration",
+      "Back to Menu"
+    ]
+  },
+  "av_products": {
+    "text": "Browse our AV product categories:",
+    "buttons": [
+      "Audio Products",
+      "Video Products",
+      "Panels",
+      "Active LED",
+      "Cables",
+      "Back to Menu"
+    ]
+  },
+  "audio_products": {
+    "text": "🎙️ *Audio Products*\n\nPremium microphones and speaker systems delivering crystal-clear sound for meetings and events.\n\nSelect a product to learn more:",
+    "buttons": [
+      "Digital Array Microphone With 6 Meter Voice Pickup",
+      "Wireless Speaker Mic With Extensions",
+      "Contact Us",
+      "Back to AV Products",
+      "Back to Menu"
+    ],
+    "images": [
+      "/static/images/Audio1.png",
+      "/static/images/Audio 2.png"
+    ]
+  },
+  "video_products": {
+    "text": "🎥 *Video Products*\n\nEnhance your business with Nanta Tech's advanced video solutions — high-definition cameras and video bars for every environment.\n\nSelect a product to learn more:",
+    "buttons": [
+      "4K Dual-lens PTZ Video Bar",
+      "4K Auto Tracking Gesture Control PTZ Webcam",
+      "4K Video Bar With HDMI Output",
+      "30x Full HD Intelligent Professional NDI PTZ Camera",
+      "12x Full HD Intelligent NDI PTZ Camera",
+      "Back to AV Products",
+      "Back to Menu"
+    ],
+    "images": [
+      "/static/images/Video 1.png",
+      "/static/images/Video 2.png"
+    ]
+  },
+  "panels": {
+    "text": "🖥️ *Interactive Panels*\n\nAI-powered interactive displays for smart classrooms, boardrooms, and collaboration spaces.\n\nSelect a product to learn more:",
+    "buttons": [
+      "X55 Pro AI",
+      "X65 Pro AI",
+      "X75 Pro AI",
+      "X86 Pro AI",
+      "X98 Pro AI",
+      "Contact Us",
+      "Back to AV Products",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Panel.png"
+  },
+  "active_led": {
+    "text": "💡 *Active LED Displays*\n\nVibrant, seamless LED display solutions for large venues, lobbies, stages, and digital signage.\n\nSelect a product to learn more:",
+    "buttons": [
+      "Active LED Display",
+      "Contact Us",
+      "Back to AV Products",
+      "Back to Menu"
+    ],
+    "images": [
+      "/static/images/Active LED 1.png",
+      "/static/images/Active LED 2.png"
+    ]
+  },
+  "cables": {
+    "text": "🔌 *Cables & Connectivity*\n\nYour one-stop guide to understanding the various cables essential for modern technology. Here, we break down the key types of cables used for data transfer, power, and connectivity. Whether you're setting up your home entertainment system, upgrading your computer hardware, or working on a technical project, knowing which cable to use is for optimal performance.\n\nSelect a cable category to learn more:",
+    "buttons": [
+      "AOC Cable",
+      "Copper Cable",
+      "Back to AV Products",
+      "Back to Menu"
+    ],
+    "image": "/static/images/cables.png"
+  },
+  "aoc_cable": {
+    "text": "💡 *AOC Cable (Active Optical Cable)*\n\nHigh-speed fibre-optic cables for long-distance HDMI and USB signal transmission without loss.\n\nSelect a product to learn more:",
+    "buttons": [
+      "HDMI 2.0 A/D Active Optical Cable (AOC)",
+      "HDMI 2.0 AOCH Cable",
+      "HDMI 2.1 AOCH Cable",
+      "USB 3.1 C-C Active Cable",
+      "USB 3.1 AM-AF Active Cable",
+      "USB 3.1 AM-C Active Cable",
+      "Contact Us",
+      "Back to Cables",
+      "Back to Menu"
+    ],
+    "image": "/static/images/AOC cable.png"
+  },
+  "copper_cable": {
+    "text": "🔌 *Copper Cable*\n\nReliable high-quality copper HDMI cables for standard short-run connections.\n\nSelect a product to learn more:",
+    "buttons": [
+      "HDMI 2.1 AM to AM Copper",
+      "HDMI 2.0 AM to AM Copper",
+      "Contact Us",
+      "Back to Cables",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Copper cable.png"
+  },
+  "av_integration": {
+    "text": "🔧 *AV Integration Services*\n\nWe design and deliver end-to-end audio-visual integration solutions tailored to your environment. Choose a solution to learn more:",
+    "buttons": [
+      "Video Wall Solution",
+      "Auditorium Solution",
+      "Hospital Solution",
+      "Meeting Room Solution",
+      "Public Address System",
+      "Active LED & Signage",
+      "IT Network Solutions",
+      "Back to AV Solutions",
+      "Back to Menu"
+    ]
+  },
+  "video_wall": {
+    "text": "🖥️ *Video Wall Solution*\n\nOur video wall solutions are designed to create stunning visual displays for a variety of environments, including control rooms, retail spaces, and public venues. With our cutting-edge technology, you can deliver high-impact visuals that captivate and engage your audience.",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/video_wall.png"
+  },
+  "auditorium": {
+    "text": "🎭 *Auditorium Solution*\n\nEnhance your auditorium with our high-quality audio-visual systems, designed to provide an immersive experience for every audience member. Our solutions include powerful projectors, large screens, and superior sound systems to ensure clear and impactful presentations.",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Auditorium Solution.png"
+  },
+  "hospital": {
+    "text": "🏥 *Hospital Solution*\n\nImprove operational efficiency and patient outcomes in operating theaters with our advanced audio-visual solutions. Our systems include medical-grade displays, surgical cameras, and integrated audio systems, ensuring that every detail is visible and audible.",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Hospital Solution.png"
+  },
+  "meeting_room": {
+    "text": "📅 *Meeting Room Solution*\n\nFacilitate seamless and productive video conferencing with our comprehensive solutions. Our systems include high-quality cameras, microphones, and speakers, along with easy-to-use control systems, ensuring that your meetings are always clear and effective.",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Meeting Room Solution.png"
+  },
+  "public_address": {
+    "text": "📢 *Public Address System*\n\nEnsure clear and effective communication across large spaces with our reliable public address systems. Ideal for schools, offices, and public venues, our systems include high-quality microphones, amplifiers, and speakers to deliver your message loud and clear.",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Public Address System.png"
+  },
+  "led_signage": {
+    "text": "💡 *Active LED & Signage Solution*\n\nMake a lasting impact with our vibrant active LED displays and signage solutions. Perfect for advertising, information displays, and more, our solutions feature bright, dynamic visuals that capture attention and convey your message effectively.",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Active LED and Signage Solution.png"
+  },
+  "it_network": {
+    "text": "🌐 *IT Network Solutions*\n\nReliable structured cabling, networking, and IT infrastructure for offices and enterprises. What would you like to know?",
+    "buttons": [
+      "Contact Us",
+      "Back to AV Integration",
+      "Back to Menu"
+    ],
+    "image": "/static/images/IT Network Solutions.png"
+  },
+  "ai_solutions": {
+    "text": "Our AI division delivers intelligent automation and vision systems. What interests you?",
+    "buttons": [
+      "Computer Vision",
+      "AI Callbot",
+      "Back to Menu"
+    ]
+  },
+  "computer_vision": {
+    "text": "👁️ *Computer Vision & AI Camera Intelligence*\n\nEnd-to-end AI-powered camera solutions for activity detection, safety monitoring, and business intelligence. What would you like to know?",
+    "buttons": [
+      "Contact Us",
+      "Back to AI Solutions",
+      "Back to Menu"
+    ]
+  },
+  "ai_callbot": {
+    "text": "📞 *AI Callbot & Speech Solutions*\n\nSophisticated AI voice agents for customer support, multilingual helpdesks, and automated call handling. What would you like to know?",
+    "buttons": [
+      "Contact Us",
+      "Back to AI Solutions",
+      "Back to Menu"
+    ]
+  },
+  "robotics": {
+    "text": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)",
+    "buttons": [
+      "Cleaning Robots",
+      "Reception Robots",
+      "Delivery Robots",
+      "AMR",
+      "Surveillance Robots",
+      "Robot Arm",
+      "Entertainment Robots",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Robot.png"
+  },
+  "cleaning_robot": {
+    "text": "🧹 *Cleaning Robots*\n\nAI-powered robots for homes, offices, and large industrial spaces. Select a product to learn more:",
+    "buttons": [
+      "AT20 PRO",
+      "AT60",
+      "AX10",
+      "AMT 1",
+      "AC40",
+      "AS100N",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "images": [
+      "/static/images/Cleaning Robot 1.png",
+      "/static/images/Cleaning Robot 2.png",
+      "/static/images/Cleaning Robot 3.png"
+    ]
+  },
+  "reception_robot": {
+    "text": "🤝 *Reception Robots*\n\nSmart AI receptionists for hotels, offices, malls & hospitals. Select a product to learn more:",
+    "buttons": [
+      "ATR V3",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Reception robot.png",
+    "video_link": "https://drive.google.com/drive/folders/176P5cX7xyuE9-ujFzAQZE_cDEzGzOtwv?usp=sharing"
+  },
+  "delivery_robot": {
+    "text": "📦 *Delivery & Serving Robots*\n\nContactless AI-powered delivery for restaurants, hotels, and hospitals. Select a product to learn more:",
+    "buttons": [
+      "AW3",
+      "ASMR T9",
+      "ASMR T10",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Delivery Robot.png"
+  },
+  "amr": {
+    "text": "🚗 *AMR — Autonomous Mobile Robots*\n\nIndustrial-grade robots for warehouse automation and material transport. Select a product to learn more:",
+    "buttons": [
+      "AT300",
+      "AT600",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "image": "/static/images/AMR robot.png"
+  },
+  "surveillance_robot": {
+    "text": "🔍 *Surveillance & Autonomous Robots*\n\nRugged quadruped robots for security patrol, inspection, and rescue. Select a product to learn more:",
+    "buttons": [
+      "ALPHA B2",
+      "ALPHA GO2",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Surveillance.png"
+  },
+  "robot_arm": {
+    "text": "🦾 *Robot Arms*\n\nAL Series collaborative robots for industrial automation and precision manufacturing. Select a product to learn more:",
+    "buttons": [
+      "AL Series Robot Arm",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Robot arm.png",
+    "video_link": "https://drive.google.com/drive/folders/1-fZy3S2ZK7vbEQZ6bXP-PJgc_Bdgj9AO?usp=sharing"
+  },
+  "entertainment_robot": {
+    "text": "🎭 *Humanoid & Entertainment Robots*\n\nNext-generation humanoid robots for hospitality, education, and entertainment. Select a product to learn more:",
+    "buttons": [
+      "G1",
+      "Contact Allbotix",
+      "Back to Menu"
+    ],
+    "image": "/static/images/Humanoid Robot.png",
+    "video_link": "https://drive.google.com/drive/folders/1bmu7faFAGGfxBbjzKERiGZYBJDckHRod?usp=sharing"
+  },
+  "fallback": {
+    "text": "I can help only with Allbotix robotics. Please choose a robotics option below or type your robot requirement.",
+    "buttons": [
+      "Robotics",
+      "Cleaning Robots",
+      "AMR",
+      "Contact Allbotix"
+    ]
+  }
+}
