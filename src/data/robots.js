@@ -117,7 +117,7 @@ export const ROBOTS = [
         },
       ],
       ctaLabel: 'Download Spec Sheet',
-      ctaLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/ALLBOTIX_ROBOTICS_PROFILE.pdf',
+      ctaLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Reception+%26+Information+Robots/Allbotix_ATR_V2_V3.pdf',
     },
   },
   {
@@ -219,7 +219,7 @@ export const ROBOTS = [
         },
       ],
       ctaLabel: 'Download Spec Sheet',
-      ctaLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/ALLBOTIX_ROBOTICS_PROFILE.pdf',
+      ctaLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Humanoid+%26+RoboDog/Bolt+G1.pdf',
     },
   },
   {
@@ -244,14 +244,14 @@ export const ROBOTS = [
         name: 'Alpha B2',
         src: '/robots/alpha_b2.avif',
         alt: 'Alpha B2 Robot Dog',
-        pdfLink: 'https://bb266153-f714-439c-a5e4-b00d0f3b1fb3.filesusr.com/ugd/5ff735_f4fbc49c92474331b27b450bab9936a4.pdf',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Humanoid+%26+RoboDog/Alpha+B2.pdf',
       },
       {
         id: 'alpha-go2',
         name: 'Alpha GO2',
         src: '/robots/alpha_go2.avif',
         alt: 'Alpha GO2 Robot Dog',
-        pdfLink: 'https://bb266153-f714-439c-a5e4-b00d0f3b1fb3.filesusr.com/ugd/5ff735_c84147440efa4da6a5d9a27368e2ec4b.pdf',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Humanoid+%26+RoboDog/Alpha+GO2.pdf',
       },
     ],
     display: {
@@ -365,6 +365,7 @@ export const ROBOTS = [
         src: '/robots/ac40.avif',
         alt: 'AC40 Smart Cleaning Robot',
         desc: 'Meet the Allbotix AC40 — mop, scrub, vacuum all-in-one cleaning robot that sweeps, scrubs, vacuums, and mops with precision and power.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AC40.pdf',
       },
       {
         id: 'ax10',
@@ -372,6 +373,7 @@ export const ROBOTS = [
         src: '/robots/ax10.avif',
         alt: 'AX10 Smart Cleaning Robot',
         desc: 'Introducing the Allbotix AX10 — a powerhouse cleaning robot engineered for deep, intelligent, and more-than-seamless cleaning every day.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AX10.pdf',
       },
       {
         id: 'amt1',
@@ -379,6 +381,7 @@ export const ROBOTS = [
         src: '/robots/amt1.avif',
         alt: 'AMT 1 Smart Cleaning Robot',
         desc: 'Introducing the Allbotix AMT1 — an AI-powered sweeping robot designed for large-scale environments, covering up to 10,000m² with advanced autonomous efficiency.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AMT1.pdf',
       },
       {
         id: 'at60s',
@@ -386,6 +389,7 @@ export const ROBOTS = [
         src: '/robots/at60s.avif',
         alt: 'AT60s Smart Cleaning Robot',
         desc: 'Meet the Allbotix AT60s — next-level precision sweeping robot that polishes, scrubs and surfaces and delivers exceptional cleanliness.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AT60s.pdf',
       },
       {
         id: 'at20s-pro',
@@ -393,6 +397,7 @@ export const ROBOTS = [
         src: '/robots/at20s_pro.avif',
         alt: 'AT20s Pro Smart Cleaning Robot',
         desc: 'Unleash the power of the AT20s Pro — the ultimate cleaning solution upon redefining how clean really looks and feels about cleaning.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AT20s+Pro.pdf',
       },
       {
         id: 'as100n',
@@ -400,6 +405,7 @@ export const ROBOTS = [
         src: '/robots/as100n.avif',
         alt: 'AS 100N Smart Cleaning Robot',
         desc: 'Introducing the Allbotix AS 100N — the most versatile outdoor sweeping robot that takes care of every outdoor surface, structure, and space.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/A+4C+-+pro.pdf',
       },
     ],
     display: {
@@ -517,7 +523,7 @@ export const ROBOTS = [
         src: '/robots/aw3.avif',
         alt: 'AW3 Smart Serving Robot',
         desc: 'A compact and agile serving robot built for efficient food and beverage delivery across restaurants, hotels, and event spaces.',
-        pdfLink: '#'
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Serving+Robots/Aw3.pdf',
       },
       {
         id: 'asmr-t10',
@@ -525,7 +531,7 @@ export const ROBOTS = [
         src: '/robots/asmr_t10.avif',
         alt: 'ASMR T10 Smart Serving Robot',
         desc: 'An advanced serving robot with a premium tray display, designed to deliver dishes with precision and style in high-end dining and hospitality environments.',
-        pdfLink: '#'
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Serving+Robots/ASMR+T10+Delivery+and+Marketing+Robot.pdf',
       },
       {
         id: 'at9',
@@ -533,7 +539,7 @@ export const ROBOTS = [
         src: '/robots/at9.avif',
         alt: 'AT9 Smart Serving Robot',
         desc: 'A multi-tray serving robot engineered for high-volume service environments, capable of carrying multiple plates simultaneously with ease.',
-        pdfLink: '#'
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Serving+Robots/AT9.pdf',
       },
     ],
     display: {
@@ -651,6 +657,7 @@ export const ROBOTS = [
         src: '/robots/at300.avif',
         alt: 'AT300 Autonomous Mobile Robot',
         desc: 'A high-capacity autonomous mobile robot engineered for heavy-duty warehouse goods transport, material handling, and logistics operations.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/AMR/AT300.pdf',
       },
       {
         id: 'at600',
@@ -658,6 +665,7 @@ export const ROBOTS = [
         src: '/robots/at600.avif',
         alt: 'AT600 Autonomous Mobile Robot',
         desc: 'A powerful and scalable AMR built for high-volume industrial environments, delivering precision transport and autonomous fleet coordination.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/AMR/AT600.pdf',
       },
     ],
     useCases: [
@@ -862,6 +870,7 @@ export const ROBOTS = [
         src: '/robots/al_series.avif',
         alt: 'AL Series Collaborative Robot Arm',
         desc: 'A compact, precise, and flexible collaborative robot arm engineered for safe and efficient human-robot collaboration across industrial production lines and workstations.',
+        pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Robotic+Hand/Universal+Cobot.pdf',
       },
     ],
     display: {
@@ -953,7 +962,7 @@ export const ROBOTS = [
         },
       ],
       ctaLabel: 'Download Spec Sheet',
-      ctaLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/ALLBOTIX_ROBOTICS_PROFILE.pdf',
+      ctaLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Robotic+Hand/Universal+Cobot.pdf',
     },
   },
 ];
