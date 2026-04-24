@@ -45,8 +45,8 @@ function ModelsSection({ robot }: { robot: Robot }) {
           <div key={m.id} className="rd-model-card">
             <div style={{ position: 'relative', height: '140px', overflow: 'hidden' }}>
               <Image src={m.src} alt={m.alt} fill style={{ objectFit: 'cover' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(4,4,4,0.8) 0%,transparent 55%)' }} />
-              <p style={{ position: 'absolute', bottom: '10px', left: '12px', right: '12px', fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, color: '#fff', letterSpacing: '0.05em' }}>{m.name}</p>
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(var(--bg-map-rgb),0.8) 0%,transparent 55%)' }} />
+              <p style={{ position: 'absolute', bottom: '10px', left: '12px', right: '12px', fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, color: 'var(--white)', letterSpacing: '0.05em' }}>{m.name}</p>
             </div>
             <div style={{ padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {m.desc && <p style={{ fontFamily: 'var(--font-light)', fontSize: '0.72rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>{m.desc}</p>}
@@ -86,7 +86,7 @@ function UseCasesSection({ robot }: { robot: Robot }) {
           <div key={uc.id} className={`rd-accordion${isOpen ? ' open' : ''}`}>
             <button className="rd-accordion-hd" onClick={() => setOpenIdx(isOpen ? null : i)}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0 }}>
-                <span style={{ width: '7px', height: '7px', borderRadius: '50%', flexShrink: 0, transition: 'background 0.22s', background: isOpen ? 'var(--red-bright)' : 'rgba(176,58,46,0.35)' }} />
+                <span style={{ width: '7px', height: '7px', borderRadius: '50%', flexShrink: 0, transition: 'background 0.22s', background: isOpen ? 'var(--red-bright)' : 'rgba(var(--red-dark-rgb),0.35)' }} />
                 <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 700, color: isOpen ? 'var(--text-primary)' : 'var(--text-secondary)', letterSpacing: '0.02em', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{uc.title}</span>
               </div>
               <svg className={`rd-chevron${isOpen ? ' open' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -96,9 +96,9 @@ function UseCasesSection({ robot }: { robot: Robot }) {
             {isOpen && (
               <div className="rd-accordion-body">
                 <div className="rd-usecase-grid">
-                  <div style={{ position: 'relative', borderRadius: '10px', overflow: 'hidden', aspectRatio: '4/3', border: '1px solid rgba(176,58,46,0.2)' }}>
+                  <div style={{ position: 'relative', borderRadius: '10px', overflow: 'hidden', aspectRatio: '4/3', border: '1px solid rgba(var(--red-dark-rgb),0.2)' }}>
                     <Image src={uc.imgSrc} alt={uc.imgAlt} fill style={{ objectFit: 'cover' }} />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(4,4,4,0.65) 0%,transparent 60%)' }} />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(var(--bg-map-rgb),0.65) 0%,transparent 60%)' }} />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                     <p style={{ fontFamily: 'var(--font-light)', fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.75 }}>{uc.subtitle}</p>
@@ -145,8 +145,8 @@ function DetailSection({ sectionKey, section, delay = 0 }: { sectionKey: string;
         {/* image */}
         <div className="rd-img-block">
           <Image src={section.imgSrc} alt={section.imgAlt} fill style={{ objectFit: 'cover' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(4,4,4,0.55) 0%,transparent 60%)' }} />
-          <div style={{ position: 'absolute', bottom: '12px', left: '14px', padding: '4px 14px', borderRadius: '100px', background: 'rgba(4,4,4,0.8)', border: '1px solid rgba(176,58,46,0.35)', backdropFilter: 'blur(6px)' }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(var(--bg-map-rgb),0.55) 0%,transparent 60%)' }} />
+          <div style={{ position: 'absolute', bottom: '12px', left: '14px', padding: '4px 14px', borderRadius: '100px', background: 'rgba(var(--bg-map-rgb),0.8)', border: '1px solid rgba(var(--red-dark-rgb),0.35)', backdropFilter: 'blur(6px)' }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--red-bright)' }}>{section.sectionLabel}</span>
           </div>
         </div>
@@ -158,7 +158,7 @@ function DetailSection({ sectionKey, section, delay = 0 }: { sectionKey: string;
             <h3 className="rd-section-title" style={{ fontSize: 'clamp(1.1rem,2.5vw,1.55rem)' }}>{section.title}</h3>
             <p className="rd-section-sub">{section.subtitle}</p>
           </div>
-          <div style={{ height: '1px', background: 'linear-gradient(90deg,rgba(176,58,46,0.4),transparent)' }} />
+          <div style={{ height: '1px', background: 'linear-gradient(90deg,rgba(var(--red-dark-rgb),0.4),transparent)' }} />
 
           {/* features */}
           {!isPackaging && !isIndustries && section.features && (
@@ -303,7 +303,7 @@ export default function RobotDetailPage() {
 
         .rd-section {
           padding: 3.5rem 0;
-          border-top: 1px solid rgba(176,58,46,0.1);
+          border-top: 1px solid rgba(var(--red-dark-rgb),0.1);
           animation: rd-fadeUp 0.55s ease both;
         }
         .rd-section:first-child { border-top: none; }
@@ -332,14 +332,14 @@ export default function RobotDetailPage() {
 
         .rd-img-block {
           position: relative; border-radius: 14px; overflow: hidden;
-          border: 1px solid rgba(176,58,46,0.2); background: rgba(176,58,46,0.03);
+          border: 1px solid rgba(var(--red-dark-rgb),0.2); background: rgba(var(--red-dark-rgb),0.03);
           aspect-ratio: 4/3;
         }
 
         .rd-feature-row {
           display: flex; align-items: flex-start; gap: 10px;
           padding: 10px 14px; border-radius: 8px;
-          border: 1px solid rgba(176,58,46,0.12); background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.12); background: rgba(var(--red-dark-rgb),0.04);
           font-family: var(--font-display); font-size: 0.72rem;
           color: var(--text-secondary); letter-spacing: 0.03em; line-height: 1.5;
         }
@@ -351,7 +351,7 @@ export default function RobotDetailPage() {
         .rd-tag {
           display: inline-flex; align-items: center; gap: 6px;
           padding: 5px 12px; border-radius: 100px;
-          border: 1px solid rgba(176,58,46,0.2); background: rgba(176,58,46,0.05);
+          border: 1px solid rgba(var(--red-dark-rgb),0.2); background: rgba(var(--red-dark-rgb),0.05);
           font-family: var(--font-display); font-size: 0.62rem;
           color: var(--text-secondary); letter-spacing: 0.04em;
         }
@@ -359,16 +359,16 @@ export default function RobotDetailPage() {
         .rd-pdf-btn {
           display: inline-flex; align-items: center; gap: 7px;
           padding: 7px 16px; border-radius: 7px;
-          border: 1px solid rgba(176,58,46,0.4); background: rgba(176,58,46,0.08);
+          border: 1px solid rgba(var(--red-dark-rgb),0.4); background: rgba(var(--red-dark-rgb),0.08);
           color: var(--red-bright); font-family: var(--font-display);
           font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
           text-decoration: none; transition: all 0.22s;
         }
-        .rd-pdf-btn:hover { background: rgba(176,58,46,0.2); box-shadow: 0 0 16px rgba(176,58,46,0.28); }
+        .rd-pdf-btn:hover { background: rgba(var(--red-dark-rgb),0.2); box-shadow: 0 0 16px rgba(var(--red-dark-rgb),0.28); }
 
         .rd-pkg-item {
           padding: 12px 16px; border-radius: 9px;
-          border: 1px solid rgba(176,58,46,0.15); background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.15); background: rgba(var(--red-dark-rgb),0.04);
         }
         .rd-pkg-title { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; color: var(--text-primary); letter-spacing: 0.05em; margin-bottom: 4px; }
         .rd-pkg-desc  { font-family: var(--font-display); font-size: 0.64rem; color: var(--text-muted); line-height: 1.6; }
@@ -376,20 +376,20 @@ export default function RobotDetailPage() {
         .rd-model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 1.25rem; }
         .rd-model-card {
           border-radius: 11px; overflow: hidden;
-          border: 1px solid rgba(176,58,46,0.15); background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.15); background: rgba(var(--red-dark-rgb),0.04);
           transition: all 0.28s;
         }
-        .rd-model-card:hover { border-color: rgba(176,58,46,0.5); box-shadow: 0 0 22px rgba(176,58,46,0.12); transform: translateY(-3px); }
+        .rd-model-card:hover { border-color: rgba(var(--red-dark-rgb),0.5); box-shadow: 0 0 22px rgba(var(--red-dark-rgb),0.12); transform: translateY(-3px); }
 
         /* Accordion */
-        .rd-accordion { border: 1px solid rgba(176,58,46,0.15); border-radius: 11px; overflow: hidden; margin-bottom: 10px; transition: border-color 0.22s; }
-        .rd-accordion.open { border-color: rgba(176,58,46,0.45); }
+        .rd-accordion { border: 1px solid rgba(var(--red-dark-rgb),0.15); border-radius: 11px; overflow: hidden; margin-bottom: 10px; transition: border-color 0.22s; }
+        .rd-accordion.open { border-color: rgba(var(--red-dark-rgb),0.45); }
         .rd-accordion-hd {
           display: flex; align-items: center; justify-content: space-between; gap: 12px;
           padding: 14px 18px; cursor: pointer; width: 100%;
-          background: rgba(176,58,46,0.04); transition: background 0.2s; border: none; text-align: left;
+          background: rgba(var(--red-dark-rgb),0.04); transition: background 0.2s; border: none; text-align: left;
         }
-        .rd-accordion-hd:hover { background: rgba(176,58,46,0.09); }
+        .rd-accordion-hd:hover { background: rgba(var(--red-dark-rgb),0.09); }
         .rd-chevron { transition: transform 0.28s; flex-shrink: 0; color: var(--text-muted); }
         .rd-chevron.open { transform: rotate(180deg); color: var(--red-bright); }
         .rd-accordion-body { padding: 0 18px 18px; }
@@ -408,9 +408,9 @@ export default function RobotDetailPage() {
           color: var(--text-muted); text-decoration: none;
           transition: all 0.22s; border: 1px solid transparent;
         }
-        .rd-nav-item:hover { color: var(--red-bright); background: rgba(176,58,46,0.06); }
-        .rd-nav-item.active { color: var(--red-bright); background: rgba(176,58,46,0.1); border-color: rgba(176,58,46,0.22); }
-        .rd-nav-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(176,58,46,0.3); flex-shrink: 0; transition: background 0.22s; }
+        .rd-nav-item:hover { color: var(--red-bright); background: rgba(var(--red-dark-rgb),0.06); }
+        .rd-nav-item.active { color: var(--red-bright); background: rgba(var(--red-dark-rgb),0.1); border-color: rgba(var(--red-dark-rgb),0.22); }
+        .rd-nav-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(var(--red-dark-rgb),0.3); flex-shrink: 0; transition: background 0.22s; }
         .rd-nav-item.active .rd-nav-dot,
         .rd-nav-item:hover  .rd-nav-dot { background: var(--red-bright); }
 
@@ -426,7 +426,7 @@ export default function RobotDetailPage() {
         }
         .rd-breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
         .rd-breadcrumb a:hover { color: var(--red-bright); }
-        .rd-breadcrumb-sep { color: rgba(176,58,46,0.35); }
+        .rd-breadcrumb-sep { color: rgba(var(--red-dark-rgb),0.35); }
 
         /* CTA bar */
         .rd-cta-bar {
@@ -444,51 +444,51 @@ export default function RobotDetailPage() {
       <main style={{ background: 'var(--bg-900)', minHeight: '100vh', paddingBottom: '6rem' }}>
 
         {/* ── Decorative bg glows ── */}
-        <div aria-hidden="true" style={{ position: 'fixed', top: '10%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle,rgba(176,58,46,0.06) 0%,transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
-        <div aria-hidden="true" style={{ position: 'fixed', bottom: '15%', left: '-8%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle,rgba(176,58,46,0.04) 0%,transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+        <div aria-hidden="true" style={{ position: 'fixed', top: '10%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle,rgba(var(--red-dark-rgb),0.06) 0%,transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+        <div aria-hidden="true" style={{ position: 'fixed', bottom: '15%', left: '-8%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle,rgba(var(--red-dark-rgb),0.04) 0%,transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
 
         {/* ── Hero Banner ── */}
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(8,8,8,0.35) 0%, rgba(8,8,8,0.15) 40%, rgba(8,8,8,0.95) 100%)' }} />
+        <div style={{ position: 'relative', overflow: 'hidden', paddingTop:'clamp(120px, 12vw, 120px)' }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(var(--overlay-light-rgb),0.3) 0%, rgba(var(--overlay-light-rgb),0.1) 40%, rgba(var(--overlay-light-rgb),0.96) 100%)' }} />
 
           {/* scan line */}
-          <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,transparent,rgba(176,58,46,0.5),transparent)', animation: 'rd-scanline 4s linear infinite', pointerEvents: 'none', zIndex: 3 }} />
+          <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,transparent,rgba(var(--red-dark-rgb),0.5),transparent)', animation: 'rd-scanline 4s linear infinite', pointerEvents: 'none', zIndex: 3 }} />
 
           {/* rings */}
-          <div aria-hidden="true" style={{ position: 'absolute', bottom: '20%', right: '8%', width: '220px', height: '220px', borderRadius: '50%', border: '1px solid rgba(176,58,46,0.1)', animation: 'rd-ringCW 18s linear infinite', pointerEvents: 'none', zIndex: 2 }} />
-          <div aria-hidden="true" style={{ position: 'absolute', bottom: '18%', right: '10%', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(176,58,46,0.07)', animation: 'rd-ringCCW 12s linear infinite', pointerEvents: 'none', zIndex: 2 }} />
+          <div aria-hidden="true" style={{ position: 'absolute', bottom: '20%', right: '8%', width: '220px', height: '220px', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.1)', animation: 'rd-ringCW 18s linear infinite', pointerEvents: 'none', zIndex: 2 }} />
+          <div aria-hidden="true" style={{ position: 'absolute', bottom: '18%', right: '10%', width: '160px', height: '160px', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.07)', animation: 'rd-ringCCW 12s linear infinite', pointerEvents: 'none', zIndex: 2 }} />
 
           {/* hero content */}
-          <div className="container-allbotix" style={{ position: 'relative', zIndex: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingTop: '110px', paddingBottom: '3rem'}}>
+          <div className="container-allbotix" style={{ position: 'relative', zIndex: 4, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: '3rem'}}>
             {/* breadcrumb */}
-            <div className="rd-breadcrumb" style={{ animation: mounted ? 'rd-fadeUp 0.5s ease 0.05s both' : 'none', marginBottom: '10px' }}>
+            <div className="rd-breadcrumb" style={{ animation: mounted ? 'rd-fadeUp 0.5s ease 0.05s both' : 'none', marginBottom: '14px' }}>
               <Link href="/">Home</Link>
               <span className="rd-breadcrumb-sep">›</span>
-              <Link href="/robots">Fleet</Link>
+              <Link href="/products">Products</Link>
               <span className="rd-breadcrumb-sep">›</span>
               <span style={{ color: 'var(--red-bright)' }}>{robot.name}</span>
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px', animation: mounted ? 'rd-fadeUp 0.5s ease 0.1s both' : 'none' }}>
-              <span style={{ padding: '4px 13px', borderRadius: '100px', background: 'rgba(176,58,46,0.18)', border: '1px solid rgba(176,58,46,0.45)', fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--red-bright)', backdropFilter: 'blur(6px)' }}>{robot.category}</span>
-              <span style={{ padding: '4px 13px', borderRadius: '100px', background: 'rgba(8,8,8,0.65)', border: '1px solid rgba(176,58,46,0.22)', fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', backdropFilter: 'blur(6px)' }}>{robot.tag}</span>
+              <span style={{ padding: '4px 13px', borderRadius: '100px', background: 'rgba(var(--red-dark-rgb),0.12)', border: '1px solid rgba(var(--red-dark-rgb),0.45)', fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--red-dark)', backdropFilter: 'blur(6px)' }}>{robot.category}</span>
+              <span style={{ padding: '4px 13px', borderRadius: '100px', background: 'rgba(var(--white-rgb),0.7)', border: '1px solid rgba(var(--navy-rgb),0.25)', fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--navy)', backdropFilter: 'blur(6px)' }}>{robot.tag}</span>
               {r.modelNumber && (
-                <span style={{ padding: '4px 13px', borderRadius: '100px', background: 'rgba(8,8,8,0.65)', border: '1px solid rgba(176,58,46,0.15)', fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-muted)', backdropFilter: 'blur(6px)' }}>{r.modelNumber}</span>
+                <span style={{ padding: '4px 13px', borderRadius: '100px', background: 'rgba(var(--white-rgb),0.7)', border: '1px solid rgba(var(--navy-rgb),0.2)', fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--navy)', backdropFilter: 'blur(6px)' }}>{r.modelNumber}</span>
               )}
             </div>
 
-            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,5vw,3.8rem)', fontWeight: 900, color: '#fff', lineHeight: 0.95, letterSpacing: '-0.02em', marginBottom: '14px', animation: mounted ? 'rd-fadeUp 0.55s ease 0.15s both' : 'none' }}>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,5vw,3.8rem)', fontWeight: 900, color: 'var(--navy-deep)', lineHeight: 0.95, letterSpacing: '-0.02em', marginBottom: '14px', animation: mounted ? 'rd-fadeUp 0.55s ease 0.15s both' : 'none' }}>
               {robot.name}
             </h1>
             <div style={{ width: '48px', height: '2px', background: 'linear-gradient(90deg,var(--red-bright),transparent)', marginBottom: '14px', animation: mounted ? 'rd-fadeUp 0.5s ease 0.2s both' : 'none' }} />
-            <p style={{ maxWidth: '560px', fontFamily: 'var(--font-light)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.85, animation: mounted ? 'rd-fadeUp 0.5s ease 0.25s both' : 'none' }}>
+            <p style={{ maxWidth: '560px', fontFamily: 'var(--font-light)', fontSize: '0.9rem', color: 'rgba(var(--navy-rgb),0.78)', lineHeight: 1.85, animation: mounted ? 'rd-fadeUp 0.5s ease 0.25s both' : 'none' }}>
               {robot.desc}
             </p>
 
             {/* spec pills */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '14px', animation: mounted ? 'rd-fadeUp 0.5s ease 0.3s both' : 'none' }}>
               {robot.specs.map(spec => (
-                <span key={spec} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 13px', borderRadius: '100px', border: '1px solid rgba(176,58,46,0.3)', background: 'rgba(8,8,8,0.6)', fontFamily: 'var(--font-display)', fontSize: '0.62rem', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.04em', backdropFilter: 'blur(6px)' }}>
+                <span key={spec} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', padding: '5px 13px', borderRadius: '100px', border: '1px solid rgba(var(--navy-rgb),0.2)', background: 'rgba(var(--white-rgb),0.65)', fontFamily: 'var(--font-display)', fontSize: '0.62rem', color: 'var(--navy)', letterSpacing: '0.04em', backdropFilter: 'blur(6px)' }}>
                   <span style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'var(--red-bright)', flexShrink: 0 }} />
                   {spec}
                 </span>
@@ -549,8 +549,8 @@ export default function RobotDetailPage() {
           </div>
 
           {/* ── Bottom CTA ── */}
-          <div style={{ marginTop: '5rem', padding: '3rem', borderRadius: '16px', border: '1px solid rgba(176,58,46,0.15)', background: 'rgba(176,58,46,0.04)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-            <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 50%,rgba(176,58,46,0.07) 0%,transparent 70%)', pointerEvents: 'none' }} />
+          <div style={{ marginTop: '5rem', padding: '3rem', borderRadius: '16px', border: '1px solid rgba(var(--red-dark-rgb),0.15)', background: 'rgba(var(--red-dark-rgb),0.04)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+            <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 50%,rgba(var(--red-dark-rgb),0.07) 0%,transparent 70%)', pointerEvents: 'none' }} />
             <div style={{ position: 'relative', zIndex: 1 }}>
               <div className="rd-section-label" style={{ textAlign: 'center', marginBottom: '10px' }}>Get Started</div>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.5rem,3vw,2.4rem)', fontWeight: 900, color: 'var(--text-primary)', letterSpacing: '0.02em', marginBottom: '12px' }}>

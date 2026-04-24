@@ -49,16 +49,16 @@ export default function Navbar() {
         zIndex: 100,
         transition: 'background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease',
         background: scrolled
-          ? 'rgba(8,8,8,0.96)'
+          ? 'var(--bg-900)'
           : 'transparent',
         backdropFilter: scrolled ? 'blur(14px)' : 'none',
         borderBottom: scrolled
-          ? '1px solid rgba(176,58,46,0.15)'
+          ? '1px solid var(--copper-border)'
           : '1px solid transparent',
         boxShadow: scrolled
-          ? '0 4px 40px rgba(0,0,0,0.5)'
+          ? '0 4px 40px var(--copper-glow)'
           : 'none',
-        paddingBlock: scrolled ? '0.75rem' : '1.25rem',
+        paddingBlock: scrolled ? '0.5rem' : '1.25rem',
       }}
     >
       <div
@@ -72,7 +72,7 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <Link href={'/'}>
           <Image
-            src="/logo.png"
+            src="/logo_light_theme.png"
             alt="Allbotix Logo"
             width={120}
             height={80}
@@ -191,7 +191,7 @@ export default function Navbar() {
       {menuOpen && (
         <div
           style={{
-            background: 'rgba(8,8,8,0.98)',
+            background: 'var(--bg-900)',
             borderTop: '1px solid var(--border)',
             padding: '1.5rem',
             display: 'flex',

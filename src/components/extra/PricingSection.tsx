@@ -158,7 +158,7 @@ function PricingCard({
     if (shineRef.current) {
       const px = ((e.clientX - rect.left) / rect.width) * 100
       const py = ((e.clientY - rect.top) / rect.height) * 100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.09) 0%, transparent 55%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-accent-rgb),0.09) 0%, transparent 55%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -189,7 +189,7 @@ function PricingCard({
         border: plan.featured
           ? '1px solid var(--red-bright)'
           : hovered
-          ? '1px solid rgba(176,58,46,0.45)'
+          ? '1px solid rgba(var(--red-dark-rgb),0.45)'
           : '1px solid var(--border)',
         borderRadius: '6px',
         padding: '2.25rem 1.75rem',
@@ -197,9 +197,9 @@ function PricingCard({
         flexDirection: 'column',
         gap: '1.5rem',
         boxShadow: plan.featured
-          ? '0 0 50px rgba(176,58,46,0.18), 0 20px 60px rgba(0,0,0,0.5)'
+          ? '0 0 50px rgba(var(--red-dark-rgb),0.18), 0 20px 60px rgba(var(--black-rgb),0.5)'
           : hovered
-          ? '0 20px 50px rgba(0,0,0,0.5), 0 0 28px rgba(176,58,46,0.10)'
+          ? '0 20px 50px rgba(var(--black-rgb),0.5), 0 0 28px rgba(var(--red-dark-rgb),0.10)'
           : 'none',
         transform: baseTransform,
         transformStyle: 'preserve-3d',
@@ -244,7 +244,7 @@ function PricingCard({
             position: 'absolute',
             top: '-1px', right: '-1px',
             width: '80px', height: '80px',
-            background: 'radial-gradient(circle at top right, rgba(232,57,42,0.2) 0%, transparent 70%)',
+            background: 'radial-gradient(circle at top right, rgba(var(--red-accent-rgb),0.2) 0%, transparent 70%)',
             borderRadius: '0 6px 0 0',
             pointerEvents: 'none',
           }}
@@ -260,7 +260,7 @@ function PricingCard({
             left: '50%',
             transform: 'translateX(-50%)',
             background: 'var(--red-bright)',
-            color: '#fff',
+            color: 'var(--white)',
             fontFamily: 'var(--font-display)',
             fontSize: '0.58rem',
             fontWeight: 700,
@@ -322,7 +322,7 @@ function PricingCard({
               fontWeight: 900,
               color: 'var(--text-primary)',
               lineHeight: 1,
-              textShadow: plan.featured ? '0 0 30px rgba(232,57,42,0.25)' : 'none',
+              textShadow: plan.featured ? '0 0 30px rgba(var(--red-accent-rgb),0.25)' : 'none',
               minWidth: '3.5ch',
               display: 'inline-block',
             }}
@@ -355,7 +355,7 @@ function PricingCard({
       <div
         style={{
           height: '1px',
-          background: plan.featured ? 'rgba(176,58,46,0.25)' : 'var(--border-soft)',
+          background: plan.featured ? 'rgba(var(--red-dark-rgb),0.25)' : 'var(--border-soft)',
           position: 'relative',
           zIndex: 2,
         }}
@@ -389,7 +389,7 @@ function PricingCard({
             <span
               style={{
                 color: 'var(--red-bright)',
-                filter: 'drop-shadow(0 0 4px rgba(232,57,42,0.5))',
+                filter: 'drop-shadow(0 0 4px rgba(var(--red-accent-rgb),0.5))',
               }}
             >
               <CheckIcon />
@@ -470,8 +470,8 @@ export default function PricingSection() {
           to   { opacity: 1; transform: translateX(0); }
         }
         @keyframes badgePulse {
-          0%,100% { box-shadow: 0 0 10px rgba(232,57,42,0.5); }
-          50%      { box-shadow: 0 0 22px rgba(232,57,42,0.85); }
+          0%,100% { box-shadow: 0 0 10px rgba(var(--red-accent-rgb),0.5); }
+          50%      { box-shadow: 0 0 22px rgba(var(--red-accent-rgb),0.85); }
         }
         @keyframes ambientFloat {
           0%,100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.7; }
@@ -500,7 +500,7 @@ export default function PricingSection() {
           width: '700px',
           height: '350px',
           borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(176,58,46,0.09) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(var(--red-dark-rgb),0.09) 0%, transparent 70%)',
           pointerEvents: 'none',
           animation: 'ambientFloat 6s ease-in-out infinite',
         }}
@@ -514,7 +514,7 @@ export default function PricingSection() {
           bottom: '10%', left: '-5%',
           width: '300px', height: '300px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.05) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -525,7 +525,7 @@ export default function PricingSection() {
           top: '15%', right: '-5%',
           width: '250px', height: '250px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.04) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />

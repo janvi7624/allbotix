@@ -113,26 +113,26 @@ const POSTS: BlogPost[] = [
 
 /* ─── Category pill colors ───────────────────────────────────────────────── */
 const CAT_COLORS: Record<string, string> = {
-  Leadership:  'rgba(176,58,46,0.18)',
-  'AI & Robotics': 'rgba(46,100,176,0.18)',
-  Automation:  'rgba(46,160,90,0.18)',
-  Humanoid:    'rgba(140,46,176,0.18)',
-  Business:    'rgba(176,130,46,0.18)',
-  Education:   'rgba(46,160,176,0.18)',
+  Leadership:      'rgba(var(--red-dark-rgb),0.18)',
+  'AI & Robotics': 'rgba(var(--cat-blue-rgb),0.18)',
+  Automation:      'rgba(var(--cat-green-rgb),0.18)',
+  Humanoid:        'rgba(var(--cat-purple-rgb),0.18)',
+  Business:        'rgba(var(--cat-amber-rgb),0.18)',
+  Education:       'rgba(var(--cat-teal-rgb),0.18)',
 }
 const CAT_TEXT: Record<string, string> = {
-  Leadership:  '#e8392a',
-  'AI & Robotics': '#4a8fe8',
-  Automation:  '#3cb46a',
-  Humanoid:    '#a03ae8',
-  Business:    '#e8a83a',
-  Education:   '#3ab4e8',
+  Leadership:      'var(--red-accent)',
+  'AI & Robotics': 'var(--cat-blue)',
+  Automation:      'var(--cat-green)',
+  Humanoid:        'var(--cat-purple)',
+  Business:        'var(--cat-amber)',
+  Education:       'var(--cat-teal)',
 }
 
 /* ─── Sub-components ─────────────────────────────────────────────────────── */
 function HeartIcon({ filled }: { filled: boolean }) {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill={filled ? 'var(--red-bright)' : 'none'} stroke={filled ? 'var(--red-bright)' : 'rgba(176,58,46,0.5)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill={filled ? 'var(--red-bright)' : 'none'} stroke={filled ? 'var(--red-bright)' : `rgba(var(--red-dark-rgb),0.5)`} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
     </svg>
   )
@@ -174,7 +174,7 @@ function BlogCard({ post, index, visible }: { post: BlogPost; index: number; vis
         gap: '0',
         borderRadius: '12px',
         overflow: 'hidden',
-        border: '1px solid rgba(176,58,46,0.12)',
+        border: `1px solid rgba(var(--red-dark-rgb),0.12)`,
         background: 'var(--bg-card)',
         transition: 'border-color 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s',
         transitionDelay: `${index * 0.07}s`,
@@ -193,25 +193,25 @@ function BlogCard({ post, index, visible }: { post: BlogPost; index: number; vis
           style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
           className="blog-card-img"
         />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right,transparent 60%,rgba(8,8,8,0.4) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right,transparent 60%,rgba(var(--overlay-dark-rgb),0.4) 100%)' }} />
         {post.category && (
-          <div style={{ position: 'absolute', top: '12px', left: '12px', padding: '3px 10px', borderRadius: '100px', background: CAT_COLORS[post.category] ?? 'rgba(176,58,46,0.18)', backdropFilter: 'blur(8px)', border: `1px solid ${CAT_TEXT[post.category] ?? 'var(--red-bright)'}33` }}>
+          <div style={{ position: 'absolute', top: '12px', left: '12px', padding: '3px 10px', borderRadius: '100px', background: CAT_COLORS[post.category] ?? 'rgba(var(--red-dark-rgb),0.18)', backdropFilter: 'blur(8px)', border: `1px solid ${CAT_TEXT[post.category] ?? 'var(--red-bright)'}33` }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.48rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: CAT_TEXT[post.category] ?? 'var(--red-bright)' }}>{post.category}</span>
           </div>
         )}
       </div>
 
       {/* content */}
-      <div style={{ padding: '1.25rem 1.4rem', display: 'flex', flexDirection: 'column', gap: '8px', borderLeft: '1px solid rgba(176,58,46,0.08)' }}>
+      <div style={{ padding: '1.25rem 1.4rem', display: 'flex', flexDirection: 'column', gap: '8px', borderLeft: `1px solid rgba(var(--red-dark-rgb),0.08)` }}>
         {/* author row */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'rgba(176,58,46,0.15)', border: '1px solid rgba(176,58,46,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: `rgba(var(--red-dark-rgb),0.15)`, border: `1px solid rgba(var(--red-dark-rgb),0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.45rem', color: 'var(--red-bright)', fontWeight: 700 }}>AB</span>
           </div>
           <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.6rem', color: 'var(--text-muted)', letterSpacing: '0.06em' }}>{post.author}</span>
-          <span style={{ color: 'rgba(176,58,46,0.3)', fontSize: '0.5rem' }}>·</span>
+          <span style={{ color: `rgba(var(--red-dark-rgb),0.3)`, fontSize: '0.5rem' }}>·</span>
           <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.6rem', color: 'var(--text-muted)' }}>{post.date}</span>
-          <span style={{ color: 'rgba(176,58,46,0.3)', fontSize: '0.5rem' }}>·</span>
+          <span style={{ color: `rgba(var(--red-dark-rgb),0.3)`, fontSize: '0.5rem' }}>·</span>
           <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.6rem', color: 'var(--text-muted)' }}>{post.readTime}</span>
         </div>
 
@@ -226,7 +226,7 @@ function BlogCard({ post, index, visible }: { post: BlogPost; index: number; vis
         </p>
 
         {/* footer */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '8px', borderTop: '1px solid rgba(176,58,46,0.07)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '8px', borderTop: `1px solid rgba(var(--red-dark-rgb),0.07)` }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontFamily: 'var(--font-display)', fontSize: '0.58rem', color: 'var(--text-muted)' }}>
               <EyeIcon />{post.views}
@@ -273,32 +273,32 @@ export default function BlogSection() {
         @keyframes pulse    { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
         .blog-card:hover {
-          border-color: rgba(176,58,46,0.38) !important;
-          box-shadow: 0 8px 40px rgba(0,0,0,0.45), 0 0 24px rgba(176,58,46,0.1);
+          border-color: rgba(var(--red-dark-rgb),0.38) !important;
+          box-shadow: 0 8px 40px rgba(var(--black-rgb),0.45), 0 0 24px rgba(var(--red-dark-rgb),0.1);
         }
         .blog-card:hover .blog-card-img { transform: scale(1.06); }
         .like-btn:hover { transform: scale(1.25); }
 
         .write-card {
           border-radius: 12px;
-          border: 1px solid rgba(176,58,46,0.18);
-          background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.18);
+          background: rgba(var(--red-dark-rgb),0.04);
           padding: 2.5rem 3rem;
           display: flex; align-items: center; justify-content: space-between;
           gap: 2rem; flex-wrap: wrap;
           transition: border-color 0.3s;
         }
-        .write-card:hover { border-color: rgba(176,58,46,0.4); }
+        .write-card:hover { border-color: rgba(var(--red-dark-rgb),0.4); }
 
         .view-more-btn {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 11px 26px; border-radius: 8px;
           background: var(--red-bright);
-          color: #fff; font-family: var(--font-display);
+          color: var(--white); font-family: var(--font-display);
           font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
           border: none; cursor: pointer; transition: all 0.25s; text-decoration: none;
         }
-        .view-more-btn:hover { background: #c0392b; box-shadow: 0 0 24px rgba(176,58,46,0.45); transform: translateY(-1px); }
+        .view-more-btn:hover { background: var(--red-dim); box-shadow: 0 0 24px rgba(var(--red-dark-rgb),0.45); transform: translateY(-1px); }
 
         @media(max-width:640px) {
           .blog-card { grid-template-columns: 1fr !important; }
@@ -309,7 +309,7 @@ export default function BlogSection() {
       <main style={{ background: 'var(--bg-900)', minHeight: '100vh', paddingBottom: '6rem', marginTop: '40px' }}>
 
         {/* ── Page Header ── */}
-        <section style={{ paddingBlock: '4rem 3rem', borderBottom: '1px solid rgba(176,58,46,0.1)' }}>
+        <section style={{ paddingBlock: '4rem 3rem', borderBottom: `1px solid rgba(var(--red-dark-rgb),0.1)` }}>
           <div className="container-allbotix">
 
             <div style={{ marginBottom: '2.5rem', animation: 'fadeUp 0.6s ease 0.05s both' }}>
@@ -325,19 +325,18 @@ export default function BlogSection() {
               style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '2.5rem', alignItems: 'center', animation: 'fadeUp 0.6s ease 0.15s both' }}
             >
               {/* image card with red bg */}
-              <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', background: 'var(--red-bright)', aspectRatio: '1', minHeight: '220px' }}>
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg,rgba(176,58,46,0.9) 0%,rgba(120,20,10,0.95) 100%)' }} />
+              <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', background: 'var(--copper)', aspectRatio: '1', minHeight: '220px' }}>
                 {/* scan line */}
-                <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent)', animation: 'scanHero 3s linear infinite', pointerEvents: 'none', zIndex: 3 }} />
+                <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg,transparent,rgba(var(--white-rgb),0.25),transparent)', animation: 'scanHero 3s linear infinite', pointerEvents: 'none', zIndex: 3 }} />
                 <div style={{ position: 'relative', zIndex: 2, padding: '2rem', display: 'flex', flexDirection: 'column', gap: '10px', height: '100%', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', gap: '4px' }}>
                     {[...Array(3)].map((_, i) => (
-                      <span key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'rgba(255,255,255,0.5)', animation: `pulse 2s ease-in-out ${i * 0.4}s infinite` }} />
+                      <span key={i} style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'rgba(var(--white-rgb),0.5)', animation: `pulse 2s ease-in-out ${i * 0.4}s infinite` }} />
                     ))}
                   </div>
-                  <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem,3vw,2rem)', fontWeight: 900, color: '#fff', lineHeight: 1.15, letterSpacing: '-0.01em' }}>Blogs<br />&amp; news</p>
-                  <div style={{ width: '32px', height: '2px', background: 'rgba(255,255,255,0.4)' }} />
-                  <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)' }}>ALLBOTIX</p>
+                  <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.4rem,3vw,2rem)', fontWeight: 900, color: 'var(--white)', lineHeight: 1.15, letterSpacing: '-0.01em' }}>Blogs<br />&amp; news</p>
+                  <div style={{ width: '32px', height: '2px', background: 'rgba(var(--white-rgb),0.4)' }} />
+                  <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.7rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(var(--white-rgb),0.7)' }}>ALLBOTIX</p>
                 </div>
               </div>
 
@@ -348,7 +347,7 @@ export default function BlogSection() {
                 </p>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   {['Robotics', 'AI Trends', 'Automation', 'Industry News'].map(tag => (
-                    <span key={tag} style={{ padding: '4px 12px', borderRadius: '100px', border: '1px solid rgba(176,58,46,0.2)', background: 'rgba(176,58,46,0.05)', fontFamily: 'var(--font-display)', fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>{tag}</span>
+                    <span key={tag} style={{ padding: '4px 12px', borderRadius: '100px', border: `1px solid rgba(var(--red-dark-rgb),0.2)`, background: `rgba(var(--red-dark-rgb),0.05)`, fontFamily: 'var(--font-display)', fontSize: '0.58rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>{tag}</span>
                   ))}
                 </div>
               </div>

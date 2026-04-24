@@ -8,42 +8,34 @@ const faqs = [
   {
     q: 'What types of robots does Allbotix build?',
     a: 'From Smart Autonomous Mobile Robots (AMRs) for warehousing, to precision industrial arms, cleaning bots, AI-powered inspection systems, and collaborative cobots — every system is engineered for your industry.',
-    tags: ['AMR', 'Cobot', 'Industrial'],
   },
   {
     q: 'How do your robots integrate with existing systems?',
     a: 'Plug-and-play integration with ERP, WMS, and SCADA via standard APIs and IoT protocols. Our engineers handle environment mapping, sensor calibration, and software deployment with zero disruption to operations.',
-    tags: ['API', 'IoT', 'ERP / WMS'],
   },
   {
     q: 'Are Allbotix robots safe around human workers?',
-    a: 'All cobots and AMRs carry multi-layer safety systems: LiDAR obstacle detection, force-torque sensors, emergency stops, and real-time path re-planning. Fully ISO 10218 and ISO/TS 15066 compliant.',
-    tags: ['ISO Certified', 'LiDAR', 'Safety'],
+    a: 'All cobots and AMRs carry multi-layer safety systems: LiDAR obstacle detection, force-torque sensors, emergency stops, and real-time path re-planning.',
   },
   {
     q: 'Which industries do you serve?',
     a: 'Manufacturing, warehousing, food & beverage, healthcare, education, electronics, government, defence, and retail. Our modular design adapts precisely to the regulatory requirements of each sector.',
-    tags: ['Manufacturing', 'Healthcare', 'Logistics'],
   },
   {
     q: 'How long does a deployment take?',
     a: 'Three phases: site assessment (2–4 weeks), hardware and software setup (1–3 weeks), and staff training plus go-live support (1 week). Multi-robot fleet deployments may vary. Full roadmap provided before any commitment.',
-    tags: ['3 Phases', 'Fast Setup'],
   },
   {
     q: 'Do you offer 24/7 support after deployment?',
     a: 'Every Allbotix deployment includes a 24/7 premium support plan. Remote diagnostics monitor robot health in real time. On-site engineers handle scheduled maintenance, emergency response, and firmware updates.',
-    tags: ['24/7', 'Remote Diagnostics'],
   },
   {
     q: 'Can your AI adapt to our specific workflows?',
     a: 'Our robots run adaptive AI models that learn your facility layout, demand patterns, and task logic over time — using reinforcement learning and real-time sensor feedback to continuously optimise routing and cycle times.',
-    tags: ['Adaptive AI', 'Reinforcement Learning'],
   },
   {
     q: 'What ROI can we expect from an Allbotix deployment?',
     a: 'Most clients achieve full ROI within 18–36 months. Throughput gains of 35–70% and error rates reduced by over 90% in precision tasks. A detailed free ROI projection is included with every initial consultation.',
-    tags: ['35–70% Gains', 'Free Audit'],
   },
 ]
 
@@ -116,12 +108,12 @@ function FAQCard({
             <span className="faq-dot" aria-hidden="true" />
             <p className="faq-answer">{item.a}</p>
           </div>
-          {/* Tag pills */}
+          {/* Tag pills
           <div className="faq-tags">
             {item.tags.map(tag => (
               <span key={tag} className="faq-tag-pill">{tag}</span>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -220,13 +212,13 @@ export default function FAQSection() {
             box-shadow 0.38s;
         }
         .faq-card:hover {
-          border-color: rgba(232,57,42,0.3);
+          border-color: rgba(var(--red-accent-rgb),0.3);
           transform: translateY(-2px);
-          box-shadow: 0 12px 36px rgba(0,0,0,0.35), 0 0 18px rgba(176,58,46,0.06);
+          box-shadow: 0 12px 36px rgba(var(--black-rgb),0.35), 0 0 18px rgba(var(--red-dark-rgb),0.06);
         }
         .faq-card.faq-card--open {
-          border-color: rgba(232,57,42,0.5);
-          box-shadow: 0 16px 44px rgba(0,0,0,0.4), 0 0 24px rgba(176,58,46,0.08);
+          border-color: rgba(var(--red-accent-rgb),0.5);
+          box-shadow: 0 16px 44px rgba(var(--black-rgb),0.4), 0 0 24px rgba(var(--red-dark-rgb),0.08);
         }
 
         /* ── Corner accents ── */
@@ -256,7 +248,7 @@ export default function FAQSection() {
           position: absolute;
           top: 0; left: -100%;
           width: 55%; height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(232,57,42,0.045), transparent);
+          background: linear-gradient(90deg, transparent, rgba(var(--red-accent-rgb),0.045), transparent);
           pointer-events: none;
         }
         .faq-card:hover .faq-scan {
@@ -276,7 +268,7 @@ export default function FAQSection() {
           flex-shrink: 0;
           width: 30px; height: 30px;
           border-radius: 6px;
-          background: rgba(232,57,42,0.09);
+          background: rgba(var(--red-accent-rgb),0.09);
           display: flex; align-items: center; justify-content: center;
           font-family: var(--font-display);
           font-size: 0.62rem;
@@ -287,7 +279,7 @@ export default function FAQSection() {
         }
         .faq-card:hover .faq-num,
         .faq-card.faq-card--open .faq-num {
-          background: rgba(232,57,42,0.18);
+          background: rgba(var(--red-accent-rgb),0.18);
           transform: scale(1.1);
         }
         .faq-question {
@@ -321,8 +313,8 @@ export default function FAQSection() {
             transform 0.4s cubic-bezier(0.23,1,0.32,1);
         }
         .faq-card.faq-card--open .faq-toggle {
-          background: rgba(232,57,42,0.12);
-          border-color: rgba(232,57,42,0.4);
+          background: rgba(var(--red-accent-rgb),0.12);
+          border-color: rgba(var(--red-accent-rgb),0.4);
           color: var(--red-bright);
           transform: rotate(45deg);
         }
@@ -421,14 +413,14 @@ export default function FAQSection() {
           text-transform: uppercase;
           padding: 3px 9px;
           border-radius: 4px;
-          background: rgba(232,57,42,0.08);
+          background: rgba(var(--red-accent-rgb),0.08);
           color: var(--red-bright);
-          border: 1px solid rgba(232,57,42,0.15);
+          border: 1px solid rgba(var(--red-accent-rgb),0.15);
           transition: background 0.2s, border-color 0.2s;
         }
         .faq-tag-pill:hover {
-          background: rgba(232,57,42,0.16);
-          border-color: rgba(232,57,42,0.3);
+          background: rgba(var(--red-accent-rgb),0.16);
+          border-color: rgba(var(--red-accent-rgb),0.3);
         }
 
         /* ── Footer row ── */
@@ -466,12 +458,12 @@ export default function FAQSection() {
         <div className="faq-glow" aria-hidden="true" style={{
           top: '8%', right: '-8%',
           width: '460px', height: '460px',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.07) 0%, transparent 70%)',
         }} />
         <div className="faq-glow" aria-hidden="true" style={{
           bottom: '5%', left: '-6%',
           width: '360px', height: '360px',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.05) 0%, transparent 70%)',
           animationDelay: '1.8s',
         }} />
 

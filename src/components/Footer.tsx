@@ -18,8 +18,8 @@ export default function Footer() {
           width: 40px;
           height: 40px;
           border-radius: 8px;
-          border: 1px solid rgba(176,58,46,0.2);
-          background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.2);
+          background: rgba(var(--red-dark-rgb),0.04);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -29,10 +29,10 @@ export default function Footer() {
         }
         .footer-social-btn:hover {
           border-color: var(--red-bright) !important;
-          background: rgba(176,58,46,0.12) !important;
+          background: rgba(var(--red-dark-rgb),0.12) !important;
           color: var(--red-bright) !important;
           transform: translateY(-3px) !important;
-          box-shadow: 0 8px 20px rgba(176,58,46,0.2) !important;
+          box-shadow: 0 8px 20px rgba(var(--red-dark-rgb),0.2) !important;
         }
 
         @media (max-width: 900px) {
@@ -60,7 +60,7 @@ export default function Footer() {
           <div>
             <Link href={'/'}>
               <Image
-                src="/logo.png"
+                src="/logo_light_theme.png"
                 alt="Allbotix Logo"
                 width={120}
                 height={80}
@@ -178,7 +178,7 @@ export default function Footer() {
               color: 'var(--text-muted)',
             }}
           >
-            © {new Date().getFullYear()}{' '}
+            © 2023{' '}
             <span style={{ color: 'var(--red-bright)' }}>Allbotix Technologies</span>. All rights reserved.
           </p>
 

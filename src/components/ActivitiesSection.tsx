@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ACTIVITIES, ACTIVITY_CATEGORIES, type ActivityCategory } from '@/data/activities'
+import { ACTIVITIES, ACTIVITY_CATEGORIES } from '@/data/activities'
 
 /* ─── Floating Orb background ────────────────────────────────────────────── */
 function OrbField() {
@@ -17,7 +17,7 @@ function OrbField() {
           width: `${o.size}px`,
           height: `${o.size}px`,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.06) 0%, transparent 70%)',
           top: o.top,
           left: (o as any).left,
           right: (o as any).right,
@@ -30,18 +30,18 @@ function OrbField() {
 
 /* ─── Category pill ──────────────────────────────────────────────────────── */
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string; glow: string }> = {
-  all:     { bg: 'rgba(176,58,46,0.12)',  border: 'rgba(176,58,46,0.5)',  text: 'var(--red-bright)',  glow: 'rgba(176,58,46,0.3)'  },
-  fun:     { bg: 'rgba(176,58,46,0.1)',   border: 'rgba(176,58,46,0.4)',  text: 'var(--red-bright)',  glow: 'rgba(176,58,46,0.25)' },
-  tech:    { bg: 'rgba(56,119,220,0.1)',  border: 'rgba(56,119,220,0.4)', text: '#5b9ef5',            glow: 'rgba(56,119,220,0.2)' },
-  indoor:  { bg: 'rgba(29,158,117,0.1)',  border: 'rgba(29,158,117,0.4)', text: '#2ec99a',            glow: 'rgba(29,158,117,0.2)' },
-  outdoor: { bg: 'rgba(186,117,23,0.1)',  border: 'rgba(186,117,23,0.4)', text: '#e8a832',            glow: 'rgba(186,117,23,0.2)' },
+  all:     { bg: 'rgba(var(--red-dark-rgb),0.12)',  border: 'rgba(var(--red-dark-rgb),0.5)',  text: 'var(--red-bright)',  glow: 'rgba(var(--red-dark-rgb),0.3)'  },
+  fun:     { bg: 'rgba(var(--red-dark-rgb),0.1)',   border: 'rgba(var(--red-dark-rgb),0.4)',  text: 'var(--red-bright)',  glow: 'rgba(var(--red-dark-rgb),0.25)' },
+  tech:    { bg: 'rgba(var(--cat-blue-rgb),0.1)',  border: 'rgba(var(--cat-blue-rgb),0.4)', text: 'var(--cat-blue)',    glow: 'rgba(var(--cat-blue-rgb),0.2)' },
+  indoor:  { bg: 'rgba(var(--cat-green-rgb),0.1)',  border: 'rgba(var(--cat-green-rgb),0.4)', text: 'var(--cat-green)',   glow: 'rgba(var(--cat-green-rgb),0.2)' },
+  outdoor: { bg: 'rgba(var(--cat-amber-rgb),0.1)',  border: 'rgba(var(--cat-amber-rgb),0.4)', text: 'var(--cat-amber)',   glow: 'rgba(var(--cat-amber-rgb),0.2)' },
 }
 
 const CARD_ACCENT: Record<string, { line: string; dot: string; badge: string }> = {
-  fun:     { line: 'var(--red-bright)',  dot: 'rgba(176,58,46,0.8)',  badge: 'rgba(176,58,46,0.08)'  },
-  tech:    { line: '#378add',            dot: 'rgba(56,119,220,0.8)', badge: 'rgba(56,119,220,0.08)' },
-  indoor:  { line: '#1d9e75',            dot: 'rgba(29,158,117,0.8)', badge: 'rgba(29,158,117,0.08)' },
-  outdoor: { line: '#ba7517',            dot: 'rgba(186,117,23,0.8)', badge: 'rgba(186,117,23,0.08)' },
+  fun:     { line: 'var(--red-bright)', dot: 'rgba(var(--red-dark-rgb),0.8)', badge: 'rgba(var(--red-dark-rgb),0.08)' },
+  tech:    { line: 'var(--cat-blue)',   dot: 'rgba(var(--cat-blue-rgb),0.8)', badge: 'rgba(var(--cat-blue-rgb),0.08)' },
+  indoor:  { line: 'var(--cat-green)',  dot: 'rgba(var(--cat-green-rgb),0.8)', badge: 'rgba(var(--cat-green-rgb),0.08)' },
+  outdoor: { line: 'var(--cat-amber)',  dot: 'rgba(var(--cat-amber-rgb),0.8)', badge: 'rgba(var(--cat-amber-rgb),0.08)' },
 }
 
 /* ─── Activity Card ──────────────────────────────────────────────────────── */
@@ -69,7 +69,7 @@ function ActivityCard({
     if (shineRef.current) {
       const px = ((e.clientX - r.left) / r.width)  * 100
       const py = ((e.clientY - r.top)  / r.height) * 100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.09) 0%, transparent 55%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-accent-rgb),0.09) 0%, transparent 55%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -87,8 +87,8 @@ function ActivityCard({
       onMouseLeave={onLeave}
       style={{
         position: 'relative',
-        background: hovered ? 'rgba(22,14,14,0.98)' : 'var(--bg-card)',
-        border: `1px solid ${hovered ? 'rgba(176,58,46,0.45)' : 'rgba(176,58,46,0.14)'}`,
+        background: hovered ? 'var(--bg-900)' : 'var(--bg-card)',
+        border: `1px solid ${hovered ? 'rgba(var(--red-dark-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.14)'}`,
         borderRadius: '14px',
         overflow: 'hidden',
         padding: '1.75rem 1.5rem 1.5rem',
@@ -96,8 +96,8 @@ function ActivityCard({
         cursor: 'default',
         transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.4s, background 0.3s',
         boxShadow: hovered
-          ? `0 22px 55px rgba(0,0,0,0.6), 0 0 30px ${col.glow}`
-          : '0 4px 20px rgba(0,0,0,0.25)',
+          ? `0 22px 55px rgba(var(--black-rgb),0.6), 0 0 30px ${col.glow}`
+          : '0 4px 20px rgba(var(--black-rgb),0.25)',
         opacity: visible ? 1 : 0,
         translate: visible ? '0 0' : '0 44px',
         filter: visible ? 'none' : 'blur(5px)',
@@ -177,7 +177,7 @@ function ActivityCard({
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         position: 'relative', zIndex: 2,
-        borderTop: '1px solid rgba(176,58,46,0.1)', paddingTop: '0.85rem',
+        borderTop: '1px solid rgba(var(--red-dark-rgb),0.1)', paddingTop: '0.85rem',
         marginTop: 'auto',
       }}>
         {/* Participants */}
@@ -186,8 +186,8 @@ function ActivityCard({
             {Array.from({ length: Math.min(activity.participants, 4) }).map((_, j) => (
               <div key={j} style={{
                 width: '20px', height: '20px', borderRadius: '50%',
-                background: `rgba(176,58,46,${0.15 + j * 0.08})`,
-                border: '1.5px solid rgba(176,58,46,0.3)',
+                background: `rgba(var(--red-dark-rgb),${0.15 + j * 0.08})`,
+                border: '1.5px solid rgba(var(--red-dark-rgb),0.3)',
                 marginLeft: j === 0 ? 0 : '-6px',
                 zIndex: 4 - j,
                 position: 'relative',
@@ -219,10 +219,45 @@ function ActivityTicker() {
   const items = ['Game Fridays', 'Hack Sprints', 'Weekend Treks', 'Tech Talks', 'Cricket Sundays', 'Yoga & Mindfulness', 'Movie Nights', 'Demo Days', 'Book Club', 'Annual Retreat', 'Volunteering Days', 'AI Research Club']
   const line = items.join('  ·  ')
   return (
-    <div style={{ overflow: 'hidden', borderTop: '1px solid rgba(176,58,46,0.12)', borderBottom: '1px solid rgba(176,58,46,0.12)', paddingBlock: '10px', background: 'rgba(176,58,46,0.03)', position: 'relative', zIndex: 2 }}>
-      <div style={{ display: 'flex', animation: 'tickerScroll 30s linear infinite', whiteSpace: 'nowrap', width: 'max-content' }}>
+    <div
+      style={{
+        overflow: 'hidden',
+        borderTop: '1px solid rgba(var(--navy-rgb),0.15)',
+        borderBottom: '1px solid rgba(var(--navy-rgb),0.15)',
+        paddingBlock: '10px',
+        background: `linear-gradient(
+          90deg,
+          rgba(var(--navy-rgb),0.95),
+          rgba(var(--navy-rgb),0.85),
+          rgba(var(--navy-rgb),0.76),
+          rgba(var(--navy-rgb),0.95)
+        )`,
+        position: 'relative',
+        zIndex: 2
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          animation: 'tickerScroll 30s linear infinite',
+          whiteSpace: 'nowrap',
+          width: 'max-content'
+        }}
+      >
         {[line, line].map((t, i) => (
-          <span key={i} style={{ fontFamily: 'var(--font-display)', fontSize: '0.55rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(250, 189, 183, 0.55)', paddingInline: '2rem' }}>{t}</span>
+          <span
+            key={i}
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '0.55rem',
+              letterSpacing: '0.16em',
+              textTransform: 'uppercase',
+              color: 'rgba(var(--white-rgb),0.9)',
+              paddingInline: '2rem',
+            }}
+          >
+            {t}
+          </span>
         ))}
       </div>
     </div>
@@ -261,13 +296,13 @@ function StatsStrip({ started }: { started: boolean }) {
   return (
     <div style={{
       display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '1px', background: 'rgba(176,58,46,0.12)',
-      border: '1px solid rgba(176,58,46,0.12)',
+      gap: '1px', background: 'rgba(var(--red-dark-rgb),0.12)',
+      border: '1px solid rgba(var(--red-dark-rgb),0.12)',
       borderRadius: '10px', overflow: 'hidden', marginBottom: '3.5rem',
     }}>
       {stats.map((s, i) => (
         <div key={s.label} style={{
-          background: 'rgba(10,8,8,0.95)', padding: '1.5rem 1rem', textAlign: 'center',
+          background: 'var(--bg-900)', padding: '1.5rem 1rem', textAlign: 'center',
           opacity: started ? 1 : 0,
           transform: started ? 'translateY(0)' : 'translateY(16px)',
           transition: `opacity 0.6s ease ${i * 0.1 + 0.1}s, transform 0.6s ease ${i * 0.1 + 0.1}s`,
@@ -291,15 +326,15 @@ export default function ActivitiesSection() {
   const [sectionVisible, setSectionVisible] = useState(false)
   const [heroVisible,    setHeroVisible]    = useState(false)
   const [statsStarted,   setStatsStarted]   = useState(false)
-  const [activeFilter,   setActiveFilter]   = useState<ActivityCategory | 'all'>('all')
-  const [prevFilter,     setPrevFilter]     = useState<ActivityCategory | 'all'>('all')
+  const [activeFilter,   setActiveFilter]   = useState<'all' | typeof ACTIVITY_CATEGORIES[number]['key']>('all')
+  const [prevFilter,     setPrevFilter]     = useState<'all' | typeof ACTIVITY_CATEGORIES[number]['key']>('all')
   const [animKey,        setAnimKey]        = useState(0)
 
   const filtered = activeFilter === 'all'
     ? ACTIVITIES
     : ACTIVITIES.filter(a => a.category === activeFilter)
 
-  const handleFilter = (key: ActivityCategory | 'all') => {
+  const handleFilter = (key: 'all' | typeof ACTIVITY_CATEGORIES[number]['key']) => {
     if (key === activeFilter) return
     setPrevFilter(activeFilter)
     setActiveFilter(key)
@@ -333,7 +368,7 @@ export default function ActivitiesSection() {
         @keyframes cardFlyIn    { from{opacity:0;transform:perspective(800px) translateY(36px) rotateX(12deg) scale(0.97)} to{opacity:1;transform:perspective(800px) translateY(0) rotateX(0) scale(1)} }
         @keyframes scanline     { 0%{top:-3%;opacity:0.5} 100%{top:110%;opacity:0} }
         @keyframes glowPulse    { 0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.1)} }
-        @keyframes borderPulse  { 0%,100%{border-color:rgba(176,58,46,0.18);box-shadow:none} 50%{border-color:rgba(176,58,46,0.45);box-shadow:0 0 24px rgba(176,58,46,0.1)} }
+        @keyframes borderPulse  { 0%,100%{border-color:rgba(var(--red-dark-rgb),0.18);box-shadow:none} 50%{border-color:rgba(var(--red-dark-rgb),0.45);box-shadow:0 0 24px rgba(var(--red-dark-rgb),0.1)} }
         @keyframes shimmerMove  { 0%{background-position:-600px 0} 100%{background-position:600px 0} }
         @keyframes countIn      { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
@@ -348,14 +383,14 @@ export default function ActivitiesSection() {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         overflow: 'hidden',
         paddingBlock: '7rem 5rem',
-        background: 'radial-gradient(ellipse 80% 55% at 50% 40%, rgba(176,58,46,0.1) 0%, transparent 70%), var(--bg-900)',
+        background: 'radial-gradient(ellipse 80% 55% at 50% 40%, rgba(var(--red-dark-rgb),0.1) 0%, transparent 70%), var(--bg-900)',
       }}>
         <OrbField/>
 
         {/* Decorative rings */}
-        <div aria-hidden="true" style={{ position: 'absolute', width: '650px', height: '650px', borderRadius: '50%', border: '1px dashed rgba(176,58,46,0.08)', top: '50%', left: '50%', animation: 'ringSpinCW 35s linear infinite', pointerEvents: 'none' }}/>
-        <div aria-hidden="true" style={{ position: 'absolute', width: '420px', height: '420px', borderRadius: '50%', border: '1px solid rgba(176,58,46,0.12)', top: '50%', left: '50%', animation: 'ringSpinCCW 22s linear infinite', pointerEvents: 'none' }}/>
-        <div aria-hidden="true" style={{ position: 'absolute', width: '220px', height: '220px', borderRadius: '50%', border: '1px dotted rgba(176,58,46,0.18)', top: '50%', left: '50%', animation: 'ringSpinCW 14s linear infinite', pointerEvents: 'none' }}/>
+        <div aria-hidden="true" style={{ position: 'absolute', width: '650px', height: '650px', borderRadius: '50%', border: '1px dashed rgba(var(--red-dark-rgb),0.08)', top: '50%', left: '50%', animation: 'ringSpinCW 35s linear infinite', pointerEvents: 'none' }}/>
+        <div aria-hidden="true" style={{ position: 'absolute', width: '420px', height: '420px', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.12)', top: '50%', left: '50%', animation: 'ringSpinCCW 22s linear infinite', pointerEvents: 'none' }}/>
+        <div aria-hidden="true" style={{ position: 'absolute', width: '220px', height: '220px', borderRadius: '50%', border: '1px dotted rgba(var(--red-dark-rgb),0.18)', top: '50%', left: '50%', animation: 'ringSpinCW 14s linear infinite', pointerEvents: 'none' }}/>
 
         {/* Corner brackets */}
         {[
@@ -377,7 +412,7 @@ export default function ActivitiesSection() {
 
         {/* Scanline */}
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 1 }}>
-          <div style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, rgba(176,58,46,0.3), transparent)', animation: 'scanline 5s linear infinite' }}/>
+          <div style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, rgba(var(--red-dark-rgb),0.3), transparent)', animation: 'scanline 5s linear infinite' }}/>
         </div>
 
         <div ref={heroRef} className="container-allbotix" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
@@ -394,7 +429,7 @@ export default function ActivitiesSection() {
             transform: heroVisible ? 'translateY(0)' : 'translateY(26px)',
             transition: 'opacity 0.7s ease 0.12s, transform 0.7s ease 0.12s',
           }}>
-            Where Work Meets <span style={{ color: 'var(--red-bright)', textShadow: '0 0 50px rgba(176,58,46,0.4)' }}>Play.</span>
+            Where Work Meets <span style={{ color: 'var(--red-bright)', textShadow: '0 0 50px rgba(var(--red-dark-rgb),0.4)' }}>Play.</span>
           </h1>
 
           <div style={{ width: '55px', height: '2px', background: 'linear-gradient(90deg, var(--red-bright), transparent)', margin: '0 auto 1.5rem', opacity: heroVisible ? 1 : 0, animation: heroVisible ? 'lineGrow 0.8s ease 0.3s both' : 'none' }}/>
@@ -450,7 +485,7 @@ export default function ActivitiesSection() {
         <OrbField/>
 
         {/* Watermark */}
-        <div aria-hidden="true" style={{ position: 'absolute', bottom: '-2rem', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', pointerEvents: 'none', fontFamily: 'var(--font-display)', fontSize: 'clamp(5rem,14vw,10rem)', fontWeight: 900, color: 'transparent', WebkitTextStroke: '1px rgba(176,58,46,0.04)', letterSpacing: '0.05em', lineHeight: 1, userSelect: 'none' }}>CULTURE</div>
+        <div aria-hidden="true" style={{ position: 'absolute', bottom: '-2rem', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', pointerEvents: 'none', fontFamily: 'var(--font-display)', fontSize: 'clamp(5rem,14vw,10rem)', fontWeight: 900, color: 'transparent', WebkitTextStroke: '1px rgba(var(--red-dark-rgb),0.04)', letterSpacing: '0.05em', lineHeight: 1, userSelect: 'none' }}>CULTURE</div>
 
         <div className="container-allbotix" style={{ position: 'relative', zIndex: 2 }}>
 
@@ -488,8 +523,8 @@ export default function ActivitiesSection() {
                   style={{
                     display: 'inline-flex', alignItems: 'center', gap: '7px',
                     padding: '9px 18px', borderRadius: '100px',
-                    background: isActive ? c.bg : 'rgba(176,58,46,0.03)',
-                    border: `1px solid ${isActive ? c.border : 'rgba(176,58,46,0.15)'}`,
+                    background: isActive ? c.bg : 'rgba(var(--red-dark-rgb),0.03)',
+                    border: `1px solid ${isActive ? c.border : 'rgba(var(--red-dark-rgb),0.15)'}`,
                     cursor: 'pointer',
                     transition: 'all 0.25s cubic-bezier(0.23,1,0.32,1)',
                     fontFamily: 'var(--font-display)', fontSize: '0.58rem',
@@ -499,7 +534,7 @@ export default function ActivitiesSection() {
                     transform: isActive ? 'scale(1.04)' : 'scale(1)',
                   }}
                   onMouseEnter={e => { if (!isActive) { (e.currentTarget as HTMLElement).style.borderColor = c.border; (e.currentTarget as HTMLElement).style.color = c.text } }}
-                  onMouseLeave={e => { if (!isActive) { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(176,58,46,0.15)'; (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)' } }}
+                  onMouseLeave={e => { if (!isActive) { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(var(--red-dark-rgb),0.15)'; (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)' } }}
                 >
                   <span style={{ width: '13px', height: '13px', flexShrink: 0 }}>{cat.icon}</span>
                   {cat.label}
@@ -522,8 +557,8 @@ export default function ActivitiesSection() {
           {/* Culture banner */}
           {/* <div style={{
             marginTop: '4rem', padding: '3rem',
-            background: 'linear-gradient(135deg, rgba(176,58,46,0.08), rgba(176,58,46,0.03))',
-            border: '1px solid rgba(176,58,46,0.2)', borderRadius: '14px',
+            background: 'linear-gradient(135deg, rgba(var(--red-dark-rgb),0.08), rgba(var(--red-dark-rgb),0.03))',
+            border: '1px solid rgba(var(--red-dark-rgb),0.2)', borderRadius: '14px',
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             flexWrap: 'wrap', gap: '2rem',
             animation: 'borderPulse 5s ease-in-out infinite',

@@ -111,7 +111,7 @@ export default function TechSection() {
           position:absolute; width:86%; height:86%;
           top:50%; left:50%;
           border-radius:50%;
-          border:1px solid rgba(242,107,58,0.10);
+          border:1px solid rgba(var(--red-bright-rgb),0.10);
           animation:ts-ringRotRev 15s linear infinite;
           pointer-events:none; z-index:0;
         }
@@ -164,7 +164,7 @@ export default function TechSection() {
         }
         .ts-overlay-label {
           position:absolute; bottom:1rem; left:1rem;
-          background:rgba(255,255,255,0.92);
+          background:rgba(var(--white-rgb),0.92);
           border:1px solid var(--copper-border);
           border-radius:6px; padding:.5rem .85rem;
           backdrop-filter:blur(10px);
@@ -188,11 +188,11 @@ export default function TechSection() {
         }
         .ts-chip {
           position:absolute;
-          background:rgba(255,255,255,0.96);
+          background:rgba(var(--white-rgb),0.96);
           border:1px solid var(--copper-border);
           border-radius:10px; padding:.65rem 1rem;
           backdrop-filter:blur(14px);
-          box-shadow:0 8px 28px var(--copper-glow), inset 0 1px 0 rgba(255,255,255,0.9);
+          box-shadow:0 8px 28px var(--copper-glow), inset 0 1px 0 rgba(var(--white-rgb),0.9);
           pointer-events:none; z-index:10;
         }
         .ts-chip-top  { top:-1rem; right:-1.75rem; animation:ts-float1 4.2s ease-in-out .3s infinite; }
@@ -205,7 +205,7 @@ export default function TechSection() {
           position:absolute; bottom:-1.6rem; right:-1.6rem;
           background:linear-gradient(135deg,var(--red-bright),var(--amber));
           border-radius:10px; padding:1.2rem 1.5rem; text-align:center;
-          box-shadow:0 12px 40px var(--red-glow), 0 4px 16px rgba(0,0,0,0.12);
+          box-shadow:0 12px 40px var(--red-glow), 0 4px 16px rgba(var(--black-rgb),0.12);
           z-index:10;
           animation:ts-floatBadge 5s ease-in-out .7s infinite;
         }
@@ -229,11 +229,11 @@ export default function TechSection() {
           border-radius:10px; padding:1.1rem 1.25rem;
           transform-style:preserve-3d;
           transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-          box-shadow:0 2px 8px rgba(0,0,0,0.04);
+          box-shadow:0 2px 8px rgba(var(--black-rgb),0.04);
         }
         .ts-feat-card:hover {
           transform:translateY(-5px) translateZ(6px);
-          box-shadow:0 14px 40px var(--copper-glow), 0 4px 12px rgba(0,0,0,0.06);
+          box-shadow:0 14px 40px var(--copper-glow), 0 4px 12px rgba(var(--black-rgb),0.06);
           border-color:var(--copper-border);
         }
         .ts-feat-card:hover .ts-icon-wrap {
@@ -307,32 +307,32 @@ export default function TechSection() {
                   >
                     <defs>
                       <linearGradient id="ts-bg" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%"   stopColor="#f0f0f0"/>
-                        <stop offset="100%" stopColor="#e4e4e4"/>
+                        <stop offset="0%"   stopColor="var(--metal-light)"/>
+                        <stop offset="100%" stopColor="var(--metal-silver)"/>
                       </linearGradient>
                       <linearGradient id="ts-metal" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"   stopColor="#f5f5f5"/>
-                        <stop offset="40%"  stopColor="#e0e0e0"/>
-                        <stop offset="100%" stopColor="#c8c8c8"/>
+                        <stop offset="0%"   stopColor="var(--metal-lighter)"/>
+                        <stop offset="40%"  stopColor="var(--metal-ice)"/>
+                        <stop offset="100%" stopColor="var(--metal-grey)"/>
                       </linearGradient>
                       <linearGradient id="ts-copper" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%"   stopColor="#f26b3a"/>
-                        <stop offset="50%"  stopColor="#d4603a"/>
-                        <stop offset="100%" stopColor="#c8581e"/>
+                        <stop offset="0%"   stopColor="var(--red-bright)"/>
+                        <stop offset="50%"  stopColor="var(--copper)"/>
+                        <stop offset="100%" stopColor="var(--amber)"/>
                       </linearGradient>
                       <linearGradient id="ts-floor" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%"   stopColor="#d8d8d8" stopOpacity=".9"/>
-                        <stop offset="100%" stopColor="#c0c0c0" stopOpacity=".4"/>
+                        <stop offset="0%"   stopColor="var(--metal-mid)" stopOpacity=".9"/>
+                        <stop offset="100%" stopColor="var(--metal-dark)" stopOpacity=".4"/>
                       </linearGradient>
                       <radialGradient id="ts-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%"   stopColor="#f26b3a" stopOpacity=".20"/>
-                        <stop offset="60%"  stopColor="#d4603a" stopOpacity=".06"/>
-                        <stop offset="100%" stopColor="#d4603a" stopOpacity="0"/>
+                        <stop offset="0%"   stopColor="var(--red-bright)" stopOpacity=".20"/>
+                        <stop offset="60%"  stopColor="var(--copper)" stopOpacity=".06"/>
+                        <stop offset="100%" stopColor="var(--copper)" stopOpacity="0"/>
                       </radialGradient>
                       <radialGradient id="ts-eye" cx="35%" cy="30%" r="65%">
-                        <stop offset="0%"   stopColor="#ff9060"/>
-                        <stop offset="60%"  stopColor="#f26b3a"/>
-                        <stop offset="100%" stopColor="#c8501a"/>
+                        <stop offset="0%"   stopColor="var(--copper-bright)"/>
+                        <stop offset="60%"  stopColor="var(--red-bright)"/>
+                        <stop offset="100%" stopColor="var(--copper-deep)"/>
                       </radialGradient>
                       <filter id="ts-gf">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
@@ -351,91 +351,91 @@ export default function TechSection() {
                     {[0,1,2,3,4,5,6].map(i => (
                       <line key={`h${i}`}
                         x1={40 + i*16} y1="300" x2={180 + i*5} y2="190"
-                        stroke="#d4603a" strokeWidth="0.5" opacity={0.08 + i*0.02}/>
+                        stroke="var(--copper)" strokeWidth="0.5" opacity={0.08 + i*0.02}/>
                     ))}
                     {[0,1,2,3,4,5,6,7,8].map(i => (
                       <line key={`v${i}`}
                         x1={0} y1={215 + i*11} x2={400} y2={215 + i*11}
-                        stroke="#d4603a" strokeWidth="0.5" opacity={0.04 + i*0.008}/>
+                        stroke="var(--copper)" strokeWidth="0.5" opacity={0.04 + i*0.008}/>
                     ))}
 
                     {/* Glow behind robot */}
                     <ellipse cx="200" cy="200" rx="90" ry="60" fill="url(#ts-glow)"/>
 
                     {/* ── Worker Left ── */}
-                    <ellipse cx="112" cy="262" rx="26" ry="7" fill="#c8c8c8" opacity=".6"/>
-                    <rect x="96"  y="174" width="32" height="88" rx="6"  fill="url(#ts-metal)" stroke="#d4603a" strokeWidth=".6"/>
-                    <circle cx="112" cy="160" r="15" fill="#d8d8d8" stroke="#c0c0c0" strokeWidth=".8"/>
+                    <ellipse cx="112" cy="262" rx="26" ry="7" fill="var(--metal-grey)" opacity=".6"/>
+                    <rect x="96"  y="174" width="32" height="88" rx="6"  fill="url(#ts-metal)" stroke="var(--copper)" strokeWidth=".6"/>
+                    <circle cx="112" cy="160" r="15" fill="var(--metal-mid)" stroke="var(--metal-dark)" strokeWidth=".8"/>
                     <rect x="84"  y="184" width="14" height="44" rx="5"  fill="url(#ts-metal)"/>
                     <rect x="130" y="184" width="14" height="44" rx="5"  fill="url(#ts-metal)"/>
                     {/* helmet accent */}
-                    <path d="M100 163 Q112 148 124 163" fill="#f26b3a" opacity=".75"/>
-                    <rect x="104" y="154" width="16" height="8" rx="3"   fill="rgba(20,20,30,.7)"/>
-                    <rect x="106" y="156" width="12" height="4" rx="1.5" fill="#f26b3a" opacity=".6">
+                    <path d="M100 163 Q112 148 124 163" fill="var(--red-bright)" opacity=".75"/>
+                    <rect x="104" y="154" width="16" height="8" rx="3"   fill="rgba(var(--screen-dark-rgb),.7)"/>
+                    <rect x="106" y="156" width="12" height="4" rx="1.5" fill="var(--red-bright)" opacity=".6">
                       <animate attributeName="opacity" values=".6;1;.6" dur="2.2s" repeatCount="indefinite"/>
                     </rect>
 
                     {/* ── Worker Right ── */}
-                    <ellipse cx="288" cy="262" rx="26" ry="7" fill="#c8c8c8" opacity=".6"/>
-                    <rect x="272" y="174" width="32" height="88" rx="6"  fill="url(#ts-metal)" stroke="#d4603a" strokeWidth=".6"/>
-                    <circle cx="288" cy="160" r="15" fill="#d8d8d8" stroke="#c0c0c0" strokeWidth=".8"/>
+                    <ellipse cx="288" cy="262" rx="26" ry="7" fill="var(--metal-grey)" opacity=".6"/>
+                    <rect x="272" y="174" width="32" height="88" rx="6"  fill="url(#ts-metal)" stroke="var(--copper)" strokeWidth=".6"/>
+                    <circle cx="288" cy="160" r="15" fill="var(--metal-mid)" stroke="var(--metal-dark)" strokeWidth=".8"/>
                     <rect x="260" y="184" width="14" height="44" rx="5"  fill="url(#ts-metal)"/>
                     <rect x="306" y="184" width="14" height="44" rx="5"  fill="url(#ts-metal)"/>
                     {/* helmet accent (grey — human) */}
-                    <path d="M276 163 Q288 148 300 163" fill="#a0a0a0" opacity=".65"/>
-                    <rect x="280" y="154" width="16" height="8" rx="3"   fill="rgba(20,20,30,.6)"/>
-                    <rect x="282" y="156" width="12" height="4" rx="1.5" fill="#888" opacity=".5"/>
+                    <path d="M276 163 Q288 148 300 163" fill="var(--metal-darker)" opacity=".65"/>
+                    <rect x="280" y="154" width="16" height="8" rx="3"   fill="rgba(var(--screen-dark-rgb),.6)"/>
+                    <rect x="282" y="156" width="12" height="4" rx="1.5" fill="var(--metal-dusk)" opacity=".5"/>
 
                     {/* ── Central Robot ── */}
                     {/* Shadow */}
-                    <ellipse cx="200" cy="264" rx="34" ry="9" fill="#b0b0b0" opacity=".5"/>
+                    <ellipse cx="200" cy="264" rx="34" ry="9" fill="var(--metal-deep)" opacity=".5"/>
                     {/* Legs */}
-                    <rect x="183" y="218" width="16" height="48" rx="5" fill="url(#ts-metal)" stroke="#d4603a" strokeWidth=".5"/>
-                    <rect x="201" y="218" width="16" height="48" rx="5" fill="url(#ts-metal)" stroke="#d4603a" strokeWidth=".5"/>
+                    <rect x="183" y="218" width="16" height="48" rx="5" fill="url(#ts-metal)" stroke="var(--copper)" strokeWidth=".5"/>
+                    <rect x="201" y="218" width="16" height="48" rx="5" fill="url(#ts-metal)" stroke="var(--copper)" strokeWidth=".5"/>
                     {/* Body */}
-                    <rect x="172" y="130" width="56" height="92" rx="8"  fill="#111" stroke="#f26b3a" strokeWidth="1.2"/>
+                    <rect x="172" y="130" width="56" height="92" rx="8"  fill="var(--bg-dark)" stroke="var(--red-bright)" strokeWidth="1.2"/>
                     {/* Body highlight */}
-                    <rect x="173" y="130" width="5"  height="86" rx="2.5" fill="rgba(255,255,255,.08)"/>
+                    <rect x="173" y="130" width="5"  height="86" rx="2.5" fill="rgba(var(--white-rgb),.08)"/>
                     {/* Chest screen */}
-                    <rect x="178" y="140" width="44" height="50" rx="5"  fill="rgba(20,20,30,.9)"/>
-                    <rect x="178" y="140" width="44" height="50" rx="5"  fill="none" stroke="#f26b3a" strokeWidth=".6" opacity=".5"/>
+                    <rect x="178" y="140" width="44" height="50" rx="5"  fill="rgba(var(--screen-dark-rgb),.9)"/>
+                    <rect x="178" y="140" width="44" height="50" rx="5"  fill="none" stroke="var(--red-bright)" strokeWidth=".6" opacity=".5"/>
                     {/* Core orb */}
                     <circle className="ts-robot-core" cx="200" cy="162" r="12" fill="url(#ts-copper)" filter="url(#ts-sg)" opacity=".9"/>
-                    <circle cx="200" cy="162" r="6"  fill="#ffa060"/>
-                    <circle cx="200" cy="162" r="3"  fill="rgba(255,230,200,1)"/>
+                    <circle cx="200" cy="162" r="6"  fill="var(--copper-highlight)"/>
+                    <circle cx="200" cy="162" r="3"  fill="rgba(var(--warm-glow-light-rgb),1)"/>
                     {/* Data lines */}
-                    <line x1="183" y1="182" x2="196" y2="182" stroke="#d4603a" strokeWidth=".6" opacity=".5"/>
-                    <line x1="204" y1="182" x2="217" y2="182" stroke="#d4603a" strokeWidth=".6" opacity=".5"/>
-                    <line x1="183" y1="188" x2="191" y2="188" stroke="#d4603a" strokeWidth=".5" opacity=".35">
+                    <line x1="183" y1="182" x2="196" y2="182" stroke="var(--copper)" strokeWidth=".6" opacity=".5"/>
+                    <line x1="204" y1="182" x2="217" y2="182" stroke="var(--copper)" strokeWidth=".6" opacity=".5"/>
+                    <line x1="183" y1="188" x2="191" y2="188" stroke="var(--copper)" strokeWidth=".5" opacity=".35">
                       <animate attributeName="x2" values="191;208;191" dur="2.5s" repeatCount="indefinite"/>
                     </line>
                     {/* Shoulder joint */}
-                    <circle cx="171" cy="140" r="9"  fill="url(#ts-metal)" stroke="#f26b3a" strokeWidth=".8"/>
+                    <circle cx="171" cy="140" r="9"  fill="url(#ts-metal)" stroke="var(--red-bright)" strokeWidth=".8"/>
                     <circle cx="171" cy="140" r="4.5" fill="url(#ts-copper)" opacity=".7"/>
-                    <circle cx="229" cy="140" r="9"  fill="url(#ts-metal)" stroke="#f26b3a" strokeWidth=".8"/>
+                    <circle cx="229" cy="140" r="9"  fill="url(#ts-metal)" stroke="var(--red-bright)" strokeWidth=".8"/>
                     <circle cx="229" cy="140" r="4.5" fill="url(#ts-copper)" opacity=".7"/>
                     {/* Arm (animated) */}
                     <g className="ts-robot-arm">
-                      <rect x="224" y="133" width="50" height="13" rx="5"  fill="url(#ts-metal)" stroke="#f26b3a" strokeWidth=".7"/>
+                      <rect x="224" y="133" width="50" height="13" rx="5"  fill="url(#ts-metal)" stroke="var(--red-bright)" strokeWidth=".7"/>
                       <circle cx="275" cy="139" r="7"  fill="url(#ts-copper)" filter="url(#ts-gf)" opacity=".8"/>
                     </g>
                     {/* Head */}
-                    <rect x="178" y="96"  width="44" height="38" rx="8"  fill="#1a1a1a" stroke="#f26b3a" strokeWidth="1"/>
-                    <rect x="179" y="96"  width="4"  height="34" rx="2"  fill="rgba(255,255,255,.06)"/>
+                    <rect x="178" y="96"  width="44" height="38" rx="8"  fill="var(--bg-dark-soft)" stroke="var(--red-bright)" strokeWidth="1"/>
+                    <rect x="179" y="96"  width="4"  height="34" rx="2"  fill="rgba(var(--white-rgb),.06)"/>
                     {/* Visor */}
-                    <rect x="182" y="104" width="36" height="18" rx="4"  fill="rgba(10,10,20,.9)"/>
-                    <rect x="182" y="104" width="36" height="18" rx="4"  fill="none" stroke="#f26b3a" strokeWidth=".5" opacity=".6"/>
+                    <rect x="182" y="104" width="36" height="18" rx="4"  fill="rgba(var(--screen-night-rgb),.9)"/>
+                    <rect x="182" y="104" width="36" height="18" rx="4"  fill="none" stroke="var(--red-bright)" strokeWidth=".5" opacity=".6"/>
                     {/* Eyes */}
                     <rect x="185" y="108" width="12" height="7"  rx="2.5" fill="url(#ts-eye)" filter="url(#ts-sg)"/>
                     <rect x="203" y="108" width="12" height="7"  rx="2.5" fill="url(#ts-eye)" filter="url(#ts-sg)"/>
-                    <rect x="187" y="109" width="4"  height="3"  rx="1"  fill="rgba(255,255,255,.5)"/>
-                    <rect x="205" y="109" width="4"  height="3"  rx="1"  fill="rgba(255,255,255,.5)"/>
+                    <rect x="187" y="109" width="4"  height="3"  rx="1"  fill="rgba(var(--white-rgb),.5)"/>
+                    <rect x="205" y="109" width="4"  height="3"  rx="1"  fill="rgba(var(--white-rgb),.5)"/>
                     {/* Antenna */}
                     <line x1="200" y1="96" x2="200" y2="84"  stroke="url(#ts-copper)" strokeWidth="1.5"/>
-                    <circle cx="200" cy="82" r="4.5" fill="#f26b3a" filter="url(#ts-sg)">
+                    <circle cx="200" cy="82" r="4.5" fill="var(--red-bright)" filter="url(#ts-sg)">
                       <animate attributeName="opacity" values=".7;1;.7" dur="1.8s" repeatCount="indefinite"/>
                     </circle>
-                    <circle cx="200" cy="82" r="2"   fill="#ffa060"/>
+                    <circle cx="200" cy="82" r="2"   fill="var(--copper-highlight)"/>
 
                     {/* Foreground radial overlay */}
                     <rect width="400" height="300" fill="url(#ts-glow)" opacity=".5"/>
@@ -463,8 +463,8 @@ export default function TechSection() {
 
                 {/* Experience badge */}
                 <div className="ts-exp-badge">
-                  <p style={{ fontFamily:'var(--font-display)', fontSize:'2rem', fontWeight:900, color:'#fff', lineHeight:1 }}>15+</p>
-                  <p style={{ fontFamily:'var(--font-light)', fontSize:'.7rem', color:'rgba(255,255,255,.85)', marginTop:'4px', letterSpacing:'.08em' }}>
+                  <p style={{ fontFamily:'var(--font-display)', fontSize:'2rem', fontWeight:900, color:'var(--white)', lineHeight:1 }}>4+</p>
+                  <p style={{ fontFamily:'var(--font-light)', fontSize:'.7rem', color:'rgba(var(--white-rgb),.85)', marginTop:'4px', letterSpacing:'.08em' }}>
                     Years<br/>Experience
                   </p>
                 </div>
@@ -510,15 +510,15 @@ export default function TechSection() {
                 ))}
               </div>
 
-              <div className="ts-reveal ts-d5">
-                <Link href="/solutions" className="btn-primary">
-                  Explore Solution
+              {/* <div className="ts-reveal ts-d5">
+                <Link href="/about" className="btn-primary">
+                  Explore More
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"/>
                     <polyline points="12 5 19 12 12 19"/>
                   </svg>
                 </Link>
-              </div>
+              </div> */}
             </div>
 
           </div>

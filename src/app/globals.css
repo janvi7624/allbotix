@@ -6,36 +6,127 @@
 
 /* ── Design Tokens ─────────────────────────────────────────── */
 :root {
-  /* ── Brand Colors ── */
-  --red:            #e05a2a;
-  --red-bright:     #f26b3a;
-  --red-dim:        #b84422;
-  --red-glow:       rgba(224, 90, 42, 0.25);
-  --red-soft:       rgba(224, 90, 42, 0.10);
+  /* ── Brand Colors (from logo gradient: bright orange → deep maroon) ── */
+  --red:            #e0552a;
+  --red-bright:     #ec6a3a;
+  --red-dim:        #a83822;
+  --red-glow:       rgba(224, 85, 42, 0.25);
+  --red-soft:       rgba(224, 85, 42, 0.10);
 
-  --copper:         #d4603a;
-  --copper-light:   #e87d52;
-  --copper-pale:    #f2a27a;
-  --amber:          #c8581e;
-  --copper-glow:    rgba(212, 96, 58, 0.18);
-  --copper-soft:    rgba(212, 96, 58, 0.08);
-  --copper-border:  rgba(212, 96, 58, 0.25);
+  --copper:         #d45a36;
+  --copper-light:   #e87a4e;
+  --copper-pale:    #f2a078;
+  --amber:          #c45018;
+  --copper-glow:    rgba(212, 90, 54, 0.18);
+  --copper-soft:    rgba(212, 90, 54, 0.08);
+  --copper-border:  rgba(212, 90, 54, 0.25);
 
   /* ── LIGHT THEME BACKGROUNDS ── */
   --bg-900:         #ffffff;   /* main background  */
-  --bg-800:         #f7f7f7;   /* section alt      */
-  --bg-700:         #eeeeee;
-  --bg-600:         #e4e4e4;
+  --bg-800:         #f5f6fa;   /* section alt — faint navy tint */
+  --bg-700:         #eaecf3;
+  --bg-600:         #dfe2ec;
   --bg-card:        #ffffff;
 
-  /* ── TEXT ── */
-  --text-primary:   #1a1a1a;
-  --text-secondary: #555555;
-  --text-muted:     #888888;
+  /* ── TEXT (navy from logo wordmark) ── */
+  --text-primary:   #162847;
+  --text-secondary: #3a4a6b;
+  --text-muted:     #6c7891;
 
   /* ── BORDERS ── */
-  --border:         rgba(0, 0, 0, 0.08);
-  --border-soft:    rgba(0, 0, 0, 0.05);
+  --border:         rgba(22, 40, 71, 0.10);
+  --border-soft:    rgba(22, 40, 71, 0.06);
+
+  /* ── RGB components (for rgba() in inline styles) ── */
+  --red-rgb:           224, 85, 42;
+  --red-bright-rgb:    236, 106, 58;
+  --red-dark:          #8a2418;
+  --red-dark-rgb:      138, 36, 24;
+  --red-accent:        #e8392a;
+  --red-accent-rgb:    232, 57, 42;
+  --copper-rgb:        212, 90, 54;
+  --white-rgb:         255, 255, 255;
+  --black-rgb:         22, 40, 71;
+  --overlay-dark-rgb:  22, 40, 71;
+  --overlay-light-rgb: 238, 178, 158;
+  --bg-map-rgb:        12, 22, 40;
+  --bg-hover-rgb:      28, 42, 72;
+
+  /* ── Navy (logo wordmark) ── */
+  --navy:              #162847;
+  --navy-rgb:          22, 40, 71;
+  --navy-deep:         #0e1c33;
+  --navy-deep-rgb:     14, 28, 51;
+  --navy-light:        #2a3d62;
+  --navy-light-rgb:    42, 61, 98;
+
+  /* ── Dark overlay / panel backgrounds (navy-tinted to match logo) ── */
+  --overlay-dark:      rgba(14, 28, 51, 0.92);
+  --bg-hover-dark:     rgba(28, 42, 72, 0.98);
+  --overlay-light: #eeb29e;
+  --bg-dark:           #0e1c33;
+  --bg-dark-deep:      #0a1528;
+  --bg-dark-soft:      #162847;
+  --bg-map-dark:       #081326;
+  --bg-deep-black:     #060f1d;
+  --white:             #ffffff;
+
+  /* ── Category / semantic colors (for multi-color pills & badges) ── */
+  --cat-blue:          #4a8fe8;
+  --cat-blue-rgb:      56, 119, 220;
+  --cat-green:         #3cb46a;
+  --cat-green-rgb:     29, 158, 117;
+  --cat-amber:         #e8a83a;
+  --cat-amber-rgb:     186, 117, 23;
+  --cat-purple:        #a03ae8;
+  --cat-purple-rgb:    140, 46, 176;
+  --cat-teal:          #3ab4e8;
+  --cat-teal-rgb:      46, 160, 176;
+  --success:           #4caf50;
+  --success-rgb:       34, 139, 34;
+  --success-soft-rgb:  34, 85, 34;
+
+  /* ── Robot/UI metal tokens (SVG gradients & neutral surfaces) ── */
+  --metal-white:       #ffffff;
+  --metal-lightest:    #f8f8f8;
+  --metal-lighter:     #f5f5f5;
+  --metal-light:       #f0f0f0;
+  --metal-pale:        #eeeeee;
+  --metal-cream:       #e8e8e8;
+  --metal-silver:      #e4e4e4;
+  --metal-ice:         #e0e0e0;
+  --metal-mid:         #d8d8d8;
+  --metal-shade:       #d4d4d4;
+  --metal-soft:        #d0d0d0;
+  --metal-grey:        #c8c8c8;
+  --metal-dim:         #c4c4c4;
+  --metal-dark:        #c0c0c0;
+  --metal-shadow:      #b8b8b8;
+  --metal-deep:        #b0b0b0;
+  --metal-darker:      #a0a0a0;
+  --metal-dusk:        #888888;
+
+  /* ── Extra brand accents used in SVGs & highlights (logo deep-maroon) ── */
+  --red-deep:          #6b1f1c;          /* deep maroon from logo bottom */
+  --red-deep-rgb:      107, 31, 28;
+  --eye-highlight:     #ff6a3c;
+  --eye-glow:          #ec6a3a;
+  --copper-deep:       #b8431a;
+  --copper-highlight:  #ff9a5a;
+  --copper-bright:     #ff8a54;
+  --copper-warm:       #ffac78;
+  --copper-pale-rgb:   242, 160, 120;
+
+  /* ── Robot SVG panel / visor tones (dark displays) ── */
+  --screen-dark-rgb:   20, 20, 30;
+  --screen-deep-rgb:   15, 15, 25;
+  --screen-mid-rgb:    30, 30, 40;
+  --screen-night-rgb:  10, 10, 20;
+
+  /* ── Warm highlight tones (robot eye/core glow interior) ── */
+  --warm-glow-rgb:         255, 200, 150;
+  --warm-glow-deep-rgb:    255, 180, 120;
+  --warm-glow-light-rgb:   255, 230, 200;
 
   /* ── FONTS ── */
   --font-display: 'Orbitron', sans-serif;
@@ -188,7 +279,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(22, 40, 71, 0.08);
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
@@ -280,7 +371,7 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(22, 40, 71, 0.08);
 }
 
 .nav-link {
@@ -358,7 +449,7 @@ a { color: inherit; text-decoration: none; }
 
 .shadow-copper      { box-shadow: 0 4px 20px var(--copper-glow); }
 .shadow-copper-lg   { box-shadow: 0 8px 40px var(--copper-glow); }
-.shadow-card        { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07); }
+.shadow-card        { box-shadow: 0 2px 12px rgba(22, 40, 71, 0.08); }
 
 /* Gradient text */
 .gradient-text {

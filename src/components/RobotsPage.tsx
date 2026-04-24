@@ -50,7 +50,7 @@ function RobotCard({
     if (shineRef.current) {
       const px = ((e.clientX - rect.left) / rect.width)  * 100
       const py = ((e.clientY - rect.top)  / rect.height) * 100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.13) 0%, transparent 60%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-accent-rgb),0.13) 0%, transparent 60%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -77,15 +77,15 @@ function RobotCard({
     <Link
       href={`/products/${robot.uid}`}
       ref={cardRef as React.Ref<HTMLAnchorElement>}
-      onMouseMove={handleMouseMove}
+      // onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none',
         position:'relative', borderRadius:'12px', overflow:'hidden',
-        border: hovered ? '1px solid rgba(176,58,46,0.55)' : '1px solid rgba(176,58,46,0.15)',
+        border: hovered ? '1px solid rgba(var(--red-dark-rgb),0.55)' : '1px solid rgba(var(--red-dark-rgb),0.15)',
         background:'var(--bg-card)', cursor:'pointer', transformStyle:'preserve-3d',
         transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1), box-shadow 0.4s, border-color 0.3s',
-        boxShadow: hovered ? '0 24px 60px rgba(0,0,0,0.6),0 0 30px rgba(176,58,46,0.14)' : '0 4px 20px rgba(0,0,0,0.3)',
+        boxShadow: hovered ? '0 24px 60px rgba(var(--black-rgb),0.6),0 0 30px rgba(var(--red-dark-rgb),0.14)' : '0 4px 20px rgba(var(--black-rgb),0.3)',
         opacity:   visible ? 1 : 0,
         translate:  visible ? '0 0' : '0 40px',
         filter:    visible ? 'none' : 'blur(4px)',
@@ -98,23 +98,23 @@ function RobotCard({
 
       {hovered && (
         <div aria-hidden="true" style={{ position:'absolute', inset:0, overflow:'hidden', zIndex:3, pointerEvents:'none', borderRadius:'12px' }}>
-          <div style={{ position:'absolute', left:0, right:0, height:'3px', background:'linear-gradient(90deg,transparent,rgba(176,58,46,0.4),transparent)', animation:'rc-scanline 3s linear infinite' }}/>
+          <div style={{ position:'absolute', left:0, right:0, height:'3px', background:'linear-gradient(90deg,transparent,rgba(var(--red-dark-rgb),0.4),transparent)', animation:'rc-scanline 3s linear infinite' }}/>
         </div>
       )}
 
       {/* ── Image area ── */}
       <div style={{ position:'relative', height:'220px', overflow:'hidden' }}>
         <Image src={robot.src} alt={robot.name} fill style={{ objectFit:'cover', transform: hovered ? 'scale(1.07)' : 'scale(1)', transition:'transform 0.6s cubic-bezier(0.23,1,0.32,1)' }}/>
-        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(8,8,8,0.85) 0%,rgba(8,8,8,0.1) 60%,transparent 100%)' }}/>
+        <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(var(--overlay-dark-rgb),0.85) 0%,rgba(var(--overlay-dark-rgb),0.1) 60%,transparent 100%)' }}/>
 
         {/* category tag */}
-        <div style={{ position:'absolute', top:'12px', left:'12px', padding:'4px 12px', borderRadius:'100px', background:'rgba(8,8,8,0.75)', border:'1px solid rgba(176,58,46,0.3)', backdropFilter:'blur(8px)', zIndex:2 }}>
+        <div style={{ position:'absolute', top:'12px', left:'12px', padding:'4px 12px', borderRadius:'100px', background:'rgba(var(--overlay-dark-rgb),0.75)', border:'1px solid rgba(var(--red-dark-rgb),0.3)', backdropFilter:'blur(8px)', zIndex:2 }}>
           <span style={{ fontFamily:'var(--font-display)', fontSize:'0.5rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'var(--red-bright)' }}>{robot.category}</span>
         </div>
 
         {/* section count badge */}
         {sectionCount > 0 && (
-          <div style={{ position:'absolute', top:'12px', right:'12px', zIndex:2, padding:'4px 10px', borderRadius:'100px', background: hovered ? 'rgba(176,58,46,0.35)' : 'rgba(176,58,46,0.1)', border:'1px solid rgba(176,58,46,0.4)', backdropFilter:'blur(8px)', transition:'background 0.3s' }}>
+          <div style={{ position:'absolute', top:'12px', right:'12px', zIndex:2, padding:'4px 10px', borderRadius:'100px', background: hovered ? 'rgba(var(--red-dark-rgb),0.35)' : 'rgba(var(--red-dark-rgb),0.1)', border:'1px solid rgba(var(--red-dark-rgb),0.4)', backdropFilter:'blur(8px)', transition:'background 0.3s' }}>
             <span style={{ fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--red-bright)' }}>
               {sectionCount} sections
             </span>
@@ -123,8 +123,8 @@ function RobotCard({
 
         {/* name + tag */}
         <div style={{ position:'absolute', bottom:0, left:0, right:0, padding:'1rem', zIndex:2 }}>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'1.3rem', fontWeight:900, color:'#fff', letterSpacing:'0.03em', lineHeight:1, marginBottom:'2px' }}>{robot.name}</p>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.55rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'rgba(176,58,46,0.9)' }}>{robot.tag}</p>
+          <p style={{ fontFamily:'var(--font-display)', fontSize:'1.3rem', fontWeight:900, color:'var(--white)', letterSpacing:'0.03em', lineHeight:1, marginBottom:'2px' }}>{robot.name}</p>
+          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.55rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'rgba(var(--red-dark-rgb),0.9)' }}>{robot.tag}</p>
         </div>
       </div>
 
@@ -145,7 +145,7 @@ function RobotCard({
                 {models.map(m => (
                   <div
                     key={m.id}
-                    style={{ display:'flex', alignItems:'center', gap:'6px', padding:'4px 10px', borderRadius:'6px', background:'rgba(176,58,46,0.05)', border:'1px solid rgba(176,58,46,0.15)' }}
+                    style={{ display:'flex', alignItems:'center', gap:'6px', padding:'4px 10px', borderRadius:'6px', background:'rgba(var(--red-dark-rgb),0.05)', border:'1px solid rgba(var(--red-dark-rgb),0.15)' }}
                     onClick={e => e.stopPropagation()}
                   >
                     <span style={{ fontFamily:'var(--font-display)', fontSize:'0.6rem', color:'var(--text-secondary)', letterSpacing:'0.05em' }}>{m.name}</span>
@@ -170,12 +170,12 @@ function RobotCard({
           {(hasIndustries || hasUseCases) && (
             <div style={{ marginBottom:'1rem', display:'flex', flexWrap:'wrap', gap:'6px' }}>
               {hasIndustries && (
-                <span style={{ padding:'3px 10px', borderRadius:'100px', background:'rgba(176,58,46,0.06)', border:'1px solid rgba(176,58,46,0.18)', fontFamily:'var(--font-display)', fontSize:'0.52rem', color:'var(--text-muted)', letterSpacing:'0.08em' }}>
+                <span style={{ padding:'3px 10px', borderRadius:'100px', background:'rgba(var(--red-dark-rgb),0.06)', border:'1px solid rgba(var(--red-dark-rgb),0.18)', fontFamily:'var(--font-display)', fontSize:'0.52rem', color:'var(--text-muted)', letterSpacing:'0.08em' }}>
                   Industries ↗
                 </span>
               )}
               {hasUseCases && (
-                <span style={{ padding:'3px 10px', borderRadius:'100px', background:'rgba(176,58,46,0.06)', border:'1px solid rgba(176,58,46,0.18)', fontFamily:'var(--font-display)', fontSize:'0.52rem', color:'var(--text-muted)', letterSpacing:'0.08em' }}>
+                <span style={{ padding:'3px 10px', borderRadius:'100px', background:'rgba(var(--red-dark-rgb),0.06)', border:'1px solid rgba(var(--red-dark-rgb),0.18)', fontFamily:'var(--font-display)', fontSize:'0.52rem', color:'var(--text-muted)', letterSpacing:'0.08em' }}>
                   {r.useCases.length} Use Cases ↗
                 </span>
               )}
@@ -185,7 +185,7 @@ function RobotCard({
           {/* specs grid */}
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'6px', marginBottom:'1.25rem' }}>
             {robot.specs.map(spec => (
-              <div key={spec} style={{ display:'flex', alignItems:'center', gap:'6px', padding:'5px 8px', borderRadius:'6px', background:'rgba(176,58,46,0.04)', border:'1px solid rgba(176,58,46,0.1)' }}>
+              <div key={spec} style={{ display:'flex', alignItems:'center', gap:'6px', padding:'5px 8px', borderRadius:'6px', background:'rgba(var(--red-dark-rgb),0.04)', border:'1px solid rgba(var(--red-dark-rgb),0.1)' }}>
                 <span style={{ width:'3px', height:'3px', borderRadius:'50%', background:'var(--red-bright)', flexShrink:0 }}/>
                 <span style={{ fontFamily:'var(--font-display)', fontSize:'0.6rem', color:'var(--text-muted)', letterSpacing:'0.04em' }}>{spec}</span>
               </div>
@@ -200,8 +200,8 @@ function RobotCard({
           <span style={{ fontFamily:'var(--font-display)', fontSize:'0.58rem', letterSpacing:'0.18em', textTransform:'uppercase', color: hovered ? 'var(--red-bright)' : 'var(--text-muted)', transition:'color 0.3s' }}>
             View Full Profile
           </span>
-          <div style={{ width:'32px', height:'32px', borderRadius:'50%', border:`1px solid ${hovered ? 'var(--red-bright)' : 'rgba(176,58,46,0.25)'}`, background: hovered ? 'rgba(176,58,46,0.15)' : 'transparent', display:'flex', alignItems:'center', justifyContent:'center', transition:'all 0.3s', transform: hovered ? 'translateX(4px)' : 'translateX(0)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={hovered ? 'var(--red-bright)' : 'rgba(176,58,46,0.5)'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <div style={{ width:'32px', height:'32px', borderRadius:'50%', border:`1px solid ${hovered ? 'var(--red-bright)' : 'rgba(var(--red-dark-rgb),0.25)'}`, background: hovered ? 'rgba(var(--red-dark-rgb),0.15)' : 'transparent', display:'flex', alignItems:'center', justifyContent:'center', transition:'all 0.3s', transform: hovered ? 'translateX(4px)' : 'translateX(0)' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={hovered ? 'var(--red-bright)' : 'rgba(var(--red-dark-rgb),0.5)'} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>
           </div>
@@ -247,30 +247,30 @@ export default function RobotsPage() {
           padding:7px 18px; border-radius:100px; cursor:pointer;
           font-family:var(--font-display); font-size:0.6rem;
           letter-spacing:0.16em; text-transform:uppercase;
-          border:1px solid rgba(176,58,46,0.2); background:rgba(176,58,46,0.04);
+          border:1px solid rgba(var(--red-dark-rgb),0.2); background:rgba(var(--red-dark-rgb),0.04);
           color:var(--text-muted); transition:all 0.25s;
         }
-        .filter-pill:hover { border-color:rgba(176,58,46,0.5); background:rgba(176,58,46,0.1); color:var(--red-bright); }
-        .filter-pill.active { border-color:var(--red-bright); background:rgba(176,58,46,0.18); color:var(--red-bright); box-shadow:0 0 16px rgba(176,58,46,0.25); }
+        .filter-pill:hover { border-color:rgba(var(--red-dark-rgb),0.5); background:rgba(var(--red-dark-rgb),0.1); color:var(--red-bright); }
+        .filter-pill.active { border-color:var(--red-bright); background:rgba(var(--red-dark-rgb),0.18); color:var(--red-bright); box-shadow:0 0 16px rgba(var(--red-dark-rgb),0.25); }
 
         .search-input {
-          background:rgba(176,58,46,0.04); border:1px solid rgba(176,58,46,0.2);
+          background:rgba(var(--red-dark-rgb),0.04); border:1px solid rgba(var(--red-dark-rgb),0.2);
           border-radius:8px; padding:9px 16px 9px 40px;
           font-family:var(--font-display); font-size:0.72rem;
           letter-spacing:0.06em; color:var(--text-primary);
           outline:none; transition:border-color 0.25s, box-shadow 0.25s; width:220px;
         }
         .search-input::placeholder { color:var(--text-muted); }
-        .search-input:focus { border-color:rgba(176,58,46,0.5); box-shadow:0 0 18px rgba(176,58,46,0.12); }
+        .search-input:focus { border-color:rgba(var(--red-dark-rgb),0.5); box-shadow:0 0 18px rgba(var(--red-dark-rgb),0.12); }
 
         @media (max-width:900px)  { .robots-grid { grid-template-columns:repeat(2,1fr) !important; } }
         @media (max-width:560px)  { .robots-grid { grid-template-columns:1fr !important; } .filter-row { flex-direction:column; align-items:flex-start !important; } }
       `}</style>
 
       <section id="robots" ref={sectionRef} style={{ position:'relative', paddingBlock:'6rem', background:'var(--bg-900)', overflow:'hidden', minHeight:'100vh' }}>
-        <div aria-hidden="true" style={{ position:'absolute', top:'10%', right:'-8%', width:'500px', height:'500px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.07) 0%,transparent 70%)', pointerEvents:'none', animation:'glowPulse 6s ease-in-out infinite' }}/>
-        <div aria-hidden="true" style={{ position:'absolute', bottom:'15%', left:'-8%', width:'420px', height:'420px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.05) 0%,transparent 70%)', pointerEvents:'none', animation:'glowPulse 8s ease-in-out 2s infinite' }}/>
-        <div aria-hidden="true" style={{ position:'absolute', bottom:'-2rem', left:'50%', transform:'translateX(-50%)', whiteSpace:'nowrap', pointerEvents:'none', fontFamily:'var(--font-display)', fontSize:'clamp(5rem,14vw,11rem)', fontWeight:900, color:'transparent', WebkitTextStroke:'1px rgba(176,58,46,0.05)', letterSpacing:'0.05em', lineHeight:1, userSelect:'none' }}>ROBOTS</div>
+        <div aria-hidden="true" style={{ position:'absolute', top:'10%', right:'-8%', width:'500px', height:'500px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.07) 0%,transparent 70%)', pointerEvents:'none', animation:'glowPulse 6s ease-in-out infinite' }}/>
+        <div aria-hidden="true" style={{ position:'absolute', bottom:'15%', left:'-8%', width:'420px', height:'420px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.05) 0%,transparent 70%)', pointerEvents:'none', animation:'glowPulse 8s ease-in-out 2s infinite' }}/>
+        <div aria-hidden="true" style={{ position:'absolute', bottom:'-2rem', left:'50%', transform:'translateX(-50%)', whiteSpace:'nowrap', pointerEvents:'none', fontFamily:'var(--font-display)', fontSize:'clamp(5rem,14vw,11rem)', fontWeight:900, color:'transparent', WebkitTextStroke:'1px rgba(var(--red-dark-rgb),0.05)', letterSpacing:'0.05em', lineHeight:1, userSelect:'none' }}>ROBOTS</div>
 
         <div className="container-allbotix" style={{ position:'relative', zIndex:2 }}>
 
@@ -299,7 +299,7 @@ export default function RobotsPage() {
               ))}
             </div>
             <div style={{ position:'relative' }}>
-              <svg style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
               <input className="search-input" type="text" placeholder="Search robots..." value={search} onChange={e => setSearch(e.target.value)}/>

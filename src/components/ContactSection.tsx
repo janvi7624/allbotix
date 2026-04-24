@@ -30,7 +30,7 @@ function Field({ label, name, type='text', required=false, half=false, value, on
         fontSize: active ? '0.55rem' : '0.78rem',
         letterSpacing: active ? '0.18em' : '0.06em',
         textTransform: active ? 'uppercase' : 'none',
-        color: focused ? 'var(--red-bright)' : active ? 'rgba(176,58,46,0.7)' : 'var(--text-muted)',
+        color: focused ? 'var(--red-bright)' : active ? `rgba(var(--red-dark-rgb),0.7)` : 'var(--text-muted)',
         background: active ? 'var(--bg-card)' : 'transparent',
         padding: active ? '0 6px' : '0',
         transition:'all 0.25s cubic-bezier(0.23,1,0.32,1)',
@@ -43,12 +43,12 @@ function Field({ label, name, type='text', required=false, half=false, value, on
         onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
         style={{
           width:'100%', padding:'14px',
-          background: focused ? 'rgba(176,58,46,0.05)' : 'rgba(176,58,46,0.02)',
-          border:`1px solid ${focused?'rgba(176,58,46,0.6)':'rgba(176,58,46,0.18)'}`,
+          background: focused ? `rgba(var(--red-dark-rgb),0.05)` : `rgba(var(--red-dark-rgb),0.02)`,
+          border:`1px solid ${focused?`rgba(var(--red-dark-rgb),0.6)`:`rgba(var(--red-dark-rgb),0.18)`}`,
           borderRadius:'8px', color:'var(--text-primary)',
           fontFamily:'var(--font-light)', fontSize:'0.88rem', outline:'none',
           transition:'border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.3s cubic-bezier(0.23,1,0.32,1)',
-          boxShadow: focused ? '0 0 24px rgba(176,58,46,0.15),inset 0 1px 0 rgba(176,58,46,0.1)' : 'none',
+          boxShadow: focused ? `0 0 24px rgba(var(--red-dark-rgb),0.15),inset 0 1px 0 rgba(var(--red-dark-rgb),0.1)` : 'none',
           transformStyle:'preserve-3d',
         }}
       />
@@ -74,7 +74,7 @@ function TextArea({ label, name, required=false, value, onChange }: {
         fontFamily:'var(--font-display)',
         fontSize: active?'0.55rem':'0.78rem', letterSpacing: active?'0.18em':'0.06em',
         textTransform: active?'uppercase':'none',
-        color: focused?'var(--red-bright)':active?'rgba(176,58,46,0.7)':'var(--text-muted)',
+        color: focused?'var(--red-bright)':active?'rgba(var(--red-dark-rgb),0.7)':'var(--text-muted)',
         background: active?'var(--bg-card)':'transparent',
         padding: active?'0 6px':'0',
         transition:'all 0.25s cubic-bezier(0.23,1,0.32,1)', pointerEvents:'none', zIndex:2,
@@ -86,12 +86,12 @@ function TextArea({ label, name, required=false, value, onChange }: {
         onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
         style={{
           width:'100%', padding:'14px',
-          background: focused?'rgba(176,58,46,0.05)':'rgba(176,58,46,0.02)',
-          border:`1px solid ${focused?'rgba(176,58,46,0.6)':'rgba(176,58,46,0.18)'}`,
+          background: focused?`rgba(var(--red-dark-rgb),0.05)`:`rgba(var(--red-dark-rgb),0.02)`,
+          border:`1px solid ${focused?`rgba(var(--red-dark-rgb),0.6)`:`rgba(var(--red-dark-rgb),0.18)`}`,
           borderRadius:'8px', color:'var(--text-primary)',
           fontFamily:'var(--font-light)', fontSize:'0.88rem', outline:'none', resize:'none',
           transition:'border-color 0.25s, background 0.25s, box-shadow 0.25s',
-          boxShadow: focused?'0 0 24px rgba(176,58,46,0.15),inset 0 1px 0 rgba(176,58,46,0.1)':'none',
+          boxShadow: focused?`0 0 24px rgba(var(--red-dark-rgb),0.15),inset 0 1px 0 rgba(var(--red-dark-rgb),0.1)`:'none',
         }}
       />
       <div style={{
@@ -119,7 +119,7 @@ function InfoCard3D({ item, index, visible }: { item:typeof INFO[0]; index:numbe
     if (shineRef.current) {
       const px = ((e.clientX-r.left)/r.width)*100
       const py = ((e.clientY-r.top)/r.height)*100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.14) 0%, transparent 58%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-bright-rgb),0.14) 0%, transparent 58%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -133,12 +133,12 @@ function InfoCard3D({ item, index, visible }: { item:typeof INFO[0]; index:numbe
     <div ref={cardRef} onMouseMove={onMove} onMouseEnter={()=>setHovered(true)} onMouseLeave={onLeave}
       style={{
         position:'relative', padding:'1.5rem',
-        background: hovered?'rgba(22,14,14,0.98)':'var(--bg-card)',
-        border:`1px solid ${hovered?'rgba(176,58,46,0.5)':'rgba(176,58,46,0.15)'}`,
+        background: hovered?'var(--bg-900)':'var(--bg-card)',
+        border:`1px solid ${hovered?`rgba(var(--red-dark-rgb),0.5)`:`rgba(var(--red-dark-rgb),0.15)`}`,
         borderRadius:'10px', display:'flex', gap:'1rem', alignItems:'flex-start',
         transformStyle:'preserve-3d', cursor:'default', overflow:'hidden',
         transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.4s, background 0.3s',
-        boxShadow: hovered?'0 24px 60px rgba(0,0,0,0.6),0 0 30px rgba(176,58,46,0.12)':'none',
+        boxShadow: hovered?`0 24px 60px rgba(var(--black-rgb),0.6),0 0 30px rgba(var(--red-dark-rgb),0.12)`:'none',
         opacity: visible?1:0,
         translate: visible?'0 0':'-30px 0',
         filter: visible?'none':'blur(4px)',
@@ -151,12 +151,12 @@ function InfoCard3D({ item, index, visible }: { item:typeof INFO[0]; index:numbe
       <div style={{
         width:'42px', height:'42px', flexShrink:0,
         display:'flex', alignItems:'center', justifyContent:'center',
-        border:'1px solid rgba(176,58,46,0.3)', borderRadius:'8px',
-        background: hovered?'rgba(176,58,46,0.12)':'rgba(176,58,46,0.06)',
+        border:`1px solid rgba(var(--red-dark-rgb),0.3)`, borderRadius:'8px',
+        background: hovered?`rgba(var(--red-dark-rgb),0.12)`:`rgba(var(--red-dark-rgb),0.06)`,
         color:'var(--red-bright)',
         transform: hovered?'translateZ(22px) scale(1.1)':'translateZ(0) scale(1)',
         transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1), background 0.3s',
-        filter: hovered?'drop-shadow(0 0 8px rgba(176,58,46,0.55))':'none',
+        filter: hovered?`drop-shadow(0 0 8px rgba(var(--red-dark-rgb),0.55))`:'none',
         animation:`iconFloat 3s ease-in-out ${index*0.5}s infinite`,
         position:'relative', zIndex:2,
       }}>
@@ -193,11 +193,11 @@ function ParticleField() {
         if (p.x<0) p.x=w; if (p.x>w) p.x=0
         if (p.y<0) p.y=h; if (p.y>h) p.y=0
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
-        ctx.fillStyle = `rgba(176,58,46,${p.o})`; ctx.fill()
+        ctx.fillStyle = `rgba(var(--red-dark-rgb),${p.o})`; ctx.fill()
       })
       for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
         const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.sqrt(dx*dx+dy*dy)
-        if (d<110) { ctx.beginPath(); ctx.strokeStyle=`rgba(176,58,46,${0.12*(1-d/110)})`; ctx.lineWidth=0.6; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke() }
+        if (d<110) { ctx.beginPath(); ctx.strokeStyle=`rgba(var(--red-dark-rgb),${0.12*(1-d/110)})`; ctx.lineWidth=0.6; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke() }
       }
       raf = requestAnimationFrame(draw)
     }
@@ -206,128 +206,7 @@ function ParticleField() {
     window.addEventListener('resize',resize)
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize',resize) }
   }, [])
-  return <canvas ref={canvasRef} style={{ position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:0 }}/>
-}
-
-/* ─── 3D Floating Robot ──────────────────────────────────────────────────── */
-function FloatingRobot({ visible }: { visible:boolean }) {
-  const wrapRef  = useRef<HTMLDivElement>(null)
-  const robotRef = useRef<HTMLDivElement>(null)
-  const cur = useRef({ x:0, y:0 })
-  const tgt = useRef({ x:0, y:0 })
-  const raf = useRef<number|null>(null)
-
-  useEffect(() => {
-    const section = wrapRef.current?.closest('section') as HTMLElement|null
-    const onMove = (e: MouseEvent) => {
-      const r = section?.getBoundingClientRect(); if (!r) return
-      tgt.current = { x:((e.clientY-r.top)/r.height*2-1)*-20, y:((e.clientX-r.left)/r.width*2-1)*28 }
-    }
-    const onLeave = () => { tgt.current={x:0,y:0} }
-    const tick = () => {
-      cur.current.x += (tgt.current.x-cur.current.x)*0.055
-      cur.current.y += (tgt.current.y-cur.current.y)*0.055
-      if (robotRef.current) robotRef.current.style.transform = `perspective(500px) rotateX(${cur.current.x}deg) rotateY(${cur.current.y}deg)`
-      raf.current = requestAnimationFrame(tick)
-    }
-    section?.addEventListener('mousemove',onMove); section?.addEventListener('mouseleave',onLeave)
-    raf.current = requestAnimationFrame(tick)
-    return () => { section?.removeEventListener('mousemove',onMove); section?.removeEventListener('mouseleave',onLeave); if(raf.current) cancelAnimationFrame(raf.current) }
-  }, [])
-
-  return (
-    <div ref={wrapRef} style={{ display:'flex',alignItems:'center',justifyContent:'center',position:'relative',zIndex:2, opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(40px)', transition:'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s' }}>
-      {/* Rings */}
-      <div aria-hidden="true" style={{ position:'absolute',width:'280px',height:'280px',borderRadius:'50%',border:'1px dashed rgba(176,58,46,0.2)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',animation:'ringCW 20s linear infinite',pointerEvents:'none' }}/>
-      <div aria-hidden="true" style={{ position:'absolute',width:'210px',height:'210px',borderRadius:'50%',border:'1px solid rgba(176,58,46,0.26)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',animation:'ringCCW 14s linear infinite',pointerEvents:'none' }}/>
-      <div aria-hidden="true" style={{ position:'absolute',width:'230px',height:'230px',borderRadius:'50%',background:'radial-gradient(circle,rgba(176,58,46,0.14) 0%,transparent 70%)',top:'50%',left:'50%',transform:'translate(-50%,-50%)',pointerEvents:'none',animation:'ambientPulse 3s ease-in-out infinite' }}/>
-      {/* Ground shadow */}
-      <div aria-hidden="true" style={{ position:'absolute',bottom:'-14px',left:'50%',transform:'translateX(-50%)',width:'120px',height:'14px',borderRadius:'50%',background:'radial-gradient(ellipse,rgba(176,58,46,0.35) 0%,transparent 70%)',filter:'blur(6px)',pointerEvents:'none' }}/>
-
-      {/* Tilt wrapper */}
-      <div ref={robotRef} style={{ transformStyle:'preserve-3d', willChange:'transform' }}>
-        <div style={{ animation:'robotFloat 4s ease-in-out infinite', transformStyle:'preserve-3d' }}>
-          <svg viewBox="0 0 160 225" fill="none" xmlns="http://www.w3.org/2000/svg"
-            style={{ width:'160px',height:'225px',filter:'drop-shadow(0 0 28px rgba(176,58,46,0.4))',overflow:'visible' }} overflow="visible">
-            {/* HEAD */}
-            <rect x="36" y="18" width="10" height="52" rx="5" fill="#141414" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-            <rect x="114" y="18" width="10" height="52" rx="5" fill="#141414" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-            <rect x="45" y="16" width="70" height="58" rx="11" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="1.3"/>
-            <rect x="47" y="16" width="66" height="3" rx="2" fill="#b03a2e" opacity="0.18"/>
-            {/* Eyes */}
-            <rect x="56" y="28" width="20" height="13" rx="3" fill="#b03a2e"><animate attributeName="opacity" values="0.9;0.45;0.9" dur="2.2s" repeatCount="indefinite"/></rect>
-            <rect x="84" y="28" width="20" height="13" rx="3" fill="#b03a2e"><animate attributeName="opacity" values="0.9;0.45;0.9" dur="2.2s" begin="0.4s" repeatCount="indefinite"/></rect>
-            <rect x="59" y="30" width="14" height="9" rx="2" fill="#ff6666" opacity="0.65"/>
-            <rect x="87" y="30" width="14" height="9" rx="2" fill="#ff6666" opacity="0.65"/>
-            {/* Mouth */}
-            <rect x="62" y="53" width="36" height="5" rx="2" fill="#b03a2e" opacity="0.55"><animate attributeName="width" values="36;28;36" dur="3s" repeatCount="indefinite"/><animate attributeName="x" values="62;66;62" dur="3s" repeatCount="indefinite"/></rect>
-            {/* Antenna */}
-            <line x1="80" y1="16" x2="80" y2="2" stroke="#b03a2e" strokeWidth="1.6"/>
-            <circle cx="80" cy="1.5" r="4" fill="#b03a2e"><animate attributeName="filter" values="none;drop-shadow(0 0 8px #ff5555);none" dur="2s" repeatCount="indefinite"/></circle>
-            <line x1="80" y1="8" x2="90" y2="4" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-            <line x1="80" y1="8" x2="70" y2="4" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-            {/* NECK */}
-            <rect x="68" y="74" width="24" height="13" rx="4" fill="#141414" stroke="#b03a2e" strokeWidth="0.8" strokeOpacity="0.5"/>
-            <circle cx="73" cy="80" r="2" fill="#b03a2e" opacity="0.4"/>
-            <circle cx="87" cy="80" r="2" fill="#b03a2e" opacity="0.4"/>
-            {/* BODY */}
-            <rect x="35" y="87" width="12" height="80" rx="5" fill="#141414" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-            <rect x="113" y="87" width="12" height="80" rx="5" fill="#141414" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-            <rect x="38" y="87" width="84" height="82" rx="9" fill="#111" stroke="#b03a2e" strokeWidth="1.2"/>
-            <rect x="50" y="97" width="60" height="46" rx="5" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.8" strokeOpacity="0.4"/>
-            {/* Chest lights */}
-            <circle cx="67" cy="114" r="7" fill="#b03a2e"><animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/></circle>
-            <circle cx="80" cy="114" r="4" fill="#b03a2e" opacity="0.4"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="1.8s" begin="0.3s" repeatCount="indefinite"/></circle>
-            <circle cx="93" cy="114" r="7" fill="#b03a2e"><animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" begin="0.6s" repeatCount="indefinite"/></circle>
-            <circle cx="67" cy="114" r="12" fill="#b03a2e" opacity="0.07"/>
-            <circle cx="93" cy="114" r="12" fill="#b03a2e" opacity="0.07"/>
-            {/* Data lines */}
-            <line x1="53" y1="128" x2="107" y2="128" stroke="#b03a2e" strokeWidth="0.6" strokeOpacity="0.35"/>
-            <line x1="53" y1="135" x2="87" y2="135" stroke="#b03a2e" strokeWidth="0.6" strokeOpacity="0.25"><animate attributeName="x2" values="87;105;87" dur="2.5s" repeatCount="indefinite"/></line>
-            {/* ARMS */}
-            <g style={{ transformOrigin:'22px 91px', animation:'armSwing 4s ease-in-out infinite' }}>
-              <rect x="14" y="89" width="18" height="64" rx="7" fill="#111" stroke="#b03a2e" strokeWidth="1"/>
-              <rect x="17" y="97" width="12" height="27" rx="3" fill="#1a1a1a"/>
-              <circle cx="23" cy="132" r="5" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-              <rect x="11" y="150" width="21" height="8" rx="4" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.4"/>
-            </g>
-            <g style={{ transformOrigin:'138px 91px', animation:'armSwing 4s ease-in-out 0.5s infinite reverse' }}>
-              <rect x="128" y="89" width="18" height="64" rx="7" fill="#111" stroke="#b03a2e" strokeWidth="1"/>
-              <rect x="131" y="97" width="12" height="27" rx="3" fill="#1a1a1a"/>
-              <circle cx="137" cy="132" r="5" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.5"/>
-              <rect x="128" y="150" width="21" height="8" rx="4" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.7" strokeOpacity="0.4"/>
-            </g>
-            {/* LEGS */}
-            <rect x="55" y="169" width="4" height="54" rx="3" fill="#141414" stroke="#b03a2e" strokeWidth="0.6" strokeOpacity="0.4"/>
-            <rect x="101" y="169" width="4" height="54" rx="3" fill="#141414" stroke="#b03a2e" strokeWidth="0.6" strokeOpacity="0.4"/>
-            <rect x="47" y="169" width="30" height="52" rx="7" fill="#111" stroke="#b03a2e" strokeWidth="1"/>
-            <rect x="83" y="169" width="30" height="52" rx="7" fill="#111" stroke="#b03a2e" strokeWidth="1"/>
-            <rect x="49" y="183" width="26" height="6" rx="3" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.6" strokeOpacity="0.35"/>
-            <rect x="85" y="183" width="26" height="6" rx="3" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.6" strokeOpacity="0.35"/>
-            {/* Feet */}
-            <rect x="41" y="212" width="42" height="12" rx="5" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.8" strokeOpacity="0.5"/>
-            <rect x="77" y="212" width="42" height="12" rx="5" fill="#1a1a1a" stroke="#b03a2e" strokeWidth="0.8" strokeOpacity="0.5"/>
-            <rect x="41" y="220" width="42" height="4" rx="2" fill="#b03a2e" opacity="0.1"/>
-            <rect x="77" y="220" width="42" height="4" rx="2" fill="#b03a2e" opacity="0.1"/>
-          </svg>
-        </div>
-      </div>
-
-      {/* Floating chips */}
-      <div style={{ position:'absolute', top:'4%', right:'-20%', animation:'chipFloat 3.5s ease-in-out 0.3s infinite', zIndex:3 }}>
-        <div style={{ background:'rgba(8,8,8,0.92)', border:'1px solid rgba(176,58,46,0.45)', borderRadius:'8px', padding:'8px 14px', backdropFilter:'blur(12px)', boxShadow:'0 8px 24px rgba(0,0,0,0.55)' }}>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.14em', color:'var(--red-bright)', textTransform:'uppercase', marginBottom:'2px' }}>Response</p>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.9rem', fontWeight:700, color:'#fff' }}>{'< 24h'}</p>
-        </div>
-      </div>
-      <div style={{ position:'absolute', bottom:'6%', left:'-20%', animation:'chipFloat 3.5s ease-in-out 1s infinite', zIndex:3 }}>
-        <div style={{ background:'rgba(8,8,8,0.92)', border:'1px solid rgba(176,58,46,0.45)', borderRadius:'8px', padding:'8px 14px', backdropFilter:'blur(12px)', boxShadow:'0 8px 24px rgba(0,0,0,0.55)' }}>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.14em', color:'var(--red-bright)', textTransform:'uppercase', marginBottom:'2px' }}>Support</p>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.9rem', fontWeight:700, color:'#fff' }}>24 / 7</p>
-        </div>
-      </div>
-    </div>
-  )
+  return <canvas ref={canvasRef} style={{ position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:0, opacity: 0.5 }}/>
 }
 
 /* ─── Map Section ────────────────────────────────────────────────────────── */
@@ -361,7 +240,7 @@ function MapSection({ visible }: { visible: boolean }) {
     }}>
       {/* Section divider */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', marginBottom: '1.75rem' }}>
-        <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, rgba(176,58,46,0.35), transparent)' }}/>
+        <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, rgba(var(--red-dark-rgb),0.35), transparent)' }}/>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
@@ -370,7 +249,7 @@ function MapSection({ visible }: { visible: boolean }) {
             Find Us
           </span>
         </div>
-        <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(176,58,46,0.35))' }}/>
+        <div style={{ flex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(var(--red-dark-rgb),0.35))' }}/>
       </div>
 
       {/* Map card */}
@@ -381,12 +260,12 @@ function MapSection({ visible }: { visible: boolean }) {
           position: 'relative',
           borderRadius: '14px',
           overflow: 'hidden',
-          border: `1px solid ${mapHovered ? 'rgba(176,58,46,0.45)' : 'rgba(176,58,46,0.2)'}`,
+          border: `1px solid ${mapHovered ? 'rgba(var(--red-dark-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.2)'}`,
           boxShadow: mapHovered
-            ? '0 32px 80px rgba(0,0,0,0.7), 0 0 40px rgba(176,58,46,0.14)'
-            : '0 12px 40px rgba(0,0,0,0.4)',
+            ? '0 32px 80px rgba(var(--black-rgb),0.7), 0 0 40px rgba(var(--red-dark-rgb),0.14)'
+            : '0 12px 40px rgba(var(--black-rgb),0.4)',
           transition: 'border-color 0.3s, box-shadow 0.4s',
-          background: '#0d0d0d',
+          background: 'var(--bg-map-dark)',
         }}
       >
         {/* Top accent bar */}
@@ -412,12 +291,12 @@ function MapSection({ visible }: { visible: boolean }) {
           {/* Dark vignette overlay for edge blending */}
           <div aria-hidden="true" style={{
             position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
-            background: 'radial-gradient(ellipse at center, transparent 55%, rgba(13,13,13,0.55) 100%)',
+            background: 'radial-gradient(ellipse at center, transparent 55%, rgba(var(--overlay-dark-rgb),0.55) 100%)',
           }}/>
           {/* Corner red glow */}
           <div aria-hidden="true" style={{
             position: 'absolute', bottom: 0, left: 0, width: '220px', height: '220px',
-            background: 'radial-gradient(circle at bottom left, rgba(176,58,46,0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(circle at bottom left, rgba(var(--red-dark-rgb),0.1) 0%, transparent 70%)',
             pointerEvents: 'none', zIndex: 2,
           }}/>
         </div>
@@ -432,8 +311,8 @@ function MapSection({ visible }: { visible: boolean }) {
             justifyContent: 'space-between',
             gap: '1rem',
             padding: '1.25rem 1.5rem',
-            background: 'rgba(10,8,8,0.97)',
-            borderTop: '1px solid rgba(176,58,46,0.15)',
+            background: 'var(--bg-800)',
+            borderTop: '1px solid rgba(var(--red-dark-rgb),0.15)',
             position: 'relative',
             zIndex: 3,
           }}
@@ -443,8 +322,8 @@ function MapSection({ visible }: { visible: boolean }) {
             <div style={{
               width: '38px', height: '38px', flexShrink: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              border: '1px solid rgba(176,58,46,0.35)', borderRadius: '8px',
-              background: 'rgba(176,58,46,0.08)', color: 'var(--red-bright)',
+              border: '1px solid rgba(var(--red-dark-rgb),0.35)', borderRadius: '8px',
+              background: 'rgba(var(--red-dark-rgb),0.08)', color: 'var(--red-bright)',
             }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
@@ -476,14 +355,14 @@ function MapSection({ visible }: { visible: boolean }) {
                 padding: '10px 18px',
                 background: 'linear-gradient(135deg, var(--red-bright), var(--red-dim))',
                 border: 'none', borderRadius: '8px',
-                color: '#fff', textDecoration: 'none',
+                color: 'var(--white)', textDecoration: 'none',
                 fontFamily: 'var(--font-display)', fontSize: '0.62rem',
                 fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase',
                 transition: 'box-shadow 0.3s, transform 0.2s',
                 whiteSpace: 'nowrap', width: '100%',
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 28px rgba(176,58,46,0.5), 0 6px 20px rgba(0,0,0,0.4)'
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 28px rgba(var(--red-dark-rgb),0.5), 0 6px 20px rgba(var(--black-rgb),0.4)'
                 ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={e => {
@@ -594,27 +473,27 @@ export default function ContactSection() {
         @keyframes checkDraw   { from{stroke-dashoffset:50} to{stroke-dashoffset:0} }
         @keyframes dotPulse    { 0%,100%{opacity:0.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.4)} }
         @keyframes glowFloat   { 0%,100%{opacity:0.5;transform:scale(1)} 50%{opacity:0.9;transform:scale(1.08)} }
-        @keyframes mapPulse    { 0%,100%{box-shadow:0 0 0 0 rgba(176,58,46,0.4)} 50%{box-shadow:0 0 0 8px rgba(176,58,46,0)} }
+        @keyframes mapPulse    { 0%,100%{box-shadow:0 0 0 0 rgba(var(--red-dark-rgb),0.4)} 50%{box-shadow:0 0 0 8px rgba(var(--red-dark-rgb),0)} }
 
         .submit-btn {
           position:relative; overflow:hidden;
           display:flex; align-items:center; justify-content:center; gap:10px;
           width:100%; padding:16px;
           background:linear-gradient(135deg,var(--red-bright),var(--red-dim));
-          border:none; border-radius:8px; color:#fff;
+          border:none; border-radius:8px; color:var(--white);
           font-family:var(--font-display); font-size:0.72rem; font-weight:700;
           letter-spacing:0.2em; text-transform:uppercase;
           cursor:pointer; transition:box-shadow 0.3s, transform 0.2s;
         }
-        .submit-btn:hover:not(:disabled) { box-shadow:0 0 36px rgba(176,58,46,0.5),0 8px 28px rgba(0,0,0,0.4); transform:translateY(-2px) scale(1.01); }
+        .submit-btn:hover:not(:disabled) { box-shadow:0 0 36px rgba(var(--red-dark-rgb),0.5),0 8px 28px rgba(var(--black-rgb),0.4); transform:translateY(-2px) scale(1.01); }
         .submit-btn:disabled { opacity:0.65; cursor:not-allowed; transform:none; }
-        .submit-btn::after { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent); transform:skewX(-20deg); transition:left 0.5s; }
+        .submit-btn::after { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(var(--white-rgb),0.14),transparent); transform:skewX(-20deg); transition:left 0.5s; }
         .submit-btn:hover:not(:disabled)::after { left:160%; }
 
-        .checkbox-custom { width:18px; height:18px; border-radius:4px; flex-shrink:0; border:1px solid rgba(176,58,46,0.35); background:rgba(176,58,46,0.04); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.25s; }
-        .checkbox-custom.checked { background:var(--red-bright); border-color:var(--red-bright); box-shadow:0 0 14px rgba(176,58,46,0.45); }
-        .social-btn { width:40px; height:40px; border-radius:8px; border:1px solid rgba(176,58,46,0.2); background:rgba(176,58,46,0.04); display:flex; align-items:center; justify-content:center; color:var(--text-muted); text-decoration:none; transition:all 0.25s; }
-        .social-btn:hover { border-color:var(--red-bright)!important; background:rgba(176,58,46,0.12)!important; color:var(--red-bright)!important; transform:translateY(-3px)!important; box-shadow:0 8px 20px rgba(176,58,46,0.2)!important; }
+        .checkbox-custom { width:18px; height:18px; border-radius:4px; flex-shrink:0; border:1px solid rgba(var(--red-dark-rgb),0.35); background:rgba(var(--red-dark-rgb),0.04); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.25s; }
+        .checkbox-custom.checked { background:var(--red-bright); border-color:var(--red-bright); box-shadow:0 0 14px rgba(var(--red-dark-rgb),0.45); }
+        .social-btn { width:40px; height:40px; border-radius:8px; border:1px solid rgba(var(--red-dark-rgb),0.2); background:rgba(var(--red-dark-rgb),0.04); display:flex; align-items:center; justify-content:center; color:var(--text-muted); text-decoration:none; transition:all 0.25s; }
+        .social-btn:hover { border-color:var(--red-bright)!important; background:rgba(var(--red-dark-rgb),0.12)!important; color:var(--red-bright)!important; transform:translateY(-3px)!important; box-shadow:0 8px 20px rgba(var(--red-dark-rgb),0.2)!important; }
 
         @media (max-width:1000px) { .c-outer { grid-template-columns:1fr 1.6fr !important; } .c-robot { display:none !important; } }
         @media (max-width:700px)  { .c-outer { grid-template-columns:1fr !important; } .form-grid > * { grid-column:span 1 !important; } .map-bar { grid-template-columns:1fr !important; } .map-actions { flex-direction:column !important; width:100% !important; } .map-actions a { justify-content:center !important; } }
@@ -623,14 +502,14 @@ export default function ContactSection() {
       <ParticleField />
 
       {/* Ambient glows */}
-      <div aria-hidden="true" style={{ position:'absolute', top:'12%', right:'-6%', width:'480px', height:'480px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.07) 0%,transparent 70%)', pointerEvents:'none', animation:'glowFloat 6s ease-in-out infinite' }}/>
-      <div aria-hidden="true" style={{ position:'absolute', bottom:'12%', left:'-6%', width:'380px', height:'380px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.05) 0%,transparent 70%)', pointerEvents:'none', animation:'glowFloat 8s ease-in-out 2s infinite' }}/>
+      <div aria-hidden="true" style={{ position:'absolute', top:'12%', right:'-6%', width:'480px', height:'480px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.07) 0%,transparent 70%)', pointerEvents:'none', animation:'glowFloat 6s ease-in-out infinite' }}/>
+      <div aria-hidden="true" style={{ position:'absolute', bottom:'12%', left:'-6%', width:'380px', height:'380px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.05) 0%,transparent 70%)', pointerEvents:'none', animation:'glowFloat 8s ease-in-out 2s infinite' }}/>
 
       {/* Vertical scanline */}
-      <div aria-hidden="true" style={{ position:'absolute', top:0, bottom:0, width:'2px', background:'linear-gradient(to bottom,transparent,rgba(176,58,46,0.18),transparent)', animation:'scanV 7s linear infinite', pointerEvents:'none', zIndex:1 }}/>
+      <div aria-hidden="true" style={{ position:'absolute', top:0, bottom:0, width:'2px', background:'linear-gradient(to bottom,transparent,rgba(var(--red-dark-rgb),0.18),transparent)', animation:'scanV 7s linear infinite', pointerEvents:'none', zIndex:1 }}/>
 
       {/* Watermark */}
-      <div aria-hidden="true" style={{ position:'absolute', bottom:'-1rem', left:'50%', transform:'translateX(-50%)', whiteSpace:'nowrap', pointerEvents:'none', fontFamily:'var(--font-display)', fontSize:'clamp(4rem,12vw,9rem)', fontWeight:900, color:'transparent', WebkitTextStroke:'1px rgba(176,58,46,0.045)', letterSpacing:'0.05em', lineHeight:1, userSelect:'none' }}>CONTACT</div>
+      <div aria-hidden="true" style={{ position:'absolute', bottom:'-1rem', left:'50%', transform:'translateX(-50%)', whiteSpace:'nowrap', pointerEvents:'none', fontFamily:'var(--font-display)', fontSize:'clamp(4rem,12vw,9rem)', fontWeight:900, color:'transparent', WebkitTextStroke:'1px rgba(var(--red-dark-rgb),0.045)', letterSpacing:'0.05em', lineHeight:1, userSelect:'none' }}>CONTACT</div>
 
       <div className="container-allbotix" style={{ position:'relative', zIndex:2 }}>
 
@@ -645,12 +524,12 @@ export default function ContactSection() {
         </div>
 
         {/* 3-column: Info | Robot | Form */}
-        <div className="c-outer" style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1.6fr', gap:'2.5rem', alignItems:'start', perspective:'1400px' }}>
+        <div className="c-outer" style={{ display:'grid', gridTemplateColumns:'1fr 2fr', gap:'2.5rem', alignItems:'start', perspective:'1400px' }}>
 
           {/* COL 1 — Info + Social */}
           <div style={{ display:'flex', flexDirection:'column', gap:'1rem' }}>
             {INFO.map((item, i) => <InfoCard3D key={item.label} item={item} index={i} visible={visible}/>)}
-            <div style={{ padding:'1.4rem', background:'var(--bg-card)', border:'1px solid rgba(176,58,46,0.15)', borderRadius:'10px', opacity:visible?1:0, translate:visible?'0 0':'-30px 0', transition:`opacity 0.6s ease ${INFO.length*0.13+0.08}s,translate 0.6s ease ${INFO.length*0.13+0.08}s` }}>
+            <div style={{ padding:'1.4rem', background:'var(--bg-card)', border:'1px solid rgba(var(--red-dark-rgb),0.15)', borderRadius:'10px', opacity:visible?1:0, translate:visible?'0 0':'-30px 0', transition:`opacity 0.6s ease ${INFO.length*0.13+0.08}s,translate 0.6s ease ${INFO.length*0.13+0.08}s` }}>
               <p style={{ fontFamily:'var(--font-display)', fontSize:'0.55rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'var(--text-muted)', marginBottom:'1rem' }}>Follow Us</p>
               <div style={{ display:'flex', gap:'10px' }}>
                 {socialIcons.map(s => (
@@ -664,16 +543,11 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* COL 2 — Floating 3D Robot */}
-          <div className="c-robot" style={{ display:'flex', alignItems:'center', justifyContent:'center', minHeight:'460px', position:'relative' }}>
-            <FloatingRobot visible={visible}/>
-          </div>
-
           {/* COL 3 — Contact Form */}
           <div ref={formPanelRef}>
             <div ref={formCardRef} onMouseMove={onFormMove} onMouseLeave={onFormLeave}
               style={{
-                background:'var(--bg-card)', border:'1px solid rgba(176,58,46,0.2)', borderRadius:'14px', padding:'2.5rem',
+                background:'var(--bg-card)', border:'1px solid rgba(var(--red-dark-rgb),0.2)', borderRadius:'14px', padding:'2.5rem',
                 position:'relative', overflow:'hidden', transformStyle:'preserve-3d',
                 transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1), opacity 0.7s ease 0.15s',
                 opacity:   formVisible?1:0,
@@ -683,13 +557,13 @@ export default function ContactSection() {
               {/* Top accent bar */}
               <div style={{ position:'absolute', top:0, left:0, right:0, height:'2px', background:'linear-gradient(90deg,var(--red-bright),var(--red-dim),transparent)' }}/>
               {/* Corner glow */}
-              <div aria-hidden="true" style={{ position:'absolute', top:'-1px', right:'-1px', width:'120px', height:'120px', background:'radial-gradient(circle at top right,rgba(176,58,46,0.16) 0%,transparent 70%)', borderRadius:'0 14px 0 0', pointerEvents:'none' }}/>
+              <div aria-hidden="true" style={{ position:'absolute', top:'-1px', right:'-1px', width:'120px', height:'120px', background:'radial-gradient(circle at top right,rgba(var(--red-dark-rgb),0.16) 0%,transparent 70%)', borderRadius:'0 14px 0 0', pointerEvents:'none' }}/>
               {/* Internal scanline */}
-              <div aria-hidden="true" style={{ position:'absolute', left:0, right:0, height:'2px', background:'linear-gradient(90deg,transparent,rgba(176,58,46,0.2),transparent)', animation:'scanV 6s linear 1s infinite', pointerEvents:'none', zIndex:1 }}/>
+              <div aria-hidden="true" style={{ position:'absolute', left:0, right:0, height:'2px', background:'linear-gradient(90deg,transparent,rgba(var(--red-dark-rgb),0.2),transparent)', animation:'scanV 6s linear 1s infinite', pointerEvents:'none', zIndex:1 }}/>
 
               {submitted ? (
                 <div style={{ textAlign:'center', padding:'3rem 1rem', animation:'successPop 0.65s cubic-bezier(0.34,1.56,0.64,1) both' }}>
-                  <div style={{ width:'72px', height:'72px', borderRadius:'50%', border:'2px solid var(--red-bright)', background:'rgba(176,58,46,0.1)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 1.5rem', boxShadow:'0 0 32px rgba(176,58,46,0.35)' }}>
+                  <div style={{ width:'72px', height:'72px', borderRadius:'50%', border:'2px solid var(--red-bright)', background:'rgba(var(--red-dark-rgb),0.1)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 1.5rem', boxShadow:'0 0 32px rgba(var(--red-dark-rgb),0.35)' }}>
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" style={{ strokeDasharray:50, strokeDashoffset:0, animation:'checkDraw 0.4s ease 0.3s both' }}/>
                     </svg>
@@ -720,28 +594,28 @@ export default function ContactSection() {
 
                     {/* Service select */}
                     <div style={{ position:'relative' }}>
-                      <label style={{ position:'absolute', left:'14px', top:service?'-9px':'14px', fontFamily:'var(--font-display)', fontSize:service?'0.55rem':'0.78rem', letterSpacing:service?'0.18em':'0.06em', textTransform:service?'uppercase':'none', color:service?'rgba(176,58,46,0.7)':'var(--text-muted)', background:service?'var(--bg-card)':'transparent', padding:service?'0 6px':'0', transition:'all 0.25s', pointerEvents:'none', zIndex:2 }}>
+                      <label style={{ position:'absolute', left:'14px', top:service?'-9px':'14px', fontFamily:'var(--font-display)', fontSize:service?'0.55rem':'0.78rem', letterSpacing:service?'0.18em':'0.06em', textTransform:service?'uppercase':'none', color:service?'rgba(var(--red-dark-rgb),0.7)':'var(--text-muted)', background:service?'var(--bg-card)':'transparent', padding:service?'0 6px':'0', transition:'all 0.25s', pointerEvents:'none', zIndex:2 }}>
                         Service Interested In
                       </label>
                       <select name="service" value={service} onChange={e => setService(e.target.value)}
-                        style={{ width:'100%', padding:'14px', background:'rgba(176,58,46,0.02)', border:'1px solid rgba(176,58,46,0.18)', borderRadius:'8px', color:service?'var(--text-primary)':'transparent', fontFamily:'var(--font-light)', fontSize:'0.88rem', outline:'none', cursor:'pointer', transition:'border-color 0.25s', appearance:'none', backgroundImage:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(176,58,46,0.6)' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat:'no-repeat', backgroundPosition:'right 14px center' }}
-                        onFocus={e => (e.target as HTMLSelectElement).style.borderColor='rgba(176,58,46,0.6)'}
-                        onBlur={e  => (e.target as HTMLSelectElement).style.borderColor='rgba(176,58,46,0.18)'}
+                        style={{ width:'100%', padding:'14px', background:'rgba(var(--red-dark-rgb),0.02)', border:'1px solid rgba(var(--red-dark-rgb),0.18)', borderRadius:'8px', color:service?'var(--text-primary)':'transparent', fontFamily:'var(--font-light)', fontSize:'0.88rem', outline:'none', cursor:'pointer', transition:'border-color 0.25s', appearance:'none', backgroundImage:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(var(--red-dark-rgb),0.6)' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat:'no-repeat', backgroundPosition:'right 14px center' }}
+                        onFocus={e => (e.target as HTMLSelectElement).style.borderColor='rgba(var(--red-dark-rgb),0.6)'}
+                        onBlur={e  => (e.target as HTMLSelectElement).style.borderColor='rgba(var(--red-dark-rgb),0.18)'}
                       >
                         <option value="" disabled/>
-                        {SERVICES.map(s => <option key={s} value={s} style={{ background:'#111', color:'#f0ece8' }}>{s}</option>)}
+                        {SERVICES.map(s => <option key={s} value={s} style={{ background:'var(--bg-dark)', color:'var(--copper-pale)' }}>{s}</option>)}
                       </select>
                     </div>
 
                     {/* Source select */}
                     <div style={{ position:'relative' }}>
-                      <label style={{ position:'absolute', left:'14px', top:source?'-9px':'14px', fontFamily:'var(--font-display)', fontSize:source?'0.55rem':'0.78rem', letterSpacing:source?'0.18em':'0.06em', textTransform:source?'uppercase':'none', color:source?'rgba(176,58,46,0.7)':'var(--text-muted)', background:source?'var(--bg-card)':'transparent', padding:source?'0 6px':'0', transition:'all 0.25s', pointerEvents:'none', zIndex:2 }}>
+                      <label style={{ position:'absolute', left:'14px', top:source?'-9px':'14px', fontFamily:'var(--font-display)', fontSize:source?'0.55rem':'0.78rem', letterSpacing:source?'0.18em':'0.06em', textTransform:source?'uppercase':'none', color:source?'rgba(var(--red-dark-rgb),0.7)':'var(--text-muted)', background:source?'var(--bg-card)':'transparent', padding:source?'0 6px':'0', transition:'all 0.25s', pointerEvents:'none', zIndex:2 }}>
                         Where Did You Find Us?
                       </label>
                       <select name="source" value={source} onChange={e => setSource(e.target.value)}
-                        style={{ width:'100%', padding:'14px', background:'rgba(176,58,46,0.02)', border:'1px solid rgba(176,58,46,0.18)', borderRadius:'8px', color:source?'var(--text-primary)':'transparent', fontFamily:'var(--font-light)', fontSize:'0.88rem', outline:'none', cursor:'pointer', transition:'border-color 0.25s', appearance:'none', backgroundImage:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(176,58,46,0.6)' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat:'no-repeat', backgroundPosition:'right 14px center' }}
-                        onFocus={e => (e.target as HTMLSelectElement).style.borderColor='rgba(176,58,46,0.6)'}
-                        onBlur={e  => (e.target as HTMLSelectElement).style.borderColor='rgba(176,58,46,0.18)'}
+                        style={{ width:'100%', padding:'14px', background:'rgba(var(--red-dark-rgb),0.02)', border:'1px solid rgba(var(--red-dark-rgb),0.18)', borderRadius:'8px', color:source?'var(--text-primary)':'transparent', fontFamily:'var(--font-light)', fontSize:'0.88rem', outline:'none', cursor:'pointer', transition:'border-color 0.25s', appearance:'none', backgroundImage:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(var(--red-dark-rgb),0.6)' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat:'no-repeat', backgroundPosition:'right 14px center' }}
+                        onFocus={e => (e.target as HTMLSelectElement).style.borderColor='rgba(var(--red-dark-rgb),0.6)'}
+                        onBlur={e  => (e.target as HTMLSelectElement).style.borderColor='rgba(var(--red-dark-rgb),0.18)'}
                       >
                         <option value="" disabled/>
                         {[
@@ -754,7 +628,7 @@ export default function ContactSection() {
                           'Trade Show / Event',
                           'News / Press Coverage',
                           'Other',
-                        ].map(s => <option key={s} value={s} style={{ background:'#111', color:'#f0ece8' }}>{s}</option>)}
+                        ].map(s => <option key={s} value={s} style={{ background:'var(--bg-dark)', color:'var(--copper-pale)' }}>{s}</option>)}
                       </select>
                     </div>
 
@@ -762,7 +636,7 @@ export default function ContactSection() {
 
                     <div style={{ display:'flex', alignItems:'flex-start', gap:'10px', cursor:'pointer' }} onClick={() => setAgreed(p => !p)}>
                       <div className={`checkbox-custom${agreed?' checked':''}`}>
-                        {agreed && <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>}
+                        {agreed && <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--white)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>}
                       </div>
                       <p style={{ fontFamily:'var(--font-light)', fontSize:'0.76rem', color:'var(--text-secondary)', lineHeight:1.6, userSelect:'none' }}>
                         I agree to the <span style={{ color:'var(--red-bright)' }}>Privacy Policy</span> and consent to Allbotix contacting me.

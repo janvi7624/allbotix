@@ -29,7 +29,7 @@ function SolutionCard({
     if (shineRef.current) {
       const px = ((e.clientX - rect.left) / rect.width)  * 100
       const py = ((e.clientY - rect.top)  / rect.height) * 100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.09) 0%, transparent 58%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-accent-rgb),0.09) 0%, transparent 58%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -66,8 +66,10 @@ function SolutionCard({
         transformStyle: 'preserve-3d',
         transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1), background 0.3s, box-shadow 0.4s',
         boxShadow: hovered
-          ? '0 24px 60px rgba(0,0,0,0.55), 0 0 28px rgba(176,58,46,0.10), inset 0 1px 0 rgba(232,57,42,0.08)'
+          ? '0 24px 60px rgba(var(--black-rgb),0.55), 0 0 28px rgba(var(--red-dark-rgb),0.10), inset 0 1px 0 rgba(var(--red-accent-rgb),0.08)'
           : 'none',
+        display: 'flex',
+        flexDirection: 'column',
         willChange: 'transform',
         opacity:   visible ? 1 : 0,
         animation: visible ? `solutionCardIn 0.65s cubic-bezier(0.23,1,0.32,1) ${index * 0.1 + 0.05}s both` : 'none',
@@ -85,12 +87,12 @@ function SolutionCard({
       <div style={{ position:'absolute', bottom:0, left:0, right:0, height:'2px', background:'linear-gradient(90deg, var(--red-bright), transparent)', transform: hovered ? 'scaleX(1)' : 'scaleX(0)', transformOrigin:'left', transition:'transform 0.4s cubic-bezier(0.23,1,0.32,1)' }} />
 
       {/* Number watermark */}
-      <div aria-hidden="true" style={{ position:'absolute', top:'1rem', right:'1.25rem', fontFamily:'var(--font-display)', fontSize:'3rem', fontWeight:900, color:'transparent', WebkitTextStroke: hovered ? '1px rgba(176,58,46,0.18)' : '1px rgba(176,58,46,0.08)', lineHeight:1, pointerEvents:'none', userSelect:'none', transition:'all 0.4s', transform: hovered ? 'translateZ(6px) scale(1.05)' : 'translateZ(0) scale(1)' }}>
+      <div aria-hidden="true" style={{ position:'absolute', top:'1rem', right:'1.25rem', fontFamily:'var(--font-display)', fontSize:'3rem', fontWeight:900, color:'transparent', WebkitTextStroke: hovered ? '1px rgba(var(--red-dark-rgb),0.18)' : '1px rgba(var(--red-dark-rgb),0.08)', lineHeight:1, pointerEvents:'none', userSelect:'none', transition:'all 0.4s', transform: hovered ? 'translateZ(6px) scale(1.05)' : 'translateZ(0) scale(1)' }}>
         {String(index + 1).padStart(2, '0')}
       </div>
 
       {/* Icon */}
-      <div className="icon-circle" style={{ marginBottom:'1.5rem', position:'relative', zIndex:2, transform: hovered ? 'translateZ(22px) scale(1.1)' : 'translateZ(0) scale(1)', transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1)', animation:`floatIcon 3.5s ease-in-out ${index * 0.35}s infinite`, filter: hovered ? 'drop-shadow(0 0 10px rgba(232,57,42,0.45))' : 'none' }}>
+      <div className="icon-circle" style={{ marginBottom:'1.5rem', position:'relative', zIndex:2, transform: hovered ? 'translateZ(22px) scale(1.1)' : 'translateZ(0) scale(1)', transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1)', animation:`floatIcon 3.5s ease-in-out ${index * 0.35}s infinite`, filter: hovered ? 'drop-shadow(0 0 10px rgba(var(--red-accent-rgb),0.45))' : 'none' }}>
         {solution.icon}
       </div>
 
@@ -134,7 +136,7 @@ function SolutionCard({
                 <p style={{ fontFamily:'var(--font-display)', fontSize:'0.5rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--red-bright)', marginBottom:'0.5rem' }}>Solutions Deployed</p>
                 <div style={{ display:'flex', flexDirection:'column', gap:'5px' }}>
                   {detail.deployedSolutions.map(ds => (
-                    <div key={ds.name} style={{ display:'flex', gap:'8px', alignItems:'flex-start', padding:'6px 10px', borderRadius:'6px', background:'rgba(176,58,46,0.04)', border:'1px solid rgba(176,58,46,0.1)' }}>
+                    <div key={ds.name} style={{ display:'flex', gap:'8px', alignItems:'flex-start', padding:'6px 10px', borderRadius:'6px', background:'rgba(var(--red-dark-rgb),0.04)', border:'1px solid rgba(var(--red-dark-rgb),0.1)' }}>
                       <span style={{ width:'4px', height:'4px', borderRadius:'50%', background:'var(--red-bright)', flexShrink:0, marginTop:'5px' }} />
                       <div>
                         <p style={{ fontFamily:'var(--font-display)', fontSize:'0.65rem', fontWeight:700, color:'var(--text-primary)', letterSpacing:'0.03em' }}>{ds.name}</p>
@@ -151,7 +153,7 @@ function SolutionCard({
                 <div style={{ display:'flex', flexDirection:'column', gap:'4px' }}>
                   {detail.capabilities.map((cap, i) => (
                     <div key={i} style={{ display:'flex', gap:'8px', alignItems:'flex-start' }}>
-                      <span style={{ width:'3px', height:'3px', borderRadius:'50%', background:'rgba(176,58,46,0.6)', flexShrink:0, marginTop:'6px' }} />
+                      <span style={{ width:'3px', height:'3px', borderRadius:'50%', background:'rgba(var(--red-dark-rgb),0.6)', flexShrink:0, marginTop:'6px' }} />
                       <p style={{ fontFamily:'var(--font-light)', fontSize:'0.72rem', color:'var(--text-secondary)', lineHeight:1.6 }}>{cap}</p>
                     </div>
                   ))}
@@ -181,10 +183,39 @@ function SolutionCard({
       {/* CTA */}
       <Link
         href={`/solutions/${(solution as any).uid}`}
-        style={{ display:'inline-flex', alignItems:'center', gap: hovered ? '10px' : '6px', fontFamily:'var(--font-display)', fontSize:'0.62rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', color:'var(--red-bright)', transition:'gap 0.25s', position:'relative', zIndex:2, transform: hovered ? 'translateZ(16px)' : 'translateZ(0)' }}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: hovered ? '10px' : '8px',
+          fontFamily: 'var(--font-display)',
+          fontSize: '0.6rem',
+          fontWeight: 700,
+          letterSpacing: '0.14em',
+          textTransform: 'uppercase',
+          marginTop: 'auto',
+          color: hovered ? '#fff' : 'var(--red-bright)',
+          background: hovered
+            ? 'linear-gradient(135deg, var(--red-bright) 0%, var(--red-dark) 100%)'
+            : 'transparent',
+          border: '1px solid',
+          borderColor: hovered ? 'transparent' : 'rgba(var(--red-dark-rgb),0.35)',
+          borderRadius: '4px',
+          padding: '0.5rem 0.85rem',
+          transition: 'gap 0.25s, color 0.25s, background 0.3s, border-color 0.3s, box-shadow 0.3s',
+          boxShadow: hovered
+            ? '0 4px 18px rgba(var(--red-dark-rgb),0.45)'
+            : 'none',
+          position: 'relative',
+          zIndex: 2,
+          transform: hovered ? 'translateZ(16px)' : 'translateZ(0)',
+          cursor: 'pointer',
+          textDecoration: 'none',
+          whiteSpace: 'nowrap',
+          width: 'fit-content',
+        }}
       >
         Full Solution Details
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: hovered ? 'translateX(3px)' : 'translateX(0)', transition:'transform 0.25s' }}>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, transform: hovered ? 'translateX(3px)' : 'translateX(0)', transition: 'transform 0.25s' }}>
           <line x1="5" y1="12" x2="19" y2="12"/>
           <polyline points="12 5 19 12 12 19"/>
         </svg>
@@ -259,8 +290,8 @@ export default function SolutionSection() {
         </div>
 
         {/* Ambient glows */}
-        <div aria-hidden="true" style={{ position:'absolute', top:'20%', right:'-10%', width:'500px', height:'500px', borderRadius:'50%', background:'radial-gradient(circle, rgba(176,58,46,0.07) 0%, transparent 70%)', pointerEvents:'none', animation:'glowPulse 5s ease-in-out infinite' }} />
-        <div aria-hidden="true" style={{ position:'absolute', bottom:'10%', left:'-8%', width:'350px', height:'350px', borderRadius:'50%', background:'radial-gradient(circle, rgba(176,58,46,0.05) 0%, transparent 70%)', pointerEvents:'none', animation:'glowPulse 6s ease-in-out 1s infinite' }} />
+        <div aria-hidden="true" style={{ position:'absolute', top:'20%', right:'-10%', width:'500px', height:'500px', borderRadius:'50%', background:'radial-gradient(circle, rgba(var(--red-dark-rgb),0.07) 0%, transparent 70%)', pointerEvents:'none', animation:'glowPulse 5s ease-in-out infinite' }} />
+        <div aria-hidden="true" style={{ position:'absolute', bottom:'10%', left:'-8%', width:'350px', height:'350px', borderRadius:'50%', background:'radial-gradient(circle, rgba(var(--red-dark-rgb),0.05) 0%, transparent 70%)', pointerEvents:'none', animation:'glowPulse 6s ease-in-out 1s infinite' }} />
 
         <div className="container-allbotix" style={{ position:'relative', zIndex:2 }}>
 

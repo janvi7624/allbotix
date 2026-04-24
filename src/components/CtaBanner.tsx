@@ -65,15 +65,15 @@ export default function CtaBanner() {
             xmlns="http://www.w3.org/2000/svg"
             style={{ width: '300px', height: '420px' }}
           >
-            <rect x="60" y="20" width="80" height="70" rx="12" fill="#b03a2e"/>
-            <rect x="75" y="38" width="18" height="12" rx="3" fill="#fff"/>
-            <rect x="107" y="38" width="18" height="12" rx="3" fill="#fff"/>
-            <rect x="88" y="90" width="24" height="16" rx="4" fill="#b03a2e"/>
-            <rect x="45" y="106" width="110" height="100" rx="10" fill="#b03a2e"/>
-            <rect x="18" y="110" width="24" height="80" rx="8" fill="#b03a2e"/>
-            <rect x="158" y="110" width="24" height="80" rx="8" fill="#b03a2e"/>
-            <rect x="58" y="206" width="34" height="64" rx="8" fill="#b03a2e"/>
-            <rect x="108" y="206" width="34" height="64" rx="8" fill="#b03a2e"/>
+            <rect x="60" y="20" width="80" height="70" rx="12" fill="var(--red-dark)"/>
+            <rect x="75" y="38" width="18" height="12" rx="3" fill="var(--white)"/>
+            <rect x="107" y="38" width="18" height="12" rx="3" fill="var(--white)"/>
+            <rect x="88" y="90" width="24" height="16" rx="4" fill="var(--red-dark)"/>
+            <rect x="45" y="106" width="110" height="100" rx="10" fill="var(--red-dark)"/>
+            <rect x="18" y="110" width="24" height="80" rx="8" fill="var(--red-dark)"/>
+            <rect x="158" y="110" width="24" height="80" rx="8" fill="var(--red-dark)"/>
+            <rect x="58" y="206" width="34" height="64" rx="8" fill="var(--red-dark)"/>
+            <rect x="108" y="206" width="34" height="64" rx="8" fill="var(--red-dark)"/>
           </svg>
         </div>
 
@@ -86,7 +86,7 @@ export default function CtaBanner() {
             transform: 'translateY(-50%)',
             width: '400px', height: '400px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(176,58,46,0.10) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.10) 0%, transparent 70%)',
             pointerEvents: 'none',
             animation: 'glowPulse 4s ease-in-out infinite',
           }}

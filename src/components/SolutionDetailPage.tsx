@@ -71,7 +71,7 @@ function DeployedCard({ item, index, visible }: { item: DeployedSolution; index:
     if (shineRef.current) {
       const px = ((e.clientX - r.left) / r.width)  * 100
       const py = ((e.clientY - r.top)  / r.height) * 100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.12) 0%, transparent 60%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-accent-rgb),0.12) 0%, transparent 60%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -89,12 +89,12 @@ function DeployedCard({ item, index, visible }: { item: DeployedSolution; index:
       onMouseLeave={onLeave}
       style={{
         position: 'relative', overflow: 'hidden', borderRadius: '10px',
-        border: `1px solid ${hovered ? 'rgba(176,58,46,0.45)' : 'rgba(176,58,46,0.15)'}`,
-        background: hovered ? 'rgba(22,14,14,0.98)' : 'var(--bg-card)',
+        border: `1px solid ${hovered ? 'rgba(var(--red-dark-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.15)'}`,
+        background: hovered ? 'var(--bg-700)' : 'var(--bg-card)',
         padding: '1.25rem 1.5rem',
         transformStyle: 'preserve-3d', cursor: 'default',
         transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.4s, background 0.3s',
-        boxShadow: hovered ? '0 20px 50px rgba(0,0,0,0.5), 0 0 24px rgba(176,58,46,0.12)' : '0 4px 16px rgba(0,0,0,0.25)',
+        boxShadow: hovered ? '0 20px 50px rgba(var(--black-rgb),0.5), 0 0 24px rgba(var(--red-dark-rgb),0.12)' : '0 4px 16px rgba(var(--black-rgb),0.25)',
         opacity: visible ? 1 : 0,
         translate: visible ? '0 0' : '0 30px',
         filter: visible ? 'none' : 'blur(4px)',
@@ -110,7 +110,7 @@ function DeployedCard({ item, index, visible }: { item: DeployedSolution; index:
 
       <div style={{ display:'flex', alignItems:'flex-start', gap:'0.85rem', position:'relative', zIndex:2 }}>
         {/* Icon box */}
-        <div style={{ width:'38px', height:'38px', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'8px', border:'1px solid rgba(176,58,46,0.3)', background: hovered ? 'rgba(176,58,46,0.18)' : 'rgba(176,58,46,0.07)', color:'var(--red-bright)', transition:'background 0.3s, transform 0.45s cubic-bezier(0.23,1,0.32,1)', transform: hovered ? 'translateZ(18px) scale(1.1)' : 'translateZ(0)', filter: hovered ? 'drop-shadow(0 0 6px rgba(176,58,46,0.5))' : 'none' }}>
+        <div style={{ width:'38px', height:'38px', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'8px', border:'1px solid rgba(var(--red-dark-rgb),0.3)', background: hovered ? 'rgba(var(--red-dark-rgb),0.18)' : 'rgba(var(--red-dark-rgb),0.07)', color:'var(--red-bright)', transition:'background 0.3s, transform 0.45s cubic-bezier(0.23,1,0.32,1)', transform: hovered ? 'translateZ(18px) scale(1.1)' : 'translateZ(0)', filter: hovered ? 'drop-shadow(0 0 6px rgba(var(--red-dark-rgb),0.5))' : 'none' }}>
           <RobotIcon />
         </div>
         <div style={{ transform: hovered ? 'translateZ(10px)' : 'translateZ(0)', transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1)' }}>
@@ -132,7 +132,7 @@ function StatPill({ value, label, delay }: { value: string; label: string; delay
     return () => obs.disconnect()
   }, [])
   return (
-    <div ref={ref} style={{ textAlign:'center', padding:'1.5rem 1rem', borderRadius:'10px', border:'1px solid rgba(176,58,46,0.18)', background:'rgba(176,58,46,0.04)', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s` }}>
+    <div ref={ref} style={{ textAlign:'center', padding:'1.5rem 1rem', borderRadius:'10px', border:'1px solid rgba(var(--red-dark-rgb),0.18)', background:'rgba(var(--red-dark-rgb),0.04)', opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transition: `opacity 0.6s ease ${delay}s, transform 0.6s ease ${delay}s` }}>
       <p style={{ fontFamily:'var(--font-display)', fontSize:'clamp(1.6rem,3vw,2.2rem)', fontWeight:900, color:'var(--red-bright)', letterSpacing:'-0.02em', lineHeight:1, marginBottom:'6px' }}>{value}</p>
       <p style={{ fontFamily:'var(--font-display)', fontSize:'0.52rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'var(--text-muted)' }}>{label}</p>
     </div>
@@ -199,7 +199,7 @@ export default function SolutionDetailPage() {
         /* Section blocks */
         .sd-section {
           padding: 3rem 0;
-          border-top: 1px solid rgba(176,58,46,0.1);
+          border-top: 1px solid rgba(var(--red-dark-rgb),0.1);
         }
         .sd-section:first-child { border-top: none; }
 
@@ -224,15 +224,15 @@ export default function SolutionDetailPage() {
         .sd-cap-row {
           display: flex; align-items: flex-start; gap: 12px;
           padding: 12px 16px; border-radius: 8px;
-          border: 1px solid rgba(176,58,46,0.12);
-          background: rgba(176,58,46,0.03);
+          border: 1px solid rgba(var(--red-dark-rgb),0.12);
+          background: rgba(var(--red-dark-rgb),0.03);
           font-family: var(--font-light); font-size: 0.82rem;
           color: var(--text-secondary); line-height: 1.6;
           transition: border-color 0.25s, background 0.25s, transform 0.25s;
         }
         .sd-cap-row:hover {
-          border-color: rgba(176,58,46,0.32);
-          background: rgba(176,58,46,0.07);
+          border-color: rgba(var(--red-dark-rgb),0.32);
+          background: rgba(var(--red-dark-rgb),0.07);
           transform: translateX(4px);
         }
         .sd-cap-dot {
@@ -244,20 +244,20 @@ export default function SolutionDetailPage() {
         .sd-impact-row {
           display: flex; align-items: flex-start; gap: 12px;
           padding: 14px 18px; border-radius: 10px;
-          border: 1px solid rgba(176,58,46,0.15);
-          background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.15);
+          background: rgba(var(--red-dark-rgb),0.04);
           transition: border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.25s;
         }
         .sd-impact-row:hover {
-          border-color: rgba(176,58,46,0.38);
-          background: rgba(176,58,46,0.09);
-          box-shadow: 0 8px 28px rgba(0,0,0,0.3), 0 0 16px rgba(176,58,46,0.1);
+          border-color: rgba(var(--red-dark-rgb),0.38);
+          background: rgba(var(--red-dark-rgb),0.09);
+          box-shadow: 0 8px 28px rgba(var(--black-rgb),0.3), 0 0 16px rgba(var(--red-dark-rgb),0.1);
           transform: translateY(-2px);
         }
         .sd-impact-check {
           width: 22px; height: 22px; flex-shrink: 0;
-          border-radius: 50%; border: 1px solid rgba(176,58,46,0.4);
-          background: rgba(176,58,46,0.1); color: var(--red-bright);
+          border-radius: 50%; border: 1px solid rgba(var(--red-dark-rgb),0.4);
+          background: rgba(var(--red-dark-rgb),0.1); color: var(--red-bright);
           display: flex; align-items: center; justify-content: center;
           margin-top: 1px;
         }
@@ -284,8 +284,8 @@ export default function SolutionDetailPage() {
         /* CTA card */
         .sd-cta-card {
           padding: clamp(1.5rem,4vw,3rem); border-radius: 16px;
-          border: 1px solid rgba(176,58,46,0.18);
-          background: rgba(176,58,46,0.04);
+          border: 1px solid rgba(var(--red-dark-rgb),0.18);
+          background: rgba(var(--red-dark-rgb),0.04);
           text-align: center; position: relative; overflow: hidden;
         }
 
@@ -297,25 +297,25 @@ export default function SolutionDetailPage() {
         .sd-related-card {
           display: flex; align-items: center; gap: 12px;
           padding: 1rem 1.25rem; border-radius: 10px;
-          border: 1px solid rgba(176,58,46,0.15);
+          border: 1px solid rgba(var(--red-dark-rgb),0.15);
           background: var(--bg-card); text-decoration: none;
           transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
         }
         .sd-related-card:hover {
-          border-color: rgba(176,58,46,0.45);
-          background: rgba(22,14,14,0.98);
+          border-color: rgba(var(--red-dark-rgb),0.45);
+          background: var(--bg-700);
           transform: translateY(-3px);
-          box-shadow: 0 12px 36px rgba(0,0,0,0.4), 0 0 18px rgba(176,58,46,0.1);
+          box-shadow: 0 12px 36px rgba(var(--black-rgb),0.4), 0 0 18px rgba(var(--red-dark-rgb),0.1);
         }
         .sd-related-icon {
           width: 36px; height: 36px; flex-shrink: 0;
           border-radius: 7px; display: flex; align-items: center; justify-content: center;
-          background: rgba(176,58,46,0.08); border: 1px solid rgba(176,58,46,0.2);
+          background: rgba(var(--red-dark-rgb),0.08); border: 1px solid rgba(var(--red-dark-rgb),0.2);
           color: var(--red-bright);
         }
         .sd-related-card:hover .sd-related-icon {
-          background: rgba(176,58,46,0.18);
-          filter: drop-shadow(0 0 6px rgba(176,58,46,0.4));
+          background: rgba(var(--red-dark-rgb),0.18);
+          filter: drop-shadow(0 0 6px rgba(var(--red-dark-rgb),0.4));
         }
 
         /* Breadcrumb */
@@ -326,27 +326,27 @@ export default function SolutionDetailPage() {
         }
         .sd-breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
         .sd-breadcrumb a:hover { color: var(--red-bright); }
-        .sd-breadcrumb-sep { color: rgba(176,58,46,0.35); }
+        .sd-breadcrumb-sep { color: rgba(var(--red-dark-rgb),0.35); }
       `}</style>
 
       <main style={{ background:'var(--bg-900)', minHeight:'100vh', paddingBottom:'6rem' }}>
 
         {/* ── Decorative bg glows ── */}
-        <div aria-hidden="true" style={{ position:'fixed', top:'8%', right:'-8%', width:'480px', height:'480px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.06) 0%,transparent 70%)', pointerEvents:'none', zIndex:0, animation:'sdGlowPulse 6s ease-in-out infinite' }} />
-        <div aria-hidden="true" style={{ position:'fixed', bottom:'12%', left:'-6%', width:'380px', height:'380px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.04) 0%,transparent 70%)', pointerEvents:'none', zIndex:0, animation:'sdGlowPulse 8s ease-in-out 2s infinite' }} />
+        <div aria-hidden="true" style={{ position:'fixed', top:'8%', right:'-8%', width:'480px', height:'480px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.06) 0%,transparent 70%)', pointerEvents:'none', zIndex:0, animation:'sdGlowPulse 6s ease-in-out infinite' }} />
+        <div aria-hidden="true" style={{ position:'fixed', bottom:'12%', left:'-6%', width:'380px', height:'380px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.04) 0%,transparent 70%)', pointerEvents:'none', zIndex:0, animation:'sdGlowPulse 8s ease-in-out 2s infinite' }} />
 
         {/* ── Hero Banner ── */}
         <div style={{ position:'relative', overflow:'hidden', paddingTop:'clamp(120px, 12vw, 120px)' }}>
 
           {/* Gradient overlay */}
-          <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(8,8,8,0.3) 0%, rgba(8,8,8,0.1) 40%, rgba(8,8,8,0.96) 100%)' }} />
+          <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom, rgba(var(--overlay-light-rgb),0.3) 0%, rgba(var(--overlay-light-rgb),0.1) 40%, rgba(var(--overlay-light-rgb),0.96) 100%)' }} />
 
           {/* Scanline */}
-          <div aria-hidden="true" style={{ position:'absolute', left:0, right:0, height:'2px', background:'linear-gradient(90deg,transparent,rgba(176,58,46,0.5),transparent)', animation:'sdScanline 4s linear infinite', pointerEvents:'none', zIndex:3 }} />
+          <div aria-hidden="true" style={{ position:'absolute', left:0, right:0, height:'2px', background:'linear-gradient(90deg,transparent,rgba(var(--red-dark-rgb),0.5),transparent)', animation:'sdScanline 4s linear infinite', pointerEvents:'none', zIndex:3 }} />
 
           {/* Decorative rings */}
-          <div aria-hidden="true" style={{ position:'absolute', bottom:'15%', right:'5%', width:'200px', height:'200px', borderRadius:'50%', border:'1px solid rgba(176,58,46,0.1)', animation:'sdRingCW 18s linear infinite', pointerEvents:'none', zIndex:2 }} />
-          <div aria-hidden="true" style={{ position:'absolute', bottom:'12%', right:'7%', width:'140px', height:'140px', borderRadius:'50%', border:'1px solid rgba(176,58,46,0.07)', animation:'sdRingCCW 12s linear infinite', pointerEvents:'none', zIndex:2 }} />
+          <div aria-hidden="true" style={{ position:'absolute', bottom:'15%', right:'5%', width:'200px', height:'200px', borderRadius:'50%', border:'1px solid rgba(var(--red-dark-rgb),0.1)', animation:'sdRingCW 18s linear infinite', pointerEvents:'none', zIndex:2 }} />
+          <div aria-hidden="true" style={{ position:'absolute', bottom:'12%', right:'7%', width:'140px', height:'140px', borderRadius:'50%', border:'1px solid rgba(var(--red-dark-rgb),0.07)', animation:'sdRingCCW 12s linear infinite', pointerEvents:'none', zIndex:2 }} />
 
           {/* Floating icon (large) */}
           <div aria-hidden="true" style={{ position:'absolute', top:'50%', right:'8%', transform:'translateY(-50%)', width:'180px', height:'180px', display:'flex', alignItems:'center', justifyContent:'center', opacity:0.06, animation:'sdFloat 5s ease-in-out infinite', pointerEvents:'none', zIndex:1 }}>
@@ -367,16 +367,16 @@ export default function SolutionDetailPage() {
 
             {/* Category badge */}
             <div style={{ display:'flex', flexWrap:'wrap', gap:'8px', marginBottom:'14px', animation: heroVisible ? 'sdFadeUp 0.5s ease 0.1s both' : 'none' }}>
-              <span style={{ padding:'4px 14px', borderRadius:'100px', background:'rgba(176,58,46,0.18)', border:'1px solid rgba(176,58,46,0.45)', fontFamily:'var(--font-display)', fontSize:'0.5rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--red-bright)', backdropFilter:'blur(6px)' }}>
+              <span style={{ padding:'4px 14px', borderRadius:'100px', border: '1px solid rgba(var(--navy-rgb),0.25)', background: 'rgba(var(--white-rgb),0.55)', color: 'var(--navy)', fontFamily:'var(--font-display)', fontSize:'0.5rem', letterSpacing:'0.2em', textTransform:'uppercase', backdropFilter:'blur(6px)' }}>
                 Industry Solution
               </span>
-              <span style={{ padding:'4px 14px', borderRadius:'100px', background:'rgba(8,8,8,0.65)', border:'1px solid rgba(176,58,46,0.22)', fontFamily:'var(--font-display)', fontSize:'0.5rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--text-muted)', backdropFilter:'blur(6px)' }}>
+              <span style={{ padding:'4px 14px', borderRadius:'100px', background:'rgba(var(--white-rgb),0.7)', border:'1px solid rgba(var(--navy-rgb),0.25)', fontFamily:'var(--font-display)', fontSize:'0.5rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--navy)', backdropFilter:'blur(6px)' }}>
                 {detail.deployedSolutions.length} Robots
               </span>
             </div>
 
             {/* Title */}
-            <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(2rem,5vw,3.8rem)', fontWeight:900, color:'#fff', lineHeight:0.95, letterSpacing:'-0.02em', marginBottom:'14px', animation: heroVisible ? 'sdFadeUp 0.55s ease 0.15s both' : 'none' }}>
+            <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(2rem,5vw,3.8rem)', fontWeight:900, color:'var(--navy-deep)', lineHeight:0.95, letterSpacing:'-0.02em', marginBottom:'14px', animation: heroVisible ? 'sdFadeUp 0.55s ease 0.15s both' : 'none' }}>
               {solution.title}
             </h1>
 
@@ -384,12 +384,12 @@ export default function SolutionDetailPage() {
             <div style={{ width:'48px', height:'2px', background:'linear-gradient(90deg,var(--red-bright),transparent)', marginBottom:'14px', animation: heroVisible ? 'sdFadeUp 0.5s ease 0.2s both' : 'none' }} />
 
             {/* Headline */}
-            <p style={{ maxWidth:'580px', fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:600, color:'rgba(255,255,255,0.65)', letterSpacing:'0.02em', lineHeight:1.5, marginBottom:'10px', animation: heroVisible ? 'sdFadeUp 0.5s ease 0.23s both' : 'none' }}>
+            <p style={{ maxWidth:'580px', fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:600, color:'var(--navy)', letterSpacing:'0.02em', lineHeight:1.5, marginBottom:'10px', animation: heroVisible ? 'sdFadeUp 0.5s ease 0.23s both' : 'none' }}>
               {detail.headline}
             </p>
 
             {/* Overview */}
-            <p style={{ maxWidth:'580px', fontFamily:'var(--font-light)', fontSize:'0.9rem', color:'rgba(255,255,255,0.6)', lineHeight:1.85, animation: heroVisible ? 'sdFadeUp 0.5s ease 0.27s both' : 'none' }}>
+            <p style={{ maxWidth:'580px', fontFamily:'var(--font-light)', fontSize:'0.9rem', color:'rgba(var(--navy-rgb),0.78)', lineHeight:1.85, animation: heroVisible ? 'sdFadeUp 0.5s ease 0.27s both' : 'none' }}>
               {detail.overview}
             </p>
 
@@ -400,7 +400,7 @@ export default function SolutionDetailPage() {
                 `${detail.capabilities.length} Key Capabilities`,
                 `${detail.impact.length} Business Outcomes`,
               ].map(spec => (
-                <span key={spec} style={{ display:'inline-flex', alignItems:'center', gap:'6px', padding:'5px 14px', borderRadius:'100px', border:'1px solid rgba(176,58,46,0.3)', background:'rgba(8,8,8,0.6)', fontFamily:'var(--font-display)', fontSize:'0.6rem', color:'rgba(255,255,255,0.7)', letterSpacing:'0.04em', backdropFilter:'blur(6px)' }}>
+                <span key={spec} style={{ display:'inline-flex', alignItems:'center', gap:'6px', padding:'5px 14px', borderRadius:'100px', border:'1px solid rgba(var(--navy-rgb),0.2)', background:'rgba(var(--white-rgb),0.65)', fontFamily:'var(--font-display)', fontSize:'0.6rem', color:'var(--navy)', letterSpacing:'0.04em', backdropFilter:'blur(6px)' }}>
                   <span style={{ width:'3px', height:'3px', borderRadius:'50%', background:'var(--red-bright)', flexShrink:0 }} />
                   {spec}
                 </span>
@@ -512,7 +512,7 @@ export default function SolutionDetailPage() {
                         <p style={{ fontFamily:'var(--font-display)', fontSize:'0.72rem', fontWeight:700, color:'var(--text-primary)', letterSpacing:'0.03em', marginBottom:'2px', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{s.title}</p>
                         <p style={{ fontFamily:'var(--font-light)', fontSize:'0.64rem', color:'var(--text-muted)', display:'-webkit-box', WebkitLineClamp:2, WebkitBoxOrient:'vertical', overflow:'hidden', lineHeight:1.5 }}>{s.desc}</p>
                       </div>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink:0 }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink:0 }}>
                         <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                       </svg>
                     </Link>
@@ -523,10 +523,10 @@ export default function SolutionDetailPage() {
 
           {/* ── Bottom CTA ── */}
           <div className="sd-cta-card" style={{ marginTop:'5rem', opacity: bodyVisible ? 1 : 0, transition:'opacity 0.6s ease 0.6s' }}>
-            <div aria-hidden="true" style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%,rgba(176,58,46,0.07) 0%,transparent 70%)', pointerEvents:'none' }} />
+            <div aria-hidden="true" style={{ position:'absolute', inset:0, background:'radial-gradient(circle at 50% 50%,rgba(var(--red-dark-rgb),0.07) 0%,transparent 70%)', pointerEvents:'none' }} />
             <div style={{ position:'relative', zIndex:1 }}>
               <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', marginBottom:'10px' }}>
-                <div style={{ width:'32px', height:'32px', borderRadius:'50%', border:'1px solid rgba(176,58,46,0.35)', background:'rgba(176,58,46,0.08)', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--red-bright)', animation:'sdFloat 3s ease-in-out infinite' }}>
+                <div style={{ width:'32px', height:'32px', borderRadius:'50%', border:'1px solid rgba(var(--red-dark-rgb),0.35)', background:'rgba(var(--red-dark-rgb),0.08)', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--red-bright)', animation:'sdFloat 3s ease-in-out infinite' }}>
                   <BoltIcon />
                 </div>
               </div>

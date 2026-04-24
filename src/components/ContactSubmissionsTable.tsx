@@ -60,7 +60,7 @@ function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
 
   const row = (label: string, value: string) =>
     value ? (
-      <div style={{ display:'flex', flexDirection:'column', gap:'4px', padding:'12px 0', borderBottom:'1px solid rgba(176,58,46,0.1)' }}>
+      <div style={{ display:'flex', flexDirection:'column', gap:'4px', padding:'12px 0', borderBottom:'1px solid rgba(var(--red-dark-rgb),0.1)' }}>
         <span style={{ fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--red-bright)' }}>{label}</span>
         <span style={{ fontFamily:'var(--font-light)', fontSize:'0.85rem', color:'var(--text-primary)', lineHeight:1.6 }}>{value}</span>
       </div>
@@ -71,15 +71,15 @@ function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
       {/* Backdrop */}
       <div
         onClick={onClose}
-        style={{ position:'fixed', inset:0, background:'rgba(0,0,0,0.7)', backdropFilter:'blur(4px)', zIndex:50 }}
+        style={{ position:'fixed', inset:0, background:'rgba(var(--black-rgb),0.7)', backdropFilter:'blur(4px)', zIndex:50 }}
       />
 
       {/* Drawer */}
       <div style={{
         position:'fixed', top:0, right:0, bottom:0, width:'min(480px, 100vw)',
-        background:'var(--bg-900)', borderLeft:'1px solid rgba(176,58,46,0.25)',
+        background:'var(--bg-900)', borderLeft:'1px solid rgba(var(--red-dark-rgb),0.25)',
         zIndex:51, display:'flex', flexDirection:'column',
-        boxShadow:'-20px 0 60px rgba(0,0,0,0.6)',
+        boxShadow:'-20px 0 60px rgba(var(--black-rgb),0.6)',
         animation:'drawerSlideIn 0.3s cubic-bezier(0.23,1,0.32,1)',
       }}>
 
@@ -87,9 +87,9 @@ function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
         <div style={{ height:'2px', background:'linear-gradient(90deg,var(--red-bright),transparent)', flexShrink:0 }} />
 
         {/* Header */}
-        <div style={{ padding:'1.5rem 2rem', borderBottom:'1px solid rgba(176,58,46,0.15)', display:'flex', alignItems:'center', justifyContent:'space-between', flexShrink:0 }}>
+        <div style={{ padding:'1.5rem 2rem', borderBottom:'1px solid rgba(var(--red-dark-rgb),0.15)', display:'flex', alignItems:'center', justifyContent:'space-between', flexShrink:0 }}>
           <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
-            <div style={{ width:'42px', height:'42px', borderRadius:'50%', background:'rgba(176,58,46,0.15)', border:'1px solid rgba(176,58,46,0.35)', display:'flex', alignItems:'center', justifyContent:'center', fontFamily:'var(--font-display)', fontSize:'0.75rem', fontWeight:700, color:'var(--red-bright)' }}>
+            <div style={{ width:'42px', height:'42px', borderRadius:'50%', background:'rgba(var(--red-dark-rgb),0.15)', border:'1px solid rgba(var(--red-dark-rgb),0.35)', display:'flex', alignItems:'center', justifyContent:'center', fontFamily:'var(--font-display)', fontSize:'0.75rem', fontWeight:700, color:'var(--red-bright)' }}>
               {initials(s)}
             </div>
             <div>
@@ -101,9 +101,9 @@ function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
           </div>
           <button
             onClick={onClose}
-            style={{ width:'32px', height:'32px', borderRadius:'6px', border:'1px solid rgba(176,58,46,0.25)', background:'rgba(176,58,46,0.06)', color:'var(--text-muted)', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', transition:'all 0.2s' }}
+            style={{ width:'32px', height:'32px', borderRadius:'6px', border:'1px solid rgba(var(--red-dark-rgb),0.25)', background:'rgba(var(--red-dark-rgb),0.06)', color:'var(--text-muted)', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', transition:'all 0.2s' }}
             onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.borderColor='var(--red-bright)'; (e.currentTarget as HTMLButtonElement).style.color='var(--red-bright)' }}
-            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor='rgba(176,58,46,0.25)'; (e.currentTarget as HTMLButtonElement).style.color='var(--text-muted)' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.borderColor='rgba(var(--red-dark-rgb),0.25)'; (e.currentTarget as HTMLButtonElement).style.color='var(--text-muted)' }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
@@ -124,7 +124,7 @@ function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
           {s.message && (
             <div style={{ padding:'12px 0' }}>
               <span style={{ fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--red-bright)', display:'block', marginBottom:'8px' }}>Message</span>
-              <div style={{ background:'rgba(176,58,46,0.04)', border:'1px solid rgba(176,58,46,0.12)', borderRadius:'8px', padding:'14px', fontFamily:'var(--font-light)', fontSize:'0.83rem', color:'var(--text-secondary)', lineHeight:1.8, whiteSpace:'pre-wrap' }}>
+              <div style={{ background:'rgba(var(--red-dark-rgb),0.04)', border:'1px solid rgba(var(--red-dark-rgb),0.12)', borderRadius:'8px', padding:'14px', fontFamily:'var(--font-light)', fontSize:'0.83rem', color:'var(--text-secondary)', lineHeight:1.8, whiteSpace:'pre-wrap' }}>
                 {s.message}
               </div>
             </div>
@@ -132,11 +132,11 @@ function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
         </div>
 
         {/* Reply CTA */}
-        <div style={{ padding:'1.25rem 2rem', borderTop:'1px solid rgba(176,58,46,0.15)', flexShrink:0 }}>
+        <div style={{ padding:'1.25rem 2rem', borderTop:'1px solid rgba(var(--red-dark-rgb),0.15)', flexShrink:0 }}>
           <a
             href={`mailto:${s.email}?subject=Re: Your Enquiry — Allbotix`}
-            style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', width:'100%', padding:'12px', background:'linear-gradient(135deg,var(--red-bright),var(--red-dim))', borderRadius:'8px', color:'#fff', textDecoration:'none', fontFamily:'var(--font-display)', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', transition:'box-shadow 0.3s, transform 0.2s' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.boxShadow='0 0 28px rgba(176,58,46,0.5)'; (e.currentTarget as HTMLAnchorElement).style.transform='translateY(-1px)' }}
+            style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', width:'100%', padding:'12px', background:'linear-gradient(135deg,var(--red-bright),var(--red-dim))', borderRadius:'8px', color:'var(--white)', textDecoration:'none', fontFamily:'var(--font-display)', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', transition:'box-shadow 0.3s, transform 0.2s' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.boxShadow='0 0 28px rgba(var(--red-dark-rgb),0.5)'; (e.currentTarget as HTMLAnchorElement).style.transform='translateY(-1px)' }}
             onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.boxShadow='none'; (e.currentTarget as HTMLAnchorElement).style.transform='translateY(0)' }}
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -187,12 +187,12 @@ export default function ContactSubmissionsTable() {
         @keyframes fadeUp { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:translateY(0) } }
         .cs-cell {
           padding: 14px 16px;
-          border-bottom: 1px solid rgba(176,58,46,0.08);
+          border-bottom: 1px solid rgba(var(--red-dark-rgb),0.08);
           vertical-align: middle;
           transition: background 0.2s;
         }
         .cs-row:hover .cs-cell {
-          background: rgba(176,58,46,0.04);
+          background: rgba(var(--red-dark-rgb),0.04);
           cursor: pointer;
         }
         .cs-row:hover .cs-cell:first-child { border-left: 2px solid var(--red-bright); }
@@ -200,8 +200,8 @@ export default function ContactSubmissionsTable() {
         .cs-tag {
           display: inline-flex; align-items: center; gap: 5px;
           padding: 3px 10px; border-radius: 100px;
-          border: 1px solid rgba(176,58,46,0.2);
-          background: rgba(176,58,46,0.05);
+          border: 1px solid rgba(var(--red-dark-rgb),0.2);
+          background: rgba(var(--red-dark-rgb),0.05);
           font-family: var(--font-display); font-size: 0.58rem;
           color: var(--text-muted); letter-spacing: 0.06em;
           white-space: nowrap;
@@ -209,31 +209,31 @@ export default function ContactSubmissionsTable() {
 
         .cs-search {
           width: 100%; padding: 10px 14px 10px 38px;
-          background: rgba(176,58,46,0.03);
-          border: 1px solid rgba(176,58,46,0.18);
+          background: rgba(var(--red-dark-rgb),0.03);
+          border: 1px solid rgba(var(--red-dark-rgb),0.18);
           border-radius: 8px; color: var(--text-primary);
           font-family: var(--font-light); font-size: 0.85rem;
           outline: none; transition: border-color 0.25s, box-shadow 0.25s;
         }
         .cs-search:focus {
-          border-color: rgba(176,58,46,0.6);
-          box-shadow: 0 0 20px rgba(176,58,46,0.12);
+          border-color: rgba(var(--red-dark-rgb),0.6);
+          box-shadow: 0 0 20px rgba(var(--red-dark-rgb),0.12);
         }
         .cs-search::placeholder { color: var(--text-muted); }
 
         .cs-stat {
           padding: 1.25rem 1.5rem; border-radius: 10px;
-          border: 1px solid rgba(176,58,46,0.15);
+          border: 1px solid rgba(var(--red-dark-rgb),0.15);
           background: var(--bg-card);
           transition: border-color 0.25s, box-shadow 0.25s;
         }
         .cs-stat:hover {
-          border-color: rgba(176,58,46,0.35);
-          box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+          border-color: rgba(var(--red-dark-rgb),0.35);
+          box-shadow: 0 8px 28px rgba(var(--black-rgb),0.3);
         }
 
-        .cs-excel-btn { display:flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(34,85,34,0.12); border:1px solid rgba(34,139,34,0.3); border-radius:8px; color:#4caf50; font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
-        .cs-excel-btn:hover { background:rgba(34,85,34,0.22); border-color:rgba(34,139,34,0.6); box-shadow:0 0 16px rgba(34,139,34,0.2); }
+        .cs-excel-btn { display:flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(var(--success-soft-rgb),0.12); border:1px solid rgba(var(--success-rgb),0.3); border-radius:8px; color:var(--success); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
+        .cs-excel-btn:hover { background:rgba(var(--success-soft-rgb),0.22); border-color:rgba(var(--success-rgb),0.6); box-shadow:0 0 16px rgba(var(--success-rgb),0.2); }
         @media (max-width: 768px) {
           .cs-hide-mobile { display: none !important; }
         }
@@ -261,7 +261,7 @@ export default function ContactSubmissionsTable() {
           {/* Search + Excel */}
           <div style={{ display:'flex', alignItems:'center', gap:'1rem', marginBottom:'1.5rem', flexWrap:'wrap' }}>
             <div style={{ position:'relative', flex:1, minWidth:'220px', maxWidth:'420px', animation:'fadeUp 0.5s ease 0.2s both' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }}>
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
               <input
@@ -295,7 +295,7 @@ export default function ContactSubmissionsTable() {
           )}
 
           {error && (
-            <div style={{ padding:'1.5rem', borderRadius:'10px', border:'1px solid rgba(176,58,46,0.35)', background:'rgba(176,58,46,0.06)', color:'var(--red-bright)', fontFamily:'var(--font-display)', fontSize:'0.75rem', letterSpacing:'0.06em' }}>
+            <div style={{ padding:'1.5rem', borderRadius:'10px', border:'1px solid rgba(var(--red-dark-rgb),0.35)', background:'rgba(var(--red-dark-rgb),0.06)', color:'var(--red-bright)', fontFamily:'var(--font-display)', fontSize:'0.75rem', letterSpacing:'0.06em' }}>
               {error}
             </div>
           )}
@@ -308,13 +308,13 @@ export default function ContactSubmissionsTable() {
 
           {/* Table */}
           {!loading && !error && filtered.length > 0 && (
-            <div style={{ borderRadius:'12px', border:'1px solid rgba(176,58,46,0.15)', overflow:'hidden', animation:'fadeUp 0.5s ease 0.25s both' }}>
+            <div style={{ borderRadius:'12px', border:'1px solid rgba(var(--red-dark-rgb),0.15)', overflow:'hidden', animation:'fadeUp 0.5s ease 0.25s both' }}>
               <div style={{ overflowX:'auto' }}>
                 <table style={{ width:'100%', borderCollapse:'collapse' }}>
 
                   {/* Head */}
                   <thead>
-                    <tr style={{ background:'rgba(176,58,46,0.06)', borderBottom:'1px solid rgba(176,58,46,0.2)' }}>
+                    <tr style={{ background:'rgba(var(--red-dark-rgb),0.06)', borderBottom:'1px solid rgba(var(--red-dark-rgb),0.2)' }}>
                       {['#', 'Name', 'Email', 'Phone', 'Company', 'Service', 'Found Via', 'Date', ''].map((h, i) => (
                         <th key={i} className={['Phone','Company'].includes(h) ? 'cs-hide-mobile' : ''} style={{ padding:'12px 16px', fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'var(--red-bright)', textAlign:'left', whiteSpace:'nowrap', fontWeight:700 }}>
                           {h}
@@ -340,7 +340,7 @@ export default function ContactSubmissionsTable() {
                         {/* Name */}
                         <td className="cs-cell" style={{ minWidth:'160px' }}>
                           <div style={{ display:'flex', alignItems:'center', gap:'10px' }}>
-                            <div style={{ width:'32px', height:'32px', borderRadius:'50%', background:'rgba(176,58,46,0.12)', border:'1px solid rgba(176,58,46,0.25)', display:'flex', alignItems:'center', justifyContent:'center', fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, color:'var(--red-bright)', flexShrink:0 }}>
+                            <div style={{ width:'32px', height:'32px', borderRadius:'50%', background:'rgba(var(--red-dark-rgb),0.12)', border:'1px solid rgba(var(--red-dark-rgb),0.25)', display:'flex', alignItems:'center', justifyContent:'center', fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, color:'var(--red-bright)', flexShrink:0 }}>
                               {initials(s)}
                             </div>
                             <span style={{ fontFamily:'var(--font-display)', fontSize:'0.78rem', fontWeight:600, color:'var(--text-primary)' }}>
@@ -387,7 +387,7 @@ export default function ContactSubmissionsTable() {
 
                         {/* Arrow */}
                         <td className="cs-cell" style={{ width:'40px', textAlign:'center' }}>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                           </svg>
                         </td>
@@ -398,7 +398,7 @@ export default function ContactSubmissionsTable() {
               </div>
 
               {/* Footer */}
-              <div style={{ padding:'12px 16px', borderTop:'1px solid rgba(176,58,46,0.1)', background:'rgba(176,58,46,0.03)', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+              <div style={{ padding:'12px 16px', borderTop:'1px solid rgba(var(--red-dark-rgb),0.1)', background:'rgba(var(--red-dark-rgb),0.03)', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
                 <p style={{ fontFamily:'var(--font-display)', fontSize:'0.52rem', letterSpacing:'0.14em', color:'var(--text-muted)' }}>
                   {filtered.length} of {data.length} submissions
                 </p>

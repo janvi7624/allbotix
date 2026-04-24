@@ -39,32 +39,32 @@ function LoginForm({ onSuccess }: { onSuccess: () => void }) {
         @keyframes loginGlow   { 0%,100%{opacity:0.55;transform:scale(1)} 50%{opacity:1;transform:scale(1.1)} }
         @keyframes loginScan   { 0%{top:-4%;opacity:0.45} 100%{top:108%;opacity:0} }
         @keyframes loginRingCW { to{transform:translate(-50%,-50%) rotate(360deg)} }
-        @keyframes loginPulse  { 0%,100%{box-shadow:0 0 0 0 rgba(176,58,46,0.4)} 60%{box-shadow:0 0 0 8px rgba(176,58,46,0)} }
+        @keyframes loginPulse  { 0%,100%{box-shadow:0 0 0 0 rgba(var(--red-dark-rgb),0.4)} 60%{box-shadow:0 0 0 8px rgba(var(--red-dark-rgb),0)} }
         @keyframes spinLoader  { to{transform:rotate(360deg)} }
         @keyframes shake       { 0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-6px)} 40%,80%{transform:translateX(6px)} }
-        .login-input { width:100%; padding:13px 14px; background:rgba(176,58,46,0.02); border:1px solid rgba(176,58,46,0.18); border-radius:8px; color:var(--text-primary); font-family:var(--font-light); font-size:0.88rem; outline:none; transition:border-color 0.25s,background 0.25s,box-shadow 0.25s; box-sizing:border-box; }
-        .login-input:focus { border-color:rgba(176,58,46,0.6); background:rgba(176,58,46,0.05); box-shadow:0 0 20px rgba(176,58,46,0.12),inset 0 1px 0 rgba(176,58,46,0.08); }
+        .login-input { width:100%; padding:13px 14px; background:rgba(var(--red-dark-rgb),0.02); border:1px solid rgba(var(--red-dark-rgb),0.18); border-radius:8px; color:var(--text-primary); font-family:var(--font-light); font-size:0.88rem; outline:none; transition:border-color 0.25s,background 0.25s,box-shadow 0.25s; box-sizing:border-box; }
+        .login-input:focus { border-color:rgba(var(--red-dark-rgb),0.6); background:rgba(var(--red-dark-rgb),0.05); box-shadow:0 0 20px rgba(var(--red-dark-rgb),0.12),inset 0 1px 0 rgba(var(--red-dark-rgb),0.08); }
         .login-input::placeholder { color:var(--text-muted); }
-        .login-btn { width:100%; padding:14px; background:linear-gradient(135deg,var(--red-bright),var(--red-dim)); border:none; border-radius:8px; color:#fff; font-family:var(--font-display); font-size:0.68rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; position:relative; overflow:hidden; transition:box-shadow 0.3s,transform 0.2s; }
-        .login-btn:hover:not(:disabled) { box-shadow:0 0 32px rgba(176,58,46,0.5),0 8px 24px rgba(0,0,0,0.4); transform:translateY(-2px); }
+        .login-btn { width:100%; padding:14px; background:linear-gradient(135deg,var(--red-bright),var(--red-dim)); border:none; border-radius:8px; color:var(--white); font-family:var(--font-display); font-size:0.68rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; position:relative; overflow:hidden; transition:box-shadow 0.3s,transform 0.2s; }
+        .login-btn:hover:not(:disabled) { box-shadow:0 0 32px rgba(var(--red-dark-rgb),0.5),0 8px 24px rgba(var(--black-rgb),0.4); transform:translateY(-2px); }
         .login-btn:disabled { opacity:0.65; cursor:not-allowed; transform:none; }
-        .login-btn::after { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent); transform:skewX(-20deg); transition:left 0.5s; }
+        .login-btn::after { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(var(--white-rgb),0.14),transparent); transform:skewX(-20deg); transition:left 0.5s; }
         .login-btn:hover:not(:disabled)::after { left:160%; }
       `}</style>
 
       <div style={{ minHeight:'100vh', background:'var(--bg-900)', display:'flex', alignItems:'center', justifyContent:'center', position:'relative', overflow:'hidden' }}>
-        <div aria-hidden="true" style={{ position:'absolute', top:'10%', right:'-8%', width:'450px', height:'450px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.07) 0%,transparent 70%)', pointerEvents:'none', animation:'loginGlow 6s ease-in-out infinite' }} />
-        <div aria-hidden="true" style={{ position:'absolute', bottom:'10%', left:'-8%', width:'380px', height:'380px', borderRadius:'50%', background:'radial-gradient(circle,rgba(176,58,46,0.05) 0%,transparent 70%)', pointerEvents:'none', animation:'loginGlow 8s ease-in-out 2s infinite' }} />
-        <div aria-hidden="true" style={{ position:'absolute', left:0, right:0, height:'2px', background:'linear-gradient(90deg,transparent,rgba(176,58,46,0.35),transparent)', animation:'loginScan 5s linear infinite', pointerEvents:'none', zIndex:1 }} />
-        <div aria-hidden="true" style={{ position:'absolute', width:'520px', height:'520px', borderRadius:'50%', border:'1px dashed rgba(176,58,46,0.08)', top:'50%', left:'50%', animation:'loginRingCW 30s linear infinite', pointerEvents:'none' }} />
+        <div aria-hidden="true" style={{ position:'absolute', top:'10%', right:'-8%', width:'450px', height:'450px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.07) 0%,transparent 70%)', pointerEvents:'none', animation:'loginGlow 6s ease-in-out infinite' }} />
+        <div aria-hidden="true" style={{ position:'absolute', bottom:'10%', left:'-8%', width:'380px', height:'380px', borderRadius:'50%', background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.05) 0%,transparent 70%)', pointerEvents:'none', animation:'loginGlow 8s ease-in-out 2s infinite' }} />
+        <div aria-hidden="true" style={{ position:'absolute', left:0, right:0, height:'2px', background:'linear-gradient(90deg,transparent,rgba(var(--red-dark-rgb),0.35),transparent)', animation:'loginScan 5s linear infinite', pointerEvents:'none', zIndex:1 }} />
+        <div aria-hidden="true" style={{ position:'absolute', width:'520px', height:'520px', borderRadius:'50%', border:'1px dashed rgba(var(--red-dark-rgb),0.08)', top:'50%', left:'50%', animation:'loginRingCW 30s linear infinite', pointerEvents:'none' }} />
 
         <div style={{ position:'relative', zIndex:2, width:'min(420px,calc(100vw - 2rem))', opacity:mounted?1:0, transform:mounted?'translateY(0)':'translateY(30px)', transition:'opacity 0.7s ease,transform 0.7s ease' }}>
-          <div style={{ background:'var(--bg-card)', border:'1px solid rgba(176,58,46,0.2)', borderRadius:'16px', overflow:'hidden', boxShadow:'0 32px 80px rgba(0,0,0,0.6),0 0 40px rgba(176,58,46,0.06)' }}>
+          <div style={{ background:'var(--bg-card)', border:'1px solid rgba(var(--red-dark-rgb),0.2)', borderRadius:'16px', overflow:'hidden', boxShadow:'0 32px 80px rgba(var(--black-rgb),0.6),0 0 40px rgba(var(--red-dark-rgb),0.06)' }}>
             <div style={{ height:'2px', background:'linear-gradient(90deg,var(--red-bright),var(--red-dim),transparent)' }} />
 
             <div style={{ padding:'2.5rem' }}>
               <div style={{ textAlign:'center', marginBottom:'2rem', animation:mounted?'loginFadeUp 0.5s ease 0.1s both':'none' }}>
-                <div style={{ width:'56px', height:'56px', borderRadius:'14px', border:'1px solid rgba(176,58,46,0.35)', background:'rgba(176,58,46,0.08)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 1rem', animation:'loginPulse 2.5s ease-in-out infinite', color:'var(--red-bright)' }}>
+                <div style={{ width:'56px', height:'56px', borderRadius:'14px', border:'1px solid rgba(var(--red-dark-rgb),0.35)', background:'rgba(var(--red-dark-rgb),0.08)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 1rem', animation:'loginPulse 2.5s ease-in-out infinite', color:'var(--red-bright)' }}>
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="11" width="18" height="10" rx="2"/>
                     <path d="M12 2v4M9 11V7a3 3 0 016 0v4"/>
@@ -80,7 +80,7 @@ function LoginForm({ onSuccess }: { onSuccess: () => void }) {
                 <div>
                   <label style={{ display:'block', fontFamily:'var(--font-display)', fontSize:'0.52rem', letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--text-muted)', marginBottom:'6px' }}>Username</label>
                   <div style={{ position:'relative' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }}>
                       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
                     </svg>
                     <input type="text" className="login-input" style={{ paddingLeft:'38px' }} placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} autoComplete="username" required />
@@ -90,11 +90,11 @@ function LoginForm({ onSuccess }: { onSuccess: () => void }) {
                 <div>
                   <label style={{ display:'block', fontFamily:'var(--font-display)', fontSize:'0.52rem', letterSpacing:'0.16em', textTransform:'uppercase', color:'var(--text-muted)', marginBottom:'6px' }}>Password</label>
                   <div style={{ position:'relative' }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position:'absolute', left:'12px', top:'50%', transform:'translateY(-50%)', pointerEvents:'none' }}>
                       <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                     </svg>
                     <input type={showPass?'text':'password'} className="login-input" style={{ paddingLeft:'38px', paddingRight:'42px' }} placeholder="Enter password" value={password} onChange={e => setPassword(e.target.value)} autoComplete="current-password" required />
-                    <button type="button" onClick={() => setShowPass(p => !p)} style={{ position:'absolute', right:'12px', top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', color:'rgba(176,58,46,0.45)', padding:'2px', display:'flex', alignItems:'center' }}>
+                    <button type="button" onClick={() => setShowPass(p => !p)} style={{ position:'absolute', right:'12px', top:'50%', transform:'translateY(-50%)', background:'none', border:'none', cursor:'pointer', color:'rgba(var(--red-dark-rgb),0.45)', padding:'2px', display:'flex', alignItems:'center' }}>
                       {showPass
                         ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
                         : <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -104,7 +104,7 @@ function LoginForm({ onSuccess }: { onSuccess: () => void }) {
                 </div>
 
                 {error && (
-                  <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'10px 14px', borderRadius:'8px', background:'rgba(176,58,46,0.08)', border:'1px solid rgba(176,58,46,0.3)', animation:'shake 0.4s ease' }}>
+                  <div style={{ display:'flex', alignItems:'center', gap:'8px', padding:'10px 14px', borderRadius:'8px', background:'rgba(var(--red-dark-rgb),0.08)', border:'1px solid rgba(var(--red-dark-rgb),0.3)', animation:'shake 0.4s ease' }}>
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink:0 }}>
                       <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
                     </svg>
@@ -154,32 +154,32 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
           cursor: pointer; transition: all 0.25s; white-space: nowrap;
         }
         .admin-tab.active {
-          background: rgba(176,58,46,0.18); border: 1px solid rgba(176,58,46,0.45);
-          color: var(--red-bright); box-shadow: 0 0 18px rgba(176,58,46,0.15);
+          background: rgba(var(--red-dark-rgb),0.18); border: 1px solid rgba(var(--red-dark-rgb),0.45);
+          color: var(--red-bright); box-shadow: 0 0 18px rgba(var(--red-dark-rgb),0.15);
         }
         .admin-tab.inactive {
-          background: rgba(176,58,46,0.04); border: 1px solid rgba(176,58,46,0.15);
+          background: rgba(var(--red-dark-rgb),0.04); border: 1px solid rgba(var(--red-dark-rgb),0.15);
           color: var(--text-muted);
         }
         .admin-tab.inactive:hover {
-          background: rgba(176,58,46,0.09); border-color: rgba(176,58,46,0.3);
+          background: rgba(var(--red-dark-rgb),0.09); border-color: rgba(var(--red-dark-rgb),0.3);
           color: var(--text-secondary);
         }
         .tab-panel { animation: tabFadeIn 0.32s cubic-bezier(0.23,1,0.32,1) both; }
-        .logout-btn { display:flex; align-items:center; gap:7px; padding:8px 14px; background:rgba(176,58,46,0.08); border:1px solid rgba(176,58,46,0.25); border-radius:8px; color:var(--text-muted); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
-        .logout-btn:hover { border-color:var(--red-bright); color:var(--red-bright); background:rgba(176,58,46,0.14); }
+        .logout-btn { display:flex; align-items:center; gap:7px; padding:8px 14px; background:rgba(var(--red-dark-rgb),0.08); border:1px solid rgba(var(--red-dark-rgb),0.25); border-radius:8px; color:var(--text-muted); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
+        .logout-btn:hover { border-color:var(--red-bright); color:var(--red-bright); background:rgba(var(--red-dark-rgb),0.14); }
       `}</style>
 
-      <div style={{ minHeight:'100vh', background:'var(--bg-900)', paddingBottom:'6rem', paddingTop: '6rem', }}>
+      <div style={{ minHeight:'100vh', background:'var(--bg-900)', paddingBottom:'6rem', paddingTop:'clamp(120px, 12vw, 120px)' }}>
 
         {/* ── Sticky Header ── */}
-        <div style={{ borderBottom:'1px solid rgba(176,58,46,0.15)', background:'rgba(8,8,8,0.88)', backdropFilter:'blur(14px)', position:'sticky', top:0, zIndex:20 }}>
+        <div style={{ borderTop:'1px solid rgba(var(--red-dark-rgb),0.15)', background:'var(--bg-900)', backdropFilter:'blur(14px)', position:'sticky', top:0, zIndex:20, padding:'0.5rem 0' }}>
           <div style={{ maxWidth:'1400px', margin:'0 auto', padding:'0 2rem' }}>
 
             {/* Brand + Logout row */}
-            <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', paddingTop:'1rem', paddingBottom:'0.75rem', gap:'1rem', flexWrap:'wrap', borderBottom:'1px solid rgba(176,58,46,0.07)' }}>
+            <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', paddingTop:'1rem', paddingBottom:'0.75rem', gap:'1rem', flexWrap:'wrap', borderBottom:'1px solid rgba(var(--red-dark-rgb),0.07)' }}>
               <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
-                <div style={{ width:'8px', height:'8px', borderRadius:'50%', background:'var(--red-bright)', boxShadow:'0 0 10px rgba(176,58,46,0.8)', animation:'cs-pulse 2s ease-in-out infinite' }} />
+                <div style={{ width:'8px', height:'8px', borderRadius:'50%', background:'var(--red-bright)', boxShadow:'0 0 10px rgba(var(--red-dark-rgb),0.8)', animation:'cs-pulse 2s ease-in-out infinite' }} />
                 <div>
                   <p style={{ fontFamily:'var(--font-display)', fontSize:'0.44rem', letterSpacing:'0.24em', textTransform:'uppercase', color:'var(--red-bright)', marginBottom:'1px' }}>Allbotix Admin</p>
                   <h1 style={{ fontFamily:'var(--font-display)', fontSize:'0.95rem', fontWeight:900, color:'var(--text-primary)', letterSpacing:'0.04em' }}>
@@ -251,7 +251,7 @@ export default function AdminPage() {
 
   if (!checked) return (
     <div style={{ minHeight:'100vh', background:'var(--bg-900)', display:'flex', alignItems:'center', justifyContent:'center' }}>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(176,58,46,0.5)" strokeWidth="2.5" style={{ animation:'spin 0.8s linear infinite' }}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.5)" strokeWidth="2.5" style={{ animation:'spin 0.8s linear infinite' }}>
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
       </svg>
       <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>

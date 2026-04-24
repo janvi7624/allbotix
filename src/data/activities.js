@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const ACTIVITY_CATEGORIES = [
   {
     key: 'all',

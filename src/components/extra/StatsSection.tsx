@@ -142,7 +142,7 @@ function StatCard({
     if (shineRef.current) {
       const px = ((e.clientX - rect.left) / rect.width) * 100
       const py = ((e.clientY - rect.top) / rect.height) * 100
-      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(232,57,42,0.10) 0%, transparent 60%)`
+      shineRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(var(--red-accent-rgb),0.10) 0%, transparent 60%)`
       shineRef.current.style.opacity = '1'
     }
   }
@@ -162,7 +162,7 @@ function StatCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{
-        background: hovered ? 'var(--bg-700, rgba(22,14,14,0.98))' : 'rgba(11,11,11,0.95)',
+        background: hovered ? 'var(--bg-700, rgba(var(--bg-hover-rgb),0.98))' : 'rgba(var(--overlay-dark-rgb),0.95)',
         padding: '2.25rem 1.75rem',
         position: 'relative',
         display: 'flex',
@@ -174,7 +174,7 @@ function StatCard({
         transformStyle: 'preserve-3d',
         transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1), background 0.3s, box-shadow 0.4s',
         boxShadow: hovered
-          ? '0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(232,57,42,0.12), inset 0 1px 0 rgba(232,57,42,0.15)'
+          ? '0 20px 60px rgba(var(--black-rgb),0.6), 0 0 30px rgba(var(--red-accent-rgb),0.12), inset 0 1px 0 rgba(var(--red-accent-rgb),0.15)'
           : 'none',
         /* entrance */
         animation: `cardIn 0.6s cubic-bezier(0.23,1,0.32,1) ${index * 0.12 + 0.1}s both`,
@@ -227,7 +227,7 @@ function StatCard({
             stroke: 'var(--red-bright)',
             fill: 'none',
             strokeWidth: 1.5,
-            filter: 'drop-shadow(0 0 6px rgba(232,57,42,0.55))',
+            filter: 'drop-shadow(0 0 6px rgba(var(--red-accent-rgb),0.55))',
           }}
           viewBox="0 0 24 24"
           strokeLinecap="round"
@@ -247,7 +247,7 @@ function StatCard({
           fontFamily: 'var(--font-display)',
           fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
           fontWeight: 900,
-          color: 'rgba(232,57,42,0.055)',
+          color: 'rgba(var(--red-accent-rgb),0.055)',
           userSelect: 'none',
           pointerEvents: 'none',
           transform: 'translateY(4px) translateX(4px)',
@@ -267,7 +267,7 @@ function StatCard({
           lineHeight: 1,
           letterSpacing: '0.02em',
           transform: 'translateZ(20px)',
-          textShadow: '0 0 20px rgba(240,236,232,0.08)',
+          textShadow: '0 0 20px rgba(var(--white-rgb),0.08)',
         }}
       >
         <AnimatedNumber
@@ -362,8 +362,8 @@ export default function StatsSection() {
           position: 'relative',
           paddingBlock: '5rem',
           background: `
-            linear-gradient(135deg, rgba(8,8,8,0.96) 0%, rgba(14,8,8,0.93) 50%, rgba(8,8,8,0.96) 100%),
-            repeating-linear-gradient(45deg, rgba(176,58,46,0.015) 0px, rgba(176,58,46,0.015) 1px, transparent 1px, transparent 20px)
+            linear-gradient(135deg, rgba(var(--overlay-dark-rgb),0.96) 0%, rgba(var(--bg-hover-rgb),0.93) 50%, rgba(var(--overlay-dark-rgb),0.96) 100%),
+            repeating-linear-gradient(45deg, rgba(var(--red-dark-rgb),0.015) 0px, rgba(var(--red-dark-rgb),0.015) 1px, transparent 1px, transparent 20px)
           `,
         }}
       >
@@ -373,7 +373,7 @@ export default function StatsSection() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(176,58,46,0.09) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(var(--red-dark-rgb),0.09) 0%, transparent 70%)',
             pointerEvents: 'none',
             animation: 'pulseGlow 4s ease-in-out infinite alternate',
           }}

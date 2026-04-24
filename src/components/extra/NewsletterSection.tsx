@@ -52,7 +52,7 @@ export default function NewsletterSection() {
           width: '400px',
           height: '400px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.07) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -68,7 +68,7 @@ export default function NewsletterSection() {
           width: '400px',
           height: '400px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.05) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -205,7 +205,7 @@ export default function NewsletterSection() {
                   width: '100%',
                   padding: '0.85rem 1rem 0.85rem 2.75rem',
                   background: 'var(--bg-900)',
-                  border: `1px solid ${focused ? 'rgba(176,58,46,0.55)' : 'var(--border)'}`,
+                  border: `1px solid ${focused ? 'rgba(var(--red-dark-rgb),0.55)' : 'var(--border)'}`,
                   borderRight: 'none',
                   borderRadius: '6px 0 0 6px',
                   color: 'var(--text-primary)',
@@ -214,7 +214,7 @@ export default function NewsletterSection() {
                   outline: 'none',
                   transition: 'border-color 0.25s',
                   clipPath: 'polygon(0 0, calc(100%) 0, 100% 100%, 8px 100%, 0 calc(100% - 8px))',
-                  boxShadow: focused ? 'inset 0 0 0 1px rgba(176,58,46,0.1)' : 'none',
+                  boxShadow: focused ? 'inset 0 0 0 1px rgba(var(--red-dark-rgb),0.1)' : 'none',
                 }}
               />
             </div>

@@ -25,11 +25,11 @@ function ParticleField() {
         if (p.x<0) p.x=w; if (p.x>w) p.x=0
         if (p.y<0) p.y=h; if (p.y>h) p.y=0
         ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
-        ctx.fillStyle=`rgba(176,58,46,${p.o})`; ctx.fill()
+        ctx.fillStyle=`rgba(var(--red-dark-rgb),${p.o})`; ctx.fill()
       })
       for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
         const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy)
-        if(d<95){ctx.beginPath();ctx.strokeStyle=`rgba(176,58,46,${0.09*(1-d/95)})`;ctx.lineWidth=0.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}
+        if(d<95){ctx.beginPath();ctx.strokeStyle=`rgba(var(--red-dark-rgb),${0.09*(1-d/95)})`;ctx.lineWidth=0.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}
       }
       raf=requestAnimationFrame(draw)
     }
@@ -38,7 +38,7 @@ function ParticleField() {
     window.addEventListener('resize',resize)
     return ()=>{cancelAnimationFrame(raf);window.removeEventListener('resize',resize)}
   },[])
-  return <canvas ref={canvasRef} style={{ position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none',zIndex:0 }}/>
+  return <canvas ref={canvasRef} style={{ position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none',zIndex:0, opacity: 0.5 }}/>
 }
 
 /* ─── Perk Card ──────────────────────────────────────────────────────────── */
@@ -50,11 +50,11 @@ function PerkCard({ item, index, visible }: { item: typeof PERKS[0]; index: numb
       onMouseLeave={() => setHovered(false)}
       style={{
         padding: '1.75rem 1.5rem',
-        background: hovered ? 'rgba(176,58,46,0.07)' : 'var(--bg-card)',
-        border: `1px solid ${hovered ? 'rgba(176,58,46,0.4)' : 'rgba(176,58,46,0.1)'}`,
+        background: hovered ? 'rgba(var(--red-dark-rgb),0.07)' : 'var(--bg-card)',
+        border: `1px solid ${hovered ? 'rgba(var(--red-dark-rgb),0.4)' : 'rgba(var(--red-dark-rgb),0.1)'}`,
         borderRadius: '14px', position: 'relative', overflow: 'hidden',
         transition: 'all 0.3s ease',
-        boxShadow: hovered ? '0 8px 40px rgba(0,0,0,0.35), 0 0 18px rgba(176,58,46,0.08)' : '0 4px 16px rgba(0,0,0,0.2)',
+        boxShadow: hovered ? '0 8px 40px rgba(var(--black-rgb),0.35), 0 0 18px rgba(var(--red-dark-rgb),0.08)' : '0 4px 16px rgba(var(--black-rgb),0.2)',
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(24px)',
         transitionDelay: `${index * 0.08 + 0.1}s`,
@@ -69,12 +69,12 @@ function PerkCard({ item, index, visible }: { item: typeof PERKS[0]; index: numb
         height: '42px',
         marginBottom: '1rem',
         borderRadius: '50%',
-        border: '1.5px solid rgba(176,58,46,0.5)',
+        border: '1.5px solid rgba(var(--red-dark-rgb),0.5)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'rgb(176,58,46)',
-        background: 'rgba(176,58,46,0.08)',
+        color: 'rgb(var(--red-dark-rgb))',
+        background: 'rgba(var(--red-dark-rgb),0.08)',
         flexShrink: 0,
       }}>
         <div style={{ width: '18px', height: '18px', display: 'flex' }}>
@@ -131,8 +131,10 @@ function ApplicationForm({ visible }: { visible: boolean }) {
 
   const fieldStyle: React.CSSProperties = {
     width: '100%', padding: '12px 16px',
-    background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(176,58,46,0.2)',
+    // ✅ was: rgba(var(--white-rgb),0.03) — invisible on white bg
+    background: 'var(--bg-800)',
+    // ✅ was: rgba(var(--red-dark-rgb),0.2) — too faint; copper-border reads better on light
+    border: '1px solid var(--copper-border)',
     borderRadius: '10px',
     color: 'var(--text-primary)',
     fontFamily: 'var(--font-light)',
@@ -153,20 +155,22 @@ function ApplicationForm({ visible }: { visible: boolean }) {
   }
 
   const focusIn  = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(176,58,46,0.6)'
-    e.currentTarget.style.background  = 'rgba(176,58,46,0.04)'
+    e.currentTarget.style.borderColor = 'var(--copper)'
+    // ✅ was: rgba(var(--red-dark-rgb),0.04) — too dark/invisible; soft copper tint fits light bg
+    e.currentTarget.style.background  = 'var(--copper-soft)'
   }
   const focusOut = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    e.currentTarget.style.borderColor = 'rgba(176,58,46,0.2)'
-    e.currentTarget.style.background  = 'rgba(255,255,255,0.03)'
+    e.currentTarget.style.borderColor = 'var(--copper-border)'
+    e.currentTarget.style.background  = 'var(--bg-800)'
   }
 
   if (sent) {
     return (
       <div style={{
         padding: '4rem 2rem', textAlign: 'center',
-        background: 'rgba(176,58,46,0.04)',
-        border: '1px solid rgba(176,58,46,0.25)',
+        // ✅ was: rgba(var(--red-dark-rgb),0.04) — near-invisible on white; use red-soft token
+        background: 'var(--red-soft)',
+        border: '1px solid var(--copper-border)',
         borderRadius: '16px',
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.7s ease 0.1s',
@@ -179,11 +183,18 @@ function ApplicationForm({ visible }: { visible: boolean }) {
           Thank you, <strong style={{ color: 'var(--text-primary)' }}>{form.name}</strong>. We'll review your profile and be in touch within 5 business days.
         </p>
         <p style={{ fontFamily: 'var(--font-light)', fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '380px', margin: '0 auto 2rem' }}>
-          Keep an eye on <strong style={{ color: 'rgba(176,58,46,0.8)' }}>{form.email}</strong> — that's where we'll reach out.
+          Keep an eye on <strong style={{ color: 'var(--copper)' }}>{form.email}</strong> — that's where we'll reach out.
         </p>
         <button
           onClick={() => setSent(false)}
-          style={{ padding: '10px 28px', borderRadius: '100px', border: '1px solid rgba(176,58,46,0.4)', background: 'rgba(176,58,46,0.1)', color: 'var(--red-bright)', fontFamily: 'var(--font-display)', fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.25s' }}
+          style={{
+            padding: '10px 28px', borderRadius: '100px',
+            border: '1px solid var(--copper-border)',
+            // ✅ was: var(--navy) — dark bg looks wrong on light theme; use bg-800
+            background: 'var(--bg-800)',
+            color: 'var(--red-bright)',
+            fontFamily: 'var(--font-display)', fontSize: '0.56rem', letterSpacing: '0.16em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.25s',
+          }}
         >
           Submit Another
         </button>
@@ -194,10 +205,12 @@ function ApplicationForm({ visible }: { visible: boolean }) {
   return (
     <div style={{
       position: 'relative',
-      background: 'linear-gradient(145deg,rgba(18,8,8,0.8),rgba(10,6,6,0.9))',
-      border: '1px solid rgba(176,58,46,0.22)',
+      // ✅ was: linear-gradient with overlay-light-rgb (pinkish tint) — use clean white card bg
+      background: 'var(--bg-card)',
+      border: '1px solid var(--copper-border)',
       borderRadius: '16px', overflow: 'hidden',
-      boxShadow: '0 24px 80px rgba(0,0,0,0.5), 0 0 60px rgba(176,58,46,0.06)',
+      // ✅ was: rgba(var(--black-rgb),0.3) deep shadow — too heavy on light; use navy-tinted shadow
+      boxShadow: '0 12px 48px rgba(var(--black-rgb),0.10), 0 0 40px var(--copper-soft)',
       opacity: visible ? 1 : 0,
       transform: visible ? 'translateY(0)' : 'translateY(28px)',
       transition: 'opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s',
@@ -208,7 +221,7 @@ function ApplicationForm({ visible }: { visible: boolean }) {
       <div style={{ padding: '2.5rem 2.75rem 3rem' }}>
         {/* Form header */}
         <div style={{ marginBottom: '2.25rem' }}>
-          <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--red-bright)', marginBottom: '8px' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.5rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--copper)', marginBottom: '8px' }}>
             Start Your Journey
           </p>
           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 900, color: 'var(--text-primary)', letterSpacing: '0.02em', lineHeight: 1.2 }}>
@@ -243,11 +256,12 @@ function ApplicationForm({ visible }: { visible: boolean }) {
           <div>
             <label style={labelStyle}>Department Interest <span style={{ color: 'var(--red-bright)' }}>*</span></label>
             <select name="dept" value={form.dept} onChange={handle}
-              style={{ ...fieldStyle, cursor: 'pointer', appearance: 'none' as const, backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(176,58,46,0.7)' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center' }}
+              style={{ ...fieldStyle, cursor: 'pointer', appearance: 'none' as const, backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(var(--red-dark-rgb),0.7)' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center' }}
               onFocus={focusIn} onBlur={focusOut}
             >
-              <option value="" style={{ background: '#0a0606' }}>Select a department…</option>
-              {DEPARTMENTS.map(d => <option key={d} value={d} style={{ background: '#0a0606' }}>{d}</option>)}
+              {/* ✅ was: bg-deep-black — pure black clashes with light theme; use bg-card */}
+              <option value="" style={{ background: 'var(--bg-card)', color: 'var(--text-muted)' }}>Select a department…</option>
+              {DEPARTMENTS.map(d => <option key={d} value={d} style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>{d}</option>)}
             </select>
           </div>
         </div>
@@ -276,13 +290,14 @@ function ApplicationForm({ visible }: { visible: boolean }) {
                 onClick={() => setForm(p => ({ ...p, experience: opt }))}
                 style={{
                   padding: '8px 18px', borderRadius: '100px',
-                  border: `1px solid ${form.experience === opt ? 'var(--red-bright)' : 'rgba(176,58,46,0.2)'}`,
-                  background: form.experience === opt ? 'rgba(176,58,46,0.18)' : 'rgba(255,255,255,0.02)',
+                  border: `1px solid ${form.experience === opt ? 'var(--copper)' : 'var(--copper-border)'}`,
+                  // ✅ was: rgba(var(--white-rgb),0.02) unselected — invisible on white; use bg-800
+                  background: form.experience === opt ? 'var(--red-soft)' : 'var(--bg-800)',
                   color: form.experience === opt ? 'var(--red-bright)' : 'var(--text-muted)',
                   fontFamily: 'var(--font-display)', fontSize: '0.52rem',
                   letterSpacing: '0.14em', textTransform: 'uppercase' as const,
                   cursor: 'pointer', transition: 'all 0.2s',
-                  boxShadow: form.experience === opt ? '0 0 14px rgba(176,58,46,0.2)' : 'none',
+                  boxShadow: form.experience === opt ? '0 0 14px var(--copper-glow)' : 'none',
                 }}
               >{opt}</button>
             ))}
@@ -300,7 +315,7 @@ function ApplicationForm({ visible }: { visible: boolean }) {
         <div style={{ marginBottom: '2rem' }}>
           <label style={labelStyle}>
             Why Allbotix? <span style={{ color: 'var(--red-bright)' }}>*</span>
-            <span style={{ color: 'rgba(176,58,46,0.5)', marginLeft: '6px' }}>(What excites you about autonomous robotics?)</span>
+            <span style={{ color: 'var(--text-muted)', marginLeft: '6px' }}>(What excites you about autonomous robotics?)</span>
           </label>
           <textarea
             name="why" placeholder="Tell us what draws you to this space and what you'd build with us…"
@@ -317,20 +332,22 @@ function ApplicationForm({ visible }: { visible: boolean }) {
             disabled={!isValid || loading}
             style={{
               padding: '14px 32px', borderRadius: '10px',
-              border: '1px solid rgba(176,58,46,0.5)',
+              border: '1px solid transparent',
+              // ✅ was: rgba(var(--red-dark-rgb),0.38) semi-transparent dark — muddy on light bg;
+              //    active = solid brand gradient (white text), disabled = muted bg (muted text)
               background: isValid && !loading
-                ? 'linear-gradient(135deg,rgba(176,58,46,0.38),rgba(176,58,46,0.18))'
-                : 'rgba(176,58,46,0.06)',
-              color: isValid && !loading ? 'var(--text-primary)' : 'rgba(255,255,255,0.3)',
+                ? 'linear-gradient(135deg, var(--red-bright), var(--amber))'
+                : 'var(--bg-700)',
+              color: isValid && !loading ? '#ffffff' : 'var(--text-muted)',
               fontFamily: 'var(--font-display)', fontSize: '0.62rem',
               letterSpacing: '0.16em', textTransform: 'uppercase' as const,
               cursor: isValid && !loading ? 'pointer' : 'not-allowed',
               transition: 'all 0.25s',
-              boxShadow: isValid && !loading ? '0 0 24px rgba(176,58,46,0.2)' : 'none',
+              boxShadow: isValid && !loading ? '0 4px 20px var(--red-glow)' : 'none',
               display: 'flex', alignItems: 'center', gap: '8px',
             }}
-            onMouseEnter={e => { if (isValid && !loading) (e.currentTarget as HTMLElement).style.boxShadow = '0 0 36px rgba(176,58,46,0.38)' }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = isValid && !loading ? '0 0 24px rgba(176,58,46,0.2)' : 'none' }}
+            onMouseEnter={e => { if (isValid && !loading) (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 28px var(--copper-glow)' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = isValid && !loading ? '0 4px 20px var(--red-glow)' : 'none' }}
           >
             {loading ? (
               <>
@@ -348,7 +365,7 @@ function ApplicationForm({ visible }: { visible: boolean }) {
 
         {/* Error message */}
         {error && (
-          <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 14px', borderRadius: '8px', background: 'rgba(176,58,46,0.08)', border: '1px solid rgba(176,58,46,0.3)' }}>
+          <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 14px', borderRadius: '8px', background: 'var(--red-soft)', border: '1px solid var(--copper-border)' }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
               <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
             </svg>
@@ -396,8 +413,8 @@ export default function CareersSection() {
         @keyframes ringCW     { to{transform:translate(-50%,-50%) rotate(360deg)} }
         @keyframes ringCCW    { to{transform:translate(-50%,-50%) rotate(-360deg)} }
         @keyframes borderPulse{
-          0%,100%{box-shadow:0 0 0 0 rgba(176,58,46,0);border-color:rgba(176,58,46,0.18);}
-          50%{box-shadow:0 0 28px rgba(176,58,46,0.12);border-color:rgba(176,58,46,0.45);}
+          0%,100%{box-shadow:0 0 0 0 rgba(var(--red-dark-rgb),0);border-color:rgba(var(--red-dark-rgb),0.18);}
+          50%{box-shadow:0 0 28px rgba(var(--red-dark-rgb),0.12);border-color:rgba(var(--red-dark-rgb),0.45);}
         }
         @keyframes shimmer {
           0%{background-position:-600px 0} 100%{background-position:600px 0}
@@ -408,7 +425,7 @@ export default function CareersSection() {
           position: absolute;
           left: 27px; top: 56px;
           width: 1px; bottom: -24px;
-          background: linear-gradient(to bottom, rgba(176,58,46,0.35), rgba(176,58,46,0.06));
+          background: linear-gradient(to bottom, rgba(var(--red-dark-rgb),0.35), rgba(var(--red-dark-rgb),0.06));
         }
 
         @media(max-width:900px){
@@ -428,12 +445,12 @@ export default function CareersSection() {
           position:'relative', minHeight:'62vh',
           display:'flex', alignItems:'center', justifyContent:'center',
           overflow:'hidden', paddingBlock:'9rem 6rem',
-          background:`radial-gradient(ellipse 80% 60% at 50% 40%,rgba(176,58,46,0.09) 0%,transparent 70%),var(--bg-900)`,
+          background:`radial-gradient(ellipse 80% 60% at 50% 40%,rgba(var(--red-dark-rgb),0.09) 0%,transparent 70%),var(--bg-900)`,
         }}
       >
         <ParticleField/>
-        <div aria-hidden="true" style={{ position:'absolute',width:'580px',height:'580px',borderRadius:'50%',border:'1px dashed rgba(176,58,46,0.09)',top:'50%',left:'50%',animation:'ringCW 32s linear infinite',pointerEvents:'none' }}/>
-        <div aria-hidden="true" style={{ position:'absolute',width:'380px',height:'380px',borderRadius:'50%',border:'1px solid rgba(176,58,46,0.12)',top:'50%',left:'50%',animation:'ringCCW 22s linear infinite',pointerEvents:'none' }}/>
+        <div aria-hidden="true" style={{ position:'absolute',width:'580px',height:'580px',borderRadius:'50%',border:'1px dashed rgba(var(--red-dark-rgb),0.09)',top:'50%',left:'50%',animation:'ringCW 32s linear infinite',pointerEvents:'none' }}/>
+        <div aria-hidden="true" style={{ position:'absolute',width:'380px',height:'380px',borderRadius:'50%',border:'1px solid rgba(var(--red-dark-rgb),0.12)',top:'50%',left:'50%',animation:'ringCCW 22s linear infinite',pointerEvents:'none' }}/>
         <div aria-hidden="true" style={{ position:'absolute',top:'5rem',left:'2rem',width:'40px',height:'40px',borderTop:'1px solid var(--red-bright)',borderLeft:'1px solid var(--red-bright)',opacity:0.4 }}/>
         <div aria-hidden="true" style={{ position:'absolute',bottom:'3rem',right:'2rem',width:'40px',height:'40px',borderBottom:'1px solid var(--red-bright)',borderRight:'1px solid var(--red-bright)',opacity:0.4 }}/>
 
@@ -451,7 +468,7 @@ export default function CareersSection() {
             transform:heroVisible?'translateY(0)':'translateY(28px)',
             transition:'opacity 0.7s ease 0.12s,transform 0.7s ease 0.12s',
           }}>
-            Build the Future<br/>of <span style={{ color:'var(--red-bright)', textShadow:'0 0 50px rgba(176,58,46,0.4)' }}>Intelligent</span> Machines.
+            Build the Future<br/>of <span style={{ color:'var(--red-bright)', textShadow:'0 0 50px rgba(var(--red-dark-rgb),0.4)' }}>Intelligent</span> Machines.
           </h1>
 
           <div style={{ width:'60px',height:'2px',background:'linear-gradient(90deg,var(--red-bright),transparent)',margin:'0 auto 1.5rem',opacity:heroVisible?1:0,animation:heroVisible?'lineGrow 0.7s ease 0.3s both':'none' }}/>
@@ -478,10 +495,10 @@ export default function CareersSection() {
           <div style={{
             display:'inline-flex', alignItems:'center', gap:'8px',
             marginTop:'2rem', padding:'8px 18px', borderRadius:'100px',
-            background:'rgba(176,58,46,0.08)', border:'1px solid rgba(176,58,46,0.28)',
+            background:'rgba(var(--red-dark-rgb),0.08)', border:'1px solid rgba(var(--red-dark-rgb),0.28)',
             opacity:heroVisible?1:0, transition:'opacity 0.6s ease 0.45s',
           }}>
-            <span style={{ width:'6px',height:'6px',borderRadius:'50%',background:'var(--red-bright)',animation:'dotPulse 2s ease-in-out infinite',boxShadow:'0 0 8px rgba(176,58,46,0.8)',flexShrink:0 }}/>
+            <span style={{ width:'6px',height:'6px',borderRadius:'50%',background:'var(--red-bright)',animation:'dotPulse 2s ease-in-out infinite',boxShadow:'0 0 8px rgba(var(--red-dark-rgb),0.8)',flexShrink:0 }}/>
             <span style={{ fontFamily:'var(--font-display)',fontSize:'0.54rem',letterSpacing:'0.16em',textTransform:'uppercase',color:'var(--red-bright)' }}>
               Actively Hiring Across All Departments
             </span>
@@ -495,8 +512,8 @@ export default function CareersSection() {
         ref={formRef as any}
         style={{ position:'relative',paddingBlock:'6rem',background:'var(--bg-800)',overflow:'hidden',borderTop:'1px solid var(--border-soft)' }}
       >
-        <div aria-hidden="true" style={{ position:'absolute',top:'10%',right:'-8%',width:'480px',height:'480px',borderRadius:'50%',background:'radial-gradient(circle,rgba(176,58,46,0.06) 0%,transparent 70%)',pointerEvents:'none',animation:'glowFloat 7s ease-in-out infinite' }}/>
-        <div aria-hidden="true" style={{ position:'absolute',bottom:'-2rem',left:'50%',transform:'translateX(-50%)',whiteSpace:'nowrap',pointerEvents:'none',fontFamily:'var(--font-display)',fontSize:'clamp(5rem,14vw,10rem)',fontWeight:900,color:'transparent',WebkitTextStroke:'1px rgba(176,58,46,0.04)',letterSpacing:'0.05em',lineHeight:1,userSelect:'none' }}>APPLY</div>
+        <div aria-hidden="true" style={{ position:'absolute',top:'10%',right:'-8%',width:'480px',height:'480px',borderRadius:'50%',background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.06) 0%,transparent 70%)',pointerEvents:'none',animation:'glowFloat 7s ease-in-out infinite' }}/>
+        <div aria-hidden="true" style={{ position:'absolute',bottom:'-2rem',left:'50%',transform:'translateX(-50%)',whiteSpace:'nowrap',pointerEvents:'none',fontFamily:'var(--font-display)',fontSize:'clamp(5rem,14vw,10rem)',fontWeight:900,color:'transparent',WebkitTextStroke:'1px rgba(var(--red-dark-rgb),0.04)',letterSpacing:'0.05em',lineHeight:1,userSelect:'none' }}>APPLY</div>
 
         <div className="container-allbotix" style={{ position:'relative',zIndex:2 }}>
           {/* Section header */}
@@ -528,7 +545,7 @@ export default function CareersSection() {
               transition:'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
             }}>
               {/* What we look for */}
-              <div style={{ padding:'1.75rem', border:'1px solid rgba(176,58,46,0.15)', borderRadius:'14px', background:'rgba(176,58,46,0.03)' }}>
+              <div style={{ padding:'1.75rem', border:'1px solid rgba(var(--red-dark-rgb),0.15)', borderRadius:'14px', background: 'linear-gradient(145deg,rgba(var(--white-rgb),0.8),rgba(var(--overlay-light-rgb),0.2))' }}>
                 <p style={{ fontFamily:'var(--font-display)',fontSize:'0.5rem',letterSpacing:'0.2em',textTransform:'uppercase',color:'var(--red-bright)',marginBottom:'12px' }}>What We Look For</p>
                 {[
                   { e:'🔥', t:'Curiosity over credentials' },
@@ -545,7 +562,7 @@ export default function CareersSection() {
               </div>
 
               {/* Time to offer */}
-              <div style={{ padding:'1.75rem', border:'1px solid rgba(176,58,46,0.15)', borderRadius:'14px', background:'rgba(176,58,46,0.03)', textAlign:'center' }}>
+              <div style={{ padding:'1.75rem', border:'1px solid rgba(var(--red-dark-rgb),0.15)', borderRadius:'14px', background: 'linear-gradient(145deg,rgba(var(--white-rgb),0.8),rgba(var(--overlay-light-rgb),0.2))', textAlign:'center' }}>
                 <p style={{ fontFamily:'var(--font-display)',fontSize:'0.5rem',letterSpacing:'0.2em',textTransform:'uppercase',color:'var(--red-bright)',marginBottom:'8px' }}>Average Time to Offer</p>
                 <p style={{ fontFamily:'var(--font-display)',fontSize:'2.4rem',fontWeight:900,color:'var(--text-primary)',lineHeight:1 }}>
                   6 <span style={{ fontSize:'0.9rem',color:'var(--text-muted)',fontWeight:400 }}>biz days</span>
@@ -553,7 +570,7 @@ export default function CareersSection() {
               </div>
 
               {/* Privacy note */}
-              <div style={{ padding:'1.25rem 1.5rem', border:'1px solid rgba(255,255,255,0.05)', borderRadius:'12px', background:'rgba(255,255,255,0.02)' }}>
+              <div style={{ padding:'1.25rem 1.5rem', border:'1px solid rgba(var(--white-rgb),0.05)', borderRadius:'12px', background:'rgba(var(--white-rgb),0.02)' }}>
                 <p style={{ fontFamily:'var(--font-light)',fontSize:'0.76rem',color:'var(--text-muted)',lineHeight:1.75 }}>
                   🔒 Your information is kept confidential and used only for hiring purposes. We do not share it with third parties.
                 </p>
@@ -568,7 +585,7 @@ export default function CareersSection() {
         ref={perksRef as any}
         style={{ position:'relative',paddingBlock:'6rem',background:'var(--bg-900)',overflow:'hidden',borderTop:'1px solid var(--border-soft)' }}
       >
-        <div aria-hidden="true" style={{ position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',whiteSpace:'nowrap',pointerEvents:'none',fontFamily:'var(--font-display)',fontSize:'clamp(5rem,14vw,10rem)',fontWeight:900,color:'transparent',WebkitTextStroke:'1px rgba(176,58,46,0.04)',letterSpacing:'0.05em',lineHeight:1,userSelect:'none' }}>PERKS</div>
+        <div aria-hidden="true" style={{ position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',whiteSpace:'nowrap',pointerEvents:'none',fontFamily:'var(--font-display)',fontSize:'clamp(5rem,14vw,10rem)',fontWeight:900,color:'transparent',WebkitTextStroke:'1px rgba(var(--red-dark-rgb),0.04)',letterSpacing:'0.05em',lineHeight:1,userSelect:'none' }}>PERKS</div>
 
         <div className="container-allbotix" style={{ position:'relative',zIndex:2 }}>
           <div style={{ textAlign:'center',marginBottom:'3.5rem',opacity:perksVisible?1:0,transform:perksVisible?'translateY(0)':'translateY(22px)',transition:'opacity 0.7s ease,transform 0.7s ease' }}>
@@ -589,7 +606,7 @@ export default function CareersSection() {
         ref={processRef as any}
         style={{ position:'relative',paddingBlock:'6rem',background:'var(--bg-800)',overflow:'hidden',borderTop:'1px solid var(--border-soft)' }}
       >
-        <div aria-hidden="true" style={{ position:'absolute',bottom:'10%',left:'-6%',width:'380px',height:'380px',borderRadius:'50%',background:'radial-gradient(circle,rgba(176,58,46,0.05) 0%,transparent 70%)',pointerEvents:'none',animation:'glowFloat 9s ease-in-out infinite' }}/>
+        <div aria-hidden="true" style={{ position:'absolute',bottom:'10%',left:'-6%',width:'380px',height:'380px',borderRadius:'50%',background:'radial-gradient(circle,rgba(var(--red-dark-rgb),0.05) 0%,transparent 70%)',pointerEvents:'none',animation:'glowFloat 9s ease-in-out infinite' }}/>
 
         <div className="container-allbotix" style={{ position:'relative',zIndex:2 }}>
           <div className="car-process-grid" style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'5rem',alignItems:'start' }}>
@@ -617,7 +634,7 @@ export default function CareersSection() {
                     transition:`opacity 0.6s ease ${i*0.1+0.15}s,transform 0.6s ease ${i*0.1+0.15}s`,
                   }}
                 >
-                  <div style={{ flexShrink:0,width:'54px',height:'54px',borderRadius:'50%',border:'1px solid rgba(176,58,46,0.35)',background:'rgba(176,58,46,0.08)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1 }}>
+                  <div style={{ flexShrink:0,width:'54px',height:'54px',borderRadius:'50%',border:'1px solid rgba(var(--red-dark-rgb),0.35)',background:'rgba(var(--red-dark-rgb),0.08)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:1 }}>
                     <span style={{ fontFamily:'var(--font-display)',fontSize:'0.65rem',fontWeight:900,color:'var(--red-bright)',letterSpacing:'0.04em' }}>{step.num}</span>
                   </div>
                   <div style={{ paddingTop:'12px' }}>

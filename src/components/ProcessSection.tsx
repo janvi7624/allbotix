@@ -40,7 +40,7 @@ export default function ProcessSection() {
           width: '500px',
           height: '500px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(176,58,46,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(var(--red-dark-rgb),0.06) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -147,7 +147,7 @@ export default function ProcessSection() {
                   fontSize: '3.5rem',
                   fontWeight: 900,
                   color: 'transparent',
-                  WebkitTextStroke: '1px rgba(176,58,46,0.08)',
+                  WebkitTextStroke: '1px rgba(var(--red-dark-rgb),0.08)',
                   lineHeight: 1,
                   pointerEvents: 'none',
                   userSelect: 'none',

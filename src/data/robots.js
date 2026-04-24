@@ -27,7 +27,7 @@ export const ROBOTS = [
     uid: '1',
     id: 'atr-p010',
     src: '/robots/robo1_package.avif',
-    name: 'Smart AI Receptionist Robot',
+    name: 'AI Receptionist Robot',
     tag: 'AI Receptionist',
     category: 'Reception & Information Robot',
     modelNumber: 'ATR-p010',
@@ -39,11 +39,11 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Smart AI Receptionist Robot',
+      title: 'AI Receptionist Robot',
       subtitle:
         'A fully automated, AI-powered receptionist that interacts with visitors, provides information, and manages appointments.',
       imgSrc: '/robots/robo1_display.avif',
-      imgAlt: 'Smart AI Receptionist Robot display unit',
+      imgAlt: 'AI Receptionist Robot display unit',
       features: [
         '13.3-inch LCD screen',
         'Visitor check-in & registration',
@@ -124,7 +124,7 @@ export const ROBOTS = [
     uid: '2',
     id: 'bolt-g1',
     src: '/robots/bolt_g1.avif',
-    name: 'Bolt G1 Smart Humanoid Robot',
+    name: 'Humanoid Robot',
     tag: 'Humanoid Robot',
     category: 'Humanoid Service Robot',
     modelNumber: 'BOLT-G1',
@@ -136,7 +136,7 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Bolt G1 Smart Humanoid Robot',
+      title: 'Humanoid Robot',
       subtitle:
         'A next-generation humanoid robot built for versatility — assisting in customer service, education, healthcare, hospitality, and entertainment through human-like interaction and adaptability.',
       imgSrc: '/robots/bolt_g1_display.avif',
@@ -226,7 +226,7 @@ export const ROBOTS = [
     uid: '3',
     id: 'alpha-dog',
     src: '/robots/alpha_dog_package.avif',
-    name: 'Smart Dog Robot',
+    name: 'Dog Robot',
     tag: 'Robot Dog',
     category: 'Quadruped Service Robot',
     modelNumber: 'ALPHA-DOG',
@@ -256,7 +256,7 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Smart Dog Robot',
+      title: 'Dog Robot',
       subtitle:
         'Robotic dogs combining agility, intelligence, and rugged performance — supporting a wide range of applications from security patrol and inspection to hospitality assistance and on-site operations.',
       imgSrc: '/robots/alpha_dog_display.avif',
@@ -346,7 +346,7 @@ export const ROBOTS = [
     uid: '4',
     id: 'cleaning-robots',
     src: '/robots/cleaning_robot_package.avif',
-    name: 'Smart Cleaning Robot',
+    name: 'Cleaning Robot',
     tag: 'Cleaning Robot',
     category: 'Autonomous Cleaning Robot',
     modelNumber: 'CLEANING-SERIES',
@@ -404,7 +404,7 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Smart Cleaning Robot',
+      title: 'Cleaning Robot',
       subtitle:
         'Revolutionizing cleaning with autonomous technology — a full lineup of smart robots engineered to redefine clean across commercial spaces, industrial facilities, and outdoor environments.',
       imgSrc: '/robots/cleaning_robot_display.gif',
@@ -498,7 +498,7 @@ export const ROBOTS = [
     uid: '5',
     id: 'serving-robots',
     src: '/robots/serving_robot_package.avif',
-    name: 'Smart Serving Robot',
+    name: 'Serving Robot',
     tag: 'Serving Robot',
     category: 'Autonomous Serving Robot',
     modelNumber: 'SERVING-SERIES',
@@ -538,7 +538,7 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Smart Serving Robot',
+      title: 'Serving Robot',
       subtitle:
         'AI-powered robots designed to streamline food & beverage service, improve efficiency, and enhance customer experience across restaurants, hotels, hospitals, and event venues.',
       imgSrc: '/robots/serving_robot_display.avif',
@@ -632,7 +632,7 @@ export const ROBOTS = [
     uid: '6',
     id: 'amr-robots',
     src: '/robots/amr_robot_package.avif',
-    name: 'Smart Autonomous Mobile Robot',
+    name: 'Autonomous Mobile Robot',
     tag: 'AMR Robot',
     category: 'Autonomous Mobile Robot (AMR)',
     modelNumber: 'AMR-SERIES',
@@ -767,7 +767,7 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Smart Autonomous Mobile Robot',
+      title: 'Autonomous Mobile Robot',
       subtitle:
         'Transform your operations with Allbotix cutting-edge AMR robots — autonomously navigating complex environments, streamlining workflows, and delivering smarter independent intelligence across industries.',
       imgSrc: '/robots/amr_display.avif',
@@ -843,7 +843,7 @@ export const ROBOTS = [
     uid: '7',
     id: 'cobots',
     src: '/robots/cobot_package.avif',
-    name: 'Smart AL Series Cobot',
+    name: 'Cobot',
     tag: 'AI Cobot',
     category: 'Collaborative Robot (Cobot)',
     modelNumber: 'AL-SERIES',
@@ -866,7 +866,7 @@ export const ROBOTS = [
     ],
     display: {
       sectionLabel: 'Core Capability',
-      title: 'Smart AL Series Cobot',
+      title: 'Cobot',
       subtitle:
         'AL Series cobots engineered for safe and efficient collaboration with human operators — delivering high precision and reliability for repetitive and heavy-duty tasks across manufacturing and processing environments.',
       imgSrc: '/robots/cobot_display.avif',
