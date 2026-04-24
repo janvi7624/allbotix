@@ -437,10 +437,10 @@ export default function TeamSection() {
             }}
           >
             {[
-              { target: 15, suffix: '+', label: 'Years Experience' },
-              { target: 3, suffix: '', label: 'Core Team Members' },
-              { target: 40, suffix: '+', label: 'Countries Served' },
-              { target: 21, suffix: 'K+', label: 'Projects Delivered' },
+              { target: 4, suffix: '+', label: 'Years Experience' },
+              { target: 6, suffix: '', label: 'Core Team Members' },
+              { target: 6, suffix: '+', label: 'Countries Served' },
+              { target: 370, suffix: '+', label: 'Projects Delivered' },
             ].map((s, i) => {
               const isHovered = hoveredIndex === i;
 

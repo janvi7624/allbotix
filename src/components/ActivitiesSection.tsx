@@ -267,7 +267,7 @@ function ActivityTicker() {
 /* ─── Stats strip ────────────────────────────────────────────────────────── */
 function StatsStrip({ started }: { started: boolean }) {
   const stats = [
-    { target: 16, suffix: '+', label: 'Activities' },
+    { target: 12, suffix: '+', label: 'Activities' },
     { target: 4,  suffix: '',  label: 'Categories' },
     { target: 95, suffix: '%', label: 'Participation' },
     { target: 52, suffix: '+', label: 'Events / Year' },
