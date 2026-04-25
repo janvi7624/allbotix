@@ -1,7 +1,8 @@
 import { solutions } from '@/data/solutions'
 
 export const footerLinks = {
-  Company: [{ href: '/about', label: 'About Us' }, { href: '/solutions', label: 'Solutions' }, { href: '/products', label: 'Products' }, { href: '/careers', label: 'Careers' }, { href: '/blog', label: 'Blog' }, { href: '/contacts', label: 'Contact Us' }],
+  Company: [{ href: '/about', label: 'About Us' }, { href: '/solutions', label: 'Solutions' }, { href: '/products', label: 'Products' }, { href: '/careers', label: 'Careers' }, //{ href: '/blog', label: 'Blog' }, 
+    { href: '/contacts', label: 'Contact Us' }],
   Solutions: solutions.map(s => ({
     href:  `/solutions/${s.uid}`,
     label: s.title,
