@@ -170,7 +170,7 @@ function ModelsSection({ robot }: { robot: Robot }) {
         {models.map((m, i) => (
           <div key={m.id} className="robo-model-card" style={{ animationDelay: `${i * 0.07}s` }}>
             {/* image */}
-            <div style={{ position: 'relative', height: '120px', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
               <Image src={m.src} alt={m.alt} fill style={{ objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(var(--bg-map-rgb),0.75) 0%,transparent 55%)' }} />
               <p style={{ position: 'absolute', bottom: '8px', left: '10px', right: '10px', fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, color: 'var(--white)', letterSpacing: '0.06em' }}>{m.name}</p>
@@ -730,7 +730,7 @@ export default function RobotShowcaseSection() {
                       <>
                         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem 1rem 1rem', background: 'linear-gradient(to top,rgba(var(--overlay-dark-rgb),0.92) 0%,transparent 100%)', zIndex: 4 }}>
                           <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: 'var(--red-bright)', marginBottom: '6px', animation: 'rc-pulse 2s ease-in-out infinite', boxShadow: '0 0 8px var(--red-glow)' }} />
-                          <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '0.05em', marginBottom: '2px' }}>{r.name}</p>
+                          <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.9rem', fontWeight: 700, color: 'rgb(var(--white-rgb))', letterSpacing: '0.05em', marginBottom: '2px' }}>{r.name}</p>
                           <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.55rem', color: 'var(--red-bright)', letterSpacing: '0.16em', textTransform: 'uppercase' }}>{r.tag}</p>
                         </div>
                         <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 5, padding: '3px 9px', borderRadius: '100px', background: 'rgba(var(--red-dark-rgb),0.2)', border: '1px solid rgba(var(--red-dark-rgb),0.4)', fontFamily: 'var(--font-display)', fontSize: '0.45rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--red-bright)', backdropFilter: 'blur(6px)' }}>TAP TO EXPAND</div>

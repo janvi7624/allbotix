@@ -103,7 +103,7 @@ function RobotCard({
       )}
 
       {/* ── Image area ── */}
-      <div style={{ position:'relative', height:'220px', overflow:'hidden' }}>
+      <div style={{ position:'relative', height:'260px', overflow:'hidden' }}>
         <Image src={robot.src} alt={robot.name} fill style={{ objectFit:'cover', transform: hovered ? 'scale(1.07)' : 'scale(1)', transition:'transform 0.6s cubic-bezier(0.23,1,0.32,1)' }}/>
         <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(var(--overlay-dark-rgb),0.85) 0%,rgba(var(--overlay-dark-rgb),0.1) 60%,transparent 100%)' }}/>
 
@@ -124,7 +124,7 @@ function RobotCard({
         {/* name + tag */}
         <div style={{ position:'absolute', bottom:0, left:0, right:0, padding:'1rem', zIndex:2 }}>
           <p style={{ fontFamily:'var(--font-display)', fontSize:'1.3rem', fontWeight:900, color:'var(--white)', letterSpacing:'0.03em', lineHeight:1, marginBottom:'2px' }}>{robot.name}</p>
-          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.55rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'rgba(var(--red-dark-rgb),0.9)' }}>{robot.tag}</p>
+          <p style={{ fontFamily:'var(--font-display)', fontSize:'0.55rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'var(--white)', }}>{robot.tag}</p>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ export const ROBOTS = [
   {
     uid: '1',
     id: 'atr-p010',
-    src: '/robots/robo1_package.avif',
+    src: '/robots/reception_robot_display.png',
     name: 'AI Receptionist Robot',
     tag: 'AI Receptionist',
     category: 'Reception & Information Robot',
@@ -42,7 +42,7 @@ export const ROBOTS = [
       title: 'AI Receptionist Robot',
       subtitle:
         'A fully automated, AI-powered receptionist that interacts with visitors, provides information, and manages appointments.',
-      imgSrc: '/robots/robo1_display.avif',
+      imgSrc: '/robots/reception_robot_2.png',
       imgAlt: 'AI Receptionist Robot display unit',
       features: [
         '13.3-inch LCD screen',
@@ -58,7 +58,7 @@ export const ROBOTS = [
       title: 'Navigation Features',
       subtitle:
         'An engaging digital concierge with all-resource autonomous navigation and assistance.',
-      imgSrc: '/robots/robo1_nav.gif',
+      imgSrc: '/robots/reception_robot_5.png',
       imgAlt: 'Navigation system floor-plan diagram',
       features: [
         'Utilizes 2D mapping, 3D localization',
@@ -72,7 +72,7 @@ export const ROBOTS = [
       title: 'Voice Assistant Reception Robot',
       subtitle:
         'A smart voice-controlled assistant designed to offer hands-free information and customer interaction.',
-      imgSrc: '/robots/robo1_voice.avif',
+      imgSrc: '/robots/reception_robot_1.png',
       imgAlt: 'Voice assistant module on the robot',
       features: [
         'Advanced voice recognition for real-time communication',
@@ -86,7 +86,7 @@ export const ROBOTS = [
       title: 'Parcel Tray',
       subtitle:
         'The ATR-p010 robot features a versatile tray designed to enhance its functionality.',
-      imgSrc: '/robots/robo1_tray.avif',
+      imgSrc: '/robots/reception_robot_4.png',
       imgAlt: 'Detachable parcel tray accessory',
       features: [
         'Wireless charging',
@@ -100,7 +100,7 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'A language-adaptive robot offering seamless multilingual support for international visitors.',
-      imgSrc: '/robots/robo1_package.avif',
+      imgSrc: '/robots/reception_robot_3.png',
       imgAlt: 'Full package contents laid out',
       includes: [
         {
@@ -123,7 +123,7 @@ export const ROBOTS = [
   {
     uid: '2',
     id: 'bolt-g1',
-    src: '/robots/bolt_g1.avif',
+    src: '/robots/humanoid_robot_display.png',
     name: 'Humanoid Robot',
     tag: 'Humanoid Robot',
     category: 'Humanoid Service Robot',
@@ -139,7 +139,7 @@ export const ROBOTS = [
       title: 'Humanoid Robot',
       subtitle:
         'A next-generation humanoid robot built for versatility — assisting in customer service, education, healthcare, hospitality, and entertainment through human-like interaction and adaptability.',
-      imgSrc: '/robots/bolt_g1_display.avif',
+      imgSrc: '/robots/humanoid_robot_1.png',
       imgAlt: 'Bolt G1 Humanoid Robot display unit',
       features: [
         'Lightweight & highly maneuverable frame',
@@ -156,7 +156,7 @@ export const ROBOTS = [
       title: 'Navigation Features',
       subtitle:
         'A highly maneuverable humanoid robot designed for seamless movement and task execution across diverse environments.',
-      imgSrc: '/robots/bolt_g1_nav.avif',
+      imgSrc: '/robots/humanoid_robot_4.avif',
       imgAlt: 'Bolt G1 navigation and movement system',
       features: [
         'Lightweight & highly maneuverable humanoid body',
@@ -170,7 +170,7 @@ export const ROBOTS = [
       title: 'AI-Powered Voice & Expression',
       subtitle:
         'Built for expressive communication and real-time AI interaction — engaging customers with empathy, intelligence, and efficiency.',
-      imgSrc: '/robots/bolt_g1_voice.avif',
+      imgSrc: '/robots/humanoid_robot_5.avif',
       imgAlt: 'Bolt G1 voice and AI interaction module',
       features: [
         'Natural movement with expressive communication',
@@ -185,7 +185,7 @@ export const ROBOTS = [
       title: 'Industries That We Serve',
       subtitle:
         'The Bolt G1 is built to serve across a wide range of industries — from hospitality to healthcare and beyond.',
-      imgSrc: '/robots/bolt_g1_industries.avif',
+      imgSrc: '/robots/humanoid_robot_2.png',
       imgAlt: 'Bolt G1 serving across industries',
       features: [
         'Coffee Shops & Bakeries',
@@ -202,7 +202,7 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'Everything you need to deploy the Bolt G1 humanoid robot and get it operational right away.',
-      imgSrc: '/robots/bolt_g1_package.avif',
+      imgSrc: '/robots/humanoid_robot_3.png',
       imgAlt: 'Bolt G1 full package contents',
       includes: [
         {
@@ -225,7 +225,7 @@ export const ROBOTS = [
   {
     uid: '3',
     id: 'alpha-dog',
-    src: '/robots/alpha_dog_package.avif',
+    src: '/robots/dog_robot_display.avif',
     name: 'Dog Robot',
     tag: 'Robot Dog',
     category: 'Quadruped Service Robot',
@@ -242,14 +242,14 @@ export const ROBOTS = [
       {
         id: 'alpha-b2',
         name: 'Alpha B2',
-        src: '/robots/alpha_b2.avif',
+        src: '/robots/dog_robot_model_b2.jpeg',
         alt: 'Alpha B2 Robot Dog',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Humanoid+%26+RoboDog/Alpha+B2.pdf',
       },
       {
         id: 'alpha-go2',
         name: 'Alpha GO2',
-        src: '/robots/alpha_go2.avif',
+        src: '/robots/dog_robot_model_go2.jpeg',
         alt: 'Alpha GO2 Robot Dog',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Humanoid+%26+RoboDog/Alpha+GO2.pdf',
       },
@@ -259,7 +259,7 @@ export const ROBOTS = [
       title: 'Dog Robot',
       subtitle:
         'Robotic dogs combining agility, intelligence, and rugged performance — supporting a wide range of applications from security patrol and inspection to hospitality assistance and on-site operations.',
-      imgSrc: '/robots/alpha_dog_display.avif',
+      imgSrc: '/robots/dog_robot_2.png',
       imgAlt: 'Smart Dog Robot display unit',
       features: [
         'Agile quadruped mobility across complex terrains',
@@ -275,7 +275,7 @@ export const ROBOTS = [
       title: 'Navigation Features',
       subtitle:
         'Robotic dogs that navigate terrain traditional robots cannot — performing patrol, inspection, and assistance tasks with precision and consistency.',
-      imgSrc: '/robots/alpha_dog_nav.avif',
+      imgSrc: '/robots/dog_robot_1.png',
       imgAlt: 'Alpha dog robot navigating terrain',
       features: [
         'Agile quadruped locomotion across uneven terrain',
@@ -289,8 +289,8 @@ export const ROBOTS = [
       title: 'AI-Powered Autonomy',
       subtitle:
         'Powered by advanced AI and sensors — delivering accurate, tireless, and autonomous service across industrial and public environments.',
-      imgSrc: '/robots/alpha_dog_ai.avif',
-      imgAlt: 'Alpha dog robot AI interaction system',
+      imgSrc: '/robots/dog_robot_3.png',
+      imgAlt: 'Dog robot AI interaction system',
       features: [
         'Advanced AI for real-time decision making',
         'High-precision sensors for environment awareness',
@@ -304,8 +304,8 @@ export const ROBOTS = [
       title: 'Industries That We Serve',
       subtitle:
         'Alpha Dog robots are built to operate across a wide range of high-demand industries and environments.',
-      imgSrc: '/robots/alpha_dog_industries.avif',
-      imgAlt: 'Alpha dog robot serving across industries',
+      imgSrc: '/robots/dog_robot_4.png',
+      imgAlt: 'Dog robot serving across industries',
       features: [
         'High-Risk Industrial Environments (Inspection & Monitoring)',
         'Construction & Infrastructure',
@@ -322,8 +322,8 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'Everything you need to deploy your Alpha Dog robot and get it operational right out of the box.',
-      imgSrc: '/robots/alpha_dog_package.avif',
-      imgAlt: 'Alpha Dog robot full package contents',
+      imgSrc: '/robots/dog_robot_5d.png',
+      imgAlt: 'Dog robot full package contents',
       includes: [
         {
           item: '1× Alpha Dog Robot (B2 or GO2)',
@@ -345,7 +345,7 @@ export const ROBOTS = [
   {
     uid: '4',
     id: 'cleaning-robots',
-    src: '/robots/cleaning_robot_package.avif',
+    src: '/robots/cleaning_robot_display.jpeg',
     name: 'Cleaning Robot',
     tag: 'Cleaning Robot',
     category: 'Autonomous Cleaning Robot',
@@ -362,7 +362,7 @@ export const ROBOTS = [
       {
         id: 'ac40',
         name: 'AC40',
-        src: '/robots/ac40.avif',
+        src: '/robots/cleaning_robot_model_ac40.png',
         alt: 'AC40 Smart Cleaning Robot',
         desc: 'Meet the Allbotix AC40 — mop, scrub, vacuum all-in-one cleaning robot that sweeps, scrubs, vacuums, and mops with precision and power.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AC40.pdf',
@@ -370,7 +370,7 @@ export const ROBOTS = [
       {
         id: 'ax10',
         name: 'AX10',
-        src: '/robots/ax10.avif',
+        src: '/robots/cleaning_robot_model_ax10.avif',
         alt: 'AX10 Smart Cleaning Robot',
         desc: 'Introducing the Allbotix AX10 — a powerhouse cleaning robot engineered for deep, intelligent, and more-than-seamless cleaning every day.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AX10.pdf',
@@ -378,7 +378,7 @@ export const ROBOTS = [
       {
         id: 'amt1',
         name: 'AMT 1',
-        src: '/robots/amt1.avif',
+        src: '/robots/cleaning_robot_model_amt1.avif',
         alt: 'AMT 1 Smart Cleaning Robot',
         desc: 'Introducing the Allbotix AMT1 — an AI-powered sweeping robot designed for large-scale environments, covering up to 10,000m² with advanced autonomous efficiency.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AMT1.pdf',
@@ -386,7 +386,7 @@ export const ROBOTS = [
       {
         id: 'at60s',
         name: 'AT60s',
-        src: '/robots/at60s.avif',
+        src: '/robots/cleaning_robot_model_at60s.avif',
         alt: 'AT60s Smart Cleaning Robot',
         desc: 'Meet the Allbotix AT60s — next-level precision sweeping robot that polishes, scrubs and surfaces and delivers exceptional cleanliness.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AT60s.pdf',
@@ -394,7 +394,7 @@ export const ROBOTS = [
       {
         id: 'at20s-pro',
         name: 'AT20s Pro',
-        src: '/robots/at20s_pro.avif',
+        src: '/robots/cleaning_robot_model_at20s.avif',
         alt: 'AT20s Pro Smart Cleaning Robot',
         desc: 'Unleash the power of the AT20s Pro — the ultimate cleaning solution upon redefining how clean really looks and feels about cleaning.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/AT20s+Pro.pdf',
@@ -402,7 +402,7 @@ export const ROBOTS = [
       {
         id: 'as100n',
         name: 'AS 100N',
-        src: '/robots/as100n.avif',
+        src: '/robots/cleaning_robot_model_as100n.avif',
         alt: 'AS 100N Smart Cleaning Robot',
         desc: 'Introducing the Allbotix AS 100N — the most versatile outdoor sweeping robot that takes care of every outdoor surface, structure, and space.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Cleaning+Robots/A+4C+-+pro.pdf',
@@ -413,7 +413,7 @@ export const ROBOTS = [
       title: 'Cleaning Robot',
       subtitle:
         'Revolutionizing cleaning with autonomous technology — a full lineup of smart robots engineered to redefine clean across commercial spaces, industrial facilities, and outdoor environments.',
-      imgSrc: '/robots/cleaning_robot_display.gif',
+      imgSrc: '/robots/cleaning_robot_1.gif',
       imgAlt: 'Smart Cleaning Robot display unit',
       features: [
         'Autonomous navigation & intelligent mapping',
@@ -429,7 +429,7 @@ export const ROBOTS = [
       title: 'Navigation Features',
       subtitle:
         'Autonomous cleaning robots that intelligently map and navigate complex environments — delivering consistent, precise cleaning with zero manual effort.',
-      imgSrc: '/robots/cleaning_robot_nav.gif',
+      imgSrc: '/robots/cleaning_robot_3.gif',
       imgAlt: 'Cleaning robot autonomous navigation system',
       features: [
         'AI-powered autonomous path planning',
@@ -443,7 +443,7 @@ export const ROBOTS = [
       title: 'AI-Powered Smart Cleaning',
       subtitle:
         'Powered by advanced AI — autonomous cleaning robots that operate tirelessly, reduce manual workload, and maintain spotless environments around the clock.',
-      imgSrc: '/robots/cleaning_robot_ai.gif',
+      imgSrc: '/robots/cleaning_robot_2.gif',
       imgAlt: 'AI smart cleaning robot intelligence system',
       features: [
         'Advanced AI for real-time cleaning decisions',
@@ -458,7 +458,7 @@ export const ROBOTS = [
       title: 'Industries That We Serve',
       subtitle:
         'Our smart cleaning robots are built to serve across a wide range of commercial, industrial, and public environments.',
-      imgSrc: '/robots/cleaning_robot_industries.gif',
+      imgSrc: '/robots/cleaning_robot_4.jpeg',
       imgAlt: 'Smart cleaning robots serving across industries',
       features: [
         'Hotels & Hospitality',
@@ -476,7 +476,7 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'Everything you need to deploy your Smart Cleaning Robot and get it operational right out of the box.',
-      imgSrc: '/robots/cleaning_robot_package.avif',
+      imgSrc: '/robots/cleaning_robot_5.jpeg',
       imgAlt: 'Smart Cleaning Robot full package contents',
       includes: [
         {
@@ -503,7 +503,7 @@ export const ROBOTS = [
   {
     uid: '5',
     id: 'serving-robots',
-    src: '/robots/serving_robot_package.avif',
+    src: '/robots/serving_robot_display.png',
     name: 'Serving Robot',
     tag: 'Serving Robot',
     category: 'Autonomous Serving Robot',
@@ -520,7 +520,7 @@ export const ROBOTS = [
       {
         id: 'aw3',
         name: 'AW3',
-        src: '/robots/aw3.avif',
+        src: '/robots/serving_robot_aw3.avif',
         alt: 'AW3 Smart Serving Robot',
         desc: 'A compact and agile serving robot built for efficient food and beverage delivery across restaurants, hotels, and event spaces.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Serving+Robots/Aw3.pdf',
@@ -528,7 +528,7 @@ export const ROBOTS = [
       {
         id: 'asmr-t10',
         name: 'ASMR T10',
-        src: '/robots/asmr_t10.avif',
+        src: '/robots/serving_robot_asmr_t10.avif',
         alt: 'ASMR T10 Smart Serving Robot',
         desc: 'An advanced serving robot with a premium tray display, designed to deliver dishes with precision and style in high-end dining and hospitality environments.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Serving+Robots/ASMR+T10+Delivery+and+Marketing+Robot.pdf',
@@ -536,7 +536,7 @@ export const ROBOTS = [
       {
         id: 'at9',
         name: 'AT9',
-        src: '/robots/at9.avif',
+        src: '/robots/serving_robot_at9.avif',
         alt: 'AT9 Smart Serving Robot',
         desc: 'A multi-tray serving robot engineered for high-volume service environments, capable of carrying multiple plates simultaneously with ease.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Serving+Robots/AT9.pdf',
@@ -547,7 +547,7 @@ export const ROBOTS = [
       title: 'Serving Robot',
       subtitle:
         'AI-powered robots designed to streamline food & beverage service, improve efficiency, and enhance customer experience across restaurants, hotels, hospitals, and event venues.',
-      imgSrc: '/robots/serving_robot_display.avif',
+      imgSrc: '/robots/serving_robot_1.png',
       imgAlt: 'Smart Serving Robot display unit',
       features: [
         'Lightweight & maneuverable for all spaces',
@@ -563,7 +563,7 @@ export const ROBOTS = [
       title: 'Navigation Features',
       subtitle:
         'Smart serving robots that autonomously navigate dining floors, hotel corridors, and event venues — delivering orders with precision every time.',
-      imgSrc: '/robots/serving_robot_nav.avif',
+      imgSrc: '/robots/serving_robot_2.png',
       imgAlt: 'Serving robot autonomous navigation system',
       features: [
         'Autonomous path planning across complex floor layouts',
@@ -577,7 +577,7 @@ export const ROBOTS = [
       title: 'AI-Powered Order Assistance',
       subtitle:
         'Built for seamless guest interaction — smart serving robots that engage customers, confirm orders, and deliver with efficiency and charm.',
-      imgSrc: '/robots/serving_robot_voice.avif',
+      imgSrc: '/robots/serving_robot_3.png',
       imgAlt: 'Serving robot AI voice interaction system',
       features: [
         'Voice interaction for a personalized guest experience',
@@ -592,7 +592,7 @@ export const ROBOTS = [
       title: 'Industries That We Serve',
       subtitle:
         'Our smart serving robots are built to enhance service across a wide range of food, beverage, and hospitality environments.',
-      imgSrc: '/robots/serving_robot_industries.avif',
+      imgSrc: '/robots/serving_robot_4.png',
       imgAlt: 'Smart serving robots across industries',
       features: [
         'Coffee Shops',
@@ -610,7 +610,7 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'Everything you need to deploy your Smart Serving Robot and get it operational right out of the box.',
-      imgSrc: '/robots/serving_robot_package.avif',
+      imgSrc: '/robots/serving_robot_5.png',
       imgAlt: 'Smart Serving Robot full package contents',
       includes: [
         {
@@ -637,7 +637,7 @@ export const ROBOTS = [
   {
     uid: '6',
     id: 'amr-robots',
-    src: '/robots/amr_robot_package.avif',
+    src: '/robots/amr_robot_display.avif',
     name: 'Autonomous Mobile Robot',
     tag: 'AMR Robot',
     category: 'Autonomous Mobile Robot (AMR)',
@@ -654,7 +654,7 @@ export const ROBOTS = [
       {
         id: 'at300',
         name: 'AT300',
-        src: '/robots/at300.avif',
+        src: '/robots/amr_robot_model_at300.avif',
         alt: 'AT300 Autonomous Mobile Robot',
         desc: 'A high-capacity autonomous mobile robot engineered for heavy-duty warehouse goods transport, material handling, and logistics operations.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/AMR/AT300.pdf',
@@ -662,7 +662,7 @@ export const ROBOTS = [
       {
         id: 'at600',
         name: 'AT600',
-        src: '/robots/at600.avif',
+        src: '/robots/amr_robot_model_at600.avif',
         alt: 'AT600 Autonomous Mobile Robot',
         desc: 'A powerful and scalable AMR built for high-volume industrial environments, delivering precision transport and autonomous fleet coordination.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/AMR/AT600.pdf',
@@ -674,7 +674,7 @@ export const ROBOTS = [
         title: 'Warehouse Goods Transport Robot',
         subtitle:
           'Optimize your warehouse logistics with our high-capacity Goods Transport AMR — a powerhouse AMR fleet that moves heavy payloads, reducing manual labor and streamlining your supply chain.',
-        imgSrc: '/robots/amr_warehouse.avif',
+        imgSrc: '/robots/amr_robot_display.avif',
         imgAlt: 'AMR warehouse goods transport robot',
         features: [
           'Advanced autonomous navigation with real-time obstacle detection',
@@ -694,7 +694,7 @@ export const ROBOTS = [
         title: 'Retail Store Shelf Scanning Robot',
         subtitle:
           'Revolutionize retail inventory management with our AI-driven Shelf Scanning AMR — the intelligent robot autonomously monitors stock levels, detects discrepancies, and optimizes shelf space in real time, empowering retailers to maintain seamless inventory accuracy.',
-        imgSrc: '/robots/amr_retail.avif',
+        imgSrc: '/robots/amr_robot_4.jpeg',
         imgAlt: 'AMR retail shelf scanning robot',
         features: [
           'Lightning-fast barcode and RFID scanning for instant inventory',
@@ -714,7 +714,7 @@ export const ROBOTS = [
         title: 'Factory Production Line Robot',
         subtitle:
           'Boost output and manufacturing efficiency with our Production Line AMR — the agile robot autonomously transports materials between workstations, optimizes workflows, and adapts to your production needs on the fly.',
-        imgSrc: '/robots/amr_factory.avif',
+        imgSrc: '/robots/amr_robot_factory.avif',
         imgAlt: 'AMR factory production line robot',
         features: [
           'Precision autonomous navigation for cycle-time material delivery',
@@ -735,7 +735,7 @@ export const ROBOTS = [
         title: 'Smart Security Patrolling Robot',
         subtitle:
           'Enhance your security posture with our vigilant Security Patrolling AMR — the autonomous sentinel providing 24/7 surveillance, obstacle avoidance, and response to threats in real time, keeping your assets and personnel safe using cutting-edge wireless technology.',
-        imgSrc: '/robots/amr_security.avif',
+        imgSrc: '/robots/amr_robot_security.avif',
         imgAlt: 'AMR smart security patrolling robot',
         features: [
           'Product display & material package and transportation',
@@ -757,7 +757,7 @@ export const ROBOTS = [
         title: 'E-Commerce Order Fulfillment Robot',
         subtitle:
           'Accelerate your e-commerce fulfillment with our lightning-fast AMR fulfillment suite — these nimble, swift platforms scale with your business growth, meet customer demands with unprecedented speed and accuracy.',
-        imgSrc: '/robots/amr_ecommerce.avif',
+        imgSrc: '/robots/amr_robot_ecommerce.avif',
         imgAlt: 'AMR e-commerce order fulfillment robot',
         features: [
           'AI-powered picking algorithm for maximum efficiency',
@@ -778,7 +778,7 @@ export const ROBOTS = [
       title: 'Autonomous Mobile Robot',
       subtitle:
         'Transform your operations with Allbotix cutting-edge AMR robots — autonomously navigating complex environments, streamlining workflows, and delivering smarter independent intelligence across industries.',
-      imgSrc: '/robots/amr_display.avif',
+      imgSrc: '/robots/amr_robot_5.jpeg',
       imgAlt: 'Smart AMR robot display unit',
       features: [
         'Advanced autonomous navigation with real-time obstacle avoidance',
@@ -794,7 +794,7 @@ export const ROBOTS = [
       title: 'Navigation Features',
       subtitle:
         'Autonomous mobile robots that intelligently map, navigate, and adapt to complex industrial and commercial environments — delivering precision every time.',
-      imgSrc: '/robots/amr_nav.avif',
+      imgSrc: '/robots/amr_robot_2.jpeg',
       imgAlt: 'AMR autonomous navigation system',
       features: [
         'Advanced autonomous navigation with real-time obstacle detection',
@@ -808,7 +808,7 @@ export const ROBOTS = [
       title: 'AI-Powered Autonomous Intelligence',
       subtitle:
         'Powered by advanced AI — autonomous mobile robots that optimize workflows, reduce manual intervention, and keep operations running at peak efficiency around the clock.',
-      imgSrc: '/robots/amr_ai.avif',
+      imgSrc: '/robots/amr_robot_3.jpeg',
       imgAlt: 'AMR AI intelligence and automation system',
       features: [
         'AI-powered real-time decision making and task allocation',
@@ -823,7 +823,7 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'Everything you need to deploy your Autonomous Mobile Robot and get your operations running immediately.',
-      imgSrc: '/robots/amr_package.avif',
+      imgSrc: '/robots/amr_robot_4.jpeg',
       imgAlt: 'AMR robot full package contents',
       includes: [
         {
@@ -850,7 +850,7 @@ export const ROBOTS = [
   {
     uid: '7',
     id: 'cobots',
-    src: '/robots/cobot_package.avif',
+    src: '/robots/cobot_display.png',
     name: 'Cobot',
     tag: 'AI Cobot',
     category: 'Collaborative Robot (Cobot)',
@@ -867,7 +867,7 @@ export const ROBOTS = [
       {
         id: 'al-series',
         name: 'AL Series',
-        src: '/robots/al_series.avif',
+        src: '/robots/cobot_al_series.avif',
         alt: 'AL Series Collaborative Robot Arm',
         desc: 'A compact, precise, and flexible collaborative robot arm engineered for safe and efficient human-robot collaboration across industrial production lines and workstations.',
         pdfLink: 'https://allbotix.s3.eu-north-1.amazonaws.com/Robotic+Hand/Universal+Cobot.pdf',
@@ -878,7 +878,7 @@ export const ROBOTS = [
       title: 'Cobot',
       subtitle:
         'AL Series cobots engineered for safe and efficient collaboration with human operators — delivering high precision and reliability for repetitive and heavy-duty tasks across manufacturing and processing environments.',
-      imgSrc: '/robots/cobot_display.avif',
+      imgSrc: '/robots/cobot_1.png',
       imgAlt: 'AL Series Cobot display unit',
       features: [
         'Safe to work alongside humans without extensive guarding',
@@ -894,7 +894,7 @@ export const ROBOTS = [
       title: 'Flexible Deployment Features',
       subtitle:
         'Compact and flexible cobots that integrate seamlessly into existing production lines — with fast setup, minimal programming, and effortless redeployment across workstations.',
-      imgSrc: '/robots/cobot_deploy.avif',
+      imgSrc: '/robots/cobot_2.png',
       imgAlt: 'AL Series Cobot deployment and integration',
       features: [
         'Fast setup and minimal programming required',
@@ -908,7 +908,7 @@ export const ROBOTS = [
       title: 'AI-Powered Precision & Automation',
       subtitle:
         'Powered by advanced AI — AL Series cobots deliver high precision, consistent repeatability, and intelligent automation that frees skilled workers for higher-value activities.',
-      imgSrc: '/robots/cobot_ai.avif',
+      imgSrc: '/robots/cobot_3.png',
       imgAlt: 'AL Series Cobot AI precision system',
       features: [
         'High precision & repeatability for consistent task performance',
@@ -923,7 +923,7 @@ export const ROBOTS = [
       title: 'Industries That We Serve',
       subtitle:
         'AL Series cobots are built to deliver precision automation across a wide range of industrial and manufacturing environments.',
-      imgSrc: '/robots/cobot_industries.avif',
+      imgSrc: '/robots/cobot_4.png',
       imgAlt: 'AL Series Cobot serving across industries',
       features: [
         'Automotive & Auto Components',
@@ -941,7 +941,7 @@ export const ROBOTS = [
       title: "What's in the Box?",
       subtitle:
         'Everything you need to deploy your AL Series Cobot and get your production line running immediately.',
-      imgSrc: '/robots/cobot_package.avif',
+      imgSrc: '/robots/cobot_5.png',
       imgAlt: 'AL Series Cobot full package contents',
       includes: [
         {

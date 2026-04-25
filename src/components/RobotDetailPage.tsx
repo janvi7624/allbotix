@@ -43,7 +43,7 @@ function ModelsSection({ robot }: { robot: Robot }) {
       <div className="rd-model-grid">
         {models.map(m => (
           <div key={m.id} className="rd-model-card">
-            <div style={{ position: 'relative', height: '140px', overflow: 'hidden' }}>
+            <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
               <Image src={m.src} alt={m.alt} fill style={{ objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(var(--bg-map-rgb),0.8) 0%,transparent 55%)' }} />
               <p style={{ position: 'absolute', bottom: '10px', left: '12px', right: '12px', fontFamily: 'var(--font-display)', fontSize: '0.78rem', fontWeight: 700, color: 'var(--white)', letterSpacing: '0.05em' }}>{m.name}</p>
@@ -373,7 +373,7 @@ export default function RobotDetailPage() {
         .rd-pkg-title { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; color: var(--text-primary); letter-spacing: 0.05em; margin-bottom: 4px; }
         .rd-pkg-desc  { font-family: var(--font-display); font-size: 0.64rem; color: var(--text-muted); line-height: 1.6; }
 
-        .rd-model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 1.25rem; }
+        .rd-model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; margin-top: 1.25rem; }
         .rd-model-card {
           border-radius: 11px; overflow: hidden;
           border: 1px solid rgba(var(--red-dark-rgb),0.15); background: rgba(var(--red-dark-rgb),0.04);
@@ -502,7 +502,7 @@ export default function RobotDetailPage() {
 
           {/* back + CTA bar */}
           <div className="rd-cta-bar" style={{ animation: mounted ? 'rd-fadeUp 0.5s ease 0.35s both' : 'none' }}>
-            <Link href="/robots" className="btn-outline rd-cta-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Link href="/products" className="btn-outline rd-cta-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <ArrowLeftIcon /> Back to Fleet
             </Link>
             <div className="rd-cta-actions">
