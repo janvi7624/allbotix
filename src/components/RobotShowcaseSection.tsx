@@ -138,6 +138,58 @@ const MODAL_STYLES = `
 
   .robo-grid-2 { display:grid;grid-template-columns:35fr 65fr;gap:1.5rem;align-items:start; }
   @media(max-width:680px) { .robo-grid-2 { grid-template-columns:1fr; } }
+
+  /* ─── Responsive modal layout ───────────────────────────────────────── */
+  .robo-modal-topbar {
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:0.9rem 1.75rem;border-bottom:1px solid rgba(var(--red-dark-rgb),0.12);flex-shrink:0;
+  }
+  .robo-modal-topbar-status { font-family:var(--font-display);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--red-bright);white-space:nowrap; }
+  .robo-modal-topbar-name {
+    font-family:var(--font-display);font-size:0.72rem;font-weight:700;color:var(--text-primary);
+    letter-spacing:0.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;
+  }
+
+  .robo-modal-hero {
+    display:grid;grid-template-columns:65fr 35fr;gap:2rem;
+    padding:2rem 2.5rem 0;align-items:center;
+  }
+  .robo-modal-hero-img-col { display:flex;align-items:center;justify-content:center;position:relative;min-height:300px; }
+  .robo-modal-image-wrap { width:400px;height:290px;max-width:100%;border-radius:18px;overflow:hidden;border:1px solid rgba(var(--red-dark-rgb),0.4);box-shadow:0 0 50px rgba(var(--red-dark-rgb),0.15),0 30px 70px rgba(var(--black-rgb),0.55);position:relative; }
+  .robo-modal-ring-1    { width:240px;height:240px; }
+  .robo-modal-ring-2    { width:340px;height:340px; }
+  .robo-modal-ring-glow { width:380px;height:380px; }
+
+  .robo-modal-body-padding { padding:0 2.5rem 2.5rem; }
+  .robo-modal-fleet { width:min(175px,20vw);flex-shrink:0;border-left:1px solid rgba(var(--red-dark-rgb),0.1);padding:1.25rem 0.875rem;display:flex;flex-direction:column;gap:8px;overflow-y:auto; }
+
+  @media(max-width:900px) {
+    .robo-modal-topbar       { padding:0.7rem 1rem;gap:0.75rem; }
+    .robo-modal-topbar-name  { max-width:140px;font-size:0.66rem; }
+    .robo-modal-hero         { grid-template-columns:1fr;gap:1.25rem;padding:1.5rem 1.25rem 0; }
+    .robo-modal-hero-img-col { min-height:240px; }
+    .robo-modal-image-wrap   { width:320px;height:232px; }
+    .robo-modal-ring-1       { width:200px;height:200px; }
+    .robo-modal-ring-2       { width:280px;height:280px; }
+    .robo-modal-ring-glow    { width:320px;height:320px; }
+    .robo-modal-body-padding { padding:0 1.25rem 1.5rem; }
+    .robo-detail-section     { padding:1.5rem 0; }
+    .robo-modal-fleet        { display:none; }
+  }
+  @media(max-width:560px) {
+    .robo-modal-topbar         { padding:0.5rem 0.75rem;gap:0.5rem; }
+    .robo-modal-topbar-status  { font-size:0.5rem;letter-spacing:0.16em; }
+    .robo-modal-topbar-name    { max-width:100px;font-size:0.6rem; }
+    .robo-modal-hero           { padding:1rem 0.75rem 0; }
+    .robo-modal-hero-img-col   { min-height:200px; }
+    .robo-modal-image-wrap     { width:260px;height:188px;border-radius:14px; }
+    .robo-modal-ring-1         { width:160px;height:160px; }
+    .robo-modal-ring-2         { width:220px;height:220px; }
+    .robo-modal-ring-glow      { width:260px;height:260px; }
+    .robo-modal-body-padding   { padding:0 0.75rem 1rem; }
+    .robo-section-title        { font-size:1rem; }
+    .robo-model-grid           { grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px; }
+  }
 `
 
 /* ─── PDF icon SVG ───────────────────────────────────────────────────────── */
@@ -399,7 +451,7 @@ function RobotDetailContent({ robot }: { robot: Robot }) {
   return (
     <div>
       {/* ── HERO ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '65fr 35fr', gap: '2rem', padding: '2rem 2.5rem 0', alignItems: 'center' }} className="robo-grid-2">
+      <div className="robo-modal-hero">
         {/* hero text */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', animation: 'robo-fadeUp 0.5s ease 0.1s both' }}>
           {/* badges */}
@@ -449,15 +501,15 @@ function RobotDetailContent({ robot }: { robot: Robot }) {
           )}
         </div>
         {/* floating image */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', minHeight: '300px' }}>
-          <div aria-hidden="true" style={{ position: 'absolute', top: '50%', left: '50%', width: '240px', height: '240px', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.07)', transform: 'translate(-50%,-50%)', animation: 'robo-ringCW 18s linear infinite', pointerEvents: 'none' }} />
-          <div aria-hidden="true" style={{ position: 'absolute', top: '50%', left: '50%', width: '340px', height: '340px', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.04)', transform: 'translate(-50%,-50%)', animation: 'robo-ringCCW 26s linear infinite', pointerEvents: 'none' }} />
-          <div aria-hidden="true" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle,rgba(var(--red-dark-rgb),0.09) 0%,transparent 65%)', pointerEvents: 'none' }} />
-          <div style={{ animation: 'robo-floatUD 4s ease-in-out infinite', position: 'relative', zIndex: 2 }}>
+        <div className="robo-modal-hero-img-col">
+          <div aria-hidden="true" className="robo-modal-ring-1" style={{ position: 'absolute', top: '50%', left: '50%', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.07)', transform: 'translate(-50%,-50%)', animation: 'robo-ringCW 18s linear infinite', pointerEvents: 'none' }} />
+          <div aria-hidden="true" className="robo-modal-ring-2" style={{ position: 'absolute', top: '50%', left: '50%', borderRadius: '50%', border: '1px solid rgba(var(--red-dark-rgb),0.04)', transform: 'translate(-50%,-50%)', animation: 'robo-ringCCW 26s linear infinite', pointerEvents: 'none' }} />
+          <div aria-hidden="true" className="robo-modal-ring-glow" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', borderRadius: '50%', background: 'radial-gradient(circle,rgba(var(--red-dark-rgb),0.09) 0%,transparent 65%)', pointerEvents: 'none' }} />
+          <div style={{ animation: 'robo-floatUD 4s ease-in-out infinite', position: 'relative', zIndex: 2, maxWidth: '100%' }}>
             <div aria-hidden="true" style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '18px', zIndex: 3, pointerEvents: 'none' }}>
               <div style={{ position: 'absolute', left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg,transparent,rgba(var(--red-dark-rgb),0.4),transparent)', animation: 'robo-scanModal 3.5s linear infinite' }} />
             </div>
-            <div style={{ width: '400px', height: '290px', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(var(--red-dark-rgb),0.4)', boxShadow: '0 0 50px rgba(var(--red-dark-rgb),0.15),0 30px 70px rgba(var(--black-rgb),0.55)', position: 'relative' }}>
+            <div className="robo-modal-image-wrap">
               <Image src={robot.src} alt={robot.name} fill style={{ objectFit: 'cover' }} priority />
             </div>
           </div>
@@ -465,7 +517,7 @@ function RobotDetailContent({ robot }: { robot: Robot }) {
       </div>
 
       {/* ── ALL SECTIONS ── */}
-      <div style={{ padding: '0 2.5rem 2.5rem' }}>
+      <div className="robo-modal-body-padding">
 
         {/* Models grid — shown first after hero */}
         {hasModels && <ModelsSection robot={robot} />}
@@ -537,18 +589,18 @@ export function RobotModal({ robot, onClose }: { robot: RobotWithIndex; onClose:
       <style>{MODAL_STYLES}</style>
 
       {/* top bar */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.9rem 1.75rem', borderBottom: '1px solid rgba(var(--red-dark-rgb),0.12)', flexShrink: 0, gap: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div className="robo-modal-topbar">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: 0 }}>
           <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--red-bright)', animation: 'robo-pulse 2s ease-in-out infinite', boxShadow: '0 0 8px rgba(var(--red-dark-rgb),0.8)', flexShrink: 0, display: 'inline-block' }} />
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--red-bright)', whiteSpace: 'nowrap' }}>
+          <span className="robo-modal-topbar-status">
             ROBOT PROFILE — {String(carIdx + 1).padStart(2, '0')} / {String(N).padStart(2, '0')}
           </span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1, justifyContent: 'center', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1, justifyContent: 'center', overflow: 'hidden', minWidth: 0 }}>
           <button className="robo-nav-btn" onClick={() => setCarIdx(p => mod(p - 1, N))} aria-label="Previous">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
           </button>
-          <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.72rem', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '0.06em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '220px' }}>
+          <span className="robo-modal-topbar-name">
             {activeRobot.name}
           </span>
           <button className="robo-nav-btn" onClick={() => setCarIdx(p => mod(p + 1, N))} aria-label="Next">
@@ -568,7 +620,7 @@ export function RobotModal({ robot, onClose }: { robot: RobotWithIndex; onClose:
         </div>
 
         {/* fleet strip */}
-        <div style={{ width: 'min(175px,20vw)', flexShrink: 0, borderLeft: '1px solid rgba(var(--red-dark-rgb),0.1)', padding: '1.25rem 0.875rem', display: 'flex', flexDirection: 'column', gap: '8px', overflowY: 'auto', opacity: thumbVisible ? 1 : 0, transform: thumbVisible ? 'translateX(0)' : 'translateX(40px)', transition: 'opacity 0.5s ease,transform 0.5s ease' }}>
+        <div className="robo-modal-fleet" style={{ opacity: thumbVisible ? 1 : 0, transform: thumbVisible ? 'translateX(0)' : 'translateX(40px)', transition: 'opacity 0.5s ease,transform 0.5s ease' }}>
           <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.47rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '2px', flexShrink: 0 }}>Fleet</p>
           {ROBOTS.map((r, i) => (
             <div key={r.name} className={`robo-thumb${i === carIdx ? ' active' : ''}`} onClick={() => setCarIdx(i)} role="button" aria-label={r.name}>

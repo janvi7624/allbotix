@@ -225,7 +225,7 @@ export const features = [
       </svg>
     ),
     title: 'Professional team',
-    desc: 'World-class robotics engineers dedicated to solving complex industrial challenges.',
+    desc: 'Our robotics engineers dedicated to solving complex industrial challenges.',
   },
   {
     icon: (

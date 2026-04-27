@@ -188,12 +188,12 @@ useEffect(() => {
           <div>
             <div className="section-tag hero-tag" style={{ marginBottom:'1.5rem' }}>Robotics Technology Services</div>
             <h1 style={{ fontFamily:'var(--font-display)', fontSize:'clamp(2.2rem,5vw,3.8rem)', fontWeight:900, lineHeight:1.1, color:'var(--text-primary)', marginBottom:'1.5rem', letterSpacing:'0.02em' }}>
-              <span className="hero-h1-line1" style={{ display:'block' }}>One team.</span>
+              <span className="hero-h1-line1" style={{ display:'block' }}>Our team.</span>
               <span className="hero-h1-line2" style={{ display:'block', color:'var(--red-bright)', textShadow:`0 0 40px rgba(var(--red-bright-rgb),0.35)`, position:'relative' }}>
-                Our robots.
-                <span aria-hidden="true" style={{ position:'absolute', inset:0, color:'var(--red-bright)', animation:'glitchText 6s steps(1) 2s infinite', opacity:0.5, pointerEvents:'none' }}>Our robots.</span>
+                Our robot.
+                <span aria-hidden="true" style={{ position:'absolute', inset:0, color:'var(--red-bright)', animation:'glitchText 6s steps(1) 2s infinite', opacity:0.5, pointerEvents:'none' }}>Our robot.</span>
               </span>
-              <span className="hero-h1-line3" style={{ display:'block' }}>Limitless<br/>possibilities.</span>
+              <span className="hero-h1-line3" style={{ display:'block' }}>Limitless<br/>Possibilities.</span>
             </h1>
             <p className="hero-sub" style={{ fontSize:'1rem', color:'var(--text-secondary)', maxWidth:'440px', lineHeight:1.9, marginBottom:'2.5rem' }}>
               Empowering tomorrow&apos;s industries with cutting-edge robotic solutions by Allbotix. Smart automation, precision engineering, and limitless innovation.

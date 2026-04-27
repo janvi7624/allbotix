@@ -1,20 +1,21 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 
 /* ─── Types ── */
 interface CareerSubmission {
-  id:          string
-  submittedAt: string
-  name:        string
-  email:       string
-  phone:       string
-  dept:        string
-  role:        string
-  linkedin:    string
-  resume:      string
-  experience:  string
-  why:         string
+  id:              string
+  submittedAt:     string
+  name:            string
+  email:           string
+  phone:           string
+  dept:            string
+  role:            string
+  linkedin:        string
+  resume:          string
+  resumeFilename?: string
+  experience:      string
+  why:             string
 }
 
 /* ─── Helpers ── */
@@ -38,7 +39,7 @@ function initials(name?: string) {
 
 /* ─── Excel Download ── */
 function downloadExcel(data: CareerSubmission[]) {
-  const headers = ['ID', 'Submitted At', 'Full Name', 'Email', 'Phone', 'Department', 'Target Role', 'Experience', 'LinkedIn', 'Resume', 'Why Allbotix']
+  const headers = ['ID', 'Submitted At', 'Full Name', 'Email', 'Phone', 'Department', 'Target Role', 'Experience', 'LinkedIn', 'Resume File', 'Resume URL', 'Why Allbotix']
   const rows = data.map(d => [
     d.id,
     formatDate(d.submittedAt),
@@ -49,6 +50,7 @@ function downloadExcel(data: CareerSubmission[]) {
     d.role,
     d.experience,
     d.linkedin,
+    d.resumeFilename ?? '',
     d.resume,
     d.why.replace(/\n/g, ' '),
   ])
@@ -63,6 +65,71 @@ function downloadExcel(data: CareerSubmission[]) {
   a.download = `allbotix-careers-${new Date().toISOString().slice(0, 10)}.csv`
   a.click()
   URL.revokeObjectURL(url)
+}
+
+/* ─── Confirm Modal ── */
+function ConfirmModal({
+  title,
+  message,
+  confirmLabel,
+  loading,
+  onConfirm,
+  onCancel,
+}: {
+  title:        string
+  message:      string
+  confirmLabel: string
+  loading:      boolean
+  onConfirm:    () => void
+  onCancel:     () => void
+}) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => { if (e.key === 'Escape' && !loading) onCancel() }
+    window.addEventListener('keydown', h)
+    return () => window.removeEventListener('keydown', h)
+  }, [onCancel, loading])
+
+  return (
+    <>
+      <div onClick={loading ? undefined : onCancel} style={{ position:'fixed', inset:0, background:'rgba(var(--black-rgb),0.7)', backdropFilter:'blur(4px)', zIndex:60 }} />
+      <div style={{ position:'fixed', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'min(420px, calc(100vw - 2rem))', background:'var(--bg-card)', border:'1px solid rgba(var(--red-dark-rgb),0.35)', borderRadius:'14px', overflow:'hidden', zIndex:61, boxShadow:'0 32px 80px rgba(var(--black-rgb),0.7), 0 0 40px rgba(var(--red-dark-rgb),0.12)', animation:'fadeUp 0.25s cubic-bezier(0.23,1,0.32,1)' }}>
+        <div style={{ height:'2px', background:'linear-gradient(90deg,var(--red-bright),var(--red-dim),transparent)' }} />
+        <div style={{ padding:'1.75rem' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'1rem' }}>
+            <div style={{ width:'40px', height:'40px', borderRadius:'10px', background:'rgba(var(--red-dark-rgb),0.12)', border:'1px solid rgba(var(--red-dark-rgb),0.35)', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--red-bright)', flexShrink:0 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3 style={{ fontFamily:'var(--font-display)', fontSize:'0.95rem', fontWeight:900, color:'var(--text-primary)', letterSpacing:'0.02em' }}>{title}</h3>
+          </div>
+          <p style={{ fontFamily:'var(--font-light)', fontSize:'0.85rem', color:'var(--text-secondary)', lineHeight:1.6, marginBottom:'1.5rem' }}>{message}</p>
+          <div style={{ display:'flex', gap:'8px', justifyContent:'flex-end' }}>
+            <button
+              onClick={onCancel}
+              disabled={loading}
+              style={{ padding:'10px 18px', borderRadius:'8px', border:'1px solid rgba(var(--red-dark-rgb),0.25)', background:'rgba(var(--red-dark-rgb),0.04)', color:'var(--text-muted)', fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', cursor:loading?'not-allowed':'pointer', opacity:loading?0.5:1, transition:'all 0.2s' }}
+            >
+              Cancel
+            </button>
+            <button
+              onClick={onConfirm}
+              disabled={loading}
+              style={{ padding:'10px 18px', borderRadius:'8px', border:'none', background:'linear-gradient(135deg,var(--red-bright),var(--red-dim))', color:'var(--white)', fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', cursor:loading?'not-allowed':'pointer', opacity:loading?0.7:1, transition:'all 0.2s', display:'flex', alignItems:'center', gap:'8px' }}
+            >
+              {loading && (
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ animation:'spin 0.8s linear infinite' }}>
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              )}
+              {loading ? 'Deleting…' : confirmLabel}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 /* ─── Detail Drawer ── */
@@ -120,7 +187,27 @@ function DetailDrawer({ s, onClose }: { s: CareerSubmission; onClose: () => void
           {row('Target Role', s.role)}
           {row('Experience',  s.experience)}
           {row('LinkedIn',    s.linkedin, true)}
-          {row('Resume',      s.resume,   true)}
+
+          {s.resume && (
+            <div style={{ display:'flex', flexDirection:'column', gap:'6px', padding:'12px 0', borderBottom:'1px solid rgba(var(--red-dark-rgb),0.1)' }}>
+              <span style={{ fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.2em', textTransform:'uppercase', color:'var(--red-bright)' }}>Resume</span>
+              <a
+                href={s.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'8px 12px', borderRadius:'8px', border:'1px solid rgba(var(--red-dark-rgb),0.25)', background:'rgba(var(--red-dark-rgb),0.06)', color:'var(--red-bright)', textDecoration:'none', fontFamily:'var(--font-light)', fontSize:'0.82rem', width:'fit-content', maxWidth:'100%' }}
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink:0 }}>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                <span style={{ overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>
+                  {s.resumeFilename || 'View PDF'}
+                </span>
+              </a>
+            </div>
+          )}
+
           {row('Submission ID', s.id)}
 
           {s.why && (
@@ -159,6 +246,9 @@ export default function CareerSubmissionsTable() {
   const [error,    setError]    = useState('')
   const [search,   setSearch]   = useState('')
   const [selected, setSelected] = useState<CareerSubmission | null>(null)
+  const [confirm,  setConfirm]  = useState<{ kind: 'one'; entry: CareerSubmission } | { kind: 'all' } | null>(null)
+  const [deleting, setDeleting] = useState(false)
+  const [toast,    setToast]    = useState<{ kind: 'ok' | 'err'; msg: string } | null>(null)
 
   useEffect(() => {
     fetch('/api/careers/submissions')
@@ -166,6 +256,41 @@ export default function CareerSubmissionsTable() {
       .then(d => { setData(d); setLoading(false) })
       .catch(() => { setError('Failed to load submissions.'); setLoading(false) })
   }, [])
+
+  useEffect(() => {
+    if (!toast) return
+    const t = setTimeout(() => setToast(null), 3200)
+    return () => clearTimeout(t)
+  }, [toast])
+
+  const handleConfirmDelete = async () => {
+    if (!confirm) return
+    setDeleting(true)
+    try {
+      const url = confirm.kind === 'all'
+        ? '/api/careers/submissions?all=true'
+        : `/api/careers/submissions?id=${encodeURIComponent(confirm.entry.id)}`
+      const res = await fetch(url, { method: 'DELETE' })
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(json.error ?? 'Failed to delete.')
+
+      if (confirm.kind === 'all') {
+        setData([])
+        setToast({ kind: 'ok', msg: `Deleted all ${json.deleted ?? ''} application${(json.deleted ?? 0) === 1 ? '' : 's'}.` })
+      } else {
+        const removedId = confirm.entry.id
+        setData(prev => prev.filter(d => d.id !== removedId))
+        if (selected?.id === removedId) setSelected(null)
+        setToast({ kind: 'ok', msg: 'Application deleted.' })
+      }
+      setConfirm(null)
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Failed to delete.'
+      setToast({ kind: 'err', msg })
+    } finally {
+      setDeleting(false)
+    }
+  }
 
   const filtered = data.filter(s => {
     const q = search?.toLowerCase()
@@ -201,6 +326,10 @@ export default function CareerSubmissionsTable() {
         .car-stat:hover { border-color:rgba(var(--red-dark-rgb),0.35); box-shadow:0 8px 28px rgba(var(--black-rgb),0.3); }
         .excel-btn { display:flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(var(--success-soft-rgb),0.12); border:1px solid rgba(var(--success-rgb),0.3); border-radius:8px; color:var(--success); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
         .excel-btn:hover { background:rgba(var(--success-soft-rgb),0.22); border-color:rgba(var(--success-rgb),0.6); box-shadow:0 0 16px rgba(var(--success-rgb),0.2); }
+        .danger-btn { display:flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(var(--red-dark-rgb),0.1); border:1px solid rgba(var(--red-dark-rgb),0.35); border-radius:8px; color:var(--red-bright); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
+        .danger-btn:hover { background:rgba(var(--red-dark-rgb),0.18); border-color:var(--red-bright); box-shadow:0 0 16px rgba(var(--red-dark-rgb),0.25); }
+        .row-del-btn { width:28px; height:28px; border-radius:6px; border:1px solid rgba(var(--red-dark-rgb),0.2); background:rgba(var(--red-dark-rgb),0.04); color:var(--text-muted); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:all 0.2s; padding:0; }
+        .row-del-btn:hover { border-color:var(--red-bright); background:rgba(var(--red-dark-rgb),0.14); color:var(--red-bright); }
         @media(max-width:768px) { .car-hide-mobile { display:none !important; } }
       `}</style>
 
@@ -237,6 +366,18 @@ export default function CareerSubmissionsTable() {
               Download Excel
             </button>
           )}
+
+          {!loading && data.length > 0 && (
+            <button className="danger-btn" onClick={() => setConfirm({ kind: 'all' })}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                <path d="M10 11v6M14 11v6"/>
+                <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+              </svg>
+              Delete All
+            </button>
+          )}
         </div>
 
         {/* States */}
@@ -264,7 +405,7 @@ export default function CareerSubmissionsTable() {
               <table style={{ width:'100%', borderCollapse:'collapse' }}>
                 <thead>
                   <tr style={{ background:'rgba(var(--red-dark-rgb),0.06)', borderBottom:'1px solid rgba(var(--red-dark-rgb),0.2)' }}>
-                    {['#', 'Name', 'Email', 'Department', 'Role', 'Experience', 'Date', ''].map((h, i) => (
+                    {['#', 'Name', 'Email', 'Department', 'Role', 'Experience', 'Resume', 'Date', ''].map((h, i) => (
                       <th key={i} style={{ padding:'12px 16px', fontFamily:'var(--font-display)', fontSize:'0.48rem', letterSpacing:'0.18em', textTransform:'uppercase', color:'var(--red-bright)', textAlign:'left', whiteSpace:'nowrap', fontWeight:700 }}>{h}</th>
                     ))}
                   </tr>
@@ -291,11 +432,37 @@ export default function CareerSubmissionsTable() {
                       <td className="car-cell">
                         {s.experience ? <span className="car-tag">{s.experience}</span> : <span style={{ color:'var(--text-muted)', fontSize:'0.75rem' }}>—</span>}
                       </td>
+                      <td className="car-cell" onClick={e => e.stopPropagation()}>
+                        {s.resume ? (
+                          <a
+                            href={s.resume}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ display:'inline-flex', alignItems:'center', gap:'6px', padding:'4px 10px', borderRadius:'100px', border:'1px solid rgba(var(--red-dark-rgb),0.3)', background:'rgba(var(--red-dark-rgb),0.06)', color:'var(--red-bright)', textDecoration:'none', fontFamily:'var(--font-display)', fontSize:'0.58rem', letterSpacing:'0.06em', whiteSpace:'nowrap' }}
+                          >
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                              <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                            View PDF
+                          </a>
+                        ) : <span style={{ color:'var(--text-muted)', fontSize:'0.75rem' }}>—</span>}
+                      </td>
                       <td className="car-cell" style={{ fontFamily:'var(--font-light)', fontSize:'0.72rem', color:'var(--text-muted)', whiteSpace:'nowrap' }}>{formatDate(s.submittedAt)}</td>
-                      <td className="car-cell" style={{ width:'40px', textAlign:'center' }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                        </svg>
+                      <td className="car-cell" style={{ width:'48px', textAlign:'center' }} onClick={e => e.stopPropagation()}>
+                        <button
+                          className="row-del-btn"
+                          onClick={() => setConfirm({ kind: 'one', entry: s })}
+                          aria-label={`Delete application from ${s.name}`}
+                          title="Delete application"
+                        >
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="3 6 5 6 21 6"/>
+                            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                            <path d="M10 11v6M14 11v6"/>
+                            <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                          </svg>
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -311,6 +478,28 @@ export default function CareerSubmissionsTable() {
       </div>
 
       {selected && <DetailDrawer s={selected} onClose={() => setSelected(null)} />}
+
+      {confirm && (
+        <ConfirmModal
+          title={confirm.kind === 'all' ? 'Delete all applications?' : 'Delete this application?'}
+          message={
+            confirm.kind === 'all'
+              ? `This will permanently remove all ${data.length} applications and their resumes from S3. This cannot be undone.`
+              : `This will permanently remove ${confirm.entry.name}'s application${confirm.entry.resume ? ' and their resume from S3' : ''}. This cannot be undone.`
+          }
+          confirmLabel={confirm.kind === 'all' ? 'Delete All' : 'Delete'}
+          loading={deleting}
+          onConfirm={handleConfirmDelete}
+          onCancel={() => { if (!deleting) setConfirm(null) }}
+        />
+      )}
+
+      {toast && (
+        <div style={{ position:'fixed', bottom:'1.5rem', right:'1.5rem', zIndex:70, padding:'12px 18px', borderRadius:'10px', border:`1px solid ${toast.kind === 'ok' ? 'rgba(var(--success-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.45)'}`, background:toast.kind === 'ok' ? 'rgba(var(--success-soft-rgb),0.18)' : 'rgba(var(--red-dark-rgb),0.14)', color:toast.kind === 'ok' ? 'var(--success)' : 'var(--red-bright)', fontFamily:'var(--font-display)', fontSize:'0.7rem', letterSpacing:'0.06em', boxShadow:'0 16px 40px rgba(var(--black-rgb),0.5)', animation:'fadeUp 0.3s ease' }}>
+          {toast.msg}
+        </div>
+      )}
+
       <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
     </>
   )

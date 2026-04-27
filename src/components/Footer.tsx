@@ -77,7 +77,7 @@ export default function Footer() {
               }}
             >
               Empowering tomorrow's industries with cutting-edge robotic solutions.
-              One team. One robot. Limitless possibilities.
+              Our team. Our robot. Limitless Possibilities.
             </p>
 
             {/* Social icons — same style as contact page */}
