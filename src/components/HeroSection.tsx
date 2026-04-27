@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useRef, useEffect } from 'react'
 
 const stats = [
-  { value: '21K+', label: 'Projects Done' },
-  { value: '17K+', label: 'Happy Clients' },
-  { value: '37K+', label: 'Parts Delivered' },
-  { value: '4.7',  label: 'Average Rating' },
+  { value: '370+', label: 'Projects Done' },
+  { value: '180+', label: 'Happy Clients' },
+  { value: '530+', label: 'Parts Delivered' },
+  { value: '4.  7',  label: 'Average Rating' },
 ]
 
 export default function HeroSection() {
