@@ -50,6 +50,71 @@ function downloadExcel(data: Submission[]) {
   URL.revokeObjectURL(url)
 }
 
+/* ─── Confirm Modal ── */
+function ConfirmModal({
+  title,
+  message,
+  confirmLabel,
+  loading,
+  onConfirm,
+  onCancel,
+}: {
+  title:        string
+  message:      string
+  confirmLabel: string
+  loading:      boolean
+  onConfirm:    () => void
+  onCancel:     () => void
+}) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => { if (e.key === 'Escape' && !loading) onCancel() }
+    window.addEventListener('keydown', h)
+    return () => window.removeEventListener('keydown', h)
+  }, [onCancel, loading])
+
+  return (
+    <>
+      <div onClick={loading ? undefined : onCancel} style={{ position:'fixed', inset:0, background:'rgba(var(--black-rgb),0.7)', backdropFilter:'blur(4px)', zIndex:60 }} />
+      <div style={{ position:'fixed', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'min(420px, calc(100vw - 2rem))', background:'var(--bg-card)', border:'1px solid rgba(var(--red-dark-rgb),0.35)', borderRadius:'14px', overflow:'hidden', zIndex:61, boxShadow:'0 32px 80px rgba(var(--black-rgb),0.7), 0 0 40px rgba(var(--red-dark-rgb),0.12)', animation:'fadeUp 0.25s cubic-bezier(0.23,1,0.32,1)' }}>
+        <div style={{ height:'2px', background:'linear-gradient(90deg,var(--red-bright),var(--red-dim),transparent)' }} />
+        <div style={{ padding:'1.75rem' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'1rem' }}>
+            <div style={{ width:'40px', height:'40px', borderRadius:'10px', background:'rgba(var(--red-dark-rgb),0.12)', border:'1px solid rgba(var(--red-dark-rgb),0.35)', display:'flex', alignItems:'center', justifyContent:'center', color:'var(--red-bright)', flexShrink:0 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3 style={{ fontFamily:'var(--font-display)', fontSize:'0.95rem', fontWeight:900, color:'var(--text-primary)', letterSpacing:'0.02em' }}>{title}</h3>
+          </div>
+          <p style={{ fontFamily:'var(--font-light)', fontSize:'0.85rem', color:'var(--text-secondary)', lineHeight:1.6, marginBottom:'1.5rem' }}>{message}</p>
+          <div style={{ display:'flex', gap:'8px', justifyContent:'flex-end' }}>
+            <button
+              onClick={onCancel}
+              disabled={loading}
+              style={{ padding:'10px 18px', borderRadius:'8px', border:'1px solid rgba(var(--red-dark-rgb),0.25)', background:'rgba(var(--red-dark-rgb),0.04)', color:'var(--text-muted)', fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', cursor:loading?'not-allowed':'pointer', opacity:loading?0.5:1, transition:'all 0.2s' }}
+            >
+              Cancel
+            </button>
+            <button
+              onClick={onConfirm}
+              disabled={loading}
+              style={{ padding:'10px 18px', borderRadius:'8px', border:'none', background:'linear-gradient(135deg,var(--red-bright),var(--red-dim))', color:'var(--white)', fontFamily:'var(--font-display)', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', cursor:loading?'not-allowed':'pointer', opacity:loading?0.7:1, transition:'all 0.2s', display:'flex', alignItems:'center', gap:'8px' }}
+            >
+              {loading && (
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ animation:'spin 0.8s linear infinite' }}>
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                </svg>
+              )}
+              {loading ? 'Deleting…' : confirmLabel}
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
 /* ─── Detail drawer ── */
 function DetailDrawer({ s, onClose }: { s: Submission; onClose: () => void }) {
   useEffect(() => {
@@ -159,6 +224,9 @@ export default function ContactSubmissionsTable() {
   const [search,   setSearch]   = useState('')
   const [selected, setSelected] = useState<Submission | null>(null)
   const [mounted,  setMounted]  = useState(false)
+  const [confirm,  setConfirm]  = useState<{ kind: 'one'; entry: Submission } | { kind: 'all' } | null>(null)
+  const [deleting, setDeleting] = useState(false)
+  const [toast,    setToast]    = useState<{ kind: 'ok' | 'err'; msg: string } | null>(null)
 
   useEffect(() => {
     setMounted(true)
@@ -167,6 +235,41 @@ export default function ContactSubmissionsTable() {
       .then(d => { setData(d); setLoading(false) })
       .catch(() => { setError('Failed to load submissions.'); setLoading(false) })
   }, [])
+
+  useEffect(() => {
+    if (!toast) return
+    const t = setTimeout(() => setToast(null), 3200)
+    return () => clearTimeout(t)
+  }, [toast])
+
+  const handleConfirmDelete = async () => {
+    if (!confirm) return
+    setDeleting(true)
+    try {
+      const url = confirm.kind === 'all'
+        ? '/api/contact/submissions?all=true'
+        : `/api/contact/submissions?id=${encodeURIComponent(confirm.entry.id)}`
+      const res = await fetch(url, { method: 'DELETE' })
+      const json = await res.json().catch(() => ({}))
+      if (!res.ok) throw new Error(json.error ?? 'Failed to delete.')
+
+      if (confirm.kind === 'all') {
+        setData([])
+        setToast({ kind: 'ok', msg: `Deleted all ${json.deleted ?? ''} submission${(json.deleted ?? 0) === 1 ? '' : 's'}.` })
+      } else {
+        const removedId = confirm.entry.id
+        setData(prev => prev.filter(d => d.id !== removedId))
+        if (selected?.id === removedId) setSelected(null)
+        setToast({ kind: 'ok', msg: 'Submission deleted.' })
+      }
+      setConfirm(null)
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Failed to delete.'
+      setToast({ kind: 'err', msg })
+    } finally {
+      setDeleting(false)
+    }
+  }
 
   const filtered = data.filter(s => {
     const q = search?.toLowerCase()
@@ -234,6 +337,10 @@ export default function ContactSubmissionsTable() {
 
         .cs-excel-btn { display:flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(var(--success-soft-rgb),0.12); border:1px solid rgba(var(--success-rgb),0.3); border-radius:8px; color:var(--success); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
         .cs-excel-btn:hover { background:rgba(var(--success-soft-rgb),0.22); border-color:rgba(var(--success-rgb),0.6); box-shadow:0 0 16px rgba(var(--success-rgb),0.2); }
+        .cs-danger-btn { display:flex; align-items:center; gap:7px; padding:8px 16px; background:rgba(var(--red-dark-rgb),0.1); border:1px solid rgba(var(--red-dark-rgb),0.35); border-radius:8px; color:var(--red-bright); font-family:var(--font-display); font-size:0.55rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
+        .cs-danger-btn:hover { background:rgba(var(--red-dark-rgb),0.18); border-color:var(--red-bright); box-shadow:0 0 16px rgba(var(--red-dark-rgb),0.25); }
+        .cs-row-del-btn { width:28px; height:28px; border-radius:6px; border:1px solid rgba(var(--red-dark-rgb),0.2); background:rgba(var(--red-dark-rgb),0.04); color:var(--text-muted); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:all 0.2s; padding:0; }
+        .cs-row-del-btn:hover { border-color:var(--red-bright); background:rgba(var(--red-dark-rgb),0.14); color:var(--red-bright); }
         @media (max-width: 768px) {
           .cs-hide-mobile { display: none !important; }
         }
@@ -280,6 +387,18 @@ export default function ContactSubmissionsTable() {
                   <line x1="9" y1="15" x2="15" y2="15"/>
                 </svg>
                 Download Excel
+              </button>
+            )}
+
+            {!loading && data.length > 0 && (
+              <button className="cs-danger-btn" onClick={() => setConfirm({ kind: 'all' })}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="3 6 5 6 21 6"/>
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                  <path d="M10 11v6M14 11v6"/>
+                  <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                </svg>
+                Delete All
               </button>
             )}
           </div>
@@ -385,11 +504,21 @@ export default function ContactSubmissionsTable() {
                           {formatDate(s.submittedAt)}
                         </td>
 
-                        {/* Arrow */}
-                        <td className="cs-cell" style={{ width:'40px', textAlign:'center' }}>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(var(--red-dark-rgb),0.4)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                          </svg>
+                        {/* Delete */}
+                        <td className="cs-cell" style={{ width:'48px', textAlign:'center' }} onClick={e => e.stopPropagation()}>
+                          <button
+                            className="cs-row-del-btn"
+                            onClick={() => setConfirm({ kind: 'one', entry: s })}
+                            aria-label={`Delete submission from ${s.firstName} ${s.lastName}`}
+                            title="Delete submission"
+                          >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="3 6 5 6 21 6"/>
+                              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                              <path d="M10 11v6M14 11v6"/>
+                              <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                          </button>
                         </td>
                       </tr>
                     ))}
@@ -412,6 +541,27 @@ export default function ContactSubmissionsTable() {
 
       {/* Detail drawer */}
       {selected && <DetailDrawer s={selected} onClose={() => setSelected(null)} />}
+
+      {confirm && (
+        <ConfirmModal
+          title={confirm.kind === 'all' ? 'Delete all submissions?' : 'Delete this submission?'}
+          message={
+            confirm.kind === 'all'
+              ? `This will permanently remove all ${data.length} contact submission${data.length === 1 ? '' : 's'}. This cannot be undone.`
+              : `This will permanently remove ${confirm.entry.firstName} ${confirm.entry.lastName}'s submission. This cannot be undone.`
+          }
+          confirmLabel={confirm.kind === 'all' ? 'Delete All' : 'Delete'}
+          loading={deleting}
+          onConfirm={handleConfirmDelete}
+          onCancel={() => { if (!deleting) setConfirm(null) }}
+        />
+      )}
+
+      {toast && (
+        <div style={{ position:'fixed', bottom:'1.5rem', right:'1.5rem', zIndex:70, padding:'12px 18px', borderRadius:'10px', border:`1px solid ${toast.kind === 'ok' ? 'rgba(var(--success-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.45)'}`, background:toast.kind === 'ok' ? 'rgba(var(--success-soft-rgb),0.18)' : 'rgba(var(--red-dark-rgb),0.14)', color:toast.kind === 'ok' ? 'var(--success)' : 'var(--red-bright)', fontFamily:'var(--font-display)', fontSize:'0.7rem', letterSpacing:'0.06em', boxShadow:'0 16px 40px rgba(var(--black-rgb),0.5)', animation:'fadeUp 0.3s ease' }}>
+          {toast.msg}
+        </div>
+      )}
 
       <style>{`
         @keyframes spin { to { transform: rotate(360deg) } }

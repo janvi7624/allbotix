@@ -89,17 +89,43 @@ function PerkCard({ item, index, visible }: { item: typeof PERKS[0]; index: numb
 }
 
 /* ─── Application Form ───────────────────────────────────────────────────── */
+const MAX_RESUME_BYTES = 5 * 1024 * 1024 // 5 MB
+
 function ApplicationForm({ visible }: { visible: boolean }) {
   const [sent,    setSent]    = useState(false)
   const [loading, setLoading] = useState(false)
   const [error,   setError]   = useState('')
+  const [resume,  setResume]  = useState<File | null>(null)
+  const resumeInputRef = useRef<HTMLInputElement>(null)
   const [form,    setForm]    = useState({
     name: '', email: '', phone: '', dept: '', role: '',
-    linkedin: '', resume: '', why: '', experience: '',
+    linkedin: '', why: '', experience: '',
   })
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm(p => ({ ...p, [e.target.name]: e.target.value }))
+
+  const handleResume = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null
+    if (!file) { setResume(null); return }
+    if (file.type !== 'application/pdf') {
+      setError('Resume must be a PDF file.')
+      e.target.value = ''
+      return
+    }
+    if (file.size > MAX_RESUME_BYTES) {
+      setError('Resume must be under 5 MB.')
+      e.target.value = ''
+      return
+    }
+    setError('')
+    setResume(file)
+  }
+
+  const clearResume = () => {
+    setResume(null)
+    if (resumeInputRef.current) resumeInputRef.current.value = ''
+  }
 
   const isValid = form.name && form.email && form.dept && form.why
 
@@ -110,18 +136,22 @@ function ApplicationForm({ visible }: { visible: boolean }) {
     setError('')
 
     try {
+      const fd = new FormData()
+      Object.entries(form).forEach(([k, v]) => fd.append(k, v))
+      if (resume) fd.append('resume', resume)
+
       const res  = await fetch('/api/careers', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(form),
+        method: 'POST',
+        body:   fd,
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error ?? 'Unknown error')
       setSent(true)
       setForm({
         name: '', email: '', phone: '', dept: '', role: '',
-        linkedin: '', resume: '', why: '', experience: '',
+        linkedin: '', why: '', experience: '',
       })
+      clearResume()
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Failed to submit. Please try again.')
     } finally {
@@ -261,7 +291,7 @@ function ApplicationForm({ visible }: { visible: boolean }) {
             >
               {/* ✅ was: bg-deep-black — pure black clashes with light theme; use bg-card */}
               <option value="" style={{ background: 'var(--bg-card)', color: 'var(--text-muted)' }}>Select a department…</option>
-              {DEPARTMENTS.map(d => <option key={d} value={d} style={{ background: 'var(--bg-card)', color: 'var(--text-primary)' }}>{d}</option>)}
+              {DEPARTMENTS.map(d => <option key={d} value={d} style={{ background: 'var(--bg-900)', color: 'var(--copper)' }}>{d}</option>)}
             </select>
           </div>
         </div>
@@ -304,11 +334,78 @@ function ApplicationForm({ visible }: { visible: boolean }) {
           </div>
         </div>
 
-        {/* Resume link */}
+        {/* Resume PDF upload */}
         <div style={{ marginBottom: '1.25rem' }}>
-          <label style={labelStyle}>Resume / CV Link <span style={{ opacity: 0.5 }}>(Google Drive, Notion, PDF URL…)</span></label>
-          <input name="resume" type="text" placeholder="https://drive.google.com/file/…" value={form.resume} onChange={handle}
-            style={fieldStyle} onFocus={focusIn} onBlur={focusOut}/>
+          <label style={labelStyle}>Resume / CV <span style={{ opacity: 0.5 }}>(PDF, max 5 MB)</span></label>
+          <input
+            ref={resumeInputRef}
+            name="resume"
+            type="file"
+            accept="application/pdf,.pdf"
+            onChange={handleResume}
+            style={{ display: 'none' }}
+          />
+          {!resume ? (
+            <button
+              type="button"
+              onClick={() => resumeInputRef.current?.click()}
+              style={{
+                ...fieldStyle,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                cursor: 'pointer',
+                textAlign: 'left' as const,
+                color: 'var(--text-muted)',
+              }}
+              onFocus={e => { e.currentTarget.style.borderColor = 'var(--copper)'; e.currentTarget.style.background = 'var(--copper-soft)' }}
+              onBlur={e => { e.currentTarget.style.borderColor = 'var(--copper-border)'; e.currentTarget.style.background = 'var(--bg-800)' }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span style={{ fontFamily: 'var(--font-light)', fontSize: '0.88rem' }}>Click to upload your PDF resume</span>
+            </button>
+          ) : (
+            <div
+              style={{
+                ...fieldStyle,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                color: 'var(--text-primary)',
+                background: 'var(--copper-soft)',
+                borderColor: 'var(--copper)',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span style={{ flex: 1, fontFamily: 'var(--font-light)', fontSize: '0.85rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' as const }}>
+                {resume.name} <span style={{ color: 'var(--text-muted)' }}>({(resume.size / 1024).toFixed(0)} KB)</span>
+              </span>
+              <button
+                type="button"
+                onClick={clearResume}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--text-muted)',
+                  cursor: 'pointer',
+                  padding: '2px 6px',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '0.55rem',
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase' as const,
+                }}
+              >
+                Remove
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Why Allbotix */}

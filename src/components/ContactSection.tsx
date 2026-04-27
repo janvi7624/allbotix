@@ -265,13 +265,13 @@ function MapSection({ visible }: { visible: boolean }) {
             ? '0 32px 80px rgba(var(--black-rgb),0.7), 0 0 40px rgba(var(--red-dark-rgb),0.14)'
             : '0 12px 40px rgba(var(--black-rgb),0.4)',
           transition: 'border-color 0.3s, box-shadow 0.4s',
-          background: 'var(--bg-map-dark)',
+          background: 'var(--bg-map-white)',
         }}
       >
         {/* Top accent bar */}
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, var(--red-bright), var(--red-dim), transparent)', zIndex: 5 }}/>
 
-        {/* Map iframe with dark overlay blend */}
+        {/* Map iframe with light theme */}
         <div style={{ position: 'relative', height: 'clamp(240px, 45vw, 420px)' }}>
           <iframe
             title="Allbotix Location"
@@ -281,17 +281,17 @@ function MapSection({ visible }: { visible: boolean }) {
             style={{
               border: 'none',
               display: 'block',
-              filter: 'invert(92%) hue-rotate(180deg) saturate(0.85) brightness(0.88)',
+              filter: 'saturate(1.05) brightness(1.02)',
               transition: 'filter 0.4s',
             }}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
-          {/* Dark vignette overlay for edge blending */}
+          {/* Soft vignette overlay for edge blending */}
           <div aria-hidden="true" style={{
             position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
-            background: 'radial-gradient(ellipse at center, transparent 55%, rgba(var(--overlay-dark-rgb),0.55) 100%)',
+            background: 'radial-gradient(ellipse at center, transparent 65%, rgba(0,0,0,0.12) 100%)',
           }}/>
           {/* Corner red glow */}
           <div aria-hidden="true" style={{
@@ -603,7 +603,7 @@ export default function ContactSection() {
                         onBlur={e  => (e.target as HTMLSelectElement).style.borderColor='rgba(var(--red-dark-rgb),0.18)'}
                       >
                         <option value="" disabled/>
-                        {SERVICES.map(s => <option key={s} value={s} style={{ background:'var(--bg-dark)', color:'var(--copper-pale)' }}>{s}</option>)}
+                        {SERVICES.map(s => <option key={s} value={s} style={{ background:'var(--bg-900)', color:'var(--copper)' }}>{s}</option>)}
                       </select>
                     </div>
 
@@ -628,7 +628,7 @@ export default function ContactSection() {
                           'Trade Show / Event',
                           'News / Press Coverage',
                           'Other',
-                        ].map(s => <option key={s} value={s} style={{ background:'var(--bg-dark)', color:'var(--copper-pale)' }}>{s}</option>)}
+                        ].map(s => <option key={s} value={s} style={{ background:'var(--bg-900)', color:'var(--copper)' }}>{s}</option>)}
                       </select>
                     </div>
 

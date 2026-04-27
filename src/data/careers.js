@@ -20,35 +20,35 @@ export const PERKS = [
     title: 'Global Exposure',
     desc: 'Work with clients and partners across 40+ countries from day one.',
   },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-      </svg>
-    ),
-    title: 'Learning Budget',
-    desc: '₹80,000 / year for courses, conferences, and certifications — no questions asked.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-      </svg>
-    ),
-    title: 'Full Health Cover',
-    desc: 'Comprehensive medical, dental, and vision for you and your dependents.',
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polyline points="12 6 12 12 16 14"/>
-      </svg>
-    ),
-    title: 'Flexible Hours',
-    desc: 'Async-first culture. We care about output, not seat time.',
-  },
+  // {
+  //   icon: (
+  //     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  //       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+  //       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+  //     </svg>
+  //   ),
+  //   title: 'Learning Budget',
+  //   desc: '₹80,000 / year for courses, conferences, and certifications — no questions asked.',
+  // },
+  // {
+  //   icon: (
+  //     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  //       <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+  //     </svg>
+  //   ),
+  //   title: 'Full Health Cover',
+  //   desc: 'Comprehensive medical, dental, and vision for you and your dependents.',
+  // },
+  // {
+  //   icon: (
+  //     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  //       <circle cx="12" cy="12" r="10"/>
+  //       <polyline points="12 6 12 12 16 14"/>
+  //     </svg>
+  //   ),
+  //   title: 'Flexible Hours',
+  //   desc: 'Async-first culture. We care about output, not seat time.',
+  // },
   {
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
