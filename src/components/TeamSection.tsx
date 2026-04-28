@@ -438,7 +438,7 @@ export default function TeamSection() {
           >
             {[
               { target: 4, suffix: '+', label: 'Years Experience' },
-              { target: 6, suffix: '', label: 'Core Team Members' },
+              { target: 25, suffix: '', label: 'Team Members' },
               { target: 6, suffix: '+', label: 'Countries Served' },
               { target: 370, suffix: '+', label: 'Projects Delivered' },
             ].map((s, i) => {
@@ -488,56 +488,53 @@ export default function TeamSection() {
       </section>
 
       {/* ══ TEAM CARDS ═══════════════════════════════════════════════════════ */}
-      <section id="team" ref={teamRef} style={{ position: 'relative', paddingBlock: '6rem', background: 'var(--bg-800)', overflow: 'hidden', borderTop: '1px solid var(--border-soft)' }}>
-        <div aria-hidden="true" style={{ position: 'absolute', top: '15%', right: '-8%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle,var(--red-soft) 0%,transparent 70%)', pointerEvents: 'none', animation: 'glowFloat 6s ease-in-out infinite' }} />
-        <div aria-hidden="true" style={{ position: 'absolute', bottom: '15%', left: '-8%', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle,var(--copper-soft) 0%,transparent 70%)', pointerEvents: 'none', animation: 'glowFloat 8s ease-in-out 2s infinite' }} />
-        {/* Watermark */}
-        <div aria-hidden="true" style={{ position: 'absolute', bottom: '-2rem', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', pointerEvents: 'none', fontFamily: 'var(--font-display)', fontSize: 'clamp(5rem,14vw,10rem)', fontWeight: 900, color: 'transparent', WebkitTextStroke: '1px var(--red-soft)', letterSpacing: '0.05em', lineHeight: 1, userSelect: 'none' }}>TEAM</div>
+        {/* <section id="team" ref={teamRef} style={{ position: 'relative', paddingBlock: '6rem', background: 'var(--bg-800)', overflow: 'hidden', borderTop: '1px solid var(--border-soft)' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', top: '15%', right: '-8%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle,var(--red-soft) 0%,transparent 70%)', pointerEvents: 'none', animation: 'glowFloat 6s ease-in-out infinite' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', bottom: '15%', left: '-8%', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle,var(--copper-soft) 0%,transparent 70%)', pointerEvents: 'none', animation: 'glowFloat 8s ease-in-out 2s infinite' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', bottom: '-2rem', left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap', pointerEvents: 'none', fontFamily: 'var(--font-display)', fontSize: 'clamp(5rem,14vw,10rem)', fontWeight: 900, color: 'transparent', WebkitTextStroke: '1px var(--red-soft)', letterSpacing: '0.05em', lineHeight: 1, userSelect: 'none' }}>TEAM</div>
 
-        <div className="container-allbotix" style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem', opacity: teamVisible ? 1 : 0, transform: teamVisible ? 'translateY(0)' : 'translateY(24px)', filter: teamVisible ? 'none' : 'blur(3px)', transition: 'opacity 0.7s ease,transform 0.7s ease,filter 0.7s ease' }}>
-            <div className="section-tag" style={{ justifyContent: 'center' }}>Our People</div>
-            <h2 className="section-title" style={{ marginBottom: '0.75rem' }}>The Architects of <span>Automation.</span></h2>
-            <p style={{ maxWidth: '460px', margin: '0 auto', fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--text-secondary)' }}>
-              Click any card to reveal the full profile, expertise, and contact details.
-            </p>
-            {/* Flip hint badge */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '1rem', padding: '6px 16px', borderRadius: '100px', background: 'var(--red-soft)', border: '1px solid var(--copper-border)' }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10" /><path d="M3.51 15a9 9 0 102.13-9.36L1 10" /></svg>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.55rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--red-bright)' }}>Click cards to flip</span>
-            </div>
-          </div>
-
-          <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2rem', perspective: '1200px' }}>
-            {TEAM.map(member => <TeamCard key={member.name} member={member} visible={teamVisible} />)}
-          </div>
-
-          {/* Join banner */}
-          <div style={{
-            marginTop: '4rem', padding: '3rem',
-            background: `linear-gradient(135deg,rgba(var(--red-dark-rgb),0.08),rgba(var(--red-dark-rgb),0.03))`,
-            border: `1px solid rgba(var(--red-dark-rgb),0.2)`, borderRadius: '14px',
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem',
-            animation: 'borderPulse 5s ease-in-out infinite',
-            opacity: teamVisible ? 1 : 0, transform: teamVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'opacity 0.7s ease 0.5s,transform 0.7s ease 0.5s',
-            position: 'relative', overflow: 'hidden',
-          }}>
-            <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,var(--red-bright),transparent)', animation: 'shimmer 3s linear infinite', backgroundSize: '600px 100%' }} />
-            <div>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--red-bright)', marginBottom: '6px' }}>We're Growing</p>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.2rem,3vw,1.8rem)', fontWeight: 900, color: 'var(--text-primary)', letterSpacing: '0.02em' }}>Want to Join the Allbotix Team?</h3>
-              <p style={{ fontFamily: 'var(--font-light)', fontSize: '0.88rem', color: 'var(--text-secondary)', marginTop: '8px', maxWidth: '420px', lineHeight: 1.7 }}>
-                We're always looking for brilliant minds passionate about robotics, AI, and automation. Come build the future with us.
+          <div className="container-allbotix" style={{ position: 'relative', zIndex: 2 }}>
+            <div style={{ textAlign: 'center', marginBottom: '4rem', opacity: teamVisible ? 1 : 0, transform: teamVisible ? 'translateY(0)' : 'translateY(24px)', filter: teamVisible ? 'none' : 'blur(3px)', transition: 'opacity 0.7s ease,transform 0.7s ease,filter 0.7s ease' }}>
+              <div className="section-tag" style={{ justifyContent: 'center' }}>Our People</div>
+              <h2 className="section-title" style={{ marginBottom: '0.75rem' }}>The Architects of <span>Automation.</span></h2>
+              <p style={{ maxWidth: '460px', margin: '0 auto', fontSize: '0.9rem', lineHeight: 1.85, color: 'var(--text-secondary)' }}>
+                Click any card to reveal the full profile, expertise, and contact details.
               </p>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '1rem', padding: '6px 16px', borderRadius: '100px', background: 'var(--red-soft)', border: '1px solid var(--copper-border)' }}>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--red-bright)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10" /><path d="M3.51 15a9 9 0 102.13-9.36L1 10" /></svg>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '0.55rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--red-bright)' }}>Click cards to flip</span>
+              </div>
             </div>
-            <Link href="/careers" className="btn-primary" style={{ flexShrink: 0 }}>
-              Join Team
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-            </Link>
+
+            <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '2rem', perspective: '1200px' }}>
+              {TEAM.map(member => <TeamCard key={member.name} member={member} visible={teamVisible} />)}
+            </div>
+
+            <div style={{
+              marginTop: '4rem', padding: '3rem',
+              background: `linear-gradient(135deg,rgba(var(--red-dark-rgb),0.08),rgba(var(--red-dark-rgb),0.03))`,
+              border: `1px solid rgba(var(--red-dark-rgb),0.2)`, borderRadius: '14px',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem',
+              animation: 'borderPulse 5s ease-in-out infinite',
+              opacity: teamVisible ? 1 : 0, transform: teamVisible ? 'translateY(0)' : 'translateY(30px)',
+              transition: 'opacity 0.7s ease 0.5s,transform 0.7s ease 0.5s',
+              position: 'relative', overflow: 'hidden',
+            }}>
+              <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg,transparent,var(--red-bright),transparent)', animation: 'shimmer 3s linear infinite', backgroundSize: '600px 100%' }} />
+              <div>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.58rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--red-bright)', marginBottom: '6px' }}>We're Growing</p>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.2rem,3vw,1.8rem)', fontWeight: 900, color: 'var(--text-primary)', letterSpacing: '0.02em' }}>Want to Join the Allbotix Team?</h3>
+                <p style={{ fontFamily: 'var(--font-light)', fontSize: '0.88rem', color: 'var(--text-secondary)', marginTop: '8px', maxWidth: '420px', lineHeight: 1.7 }}>
+                  We're always looking for brilliant minds passionate about robotics, AI, and automation. Come build the future with us.
+                </p>
+              </div>
+              <Link href="/careers" className="btn-primary" style={{ flexShrink: 0 }}>
+                Join Team
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section> */}
 
       {/* ══ VALUES ═══════════════════════════════════════════════════════════ */}
       <section ref={valRef} style={{ position: 'relative', paddingBlock: '6rem', background: 'var(--bg-900)', overflow: 'hidden', borderTop: '1px solid var(--border-soft)' }}>
