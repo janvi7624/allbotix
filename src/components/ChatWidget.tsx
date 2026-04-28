@@ -104,10 +104,17 @@ export default function ChatWidget() {
     setShowTyping(true);
 
     try {
+      // Build history from current messages before adding the new user message
+      const history = messages
+        .filter((m): m is { role: 'user'; text: string } | { role: 'bot'; text: string } =>
+          'text' in m && (m.role === 'user' || m.role === 'bot')
+        )
+        .map((m) => ({ role: m.role as 'user' | 'bot', text: m.text }));
+
       const res = await fetch('/api/chatbot/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, session_id: sessionIdRef.current }),
+        body: JSON.stringify({ message: text, session_id: sessionIdRef.current, history }),
       });
       const data: BotPayload & Partial<RecommendationCardData> = await res.json();
       setShowTyping(false);
@@ -166,7 +173,6 @@ export default function ChatWidget() {
           </div>
           <div className={styles.chatHeaderInfo}>
             <div className={styles.chatAgentName}>Allbotix Assistant</div>
-            <div className={styles.chatAgentStatus}>Online · Typically replies instantly</div>
           </div>
           <button className={styles.chatCloseBtn} onClick={() => setIsOpen(false)} aria-label="Close chat">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

@@ -4,6 +4,22 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { solutions } from '@/data/solutions'
+import { ROBOTS } from '@/data/robots'
+
+/* ─── Map a deployedSolution.name → robot uid (from /data/robots) ────────── */
+function findRobotUidByName(name: string): string | null {
+  const n = name.toLowerCase()
+  const byId = (id: string) => (ROBOTS as Array<{ id: string; uid: string }>).find(r => r.id === id)?.uid ?? null
+
+  if (/\b(alpha|robo\s*dog|robot\s*dog|quadruped|go2|\bb2\b)\b/.test(n)) return byId('alpha-dog')
+  if (/humanoid|bolt[\s-]*g1/.test(n))                                   return byId('bolt-g1')
+  if (/cleaning|scrub|sweep|ac40|ax10|amt[\s-]*1|at60s|at20s|as[\s-]*100n/.test(n)) return byId('cleaning-robots')
+  if (/serving|\baw3\b|\basmr\b|\bat9\b/.test(n))                        return byId('serving-robots')
+  if (/\bamr\b|autonomous mobile|at300|at600/.test(n))                   return byId('amr-robots')
+  if (/cobot|collaborative|robotic hand|al[\s-]*series/.test(n))         return byId('cobots')
+  if (/reception|guide/.test(n))                                         return byId('atr-p010')
+  return null
+}
 
 /* ─── Types ──────────────────────────────────────────────────────────────── */
 type DeployedSolution = { name: string; role: string }
@@ -58,11 +74,14 @@ function TargetIcon() {
 
 /* ─── Deployed Solution Card ─────────────────────────────────────────────── */
 function DeployedCard({ item, index, visible }: { item: DeployedSolution; index: number; visible: boolean }) {
-  const cardRef  = useRef<HTMLDivElement>(null)
+  const cardRef  = useRef<HTMLElement | null>(null)
   const shineRef = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState(false)
 
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const robotUid = findRobotUidByName(item.name)
+  const href = robotUid ? `/products/${robotUid}` : null
+
+  const onMove = (e: React.MouseEvent<HTMLElement>) => {
     const el = cardRef.current; if (!el) return
     const r = el.getBoundingClientRect()
     const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2)
@@ -81,28 +100,25 @@ function DeployedCard({ item, index, visible }: { item: DeployedSolution; index:
     setHovered(false)
   }
 
-  return (
-    <div
-      ref={cardRef}
-      onMouseMove={onMove}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={onLeave}
-      style={{
-        position: 'relative', overflow: 'hidden', borderRadius: '10px',
-        border: `1px solid ${hovered ? 'rgba(var(--red-dark-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.15)'}`,
-        background: hovered ? 'var(--bg-700)' : 'var(--bg-card)',
-        padding: '1.25rem 1.5rem',
-        transformStyle: 'preserve-3d', cursor: 'default',
-        transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.4s, background 0.3s',
-        boxShadow: hovered ? '0 20px 50px rgba(var(--black-rgb),0.5), 0 0 24px rgba(var(--red-dark-rgb),0.12)' : '0 4px 16px rgba(var(--black-rgb),0.25)',
-        opacity: visible ? 1 : 0,
-        translate: visible ? '0 0' : '0 30px',
-        filter: visible ? 'none' : 'blur(4px)',
-        transitionProperty: 'transform, border-color, box-shadow, background, opacity, translate, filter',
-        transitionDuration: '0.45s, 0.3s, 0.4s, 0.3s, 0.6s, 0.6s, 0.6s',
-        transitionDelay: `0s, 0s, 0s, 0s, ${index * 0.1 + 0.1}s, ${index * 0.1 + 0.1}s, ${index * 0.1 + 0.1}s`,
-      }}
-    >
+  const sharedStyle: React.CSSProperties = {
+    position: 'relative', overflow: 'hidden', borderRadius: '10px',
+    border: `1px solid ${hovered ? 'rgba(var(--red-dark-rgb),0.45)' : 'rgba(var(--red-dark-rgb),0.15)'}`,
+    background: hovered ? 'var(--bg-700)' : 'var(--bg-card)',
+    padding: '1.25rem 1.5rem',
+    transformStyle: 'preserve-3d', cursor: href ? 'pointer' : 'default',
+    transition: 'transform 0.45s cubic-bezier(0.23,1,0.32,1), border-color 0.3s, box-shadow 0.4s, background 0.3s',
+    boxShadow: hovered ? '0 20px 50px rgba(var(--black-rgb),0.5), 0 0 24px rgba(var(--red-dark-rgb),0.12)' : '0 4px 16px rgba(var(--black-rgb),0.25)',
+    opacity: visible ? 1 : 0,
+    translate: visible ? '0 0' : '0 30px',
+    filter: visible ? 'none' : 'blur(4px)',
+    transitionProperty: 'transform, border-color, box-shadow, background, opacity, translate, filter',
+    transitionDuration: '0.45s, 0.3s, 0.4s, 0.3s, 0.6s, 0.6s, 0.6s',
+    transitionDelay: `0s, 0s, 0s, 0s, ${index * 0.1 + 0.1}s, ${index * 0.1 + 0.1}s, ${index * 0.1 + 0.1}s`,
+    textDecoration: 'none', color: 'inherit', display: 'block',
+  }
+
+  const inner = (
+    <>
       <div ref={shineRef} aria-hidden="true" style={{ position:'absolute', inset:0, borderRadius:'10px', pointerEvents:'none', opacity:0, transition:'opacity 0.3s', zIndex:1 }} />
 
       {/* Bottom accent bar */}
@@ -113,11 +129,51 @@ function DeployedCard({ item, index, visible }: { item: DeployedSolution; index:
         <div style={{ width:'38px', height:'38px', flexShrink:0, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'8px', border:'1px solid rgba(var(--red-dark-rgb),0.3)', background: hovered ? 'rgba(var(--red-dark-rgb),0.18)' : 'rgba(var(--red-dark-rgb),0.07)', color:'var(--red-bright)', transition:'background 0.3s, transform 0.45s cubic-bezier(0.23,1,0.32,1)', transform: hovered ? 'translateZ(18px) scale(1.1)' : 'translateZ(0)', filter: hovered ? 'drop-shadow(0 0 6px rgba(var(--red-dark-rgb),0.5))' : 'none' }}>
           <RobotIcon />
         </div>
-        <div style={{ transform: hovered ? 'translateZ(10px)' : 'translateZ(0)', transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1)' }}>
+        <div style={{ flex: 1, minWidth: 0, transform: hovered ? 'translateZ(10px)' : 'translateZ(0)', transition:'transform 0.45s cubic-bezier(0.23,1,0.32,1)' }}>
           <p style={{ fontFamily:'var(--font-display)', fontSize:'0.78rem', fontWeight:700, color:'var(--text-primary)', letterSpacing:'0.04em', marginBottom:'3px' }}>{item.name}</p>
           <p style={{ fontFamily:'var(--font-light)', fontSize:'0.71rem', color:'var(--text-muted)', lineHeight:1.55 }}>{item.role}</p>
         </div>
+        {href && (
+          <svg
+            width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke={hovered ? 'var(--red-bright)' : 'rgba(var(--red-dark-rgb),0.5)'}
+            strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            style={{ flexShrink: 0, marginTop: 4, transform: hovered ? 'translateX(3px)' : 'translateX(0)', transition: 'transform 0.25s, stroke 0.25s' }}
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        )}
       </div>
+    </>
+  )
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        ref={cardRef as React.Ref<HTMLAnchorElement>}
+        onMouseMove={onMove}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={onLeave}
+        aria-label={`View ${item.name} details`}
+        style={sharedStyle}
+      >
+        {inner}
+      </Link>
+    )
+  }
+
+  return (
+    <div
+      ref={cardRef as React.Ref<HTMLDivElement>}
+      onMouseMove={onMove}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={onLeave}
+      style={sharedStyle}
+    >
+      {inner}
     </div>
   )
 }
@@ -426,11 +482,11 @@ export default function SolutionDetailPage() {
           </div>
 
           {/* ── Stats Row ── */}
-          <div className="sd-section" style={{ borderTop:'none', marginBottom:'1rem', opacity: bodyVisible ? 1 : 0, transition:'opacity 0.6s ease 0.15s' }}>
+          {/* <div className="sd-section" style={{ borderTop:'none', marginBottom:'1rem', opacity: bodyVisible ? 1 : 0, transition:'opacity 0.6s ease 0.15s' }}>
             <div className="sd-stats-grid">
               {stats.map((s, i) => <StatPill key={s.label} value={s.value} label={s.label} delay={i * 0.1 + 0.2} />)}
             </div>
-          </div>
+          </div> */}
 
           {/* ── Deployed Solutions ── */}
           <div className="sd-section" style={{ opacity: bodyVisible ? 1 : 0, transition:'opacity 0.6s ease 0.2s' }}>

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import fs from 'fs'
 import path from 'path'
+import { buildEmail, escapeHtml } from '@/lib/emailTemplate'
 
 interface ContactSubmission {
   id: string
@@ -38,54 +39,23 @@ function saveSubmission(entry: ContactSubmission) {
 }
 
 function buildHtml(d: ContactSubmission): string {
-  const row = (label: string, value: string) => value ? `
-    <tr>
-      <td style="padding:10px 16px;font-weight:600;color:#b03a2e;white-space:nowrap;font-family:Arial,sans-serif;font-size:13px;border-bottom:1px solid #1e1e1e;">${label}</td>
-      <td style="padding:10px 16px;color:#e0dbd5;font-family:Arial,sans-serif;font-size:13px;border-bottom:1px solid #1e1e1e;">${value}</td>
-    </tr>` : ''
-
-  return `<!DOCTYPE html>
-<html><head><meta charset="UTF-8"/></head>
-<body style="margin:0;padding:0;background:#0a0a0a;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0a;padding:32px 0;">
-    <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#111;border-radius:12px;overflow:hidden;border:1px solid #2a1a1a;">
-        <tr>
-          <td colspan="2" style="background:linear-gradient(135deg,#b03a2e,#7a2820);padding:28px 32px;">
-            <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">New Contact Submission</p>
-            <h1 style="margin:0;font-family:Arial,sans-serif;font-size:22px;font-weight:900;color:#fff;">Allbotix — Contact Form</h1>
-          </td>
-        </tr>
-        <tr><td colspan="2">
-          <table width="100%" cellpadding="0" cellspacing="0">
-            ${row('Full Name',    `${d.firstName} ${d.lastName}`)}
-            ${row('Email',        d.email)}
-            ${row('Phone',        d.phone)}
-            ${row('Company',      d.company)}
-            ${row('Service',      d.service)}
-            ${row('Found Us Via', d.source)}
-            ${row('Submitted',    new Date(d.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }))}
-          </table>
-        </td></tr>
-        <tr>
-          <td colspan="2" style="padding:20px 16px 4px;font-weight:600;color:#b03a2e;font-family:Arial,sans-serif;font-size:13px;">Message</td>
-        </tr>
-        <tr>
-          <td colspan="2" style="padding:0 16px 24px;">
-            <div style="background:#1a1a1a;border:1px solid #2a1a1a;border-radius:8px;padding:16px;font-family:Arial,sans-serif;font-size:13px;color:#e0dbd5;line-height:1.75;">
-              ${d.message.replace(/\n/g, '<br/>')}
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" style="padding:16px 32px;border-top:1px solid #1e1e1e;text-align:center;">
-            <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;color:#555;letter-spacing:0.1em;">ALLBOTIX TECHNOLOGIES · Ahmedabad, Gujarat</p>
-          </td>
-        </tr>
-      </table>
-    </td></tr>
-  </table>
-</body></html>`
+  const fullName = `${d.firstName} ${d.lastName}`.trim()
+  return buildEmail({
+    badge: 'New Contact Submission',
+    title: 'Allbotix — Contact Form',
+    fields: [
+      { label: 'Full Name',    value: escapeHtml(fullName) },
+      { label: 'Email',        value: escapeHtml(d.email) },
+      { label: 'Phone',        value: escapeHtml(d.phone) },
+      { label: 'Company',      value: escapeHtml(d.company) },
+      { label: 'Service',      value: escapeHtml(d.service) },
+      { label: 'Found Us Via', value: escapeHtml(d.source) },
+      { label: 'Submitted',    value: escapeHtml(new Date(d.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })) },
+    ],
+    blocks: [
+      { heading: 'Message', html: escapeHtml(d.message).replace(/\n/g, '<br/>') },
+    ],
+  })
 }
 
 export async function POST(req: NextRequest) {

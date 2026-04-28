@@ -266,12 +266,12 @@ function ApplicationForm({ visible }: { visible: boolean }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
           <div>
             <label style={labelStyle}>Full Name <span style={{ color: 'var(--red-bright)' }}>*</span></label>
-            <input name="name" type="text" placeholder="Riya Mehta" value={form.name} onChange={handle}
+            <input name="name" type="text" placeholder="Name" value={form.name} onChange={handle}
               style={fieldStyle} onFocus={focusIn} onBlur={focusOut}/>
           </div>
           <div>
             <label style={labelStyle}>Email Address <span style={{ color: 'var(--red-bright)' }}>*</span></label>
-            <input name="email" type="email" placeholder="riya@example.com" value={form.email} onChange={handle}
+            <input name="email" type="email" placeholder="info@example.com" value={form.email} onChange={handle}
               style={fieldStyle} onFocus={focusIn} onBlur={focusOut}/>
           </div>
         </div>
@@ -280,7 +280,7 @@ function ApplicationForm({ visible }: { visible: boolean }) {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem', marginBottom: '1.25rem' }}>
           <div>
             <label style={labelStyle}>Phone (Optional)</label>
-            <input name="phone" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={handle}
+            <input name="phone" type="tel" placeholder="+91 00000 00000" value={form.phone} onChange={handle}
               style={fieldStyle} onFocus={focusIn} onBlur={focusOut}/>
           </div>
           <div>

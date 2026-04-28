@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { useRef, useEffect } from 'react'
 
 const stats = [
-  { value: '370+', label: 'Projects Done' },
+  { value: '525+', label: 'Robots Develops' },
   { value: '180+', label: 'Happy Clients' },
-  { value: '530+', label: 'Parts Delivered' },
+  { value: '610+', label: 'Robots Delivered' },
   { value: '4.  7',  label: 'Average Rating' },
 ]
 

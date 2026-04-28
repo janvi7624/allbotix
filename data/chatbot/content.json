@@ -231,7 +231,7 @@
     ]
   },
   "robotics": {
-    "text": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?\n\n[Visit Allbotix](https://www.allbotix.ai/)",
+    "text": "🤖 *Robotics Solutions*\n\nWe offer a full range of intelligent robotic systems for commercial, industrial, and service environments. What type of robot are you interested in?",
     "buttons": [
       "Cleaning Robots",
       "Reception Robots",
@@ -240,7 +240,7 @@
       "Surveillance Robots",
       "Robot Arm",
       "Entertainment Robots",
-      "Back to Menu"
+      "Contact Allbotix"
     ],
     "image": "/static/images/Robot.png"
   },
@@ -269,14 +269,13 @@
       "Contact Allbotix",
       "Back to Menu"
     ],
-    "image": "/static/images/Reception robot.png",
-    "video_link": "https://drive.google.com/drive/folders/176P5cX7xyuE9-ujFzAQZE_cDEzGzOtwv?usp=sharing"
+    "image": "/static/images/reception_robot_4.png"
   },
   "delivery_robot": {
     "text": "📦 *Delivery & Serving Robots*\n\nContactless AI-powered delivery for restaurants, hotels, and hospitals. Select a product to learn more:",
     "buttons": [
       "AW3",
-      "ASMR T9",
+      "AT9",
       "ASMR T10",
       "Contact Allbotix",
       "Back to Menu"
@@ -310,8 +309,7 @@
       "Contact Allbotix",
       "Back to Menu"
     ],
-    "image": "/static/images/Robot arm.png",
-    "video_link": "https://drive.google.com/drive/folders/1-fZy3S2ZK7vbEQZ6bXP-PJgc_Bdgj9AO?usp=sharing"
+    "image": "/static/images/Robot arm.png"
   },
   "entertainment_robot": {
     "text": "🎭 *Humanoid & Entertainment Robots*\n\nNext-generation humanoid robots for hospitality, education, and entertainment. Select a product to learn more:",
@@ -320,15 +318,18 @@
       "Contact Allbotix",
       "Back to Menu"
     ],
-    "image": "/static/images/Humanoid Robot.png",
-    "video_link": "https://drive.google.com/drive/folders/1bmu7faFAGGfxBbjzKERiGZYBJDckHRod?usp=sharing"
+    "image": "/static/images/Humanoid Robot.png"
   },
   "fallback": {
     "text": "I can help only with Allbotix robotics. Please choose a robotics option below or type your robot requirement.",
     "buttons": [
-      "Robotics",
       "Cleaning Robots",
+      "Reception Robots",
+      "Delivery Robots",
       "AMR",
+      "Surveillance Robots",
+      "Robot Arm",
+      "Entertainment Robots",
       "Contact Allbotix"
     ]
   }

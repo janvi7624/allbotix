@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer'
 import fs from 'fs'
 import path from 'path'
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
+import { buildEmail, escapeHtml, EMAIL_COLORS } from '@/lib/emailTemplate'
 
 /* ─── Types ── */
 interface CareerSubmission {
@@ -95,71 +96,28 @@ async function uploadResumeToS3(file: File, submissionId: string): Promise<{ url
 
 /* ─── Email HTML ── */
 function buildHtml(d: CareerSubmission): string {
-  const row = (label: string, value: string) => value ? `
-    <tr>
-      <td style="padding:10px 16px;font-weight:600;color:#b03a2e;white-space:nowrap;font-family:Arial,sans-serif;font-size:13px;border-bottom:1px solid #1e1e1e;">${label}</td>
-      <td style="padding:10px 16px;color:#e0dbd5;font-family:Arial,sans-serif;font-size:13px;border-bottom:1px solid #1e1e1e;">${value}</td>
-    </tr>` : ''
-
   const resumeCell = d.resume
-    ? `<a href="${d.resume}" style="color:#e0dbd5;text-decoration:underline;">${d.resumeFilename || 'View PDF'}</a>`
+    ? `<a href="${escapeHtml(d.resume)}" style="color:${EMAIL_COLORS.RED};text-decoration:none;font-weight:600;border-bottom:1px solid ${EMAIL_COLORS.RED};">${escapeHtml(d.resumeFilename || 'View PDF')}</a>`
     : ''
 
-  return `<!DOCTYPE html>
-<html><head><meta charset="UTF-8"/></head>
-<body style="margin:0;padding:0;background:#0a0a0a;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a0a0a;padding:32px 0;">
-    <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="background:#111;border-radius:12px;overflow:hidden;border:1px solid #2a1a1a;">
-
-        <!-- Header -->
-        <tr>
-          <td colspan="2" style="background:linear-gradient(135deg,#b03a2e,#7a2820);padding:28px 32px;">
-            <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;">New Job Application</p>
-            <h1 style="margin:0;font-family:Arial,sans-serif;font-size:22px;font-weight:900;color:#fff;">Allbotix — Careers</h1>
-          </td>
-        </tr>
-
-        <!-- Fields -->
-        <tr><td colspan="2">
-          <table width="100%" cellpadding="0" cellspacing="0">
-            ${row('Full Name',   d.name)}
-            ${row('Email',       d.email)}
-            ${row('Phone',       d.phone)}
-            ${row('Department',  d.dept)}
-            ${row('Target Role', d.role)}
-            ${row('Experience',  d.experience)}
-            ${row('LinkedIn',    d.linkedin)}
-            ${row('Resume',      resumeCell)}
-            ${row('Submitted',   new Date(d.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }))}
-          </table>
-        </td></tr>
-
-        <!-- Why Allbotix -->
-        <tr>
-          <td colspan="2" style="padding:20px 16px 4px;font-weight:600;color:#b03a2e;font-family:Arial,sans-serif;font-size:13px;">Why Allbotix?</td>
-        </tr>
-        <tr>
-          <td colspan="2" style="padding:0 16px 24px;">
-            <div style="background:#1a1a1a;border:1px solid #2a1a1a;border-radius:8px;padding:16px;font-family:Arial,sans-serif;font-size:13px;color:#e0dbd5;line-height:1.75;">
-              ${d.why.replace(/\n/g, '<br/>')}
-            </div>
-          </td>
-        </tr>
-
-        <!-- Footer -->
-        <tr>
-          <td colspan="2" style="padding:16px 32px;border-top:1px solid #1e1e1e;text-align:center;">
-            <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;color:#555;letter-spacing:0.1em;">
-              ALLBOTIX TECHNOLOGIES · Ahmedabad, Gujarat · allbotix.com
-            </p>
-          </td>
-        </tr>
-
-      </table>
-    </td></tr>
-  </table>
-</body></html>`
+  return buildEmail({
+    badge: 'New Job Application',
+    title: 'Allbotix — Careers',
+    fields: [
+      { label: 'Full Name',   value: escapeHtml(d.name) },
+      { label: 'Email',       value: escapeHtml(d.email) },
+      { label: 'Phone',       value: escapeHtml(d.phone) },
+      { label: 'Department',  value: escapeHtml(d.dept) },
+      { label: 'Target Role', value: escapeHtml(d.role) },
+      { label: 'Experience',  value: escapeHtml(d.experience) },
+      { label: 'LinkedIn',    value: escapeHtml(d.linkedin) },
+      { label: 'Resume',      value: resumeCell },
+      { label: 'Submitted',   value: escapeHtml(new Date(d.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })) },
+    ],
+    blocks: [
+      { heading: 'Why Allbotix?', html: escapeHtml(d.why).replace(/\n/g, '<br/>') },
+    ],
+  })
 }
 
 /* ─── Route Handler ── */

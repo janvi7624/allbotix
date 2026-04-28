@@ -205,6 +205,44 @@ export default function Footer() {
             ))}
           </div>
         </div>
+
+        {/* ── Powered by ── */}
+        <div
+          style={{
+            paddingBlock: '1rem',
+            borderTop: '1px solid var(--border-soft)',
+            textAlign: 'center',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: 'var(--font-light)',
+              fontSize: '0.78rem',
+              color: 'var(--text-muted)',
+              letterSpacing: '0.04em',
+            }}
+          >
+            Powered by{' '}
+            <a
+              href="https://www.nantatech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'var(--red-bright)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.textDecoration = 'underline')
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.textDecoration = 'none')
+              }
+            >
+              Nanta Tech Limited
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   )
