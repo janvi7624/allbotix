@@ -306,11 +306,11 @@
 /* ── In-bubble image / collage ────────────────────────────────── */
 .bubbleImage {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
+  height: 200px;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 8px;
-  background: var(--cw-bg-alt);
+  background: #ffffff;
 }
 
 .bubbleCollage {
