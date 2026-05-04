@@ -56,7 +56,7 @@ export default function ChatWidget() {
   const [buttons, setButtons] = useState<string[]>([]);
   const [showTyping, setShowTyping] = useState(false);
   const [input, setInput] = useState('');
-  const sessionIdRef = useRef<string>('');
+  const sessionIdRef = useRef<string>(getOrCreateSessionId());
   const welcomedRef = useRef(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -134,7 +134,7 @@ export default function ChatWidget() {
     } finally {
       setIsWaiting(false);
     }
-  }, [input, isWaiting]);
+  }, [input, isWaiting, messages]);
 
   function handleKey(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
